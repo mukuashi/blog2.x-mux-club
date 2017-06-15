@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router'
 import TweenOne from 'rc-tween-one';
 import { Menu, Icon } from 'antd';
 
@@ -23,9 +24,14 @@ class Header extends React.Component {
     const props = { ...this.props };
     const isMode = props.isMode;
     delete props.isMode;
-    const navData = { menu1: '导航一', menu2: '导航二', menu3: '导航三', menu4: '导航四' };
+    const navData = {
+      menu1: 'http://kquanr.com/1|代码篇(2016年之前)',
+      menu2: 'http://kquanr.com/2|背景篇',
+      menu3: 'http://kquanr.com/3|摄影篇',
+      menu4: 'http://kquanr.com/4|文患篇'
+    };
     const navChildren = Object.keys(navData).map((key, i) => (<Item key={i}>
-      {navData[key]}
+      <Link to={navData[key].split('|')[0]} target="_blank">{navData[key].split('|')[1]}</Link>
     </Item>));
     const userTitle = (<div>
       <span className="img">
@@ -35,11 +41,11 @@ class Header extends React.Component {
           height="30"
         />
       </span>
-      <span>用户名</span>
+      <span>Mich</span>
     </div>);
     navChildren.push((<Item className="help" key="help">
-        <Icon type="question-circle-o" />
-        <span>帮助</span>
+        <Icon type="aliwangwang" />
+        <span>联系</span>
       </Item>),
       (<SubMenu className="user" title={userTitle} key="user">
         <Item key="a">用户中心</Item>
