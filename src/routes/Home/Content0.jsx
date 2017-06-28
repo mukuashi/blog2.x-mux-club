@@ -32,14 +32,14 @@ class Content extends React.Component {
             key="content"
             id={`${props.id}-content`}
           >
-            一只拍片写稿、画图敲代码的斜杠文青患者 
+            一只拍片写稿、画图敲代码的斜杠文青患者
           </p>
           <Button type="ghost" key="button" id={`${props.id}-button`}>
-            Get More
+            下滑 Get More
           </Button>
         </QueueAnim>
         <TweenOne
-          animation={{ y: '-=20', yoyo: true, repeat: -1, duration: 1000 }}
+          animation={{ y: '-=70', yoyo: true, repeat: -1, duration: 1000 }}
           className={`${props.className}-icon`}
           key="icon"
         >

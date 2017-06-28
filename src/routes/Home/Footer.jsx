@@ -2,6 +2,7 @@ import React from 'react';
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
+import { Tooltip } from 'antd';
 
 class Footer extends React.Component {
   static propTypes = {
@@ -36,12 +37,28 @@ class Footer extends React.Component {
     const props = { ...this.props };
     const isMode = props.isMode;
     delete props.isMode;
-    const logoContent = { img: 'https://zos.alipayobjects.com/rmsportal/qqaimmXZVSwAhpL.svg', content: 'A efficient motion design solutions' };
+    const logoContent = { img: '//kquanr.com/images/footer.png', content: '一只拍片写稿、画图敲代码的文青患者' };
     const dataSource = [
-      { title: '产品', content: '产品更新记录\nAPI文档\n快速入门\n参考指南', contentLink: '#\n#\n#\n#' },
-      { title: '关于', content: 'FAQ\n联系我们', contentLink: '#\n#' },
-      { title: '资源', content: 'Ant Design\nAnt Design Mobile\nAnt Cool\nAntD Library', contentLink: '#\n#\n#\n#' },
-      { title: '关注', content: 'https://zos.alipayobjects.com/rmsportal/IiCDSwhqYwQHLeU.svg\n https://zos.alipayobjects.com/rmsportal/AXtqVjTullNabao.svg\n https://zos.alipayobjects.com/rmsportal/fhJykUTtceAhYFz.svg\n https://zos.alipayobjects.com/rmsportal/IDZTVybHbaKmoEA.svg', contentLink: '#\n#\n#\n#' },
+      {
+        title: '关于作者',
+        content: '公路作者\n自由摄影师\n软件工程师\n半个设计师\n视频后期控\n环球游侠客\n待续 >>>',
+        contentLink: '//kquanr.com/project/works\n//photoartlife.lofter.com\nhttps://github.com/photoArtLife\n//kquanr.com/project\n//i.youku.com/mukuashi\nhttps://500px.me/PhotoArtLife\njavascript:;'
+      },
+      {
+        title: '博客驿站',
+        content: 'FAQ\n联系我们',
+        contentLink: '#\n#'
+      },
+      {
+        title: '资源Club',
+        content: 'Ant Design\nAnt Design Mobile\nAnt Cool\nAntD Library',
+        contentLink: '#\n#\n#\n#'
+      },
+      {
+        title: '社交媒体',
+        content: 'https://zos.alipayobjects.com/rmsportal/IiCDSwhqYwQHLeU.svg\nhttps://zos.alipayobjects.com/rmsportal/AXtqVjTullNabao.svg\nhttps://zos.alipayobjects.com/rmsportal/fhJykUTtceAhYFz.svg\nhttps://zos.alipayobjects.com/rmsportal/IDZTVybHbaKmoEA.svg',
+        contentLink: '#\n#\n#\n#'
+      },
     ];
     const liChildrenToRender = dataSource.map(this.getLiChildren);
     return (<OverPack
@@ -64,7 +81,8 @@ class Footer extends React.Component {
         id={`${props.id}-content`}
       >
         <span>
-          Copyright © 2016 The Project by <a href="#">Ant Motion</a>. All Rights Reserved
+          备案号：鲁ICP备15022927号 Copyright © 2015-Now All Rights Reserved<br/>
+          <a href="javascript:;">版本2.x</a> Crafted By <a href="//photoartlife.lofter.com">PhotoArtLife</a> | Powered by <a href="//kquanr.com">mukuashi@Mich</a> Design For Life
         </span>
       </TweenOne>
     </OverPack>);
