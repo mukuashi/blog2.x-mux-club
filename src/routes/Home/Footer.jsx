@@ -15,7 +15,7 @@ class Footer extends React.Component {
   };
   //version notice
   
-  openNotification = () => {    
+  openNotification = () => {
     const btnReturnClick = function() {
       window.location.href = 'http://kquanr.com'
     };
@@ -27,7 +27,7 @@ class Footer extends React.Component {
     notification.open({
       message: 'Hey，欢迎访问 PhotoArtLife',
       description: '当前版本：2.x\n\n这是2016年及至今的博客新版本，老版本可以在首页切换（3秒后自动关闭）',
-      icon: <i className="micon micon-2x micon-world" style={{ color: '#108ee9' }}></i>,
+      icon: <i className="micon micon-2x micon-smile" style={{ color: '#108ee9' }}></i>,
       duration: 4,
       btn: btnReturn
     });
