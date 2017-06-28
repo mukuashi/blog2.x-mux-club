@@ -2,7 +2,7 @@ import React from 'react';
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
-import { Tooltip } from 'antd';
+import { Tooltip, Message, Icon } from 'antd';
 
 class Footer extends React.Component {
   static propTypes = {
@@ -18,10 +18,10 @@ class Footer extends React.Component {
     const content = data.content.split(/\n/).filter(item => item)
       .map((item, ii) => {
         const cItem = item.trim();
-        const isImg = cItem.match(/\.(jpg|png|svg|bmp|jpeg)$/i);
+        const isImg = cItem.split('MKSIcon@')[1];
         return (<li className={isImg ? 'icon' : ''} key={ii}>
           <a href={links[ii]} target="_blank">
-            {isImg ? <img src={cItem} width="100%" /> : cItem}
+            {isImg ? <i className={"micon micon-1x-bg micon-" + isImg } title={cItem}></i> : cItem}
           </a>
         </li>);
       });
@@ -37,7 +37,10 @@ class Footer extends React.Component {
     const props = { ...this.props };
     const isMode = props.isMode;
     delete props.isMode;
-    const logoContent = { img: '//kquanr.com/images/footer.png', content: '一只拍片写稿、画图敲代码的文青患者' };
+    const logoContent = {
+      img: 'http://kquanr.com/images/footer.png',
+      content: '一只拍片写稿、画图敲代码的文青患者'
+    };
     const dataSource = [
       {
         title: '关于作者',
@@ -46,18 +49,18 @@ class Footer extends React.Component {
       },
       {
         title: '博客驿站',
-        content: 'FAQ\n联系我们',
-        contentLink: '#\n#'
+        content: '背景篇\n摄影与文学篇\nLOFTER摄影\n图虫网摄影\n500PX摄影\n代码篇@2016及之前\n陆续公开中 >>>',
+        contentLink: '//kquanr.com/project\n//kquanr.com/project/works\n//photoartlife.lofter.com\nhttps://photoartlife.tuchong.com/\nhttps://500px.me/PhotoArtLife\n//kquanr.com/arts\njavascript:;'
       },
       {
         title: '资源Club',
-        content: 'Ant Design\nAnt Design Mobile\nAnt Cool\nAntD Library',
-        contentLink: '#\n#\n#\n#'
+        content: 'Stack Overflow\nAnt Design\n蚂蚁金服设计平台\n淘宝前端团队（FED）\n阿里巴巴国际UED团队\n腾讯ISUX社交用户设计部\n百度FEX前端研发部\nIconfont-阿里巴巴矢量图标库',
+        contentLink: 'https://stackoverflow.com\nhttps://ant.design\nhttps://design.alipay.com\n//taobaofed.org\n//www.aliued.com\n//isux.tencent.com\n//fex.baidu.com\n//www.iconfont.cn'
       },
       {
         title: '社交媒体',
-        content: 'https://zos.alipayobjects.com/rmsportal/IiCDSwhqYwQHLeU.svg\nhttps://zos.alipayobjects.com/rmsportal/AXtqVjTullNabao.svg\nhttps://zos.alipayobjects.com/rmsportal/fhJykUTtceAhYFz.svg\nhttps://zos.alipayobjects.com/rmsportal/IDZTVybHbaKmoEA.svg',
-        contentLink: '#\n#\n#\n#'
+        content: 'MKSIcon@sina-weibo-circle\nMKSIcon@wechat-circle\nMKSIcon@camera-circle\nMKSIcon@mi-camera\nMKSIcon@email-circle\nMKSIcon@github\nMKSIcon@500px',
+        contentLink: '//weibo.com/572512250\nhttp://t.cn/Rt1xb42\n//photoartlife.lofter.com\nhttps://m.mepai.me/photographyer/u_592e418fe4a53.html\nhttps://photoartlife.tuchong.com\nhttps://github.com/PhotoArtLife\nhttps://github.com/PhotoArtLife'
       },
     ];
     const liChildrenToRender = dataSource.map(this.getLiChildren);
@@ -82,7 +85,10 @@ class Footer extends React.Component {
       >
         <span>
           备案号：鲁ICP备15022927号 Copyright © 2015-Now All Rights Reserved<br/>
-          <a href="javascript:;">版本2.x</a> Crafted By <a href="//photoartlife.lofter.com">PhotoArtLife</a> | Powered by <a href="//kquanr.com">mukuashi@Mich</a> Design For Life
+          <a href="javascript:;">版本2.x </a>
+          Crafted By <a href="//photoartlife.lofter.com">PhotoArtLife </a>
+          | Referenced By <a href="https://facebook.github.io/react" target="_blank">Facebook React </a>
+          | Powered By <a href="//kquanr.com">mukuashi@Mich</a> Design For Life
         </span>
       </TweenOne>
     </OverPack>);

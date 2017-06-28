@@ -12,11 +12,17 @@
     max-width: 1200px;
     margin: 40px auto 0;
     overflow: inherit;
+    
+      
+
     & > li {
       float: left;
       width: 20%;
       padding: 10px;
       position: relative !important; // 强制去除 queue-anim-leaving 的 absolute;
+      &:nth-child(4) {
+        
+      }
       & h2 {
         font-weight: normal;
         color: @template-text-color;
@@ -24,11 +30,17 @@
       }
 
       & .icon {
-        width: 20px;
+        width: 15%;
         display: inline-block;
         margin-left: 10px;
-        opacity: .35;
+        padding-top: 1.8%;
+        opacity: .8;
         transition: opacity .3s @ease-out;
+        a {
+          i {
+            line-height: 1.6;
+          }
+        }
         &:first-child {
           margin-left: 0;
         }
@@ -71,6 +83,10 @@
     span{
       display: block;
       margin: 20px auto 0;
+      font-size: 115%;
+      a {
+        text-decoration: none;
+      }
     }
   }
 }

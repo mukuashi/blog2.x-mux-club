@@ -64,7 +64,7 @@ class Header extends React.Component {
     </div>);
     navChildren.push((<Item className="help" key="help">
         <Popover content={contactAuthor} title="微信公共平台 + 约片投稿微信 >>> 技术交流等" trigger="hover" placement="bottom" arrowPointAtCenter>
-          <Icon type="aliwangwang" />
+          <i className="micon micon-wechat micon-1x-md"></i>
           <span>联系作者</span>
         </Popover>
       </Item>),

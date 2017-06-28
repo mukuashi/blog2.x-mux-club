@@ -10,8 +10,10 @@ import Content2 from './Content2';
 import Content3 from './Content3';
 import Content4 from './Content4';
 import Footer from './Footer';
-
+//公共样式
 import './less/antMotion_style.less';
+//公共字体与图标库
+import '../../components/FontIcons/blog-font.min.less'
 
 export default class Home extends React.Component {
   constructor(props) {
