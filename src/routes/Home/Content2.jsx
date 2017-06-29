@@ -14,7 +14,7 @@ class Content extends React.Component {
     const isMode = props.isMode;
     delete props.isMode;
     const animation = { y: '+=30', opacity: 0, type: 'from', ease: 'easeOutQuad' };
-    const videoChildren = 'https://os.alipayobjects.com/rmsportal/EejaUGsyExkXyXr.mp4'
+    const videoChildren = 'http://player.youku.com/player.php/sid/XMjY5ODIzNzc2MA==/v.swf'
     return (
       <div {...props} className={`content-template-wrapper ${props.className}-wrapper`}>
         <OverPack

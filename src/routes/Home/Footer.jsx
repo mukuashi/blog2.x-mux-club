@@ -1,5 +1,4 @@
 import React from 'react';
-import { browserHistory } from 'react-router'
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
@@ -26,7 +25,7 @@ class Footer extends React.Component {
     );
     notification.open({
       message: 'Hey，欢迎访问 PhotoArtLife',
-      description: '当前版本：2.x\n\n这是2016年及至今的博客新版本，老版本可以在首页切换（3秒后自动关闭）',
+      description: '当前版本：2.x\n。\n为2016年及至今的博客新版本，老版本可以在首页切换（当前toast浮层会在3秒后自动关闭）。',
       icon: <i className="micon micon-2x micon-smile" style={{ color: '#108ee9' }}></i>,
       duration: 4,
       btn: btnReturn
@@ -83,9 +82,9 @@ class Footer extends React.Component {
       },
       {
         title: '社交媒体',
-        content: 'MKSIcon@sina-weibo-circle\nMKSIcon@wechat-circle\nMKSIcon@camera-circle\nMKSIcon@mi-camera\nMKSIcon@500px-circle\nMKSIcon@tuchong\nMKSIcon@video\nMKSIcon@github\nMKSIcon@email-circle',
-        hoverTitle: '新浪微博\n微信专栏\nLOFTER摄影\n米拍摄影专辑\n500px摄影专栏\n图虫摄影专栏\n优酷自媒体\nGithub代码中心\n联系邮箱',
-        contentLink: '//weibo.com/572512250\nhttp://t.cn/Rt1xb42\n//photoartlife.lofter.com\nhttps://m.mepai.me/photographyer/u_592e418fe4a53.html\nhttps://500px.me/PhotoArtLife\nhttps://photoartlife.tuchong.com\n//i.youku.com/mukuashi\nhttps://github.com/PhotoArtLife\njavascript:;'
+        content: 'MKSIcon@sina-weibo-circle\nMKSIcon@wechat-circle\nMKSIcon@camera-circle\nMKSIcon@mi-camera\nMKSIcon@500px-circle\nMKSIcon@tuchong\nMKSIcon@video\nMKSIcon@github\nMKSIcon@email-circle\nMKSIcon@home-circle',
+        hoverTitle: '新浪微博\n微信专栏\nLOFTER摄影\n米拍摄影专辑\n500px摄影专栏\n图虫摄影专栏\n优酷自媒体\nGithub代码中心\n联系邮箱\n返回旧版',
+        contentLink: '//weibo.com/572512250\nhttp://t.cn/Rt1xb42\n//photoartlife.lofter.com\nhttps://m.mepai.me/photographyer/u_592e418fe4a53.html\nhttps://500px.me/PhotoArtLife\nhttps://photoartlife.tuchong.com\n//i.youku.com/mukuashi\nhttps://github.com/PhotoArtLife\n//kquanr.com/project/works#four\n//kquanr.com'
       },
     ];
     const liChildrenToRender = dataSource.map(this.getLiChildren);
@@ -110,11 +109,13 @@ class Footer extends React.Component {
       >
 
         <span>
-          备案号：鲁ICP备15022927号 Copyright © 2015-Now All Rights Reserved<br/>
-          <a href="javascript:;" onClick={this.openNotification}>版本2.x </a>
-          Crafted By <a href="//photoartlife.lofter.com">PhotoArtLife </a>
-          | Referenced By <a href="https://facebook.github.io/react" target="_blank">Facebook React </a>
-          | Powered By <a href="//kquanr.com">mukuashi@Mich</a> Design For Life
+          备案号：鲁ICP备15022927号 <em>Copyright © 2015-Now All Rights Reserved</em>
+          <p>
+            <a href="javascript:;" onClick={this.openNotification}>版本2.x </a>
+            Crafted By <a href="//photoartlife.lofter.com">PhotoArtLife </a>
+            | Referenced By <a href="https://facebook.github.io/react" target="_blank">Facebook React </a>
+            | Powered By <a href="//kquanr.com">mukuashi@Mich</a> Design For Life
+          </p>
         </span>
       </TweenOne>
     </OverPack>);

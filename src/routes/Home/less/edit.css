@@ -1,6 +1,15 @@
 
 @media screen and (min-width: 768px) {
-#content_0_0-button { border-radius: 2px; border-width: 1px; border-style: solid }
-#content_6_0 .content-template { height: 80% }
-#content_6_0 { background-blend-mode: normal; height: 135vh }
+	#content_0_0-button {
+		border-radius: 2px;
+		border-width: 1px;
+		border-style: solid;
+	}
+	#content_6_0 .content-template {
+		height: 80%
+	}
+	#content_6_0 {
+		background-blend-mode: normal;
+		height: 110vh;
+	}
 }
