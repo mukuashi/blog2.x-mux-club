@@ -3,6 +3,9 @@ import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { Modal } from 'antd';
 import Slider from 'react-slick';
+//Carousel style
+import '../../components/Slick/slick-theme.min.css'
+import '../../components/Slick/slick.min.css'
 
 const styles = {
   modalWidth: {
@@ -141,7 +144,8 @@ class Content extends React.Component {
         <Modal
           title = ""
           footer = {null}
-          
+          width = "50%"
+          closable = "false"
           wrapClassName="vertical-center-modal"
           style={styles.modalWidth}
           visible={this.state.visible}
@@ -151,7 +155,7 @@ class Content extends React.Component {
           <Slider {...settings}>
             {
               dataArray.map((item, index) => (
-                <img src={item.img} key={index} alt="" width="100%" height="50%" />
+                <img src={item.img} key={index} alt="LOFTER@PhotoArtLife" width="100%" />
               ))
             }
           </Slider>
