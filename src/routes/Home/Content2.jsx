@@ -38,7 +38,7 @@ class Content extends React.Component {
             reverseDelay={200}
             id={`${props.id}-content`}
           >
-            我想，有时候为了求生混口饭吃，去敲代码、写稿、拍片子、画图等等，也随着时间洗礼，总会找到一些真正喜欢和热爱的，那么过往在未知世界里寻找自己的一种方式，就是成长与经历。
+            我想，曾经选择去敲代码、写稿、拍片子、画图等等，不论何种缘由，总有一些真正喜欢和热爱的，那么过往在未知世界里寻找自己的这些方式，终是成长与经历。
           </TweenOne>
           <TweenOne
             key="video"

@@ -18,33 +18,33 @@ class Content extends React.Component {
     const oneAnim = { y: '+=30', opacity: 0, type: 'from', ease: 'easeOutQuad' };
     const blockArray = [
       {
-        icon: 'pie-chart',
-        title: '企业资源管理',
-        content: '云资源集中编排、弹性伸缩、持续发布和部署，高可用及容灾。'
+        icon: 'design',
+        title: '设计',
+        content: '从UI View层过渡到Code Products上，博客托管和备份一些原型交互设计资源等。'
       },
       {
-        icon: 'cloud',
-        title: '云安全',
-        content: '按金融企业。' },
+        icon: 'code',
+        title: '前后端',
+        content: 'Web项目基本由前后端栈构建且框架快速迭代，博客记录踩坑手册及开源技术。' },
       {
-        icon: 'mobile',
-        title: '云监控',
-        content: '分布式云环境集中监控，统一。'
+        icon: 'crm',
+        title: '中后台',
+        content: '系统CRM与管理后台、中间层技术等。'
       },
       {
         icon: 'camera',
-        title: '移动',
-        content: '一站式移动金组件，动态发布和故障热修复。'
+        title: '摄影',
+        content: '眼睛的一种凝固方式。'
       },
       {
-        icon: 'gift',
-        title: '分布式中间件',
-        content: '金融级联机级并发能数据统一性。'
+        icon: 'article',
+        title: '写作',
+        content: '虽不及文学高斗，但足矣慰藉心兽。'
       },
       {
-        icon: 'trophy',
-        title: '大数据',
-        content: '一站式、全周数据处理、毫秒级数据分析工具。'
+        icon: 'media',
+        title: '媒体',
+        content: '广告与传媒、电影与文化创作，穷极一生，但为恭求盈之。'
       }
     ];
     const children = blockArray.map((item, i) => {
@@ -63,7 +63,7 @@ class Content extends React.Component {
           className="img"
           key="img"
         >
-          <Icon type={item.icon} />
+          <i className={"micon micon-" + item.icon}></i>
         </TweenOne>
         <div className="text">
           <TweenOne key="h1" animation={childrenAnim} component="h1">
@@ -88,7 +88,7 @@ class Content extends React.Component {
             id={`${props.id}-title`}
             reverseDelay={100}
           >
-             阿里云提供基础的软件环境即服务
+             阿里云提供基础的环境即服务
           </TweenOne>
           <TweenOne
             key="p"
@@ -96,7 +96,7 @@ class Content extends React.Component {
             component="p"
             id={`${props.id}-titleContent`}
           >
-            博客基于React、Redux、Dva、WebPack、Node.js等技术栈构建
+            博客基于React、Redux、Dva、Webpack、Node.js等技术栈构建
           </TweenOne>
           <QueueAnim
             key="ul"
