@@ -7,7 +7,7 @@ import { Icon } from 'antd';
 class Content extends React.Component {
 
   static defaultProps = {
-    className: 'content2',
+    className: 'content1',
   };
 
   getDelay = e => e % 3 * 100 + Math.floor(e / 3) * 100 + 300;

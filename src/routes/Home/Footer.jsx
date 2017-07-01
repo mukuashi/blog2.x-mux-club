@@ -25,9 +25,9 @@ class Footer extends React.Component {
     );
     notification.open({
       message: 'Hey，欢迎访问 PhotoArtLife',
-      description: '当前版本：2.x\n。\n为2016年及至今的博客新版本，老版本可以在首页切换（当前toast浮层会在3秒后自动关闭）。',
+      description: '当前版本：2.x\n。\n其为2016年及至今的博客新版本，老版本可以在首页切换（当前toast浮层会在3秒后自动关闭）。',
       icon: <i className="micon micon-2x micon-smile" style={{ color: '#108ee9' }}></i>,
-      duration: 4,
+      duration: 5,
       btn: btnReturn
     });
   }

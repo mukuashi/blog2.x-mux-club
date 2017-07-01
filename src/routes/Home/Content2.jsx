@@ -6,7 +6,7 @@ import VideoPlay from 'react-sublime-video';
 class Content extends React.Component {
 
   static defaultProps = {
-    className: 'content3',
+    className: 'content2',
   };
 
   render() {
@@ -14,7 +14,8 @@ class Content extends React.Component {
     const isMode = props.isMode;
     delete props.isMode;
     const animation = { y: '+=30', opacity: 0, type: 'from', ease: 'easeOutQuad' };
-    const videoChildren = 'http://player.youku.com/player.php/sid/XMjY5ODIzNzc2MA==/v.swf'
+    const videoChildren = 'https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.mp4',
+          videoPoster = 'https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.jpg?v1';
     return (
       <div {...props} className={`content-template-wrapper ${props.className}-wrapper`}>
         <OverPack
@@ -28,7 +29,7 @@ class Content extends React.Component {
             reverseDelay={300}
             id={`${props.id}-title`}
           >
-            蚂蚁金融云提供专业的服务
+            一个文青患者的富媒体之路
           </TweenOne>
           <TweenOne
             animation={{ ...animation, delay: 200 }}
@@ -37,7 +38,7 @@ class Content extends React.Component {
             reverseDelay={200}
             id={`${props.id}-content`}
           >
-            科技想象力，金融创造力
+            我想，有时候为了求生混口饭吃，去敲代码、写稿、拍片子、画图等等，也随着时间洗礼，总会找到一些真正喜欢和热爱的，那么过往在未知世界里寻找自己的一种方式，就是成长与经历。
           </TweenOne>
           <TweenOne
             key="video"
@@ -46,14 +47,25 @@ class Content extends React.Component {
             id={`${props.id}-video`}
           >
             {isMode ?
-              (<video src={videoChildren} width="100%" loop />) :
-              (<VideoPlay loop src={videoChildren} width="100%" />)}
+              (
+                <video
+                  src={videoChildren}
+                  poster={videoPoster}
+                  width="100%"
+                  loop />)
+            :
+              (
+                <VideoPlay
+                  loop
+                  src={videoChildren}
+                  poster={videoPoster}
+                  width="100%" />)
+            }
           </TweenOne>
         </OverPack>
       </div>
     );
   }
 }
-
 
 export default Content;

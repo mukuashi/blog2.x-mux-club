@@ -93,6 +93,8 @@ class Content extends React.Component {
     const settings = {
       dots: true,
       infinite: true,
+      autoplay: true,
+      lazyLoad: false,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1
@@ -145,7 +147,7 @@ class Content extends React.Component {
           title = ""
           footer = {null}
           width = "50%"
-          closable = "false"
+          closable = {false}
           wrapClassName="vertical-center-modal"
           style={styles.modalWidth}
           visible={this.state.visible}

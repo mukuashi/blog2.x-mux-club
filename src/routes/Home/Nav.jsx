@@ -7,10 +7,10 @@ const Item = Menu.Item;
 const SubMenu = Menu.SubMenu;
 
 const styles = {
-    avatarSet: {
-      color: 'rgba(108, 93, 231, 0.89)',
-      fontSize: '0.85rem'
-    }
+  avatarSet: {
+    color: 'rgba(108, 93, 231, 0.89)',
+    fontSize: '0.85rem'
+  }
 }
 
 class Header extends React.Component {
@@ -41,7 +41,7 @@ class Header extends React.Component {
       </div>
     );
     const navData = {
-      menu1: 'http://kquanr.com/arts|代码篇(2016年之前)',
+      menu1: 'http://kquanr.com/arts|代码篇(2016年及之前)',
       menu2: 'http://kquanr.com/project|背景篇',
       menu3: 'http://photoartlife.lofter.com|摄影篇',
       menu4: 'http://kquanr.com/project/works/|文患篇'
@@ -63,7 +63,13 @@ class Header extends React.Component {
       <span>Mich</span>
     </div>);
     navChildren.push((<Item className="help" key="help">
-        <Popover content={contactAuthor} title="微信公共平台 + 约片投稿微信 >>> 技术交流等" trigger="hover" placement="bottom" arrowPointAtCenter>
+        <Popover
+          content={contactAuthor}
+          title="微信公共平台 + 约片投稿微信 >>> 技术交流等"
+          trigger="hover"
+          placement="bottomRight"
+          arrowPointAtCenter
+        >
           <i className="micon micon-wechat micon-1x-md"></i>
           <span>联系作者</span>
         </Popover>
