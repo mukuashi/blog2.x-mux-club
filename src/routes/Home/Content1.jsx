@@ -20,16 +20,16 @@ class Content extends React.Component {
       {
         icon: 'design',
         title: '设计',
-        content: '从UI View层过渡到Code Products上，博客托管和备份一些原型交互设计资源等。'
+        content: '从UI View层过渡到Code Products，博客托管相关原型交互设计资源等。'
       },
       {
         icon: 'code',
         title: '前后端',
-        content: 'Web项目基本由前后端栈构建且框架快速迭代，博客记录踩坑手册及开源技术。' },
+        content: 'Web项目基本由前后端框架构建，博客搭建FED手册及开源技术。' },
       {
         icon: 'crm',
         title: '中后台',
-        content: '系统CRM与管理后台、中间层技术等。'
+        content: '系统CRM与管理后台、中间层、图像识别与3D建模、通信技术等。'
       },
       {
         icon: 'camera',
@@ -96,7 +96,7 @@ class Content extends React.Component {
             component="p"
             id={`${props.id}-titleContent`}
           >
-            博客基于React、Redux、Dva、Webpack、Node.js等技术栈构建
+            博客基于React、Redux、Dvajs、Node.js等技术栈构建
           </TweenOne>
           <QueueAnim
             key="ul"

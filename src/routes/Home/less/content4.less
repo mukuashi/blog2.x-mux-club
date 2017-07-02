@@ -1,11 +1,10 @@
 @import './custom.less';
 
 @content4: content4;
-
 .@{content4} {
-
   &-wrapper {
     background-color: #f3f3f3;
+    min-height: 750px;
   }
   & > h1, & > p {
     position: relative;
@@ -71,10 +70,14 @@
 .slick-track img {
   min-height: 430px;
 }
-
+@media screen and (min-width:767px) and (max-width:1024px){
+  .@{content4}-wrapper {
+      max-height: 400px;
+  }
+}
 @media screen and (max-width: 767px) {
   .@{content4}-wrapper {
-    height: 2035px;
+    min-height: 2035px;
     overflow: hidden;
     .@{content4} {
       width: 90%;
@@ -106,6 +109,6 @@
   }
   .slick-track img {
     min-height: auto;
+    height: 250px;
   }
-
 }

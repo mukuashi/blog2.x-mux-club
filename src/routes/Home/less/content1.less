@@ -2,6 +2,10 @@
 
 @content1: content1;
 .@{content1} {
+  &-wrapper {
+    height: auto;
+    padding: 5% 0;
+  }
   > h1, > p {
     text-align: center;
     position: relative;
@@ -36,6 +40,7 @@
           width: 85%;
           display: inline-block;
           padding-left: 8%;
+          margin-top: -2.6%;
         }
       }
     }
@@ -44,7 +49,8 @@
 
 @media screen and (max-width: 767px) {
   .@{content1}-wrapper {
-    height: 920px;
+    height: auto;
+    padding-bottom: 10%;
     .@{content1} {
       overflow: hidden;
       width: 90%;

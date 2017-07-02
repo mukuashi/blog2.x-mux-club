@@ -2,6 +2,10 @@
 
 @content3: content3;
 .@{content3} {
+  &-wrapper {
+    height: auto;
+    padding: 5% 0;
+  }
   & > h1, & > p {
     text-align: center;
     position: relative;
@@ -20,7 +24,7 @@
     }
   }
   .ant-tabs-bar {
-    width: 47%;
+    width: 70%;
     margin: auto;
   }
   .ant-tabs {
@@ -60,7 +64,8 @@
 
 @media screen and (max-width: 767px) {
   .@{content3}-wrapper {
-    height: 800px;
+    height: auto;
+    padding-bottom: 10%;
     overflow: hidden;
     .@{content3} {
       width: 90%;

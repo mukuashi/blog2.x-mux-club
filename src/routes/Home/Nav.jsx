@@ -35,8 +35,8 @@ class Header extends React.Component {
     const contactAuthor = (
       <div>
         <p>
-          <img title="微信平台" src="http://kquanr.com/arts/images/photoartlife.jpg" width="140px"/>
-          <img title="作者微信" src="http://kquanr.com/arts/images/private-wechat.jpg" width="140px"/>
+          <img title="微信平台" src="http://kquanr.com/arts/images/photoartlife.jpg" width="135px"/>
+          <img title="作者微信" src="http://kquanr.com/arts/images/private-wechat.jpg" width="135px"/>
         </p>
       </div>
     );
