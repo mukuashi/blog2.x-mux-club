@@ -86,7 +86,13 @@
     color: @template-text-color-light;
   }
 }
-
+@media screen and (min-width:768px) and (max-width:1024px){
+  .@{banner0} {
+    &-icon {
+      bottom: 160px;
+    }
+  }
+}
 @media screen and (max-width: 767px) {
   .@{banner0} {
     &-wrapper {

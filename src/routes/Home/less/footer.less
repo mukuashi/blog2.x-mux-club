@@ -3,7 +3,8 @@
 @footer: footer1;
 .@{footer} {
   background: @template-bg-color;
-  height: 400px;
+  min-height: 400px;
+  height: auto;
   overflow: hidden;
   position: relative;
   color: @template-footer-text-color;
@@ -93,10 +94,27 @@
     }
   }
 }
-
+@media screen and (min-width:768px) and (max-width:1024px){
+  .@{footer} {
+    height: auto;
+    padding-bottom: 13%;
+    ul {
+      li {
+        &:last-child {
+          ul {
+            li {
+              width: 35%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 767px) {
   .@{footer} {
-    min-height: 750px;
+    min-height: 760px;
     > ul {
       width: 90%;
       margin: 20px auto 0;
