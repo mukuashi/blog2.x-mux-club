@@ -88,7 +88,7 @@ class Content extends React.Component {
             id={`${props.id}-title`}
             reverseDelay={100}
           >
-             阿里云提供基础的环境即服务
+          阿里云提供基础的环境即服务
           </TweenOne>
           <TweenOne
             key="p"
@@ -96,7 +96,7 @@ class Content extends React.Component {
             component="p"
             id={`${props.id}-titleContent`}
           >
-            博客基于React、Redux、Dvajs、Node.js等技术栈构建
+          博客基于React、Redux、Dvajs、Node.js等技术栈构建
           </TweenOne>
           <QueueAnim
             key="ul"
@@ -113,6 +113,5 @@ class Content extends React.Component {
     );
   }
 }
-
 
 export default Content;

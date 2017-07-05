@@ -41,10 +41,11 @@ class Header extends React.Component {
       </div>
     );
     const navData = {
-      menu1: 'http://kquanr.com/arts|代码篇(2016年及之前)',
-      menu2: 'http://kquanr.com/project|背景篇',
-      menu3: 'http://photoartlife.lofter.com|摄影篇',
-      menu4: 'http://kquanr.com/project/works/|文患篇'
+      menu1: 'javascript:;|Home',
+      menu2: 'http://kquanr.com/arts|代码篇(2016年及之前)',
+      menu3: 'http://kquanr.com/project|背景篇',
+      menu4: 'http://photoartlife.lofter.com|摄影篇',
+      menu5: 'http://kquanr.com/project/works/|文患篇'
     };
     const navChildren = Object.keys(navData).map((key, i) => (
       <Item key={i}>
@@ -126,7 +127,8 @@ class Header extends React.Component {
           className={`${this.props.className}-nav`}
         >
           <Menu
-            mode="horizontal" defaultSelectedKeys={['0']}
+            mode="horizontal"
+            defaultSelectedKeys={['0']}
             id={`${this.props.id}-menu`}
           >
             {navChildren}

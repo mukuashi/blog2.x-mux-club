@@ -2,6 +2,9 @@ import React from 'react';
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import VideoPlay from 'react-sublime-video';
+//@version 2.0视频设备解决方案-后续完善
+//import plyr from 'plyr';
+//import '../../components/Plyr/plyr.css'
 
 class Content extends React.Component {
 
@@ -49,10 +52,13 @@ class Content extends React.Component {
             {isMode ?
               (
                 <video
+                  controls
+                  loop
                   src={videoChildren}
                   poster={videoPoster}
-                  width="100%"
-                  loop />)
+                  width="100%">
+                </video>
+              )
             :
               (
                 <VideoPlay
