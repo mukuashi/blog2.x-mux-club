@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React , { Component } from 'react'
+import PropTypes from 'prop-types';
 import { Button, Icon } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -32,7 +33,7 @@ class Content extends React.Component {
             key="content"
             id={`${props.id}-content`}
           >
-            一只拍片写稿、画图敲代码的斜杠文青患者
+            一只拍片码稿写代码的文盲患（作）者
           </p>
           <Button type="ghost" key="button" id={`${props.id}-button`}>
             下滑 Get More

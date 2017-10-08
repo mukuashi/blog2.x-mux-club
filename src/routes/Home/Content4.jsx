@@ -58,35 +58,35 @@ class Content extends React.Component {
     delete props.isMode;
     const dataArray = [
       {
-        img: 'http://imglf.nosdn.127.net/img/eCsxeXUwR1dBeGVXa0N0QytwTG92MHpEb3VRTzBIQk1va2hldklYajV3L1liM2taQUZyYWZnPT0.jpg?imageView&thumbnail=3000y1928&type=jpg&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkgUGhvdG9BcnRMaWZlIC8gcGhvdG9hcnRsaWZlLmxvZnRlci5jb20=&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0',
+        img: '//kquanr.com/files/blog/slickImgs/1.jpg',
         content: 'LOFTER@PhotoArtLife1'
       },
       {
-        img: 'http://imglf2.nosdn.127.net/img/eCsxeXUwR1dBeGYzSVRrUHk1bWhBNTlGaWJsRkt1d0kwMmpjbUhOanpTLzVDb1pycXFGVlZRPT0.jpg?imageView&thumbnail=2000y1091&type=jpg&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkgUGhvdG9BcnRMaWZlIC8gcGhvdG9hcnRsaWZlLmxvZnRlci5jb20=&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0',
+        img: '//kquanr.com/files/blog/slickImgs/2.jpg',
         content: 'LOFTER@PhotoArtLife2'
       },
       {
-        img: 'http://imglf0.nosdn.127.net/img/eCsxeXUwR1dBeGZJZFdQTC9OaDdpU21EWEszMzc2MGlUdWlnQU5HVDh6dHlpVm5ETVNBUFhRPT0.jpg?imageView&thumbnail=3000y1981&type=jpg&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkgUGhvdG9BcnRMaWZlIC8gcGhvdG9hcnRsaWZlLmxvZnRlci5jb20=&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0',
+        img: '//kquanr.com/files/blog/slickImgs/3.jpg',
         content: 'LOFTER@PhotoArtLife3'
       },
       {
-        img: 'http://imglf1.nosdn.127.net/img/eCsxeXUwR1dBeGRrcWE2Ym45OTFabldSS2psTmJCN2pYdW5SUnBzMkNPSlRJTGo1Sk1sOWtnPT0.jpg?imageView&thumbnail=3000y2000&type=jpg&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkgUGhvdG9BcnRMaWZlIC8gcGhvdG9hcnRsaWZlLmxvZnRlci5jb20=&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0',
+        img: '//kquanr.com/files/blog/slickImgs/4.jpg',
         content: 'LOFTER@PhotoArtLife4'
       },
       {
-        img: 'http://imglf.nosdn.127.net/img/eCsxeXUwR1dBeGZGN2dFUXBwU2o0aHM2V3JuWEpXRmptQUEyalgvWGFLSzkxT3FXcUpsSjF3PT0.jpg?imageView&thumbnail=2999y2000&type=jpg&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkgUGhvdG9BcnRMaWZlIC8gcGhvdG9hcnRsaWZlLmxvZnRlci5jb20=&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0',
+        img: '//kquanr.com/files/blog/slickImgs/5.jpg',
         content: 'LOFTER@PhotoArtLife5'
       },
       {
-        img: 'http://imglf1.nosdn.127.net/img/eCsxeXUwR1dBeGREYjIwTVpjbjV3RVIweVo4RTNXS2ZvSkpqbjNvdTlDV1JiclJETE8vdUtRPT0.jpg?imageView&thumbnail=2999y2000&type=jpg&quality=96&stripmeta=0&type=jpg',
+        img: '//kquanr.com/files/blog/slickImgs/6.jpg',
         content: 'LOFTER@PhotoArtLife6'
       },
       {
-        img: 'http://imglf1.nosdn.127.net/img/eCsxeXUwR1dBeGRoREgvWnFxN3MzY3Jzc1RzSHpreWJjSnVzWkRtUVBDNDFwZDdtSkxsVjlRPT0.jpg?imageView&thumbnail=2999y2000&type=jpg&quality=96&stripmeta=0&type=jpg',
+        img: '//kquanr.com/files/blog/slickImgs/7.jpg',
         content: 'LOFTER@PhotoArtLife7'
       },
       {
-        img: 'http://imglf2.nosdn.127.net/img/eCsxeXUwR1dBeGU4Y1ZRWHByWmZOZ282OURvUW5QSmNTMHFPUEd2a0NCcXNib0UvL2htVVJnPT0.jpg?imageView&thumbnail=2995y2000&type=jpg&quality=96&stripmeta=0&type=jpg%7Cwatermark&type=2&text=wqkgUGhvdG9BcnRMaWZlIC8gcGhvdG9hcnRsaWZlLmxvZnRlci5jb20=&font=bXN5aA==&gravity=southwest&dissolve=30&fontsize=680&dx=32&dy=36&stripmeta=0',
+        img: '//kquanr.com/files/blog/slickImgs/8.jpg',
         content: 'LOFTER@PhotoArtLife8'
       }
     ];

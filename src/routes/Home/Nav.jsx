@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router'
+import React , { Component } from 'react'
+import PropTypes from 'prop-types';
 import TweenOne from 'rc-tween-one';
 import { Menu, Icon, Popover } from 'antd';
 

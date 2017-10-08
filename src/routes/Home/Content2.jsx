@@ -17,8 +17,8 @@ class Content extends React.Component {
     const isMode = props.isMode;
     delete props.isMode;
     const animation = { y: '+=30', opacity: 0, type: 'from', ease: 'easeOutQuad' };
-    const videoChildren = 'https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.mp4',
-          videoPoster = 'https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.jpg?v1';
+    const videoChildren = '//kquanr.com/files/blog/View_From_A_Blue_Moon_Trailer-HD.mp4',
+          videoPoster = '//kquanr.com/files/blog/View_From_A_Blue_Moon_Trailer-HD.jpg';
     return (
       <div {...props} className={`content-template-wrapper ${props.className}-wrapper`}>
         <OverPack
