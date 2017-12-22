@@ -41,7 +41,7 @@ class Content extends React.Component {
             reverseDelay={200}
             id={`${props.id}-content`}
           >
-            我想，曾经选择去敲代码、写稿、拍片子、画图等等，不论何种缘由，总有一些真正喜欢和热爱的，那么过往在未知世界里寻找自己的这些方式，终是成长与经历。
+            成长即乐趣。不乎于敲代码、写文章、玩摄影、做视频等等这些事情，可能是花时间付诸于某个交代，或是为了满足未来的某个梦想所要不断为之准备的阶梯。
           </TweenOne>
           <TweenOne
             key="video"

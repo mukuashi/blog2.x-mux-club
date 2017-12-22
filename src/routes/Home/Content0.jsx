@@ -33,7 +33,7 @@ class Content extends React.Component {
             key="content"
             id={`${props.id}-content`}
           >
-            一只拍片码稿写代码的文盲患（作）者
+            一只拍片码稿、画图写代码的文盲患（作）者
           </p>
           <Button type="ghost" key="button" id={`${props.id}-button`}>
             下滑 Get More

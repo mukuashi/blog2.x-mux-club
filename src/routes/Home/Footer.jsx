@@ -59,20 +59,20 @@ class Footer extends React.Component {
     delete props.isMode;
     const logoContent = {
       img: 'http://kquanr.com/images/footer.png',
-      content: '一只拍片写稿、画图敲代码的文青患者'
+      content: '一只拍片码稿、画图写代码的文盲患者'
     };
     const dataSource = [
       {
         title: '关于作者',
-        content: '公路作者\n自由摄影师\n软件工程师\n半个设计师\n视频后期控\n环球游侠客\n待续 >>>',
+        content: '自媒体作者\n自由摄影师\n软件工程师\n半个设计师\n视频后期\n控制片人\n游侠客\n待续 >>>',
         hoverTitle: '',
         contentLink: '//kquanr.com/project/works\n//photoartlife.lofter.com\nhttps://github.com/photoArtLife\n//kquanr.com/project\n//i.youku.com/mukuashi\nhttps://500px.me/PhotoArtLife\njavascript:;'
       },
       {
         title: '博客驿站',
-        content: '背景篇\n摄影与文学篇\nLOFTER摄影\n图虫网摄影\n500PX摄影\n代码篇@2016及之前\n陆续公开中 >>>',
+        content: '背景篇\n摄影与文学篇\nLOFTER摄影\n米拍摄影\n图虫网摄影\n500PX摄影\n代码篇@2016及之前\n陆续公开中 >>>',
         hoverTitle: '',
-        contentLink: '//kquanr.com/project\n//kquanr.com/project/works\n//photoartlife.lofter.com\nhttps://photoartlife.tuchong.com/\nhttps://500px.me/PhotoArtLife\n//kquanr.com/arts\njavascript:;'
+        contentLink: '//kquanr.com/project\n//kquanr.com/project/works\n//photoartlife.lofter.com\nhttps://m.mepai.me/photographyer/u_592e418fe4a53.html\nhttps://photoartlife.tuchong.com/\nhttps://500px.me/PhotoArtLife\n//kquanr.com/arts\njavascript:;'
       },
       {
         title: '资源Club',

@@ -165,7 +165,7 @@ class Content extends React.Component {
             reverseDelay={100}
             id={`${props.id}-content`}
           >
-            四年像过了十年，从中原到北方，再从北方回到南方，再也不怕归零。
+            四年像是过了十年，无论此刻还是未来，再也不怕归零。
           </TweenOne>
           <TweenOne.TweenOneGroup
             key="tabs"
