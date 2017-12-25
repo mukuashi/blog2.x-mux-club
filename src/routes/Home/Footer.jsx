@@ -64,7 +64,7 @@ class Footer extends React.Component {
     const dataSource = [
       {
         title: '关于作者',
-        content: '自媒体作者\n自由摄影师\n软件工程师\n半个设计师\n视频后期\n控制片人\n游侠客\n待续 >>>',
+        content: '自媒体作者\n自由摄影师\n软件工程师\n半个设计师\n视频后期控\n制片人\n游侠客\n待续 >>>',
         hoverTitle: '',
         contentLink: '//kquanr.com/project/works\n//photoartlife.lofter.com\nhttps://github.com/photoArtLife\n//kquanr.com/project\n//i.youku.com/mukuashi\nhttps://500px.me/PhotoArtLife\njavascript:;'
       },
@@ -114,7 +114,7 @@ class Footer extends React.Component {
             <a href="javascript:;" onClick={this.openNotification}>版本2.x </a>
             Crafted By <a href="//photoartlife.lofter.com">PhotoArtLife </a>
             | Referenced By <a href="https://facebook.github.io/react" target="_blank">Facebook React </a>
-            | Powered By <a href="//kquanr.com">mukuashi@Mich</a> Design For Life
+            | Powered By <a href="//kquanr.com">mukuashi</a> Design For Life
           </p>
         </span>
       </TweenOne>

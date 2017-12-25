@@ -1,3 +1,5 @@
-# dva-react-animate-blog
+# Blog
+dva-react-animate-blog
 
-a new blog
+### Version 2.x
+2016-now，create a new version blog
