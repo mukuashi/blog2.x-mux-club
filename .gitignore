@@ -5,6 +5,7 @@
 
 # production
 /dist
+/package-lock.json
 
 # misc
 .DS_Store
