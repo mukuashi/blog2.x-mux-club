@@ -1,0 +1,104 @@
+@import "../../styles/basics/mixin";
+:global {
+  .banner {
+    width: 100%;
+    height: rem(576px);
+    margin-top: -$default-nav-height;
+    z-index: $default-nav-zindex - 1;
+    background: $default-background-color;
+    .banner-anim {
+      height: 100%;
+    }
+    &.queue-anim-leaving {
+      position: relative !important;
+      width: auto;
+    }
+    .bg-banner {
+      @include square(100%);
+      background-repeat:no-repeat;
+      background-size: cover;
+      transform:translateY(0)!important;
+      &:before {
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: rgba($dark-color, .1);
+        display: block;
+      }
+    }
+    .banner-user-elem {
+      height: 100%;
+      color: $default-background-color;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner-user-elem .banner-user-title {
+      font-size: $default-content-h1-sm;
+      top: 40%;
+    }
+    .banner-user-elem .banner-user-text {
+      top: 40%;
+    }
+    .bg-text {
+      letter-spacing: 3px;
+      @include size(50%,100%);
+      @include custom-position(absolute,$top:17rem,$right:0);
+      .title {
+        font-size: rem(42px);
+        font-weight: bold;
+      }
+      .name {
+        font-size: $default-content-hx-l1;
+        font-weight: bolder;
+        margin: 0;
+      }
+      &-center {
+        margin-top: -8rem;
+        @include size(100%,50%);
+        @include flex-center-middle;
+        text-align: center;
+        color: $default-content-title-color;
+        .title {
+          font-weight: 600;
+          font-size: $default-content-hx-l0;
+          &-color {
+            color: $default-content-text-color;
+          }
+          &-size {
+            font-size: 4.2rem;
+          }
+        }
+      }
+      &-left{
+
+      }
+      &-right {
+
+      }
+    }
+    .bg-btn {
+      width: 50%;
+      @include custom-position(absolute,$bottom:0,$right:0,$zindex:$default-nav-zindex - 1);
+      a,button {
+        @include button-initialize;
+        @include button-initialize-hover;
+      }
+      &-left {
+        left: calc(50% - 199px);
+        bottom: 10%;
+      }
+      &-center {
+        width: 100%;
+        text-align: center;
+        bottom: 30%;
+        button {
+          border: 4px solid $default-content-text-color;
+          color: $default-content-text-color;
+        }
+      }
+      &-right {
+        
+      }
+    }
+  }
+}

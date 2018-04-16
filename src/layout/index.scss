@@ -1,0 +1,25 @@
+@import "../styles/basics/mixin";
+//
+:global {
+	//侧边栏之外的导航栏及内容区布局
+	.mux-layout {
+		background: $default-background-color;
+		min-height: 100vh;
+		&-header {
+			padding: 0;
+			height: $default-nav-height;
+			line-height: $default-nav-height;
+			background: transparent;
+		}
+		&-content {
+			background: $default-background-color;
+			&-container {
+				background: $default-background-color;
+			}
+		}
+		&-footer {
+			padding: 0;
+			background: $default-footer-background-color;
+		}
+	}
+}

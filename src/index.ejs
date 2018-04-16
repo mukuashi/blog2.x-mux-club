@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog2.x | mukuashi@️PhotoArtLife</title>
+  <meta name="keywords" content="mukuashi@PhotoArtLife-2016-Later" />
+  <meta name="description" content="mukuashi@PhotoArtLife" />
+  <link rel="shortcut icon" href="http://kquanr.com/images/logo.ico">
+  <link rel="bookmark" type="image/icon" href="http://kquanr.com/images/logo.ico" />
+</head>
+
+<body>
+  <img style="width:0;height:0;position:absolute;" src="http://kquanr.com/images/Share-PhotoArtLife.jpg" alt="PhotoArtLife">
+  <div id="root"></div>
+  <!--[if lte IE 10]>
+    <script
+      src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,media-match/2.0.2/media.match.min.js"></script>
+    <![endif]-->
+  <!-- IE10以下-HTML5腻子 -->
+  <!--[if lt IE 10]>
+      <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+  <script>
+    //IE版本检测及提示
+    var isIE = function (ver) {
+      var b = document.createElement('b')
+      b.innerHTML = '<!--[if IE ' + ver + ']><i></i><![endif]-->'
+      return b.getElementsByTagName('i').length === 1
+    }
+    if (isIE(5) || isIE(6) || isIE(7) || isIE(8)) {
+      (function (w) {
+        if (!("WebSocket" in w && 2 === w.WebSocket.CLOSING)) {
+          var firstChild = document.createElement("div"),
+            browserSkip = document.createElement("div");
+          //插入跳转按钮
+          browserSkip.innerHTML = '<div style="position:absolute;left:0;bottom:18%;width:100%;text-align:center;"><a target="_blank" href="http://browsehappy.com/" style="display:inline-block;height:50px;line-height:50px;margin: 0 5px;padding: 0 50px;font-size: 1.4rem;font-weight:bolder;letter-spacing:2px;text-align: center;color: #eee;text-decoration: none;background-color: #222;">下载最新浏览器</a><p style="color:#fff;padding-top:3%;font-size:1.18rem;font-weight:600;letter-spacing:1px;">很抱歉，您的浏览器太~太古老了(暂不支持IE8及以下版本)，请下载最新浏览器获得完整体验！！！</p></div>'
+          //背景图
+          firstChild.innerHTML = 'firstChild<style>html{height:100%;}body{height:100%;margin:0;font-size:20px;text-align:center;background:url(https://sec-cdn.static.xiaomi.net/secStatic/groups/miui-sec/mukuashi/StaticRes/93b96db134e8a0e495541b647666f800e43f8357.jpg) center no-repeat;-webkit-background-size:100%;-o-background-size:100%;-moz-background-size:100%;background-size: 100%;}</style>';
+          var bodyHacks = function () {
+            var Shill = document.getElementsByTagName("body")[0];
+            if ("undefined" == typeof (Shill)) {
+              setTimeout(bodyHacks, 10)
+            } else {
+              //背景
+              Shill.appendChild(firstChild.lastChild)
+              //按钮
+              Shill.insertBefore(browserSkip, Shill.firstChild)
+            }
+          };
+          bodyHacks();
+        }
+      }(window));
+    }         
+  </script>
+</body>
+
+</html>

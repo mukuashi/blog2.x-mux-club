@@ -3,22 +3,22 @@ import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { Modal } from 'antd';
 import Slider from 'react-slick';
-//Carousel style
-import '../../components/Slick/slick-theme.min.css'
-import '../../components/Slick/slick.min.css'
+// Carousel style
+import '../../components/Slick/slick-theme.min.css';
+import '../../components/Slick/slick.min.css';
 
 const styles = {
   modalWidth: {
-    width: '100%'
-  }
-}
+    width: '100%',
+  },
+};
 
 class Content extends React.Component {
   constructor(props) {
-    super(props)
-      this.state = {
-        visible: false
-    }
+    super(props);
+    this.state = {
+      visible: false,
+    };
   }
 
   static propTypes = {
@@ -29,21 +29,22 @@ class Content extends React.Component {
     className: 'content4',
   };
 
- 
 
   getChildrenToRender = (item, i) => {
     const id = `block${i}`;
-    return (<li
-      key={i}
-      id={`${this.props.id}-${id}`}
-    >
-      <div className="content-wrapper">
-        <span onClick={(e) => this.setState({ visible: true })}>
-          <img src={item.img} height="100%" />
-        </span>
-        <p>{item.content}</p>
-      </div>
-    </li>);
+    return (
+      <li
+        key={i}
+        id={`${this.props.id}-${id}`}
+      >
+        <div className="content-wrapper">
+          <span onClick={e => this.setState({ visible: true })}>
+            <img src={item.img} height="100%" />
+          </span>
+          <p>{item.content}</p>
+        </div>
+      </li>
+    );
   }
 
   getEnterAnim = (e, isMode) => {
@@ -59,36 +60,36 @@ class Content extends React.Component {
     const dataArray = [
       {
         img: '//kquanr.com/files/blog/slickImgs/1.jpg',
-        content: 'LOFTER@PhotoArtLife1'
+        content: 'LOFTER@PhotoArtLife1',
       },
       {
         img: '//kquanr.com/files/blog/slickImgs/2.jpg',
-        content: 'LOFTER@PhotoArtLife2'
+        content: 'LOFTER@PhotoArtLife2',
       },
       {
         img: '//kquanr.com/files/blog/slickImgs/3.jpg',
-        content: 'LOFTER@PhotoArtLife3'
+        content: 'LOFTER@PhotoArtLife3',
       },
       {
         img: '//kquanr.com/files/blog/slickImgs/4.jpg',
-        content: 'LOFTER@PhotoArtLife4'
+        content: 'LOFTER@PhotoArtLife4',
       },
       {
         img: '//kquanr.com/files/blog/slickImgs/5.jpg',
-        content: 'LOFTER@PhotoArtLife5'
+        content: 'LOFTER@PhotoArtLife5',
       },
       {
         img: '//kquanr.com/files/blog/slickImgs/6.jpg',
-        content: 'LOFTER@PhotoArtLife6'
+        content: 'LOFTER@PhotoArtLife6',
       },
       {
         img: '//kquanr.com/files/blog/slickImgs/7.jpg',
-        content: 'LOFTER@PhotoArtLife7'
+        content: 'LOFTER@PhotoArtLife7',
       },
       {
         img: '//kquanr.com/files/blog/slickImgs/8.jpg',
-        content: 'LOFTER@PhotoArtLife8'
-      }
+        content: 'LOFTER@PhotoArtLife8',
+      },
     ];
     const settings = {
       dots: true,
@@ -97,7 +98,7 @@ class Content extends React.Component {
       lazyLoad: false,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
     };
     const childrenToRender = dataArray.map(this.getChildrenToRender);
     return (
@@ -135,7 +136,7 @@ class Content extends React.Component {
             component="ul"
             key="ul"
             enter={(e) => {
-              return this.getEnterAnim(e, isMode)
+              return this.getEnterAnim(e, isMode);
             }}
             leave={{ y: '+=30', opacity: 0, ease: 'easeOutQuad' }}
             id={`${props.id}-ul`}
@@ -144,15 +145,15 @@ class Content extends React.Component {
           </TweenOneGroup>
         </OverPack>
         <Modal
-          title = ""
-          footer = {null}
-          width = "50%"
-          closable = {false}
+          title=""
+          footer={null}
+          width="50%"
+          closable={false}
           wrapClassName="vertical-center-modal"
           style={styles.modalWidth}
           visible={this.state.visible}
-          onOk={(e) => this.setState({ visible: false })}
-          onCancel={(e) => this.setState({ visible: false })}
+          onOk={e => this.setState({ visible: false })}
+          onCancel={e => this.setState({ visible: false })}
         >
           <Slider {...settings}>
             {
@@ -161,7 +162,7 @@ class Content extends React.Component {
               ))
             }
           </Slider>
-         
+
         </Modal>
       </div>
 
