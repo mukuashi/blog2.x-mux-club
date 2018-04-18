@@ -6,12 +6,13 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-18 23:45:15
+ * @Last Modified time: 2018-04-19 04:10:10
 */
 @import "variable","functions";
 //theme color
 $dark-color: #000;
 $default-color: #108ee9;
+$primary-color: $default-color;
 $default-text-color: #586069;
 $default-active-color:#108ee9;
 $default-hover-color: #e6f7ff;
@@ -28,9 +29,6 @@ $template-text-color: #ccc;
 $template-text-title-color: #bcbcbc;
 $template-text-color-light: $default-background-color;
 $template-footer-text-color: #666;
-//nav common
-$nav-text-color: rgba(#adadad,1);
-$nav-active-color: rgba($default-background-theme,1);
 //layout-header-nav
 $default-nav-zindex: 1000;
 $default-nav-height: rem(64px);
@@ -40,9 +38,12 @@ $default-nav-active-border-color: $default-active-color;
 //content * color
 
 //content * font-size
-$default-content-fz-sm: 1.6rem;
-$default-content-fz-md: 2.2rem;
-$default-content-fz-lg: 2.8rem;
+$default-content-fz-xs: 1.2rem;
+$default-content-fz-sm: 1.4rem;
+$default-content-fz-md: 1.6rem;
+$default-content-fz-lg: 2rem;
+$default-content-fz-xl: 2.6rem;
+$default-content-fz-xxl: 3rem;
 //button
 $default-button-width: rem(100px);
 $default-button-height: rem(50px);

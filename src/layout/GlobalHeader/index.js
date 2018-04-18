@@ -5,13 +5,12 @@
  * @Date:   2018-03-26 12:25:27
  * @version 0.1 | 2018-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-17 02:35:55
+ * @Last Modified time: 2018-04-19 04:47:42
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import { Menu, Icon, Popover } from 'antd';
-import Iconfont from 'components/Iconfont'
 import { data } from 'config/system';
 import styles from './index.scss';
 
@@ -76,19 +75,19 @@ export default class GlobalHeader extends PureComponent {
       </Item>
     ));
     navChildren.push(
-      (<Item className="menu-contact" key="contact">
+      <Item className="menu-contact" key="contact">
         <Popover
           content={contactAuthor}
           title="微信公共平台 + 约片投稿微信 >>> 技术交流等"
           trigger="hover"
-          placement="bottomRight"
+          placement="bottom"
           arrowPointAtCenter
         >
-          <i className="micon micon-wechat micon-1x-md" />
+          <Icon type="wechat" />
           <span>联系作者</span>
         </Popover>
-      </Item>),
-      (<SubMenu className="user" title={userTitle} key="user">
+      </Item>,
+      <SubMenu className="menu-user" title={userTitle} key="user">
         <Item key="a">用户：mukuashi</Item>
         <Item key="b">
           <a href="http://t.cn/Rt1xb42" target="_blank" style={styles.avatarSet}>微信专栏</a>
@@ -96,7 +95,8 @@ export default class GlobalHeader extends PureComponent {
         <Item key="c">
           <a href="http://kquanr.com" style={styles.avatarSet}>回到旧版</a>
         </Item>
-      </SubMenu>));
+      </SubMenu>
+    );
     const navTopMenu = (
       <TweenOne
         delay={300}

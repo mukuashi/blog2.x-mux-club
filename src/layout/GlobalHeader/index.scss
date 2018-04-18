@@ -11,7 +11,7 @@
 		&-logo {
 			display: inline-block;
 			@include custom-position(absolute,$left:4%);
-			width: 150px;
+			width: rem(150px);
 			line-height: $default-nav-height;
 			& a {
 				display: inline-block;
@@ -19,267 +19,180 @@
 					vertical-align: middle;
 				}
 			}
-  }
-  &-nav {
-    float: right;
-    line-height: $default-nav-height;
-    position: relative;
-    margin-right: 1.5%;
-    & .ant-menu-horizontal {
-      border-bottom-color: transparent;
     }
-    .ant-menu {
-      background: transparent;
-      color: $template-text-color-light;
+    &-nav {
+      float: right;
       line-height: $default-nav-height;
-      li {
-        float: left;
-        text-align: center;
-        min-width: 100px;
-        a {
-          color: $template-text-color-light;
-        }
-        i {
-          transition: none;
-				}
-				&::after {
-					content:'';
-					width: 0;
-					height: 2px;
-					display: block;
-					margin-left: -35%;
-					margin-top: -2px;
-					background: $default-nav-active-border-color; 
-					transition: width .4s;
-				}
-				&:hover {
-					border-bottom: none;
-					&::after {
-						width: 170%;
-					}
-				}
+      position: relative;
+      margin-right: 1.5%;
+      & .ant-menu-horizontal {
+        border-bottom-color: transparent;
       }
-      .ant-menu-sub {
-        background: $template-text-color-light;
-        color: rgba($template-footer-text-color, .75);
-        overflow: hidden;
+      .ant-menu {
+        background: transparent;
+        color: $template-text-color-light;
+        line-height: $default-nav-height;
         li {
-          width: 100%;
-          padding: 0 20px;
-        }
-        &menu-title:hover {
-          color: inherit;
-        }
-      }
-      .ant-menu-vertical, .ant-menu-vertical .ant-menu-item {
-        border-right: none;
-      }
-    }
-    & .ant-menu-horizontal > .ant-menu-item-active {
-      color: $link-hover-color;
-      border-bottom-color: $link-hover-color;
-    }
-  }
-  &-nav, &-mobile-nav {
-    .ant-menu {
-      li i {
-        transition: none;
-      }
-    }
-    .help {
-      border-left: 1px solid rgba($line-color, 5) !important;
-      .anticon {
-        font-size: 16px;
-        vertical-align: middle;
-      }
-      span {
-        display: inline-block;
-        margin-left: 5px;
-        font-size: 12px;
-      }
-    }
-    .user {
-      font-size: 14px;
-      border-left: 1px solid rgba($line-color, 5) !important;
-      .img {
-        margin-left: 0;
-        img {
-          vertical-align: middle;
-        }
-      }
-      span {
-        margin-left: 10px;
-      }
-    }
-  }
-}
-@media screen and (max-width: 767px) {
-  .header{
-    &-logo {
-      z-index: 101;
-    }
-    &-mobile-nav {
-      width: 16px;
-      height: 14px;
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      right: 20px;
-      &-bar {
-        position: relative;
-        z-index: 100;
-        em {
-          display: block;
-          width: 100%;
-          height: 2px;
-          background: #FFF;
-          margin-top: 4px;
-          transition: transform .3s $ease-in-out, opacity .3s $ease-in-out;
-        }
-        :first-child {
-          margin-top: 0;
-        }
-      }
-      &.open {
-        .header-mobile-nav-bar {
-          em {
-            &:nth-child(1) {
-              transform: translateY(6px) rotate(45deg);
+          float: left;
+          text-align: center;
+          min-width: 100px;
+          a {
+            color: $template-text-color-light;
+          }
+          i {
+            transition: none;
+          }
+          &:last-child {
+            &::after {
+              margin-left: 0;
             }
-            &:nth-child(2) {
-              opacity: 0;
-            }
-            &:nth-child(3) {
-              transform: translateY(-6px) rotate(-45deg);
+          }
+          &::after {
+            content:'';
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-left: -22%;
+            margin-top: -2px;
+            background: $default-nav-active-border-color; 
+            transition: width .4s $ease-in-out-circ;
+          }
+          &:hover {
+            border-bottom: none;
+            border-color: transparent;
+            &::after {
+              width: 145%;
             }
           }
         }
-        .header-mobile-nav-text {
-          opacity: 1;
-          pointer-events: auto;
-          transition-timing-function: $ease-out;
+        .ant-menu-sub {
+          background: $template-text-color-light;
+          color: rgba($template-footer-text-color, .75);
+          overflow: hidden;
+          li {
+            width: 100%;
+            padding: 0 rem(20px);
+          }
+          &menu-title:hover {
+            color: inherit;
+          }
+        }
+        .ant-menu-vertical, .ant-menu-vertical .ant-menu-item {
+          border-right: none;
         }
       }
-
-      &-text {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        padding-top: 64px;
-        opacity: 0;
-        transition: opacity .3s $ease-in;
-        pointer-events: none;
-        background: #404040;
-        .ant-menu-item-selected {
-          border: none;
+      & .ant-menu-horizontal > .ant-menu-item-selected {
+        height: $default-nav-height;
+        > a {
+          color: $link-active-color;
+        }
+      }
+      & .ant-menu-horizontal > .ant-menu-item-active {
+        color: $link-hover-color;
+        border-bottom-color: $link-hover-color;
+        height: $default-nav-height;
+        
+      }
+    }
+    &-nav, &-mobile-nav {
+      .ant-menu {
+        li i {
+          transition: none;
+        }
+      }
+      .menu-contact {
+        border-left: 1px solid rgba($line-color, 0.1);
+        .anticon {
+          font-size: $default-content-fz-xs;
+          vertical-align: middle;
+        }
+        span {
+          display: inline-block;
+          margin-left: 5px;
+          font-size: 12px;
+        }
+      }
+      .menu-user {
+        font-size: 1rem;
+        border-left: 1px solid rgba($line-color, 0.1);
+        .img {
+          margin-left: 0;
+          img {
+            vertical-align: middle;
+          }
+        }
+        span {
+          margin-left: 10px;
         }
       }
     }
   }
-  //wechat img auto adjust
-  
-}
-}
-// :global {
-// 	.header {
-// 		width: 100%;
-// 		height: inherit;
-// 		z-index: $default-nav-zindex;
-// 		@include custom-position(fixed,$top:0,$left:0);
-// 		background: transparent;
-// 		transition: all .3s $ease-in-circ;
-// 		//另种样式导航栏
-// 		&-fixheader {
-// 			background: rgba($default-content-title-color,.8);
-// 		}
-// 		&-logo {
-// 			@include custom-position(absolute,$top:rem(20px),$left:rem(102px));
-// 			line-height: 1;
-// 			img {
-// 				width: rem(242px);
-// 			}
-// 			a {
-// 				display: block;
-// 			}
-// 		}
-// 		&-nav {
-// 			float: right;
-// 			margin-right: rem(102px);
-// 			position: relative;
-// 			.ant-menu-horizontal {
-// 				border-bottom-color: transparent;
-// 			}
-// 			.ant-menu {
-// 				background: transparent;
-// 				line-height: $default-nav-height;
-// 				li {
-// 					text-align: center;
-// 					min-width: rem(80px);
-// 					border-bottom: none;
-// 					&:nth-last-child(2) {
-// 						margin-left: rem(90px);
-// 						padding-right: 0;
-// 					}
-// 					&:last-child {
-// 						padding-left: 0;
-// 						&::before {
-// 							content: '/';
-// 							color: $nav-text-color;
-// 							font-size: 1.5rem;
-// 							@include custom-position(absolute,$top:-3%,$left:-.3rem);
-// 						}
-// 					}
-// 					> a {
-// 						color: $nav-text-color;
-// 						font-size: rem(16.67px);
-// 						letter-spacing: 3px;
-// 					}
-// 					&::after {
-// 						content:'';
-// 						width: 0;
-// 						height: 4px;
-// 						display: block;
-// 						margin-left: -35%;
-// 						margin-top: -4px;
-// 						background: $default-nav-active-border-color; 
-// 						transition: width .4s;
-// 					}
-// 					&:hover {
-// 						border-bottom: none;
-// 						&::after {
-// 							width: 170%;
-// 						}
-// 					}
-// 				}
-// 			}
-// 			.menu-product-item > a {
-// 				color: $default-content-title-color!important;
-// 			}
+  @media screen and (max-width: 767px) {
+    .header{
+      &-logo {
+        z-index: 101;
+      }
+      &-mobile-nav {
+        width: 16px;
+        height: 14px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        right: 20px;
+        &-bar {
+          position: relative;
+          z-index: 100;
+          em {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #FFF;
+            margin-top: 4px;
+            transition: transform .3s $ease-in-out, opacity .3s $ease-in-out;
+          }
+          :first-child {
+            margin-top: 0;
+          }
+        }
+        &.open {
+          .header-mobile-nav-bar {
+            em {
+              &:nth-child(1) {
+                transform: translateY(6px) rotate(45deg);
+              }
+              &:nth-child(2) {
+                opacity: 0;
+              }
+              &:nth-child(3) {
+                transform: translateY(-6px) rotate(-45deg);
+              }
+            }
+          }
+          .header-mobile-nav-text {
+            opacity: 1;
+            pointer-events: auto;
+            transition-timing-function: $ease-out;
+          }
+        }
 
-// 			.ant-menu-horizontal > .ant-menu-item-selected,.ant-menu-horizontal > .ant-menu-item-active {
-// 				a {
-// 					font-weight: bold;
-// 					color:  $nav-active-color;
-// 					transition: all 0.2s ease-in-out;
-// 				}
-// 			}
-// 			.ant-menu-horizontal > .ant-menu-item-selected {
-// 				border-bottom: none;
-// 				&::after {
-// 					content:'';
-// 					width: 170%;
-// 					height: 4px;
-// 					display: block;
-// 					margin-left: -35%;
-// 					margin-top: -4px;
-// 					background: $default-nav-active-border-color; 
-// 					transition: width .4s;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+        &-text {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          padding-top: 64px;
+          opacity: 0;
+          transition: opacity .3s $ease-in;
+          pointer-events: none;
+          background: #404040;
+          .ant-menu-item-selected {
+            border: none;
+          }
+        }
+      }
+    }  
+  }
+}

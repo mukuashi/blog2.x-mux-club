@@ -4,8 +4,9 @@
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
+ * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-19 00:25:36
+ * @Last Modified time: 2018-04-19 04:23:52
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -20,6 +21,9 @@ import './index.scss';
 
 const { BgElement } = Element;
 const { banner } = data;
+const yAnim = {
+  type: 'from', ease: 'easeInOutQuad', duration: 200,
+};
 //
 export default class BannerHeader extends PureComponent {
   static defaultProps = {
@@ -30,54 +34,62 @@ export default class BannerHeader extends PureComponent {
   }
   render() {
     const { className } = this.props;
-    const childrenData = [
-      {
-        id: 1,
-        title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
-        content: '一个高效的页面动画解决方案',
-        button: '下滑 Get More',
-      },
-      {
-        id: 2,
-        title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
-        content: '一个高效的页面动画解决方案',
-        button: 'Learn More',
-      },
-    ];
     const childrenToRender = banner.map(row => (
       <Element
         key={row.id}
         prefixCls="banner-user-elem"
       >
         <BgElement
+          key="a"
           className={`bg bg${row.id}`}
           style={{ background: `url(${row.bgImg}) no-repeat center`, backgroundSize: 'cover' }}
-          key="bg"
         />
         <QueueAnim
+          key="b"
           type={['bottom', 'top']}
           delay={200}
           className={`${className}-title`}
-          key="text"
         >
           <span
+            key="c"
             className="logo"
-            key="logo"
             dangerouslySetInnerHTML={{
               __html: row.title,
             }}
           />
-          <p
-            key="content"
+          <p key="d">{row.content}</p>
+          <QueueAnim
+            animation={{ ...yAnim, delay: 500 }}
+            delay={300}
+            component="ul"
+            key="e"
           >
-            {row.content}
-          </p>
-          <Button
-            type="ghost"
-            key="button"
-          >
-            {row.button}
-          </Button>
+            {
+              row.button.map(second => (
+                <li key={`li${second.id}`}>
+                  <Button
+                    key={second.id}
+                    type="ghost"
+                    href={second.link}
+                    target={second.target}
+                  >
+                    {second.value}
+                    {
+                      second.icon && (
+                        <TweenOne
+                          animation={{ ...second.animate, yoyo: true, repeat: -1, duration: 2200 }}
+                          className="icon"
+                          key={`icon${second.id}`}
+                        >
+                          <Icon type={second.icon} />
+                        </TweenOne>
+                      )
+                    }
+                  </Button>
+                </li>
+              ))
+            }
+          </QueueAnim>
         </QueueAnim>
       </Element>
     ));
@@ -88,24 +100,26 @@ export default class BannerHeader extends PureComponent {
         className={`mux-layout-${className} banner`}
       >
         <TweenOneGroup
-          key="banner"
+          key="f"
           enter={{ opacity: 0, type: 'from' }}
           leave={{ opacity: 0 }}
           component=""
         >
           <div className={`${className}-wrapper`}>
             <BannerAnim
-              key="banner"
+              autoPlay
+              autoPlaySpeed={6666}
+              key="g"
             >
               {childrenToRender}
             </BannerAnim>
           </div>
         </TweenOneGroup>
         <TweenOne
-          animation={{ y: '-=20', yoyo: true, repeat: -1, duration: 1000 }}
+          animation={{ y: '-=35', yoyo: true, repeat: -1, duration: 1500 }}
           className={`${className}-icon`}
           style={{ bottom: 40 }}
-          key="icon"
+          key="h"
         >
           <Icon type="down" />
         </TweenOne>

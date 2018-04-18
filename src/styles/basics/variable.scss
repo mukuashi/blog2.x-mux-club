@@ -5,7 +5,7 @@
  * @Date:   2016-03-02 12:50:27
  * @version 0.1 | 2016-03-02 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-18 23:21:20
+ * @Last Modified time: 2018-04-19 04:11:03
 */
 //font
 $font-size-base: 14px;
@@ -39,8 +39,8 @@ $line-height-lg: 4;
 $default-box-shadow-base: 1px 2px 3px rgba($font-primary-color,.5);
 $default-box-shadow-light: 1px 2px 7px rgba($font-primary-color,1);
 //
-$link-color             : #019BF0;
-$link-hover-color       : tint($link-color, 20%);
+$link-color             : #108ee9;
+$link-hover-color       : tint($link-color, 10%);
 $link-active-color      : shade($link-color, 5%);
 $link-visited-color: #6c5de7;
 $link-hover-decoration  : none;

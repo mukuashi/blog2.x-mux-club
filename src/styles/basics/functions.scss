@@ -5,7 +5,7 @@
  * @Date:   2016-04-17 11:40:27
  * @version 0.1 | 2016-1-18 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 21:01:43
+ * @Last Modified time: 2018-04-19 04:06:16
 */
 @import "variable";
 //去掉一个值的单位，如12px => 12
@@ -15,4 +15,21 @@
 //px -> rem 使用方式如rem(300px)
 @function rem($px) {
    @return strip-units(($px / $font-size-base)) * 1rem;
+}
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
 }

@@ -5,17 +5,13 @@
  * @Date:   2018-03-23 12:25:27
  * @version 0.1 | 2018-03-23  // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-19 00:27:34
+ * @Last Modified time: 2018-04-19 03:57:45
 */
 const nowYear = new Date().getFullYear();
 //
 export const data = {
-  logo: {
-    header: '',
-    footer: '',
-  },
   header: {
-    logo: '',
+    logo: 'http://kquanr.com/images/header_nav.png',
     nav: [
       {
         id: 0,
@@ -49,22 +45,56 @@ export const data = {
       id: 1,
       title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
       bgImg: 'https://zos.alipayobjects.com/rmsportal/hzPBTkqtFpLlWCi.jpg',
-      content: '一个高效的页面动画解决方案',
-      button: '下滑 Get More',
+      content: '一只拍片码稿、画图写代码的文盲（作）者',
+      button: [
+        {
+          id: 'a1',
+          value: '下滑 Get More',
+          icon: '',
+          link: null,
+          target: null,
+        },
+      ],
     },
     {
       id: 2,
       title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
       bgImg: 'https://zos.alipayobjects.com/rmsportal/xHxWkcvaIcuAdQl.jpg',
-      content: '一个高效的页面动画解决方案',
-      button: 'Learn More',
+      content: '一个信仰自由与平等的摄影师、制片人、自媒体/公路作者...',
+      button: [
+        {
+          id: 'a2',
+          value: 'LOFTER',
+          icon: 'camera',
+          target: '_blank',
+          animate: { x: '+=20' },
+          link: 'http://photoartlife.lofter.com',
+        },
+        {
+          id: 'b2',
+          value: '米拍',
+          icon: 'man',
+          target: '_blank',
+          animate: { x: '+=20', blur: '3px', rotate: 360 },
+          link: 'https://m.mepai.me/photographyer/u_592e418fe4a53.html',
+        },
+      ],
     },
     {
       id: 3,
       title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
       bgImg: 'https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg',
-      content: '一个高效的页面动画解决方案',
-      button: 'Learn More',
+      content: '一个喜欢创作与挑战的程序猿、软件工程师、背包客...',
+      button: [
+        {
+          id: 'a3',
+          value: 'Github',
+          icon: 'github',
+          target: '_blank',
+          animate: { x: '+=20' },
+          link: 'https://github.com/PhotoArtLife',
+        },
+      ],
     },
   ],
 };
