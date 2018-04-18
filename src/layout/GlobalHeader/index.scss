@@ -3,8 +3,11 @@
 	.header {
 		width: 100%;
 		height: $default-nav-height;
-		background: $template-nav-bg-color;
-		@include custom-position(fixed,$top:0,$zindex:$default-nav-zindex);
+    background: transparent;
+    @include custom-position(fixed,$top:0);
+    &-fixheader {
+      background: $template-nav-bg-color;
+    }
 		&-logo {
 			display: inline-block;
 			@include custom-position(absolute,$left:4%);

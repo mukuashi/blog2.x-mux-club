@@ -5,7 +5,7 @@
  * @Date:   2018-03-23 12:25:27
  * @version 0.1 | 2018-03-23  // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-17 02:38:04
+ * @Last Modified time: 2018-04-19 00:27:34
 */
 const nowYear = new Date().getFullYear();
 //
@@ -44,4 +44,27 @@ export const data = {
       },
     ],
   },
+  banner: [
+    {
+      id: 1,
+      title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
+      bgImg: 'https://zos.alipayobjects.com/rmsportal/hzPBTkqtFpLlWCi.jpg',
+      content: '一个高效的页面动画解决方案',
+      button: '下滑 Get More',
+    },
+    {
+      id: 2,
+      title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
+      bgImg: 'https://zos.alipayobjects.com/rmsportal/xHxWkcvaIcuAdQl.jpg',
+      content: '一个高效的页面动画解决方案',
+      button: 'Learn More',
+    },
+    {
+      id: 3,
+      title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
+      bgImg: 'https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg',
+      content: '一个高效的页面动画解决方案',
+      button: 'Learn More',
+    },
+  ],
 };

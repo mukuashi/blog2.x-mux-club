@@ -1,11 +1,11 @@
 /*
  * Copyright (c) 2016-Now PhotoArtLife PD, All rights reseved.
- * @fileoverview | Common Banner
+ * @fileoverview | Common Footer
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
- * @Date:   2018-03-26 12:25:27
- * @version 0.1 | 2018-03-26 // Initial version.
+ * @Date:   2017-03-26 12:25:27
+ * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 21:56:09
+ * @Last Modified time: 2018-04-19 00:25:36
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -14,82 +14,78 @@ import QueueAnim from 'rc-queue-anim';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import BannerAnim, { Element } from 'rc-banner-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
+import { data } from 'config/system';
 import 'rc-banner-anim/assets/index.css';
 import './index.scss';
 
 const { BgElement } = Element;
-const yAnim = {
-  type: 'from', ease: 'easeInOutQuad', duration: 300,
-};
-
+const { banner } = data;
+//
 export default class BannerHeader extends PureComponent {
-  static propTypes = {
-    className: PropTypes.string,
-  };
-
   static defaultProps = {
     className: 'banner',
   };
-
+  static propTypes = {
+    className: PropTypes.string,
+  }
   render() {
-    const { bannerdata } = this.props;
-
-    const childrenToRender = (
+    const { className } = this.props;
+    const childrenData = [
+      {
+        id: 1,
+        title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
+        content: '一个高效的页面动画解决方案',
+        button: '下滑 Get More',
+      },
+      {
+        id: 2,
+        title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
+        content: '一个高效的页面动画解决方案',
+        button: 'Learn More',
+      },
+    ];
+    const childrenToRender = banner.map(row => (
       <Element
-        key="bg-box"
+        key={row.id}
         prefixCls="banner-user-elem"
       >
         <BgElement
-          id="header-banner"
-          className="bg-banner"
+          className={`bg bg${row.id}`}
+          style={{ background: `url(${row.bgImg}) no-repeat center`, backgroundSize: 'cover' }}
           key="bg"
-          scrollParallax={{ y: 200 }}
-          style={{ backgroundImage: `url(${bannerdata.img})` }}
         />
         <QueueAnim
-          type={['left', 'right']}
-          delay={300}
-          className={`bg-text${classBoxCondition('text')}`}
+          type={['bottom', 'top']}
+          delay={200}
+          className={`${className}-title`}
           key="text"
         >
-          <TweenOne component="span" className={`title${classTitleStyle(bannerdata.content)}`} key="title" animation={{ ...yAnim, delay: 400 }}>{bannerdata.content && bannerdata.content.title}<br />{bannerdata.content && bannerdata.content.title1}
-          </TweenOne>
-          <TweenOne component="p" className="name" key="name" animation={{ ...yAnim, delay: 500 }}>
-            {bannerdata.content && bannerdata.content.cnName}
-          </TweenOne>
-        </QueueAnim>
-        <QueueAnim
-          type={['bottom', 'top']}
-          delay={600}
-          className={`bg-btn${classBoxCondition('button')}`}
-          key="button"
-        >
-          {
-            bannerdata.button && (
-              <Button
-                type="primary"
-                size="large"
-                key="button"
-                href={bannerdata.button.link ? bannerdata.button.link : '/login/#/register/1'}
-              >
-                {bannerdata.button.value}
-                <TweenOne
-                  animation={{ x: '+=18', yoyo: true, repeat: -1, duration: 1800 }}
-                  className="icon"
-                  key="icon"
-                >
-                  <Icon type={bannerdata.button.icon} />
-                </TweenOne>
-              </Button>
-            )
-          }
+          <span
+            className="logo"
+            key="logo"
+            dangerouslySetInnerHTML={{
+              __html: row.title,
+            }}
+          />
+          <p
+            key="content"
+          >
+            {row.content}
+          </p>
+          <Button
+            type="ghost"
+            key="button"
+          >
+            {row.button}
+          </Button>
         </QueueAnim>
       </Element>
-    );
+    ));
 
     return (
       <OverPack
-        {...this.props}
+        playScale="0.1"
+        className={`mux-layout-${className} banner`}
       >
         <TweenOneGroup
           key="banner"
@@ -97,14 +93,24 @@ export default class BannerHeader extends PureComponent {
           leave={{ opacity: 0 }}
           component=""
         >
-          <BannerAnim
-            key="banner"
-            style={bannerdata.height ? { minHeight: bannerdata.height } : {}}
-          >
-            {childrenToRender}
-          </BannerAnim>
+          <div className={`${className}-wrapper`}>
+            <BannerAnim
+              key="banner"
+            >
+              {childrenToRender}
+            </BannerAnim>
+          </div>
         </TweenOneGroup>
+        <TweenOne
+          animation={{ y: '-=20', yoyo: true, repeat: -1, duration: 1000 }}
+          className={`${className}-icon`}
+          style={{ bottom: 40 }}
+          key="icon"
+        >
+          <Icon type="down" />
+        </TweenOne>
       </OverPack>
     );
   }
 }
+

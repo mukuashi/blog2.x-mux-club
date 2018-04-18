@@ -2,10 +2,10 @@
  * Copyright (c) 2016-Now PhotoArtLife PD, All rights reseved.
  * @fileoverview | Common Footer
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
- * @Date:   2018-03-26 12:25:27
- * @version 0.1 | 2018-03-26 // Initial version.
+ * @Date:   2017-03-26 12:25:27
+ * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 20:36:03
+ * @Last Modified time: 2018-04-18 23:24:28
 */
 import React, { PureComponent } from 'react';
 import { Icon, Button, Popover } from 'antd';

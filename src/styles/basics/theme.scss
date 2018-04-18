@@ -6,7 +6,7 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-17 01:54:02
+ * @Last Modified time: 2018-04-18 23:45:15
 */
 @import "variable","functions";
 //theme color
@@ -38,51 +38,17 @@ $default-nav-background: transparent;
 $default-nav-active-fixed-background: $template-nav-bg-color;
 $default-nav-active-border-color: $default-active-color;
 //content * color
-$default-content-subtitle-color-1:#797979;
-$default-content-subtitle-color: #bcbcbc;
-$default-content-title-color: #011638;
-$default-content-tip-color: #00c0ff;
-$default-content-block-color: #2ce4ff;
-$default-content-light-color:#5a5a5a;
-$default-content-heavy-color:#021d46;
-$default-content-softly-background-color:#f1fdff;
-$default-content-lighter-background-color:#0158c8;
-$default-content-text-h-color:#fefefe;
-$default-content-text-p-color:#03285c;
-$default-content-text-v-color:#02204b;
-$default-content-text-c-color:#01183b;
-$default-content-text-t-color: #021a4e;
-$default-content-text-l-color: #011a3f;
-$default-content-arrows-color: #1acfff;
-$default-content-text-color: $default-background-color;
-//content * font-size
-$default-content-title-fs: rem(58.33px)*0.9;
-$default-content-hx-l0:rem(55px)*0.9;
-$default-content-hx-l1: rem(50px)*0.88;
-$default-content-hx-l2: rem(41.67px)*0.9;
-$default-content-hx-l3:rem(33.33px)*0.95;
-$default-content-hx-l4:rem(29.17px)*0.9;
-$default-content-hx-l5: rem(25px)*0.9;
-$default-content-hx-l6: rem(16.67px);
 
-$default-content-h1-sm: 1.6rem;
-$default-content-h1-md: 2.2rem;
-$default-content-h1-lg: 2.8rem;
-//mobile
-$default-mobile-content-l1: 3rem;
-$default-mobile-content-l2: 2.3rem;
-$default-mobile-content-l3: 2rem;
-$default-mobile-content-l4: 1.8rem;
-$default-mobile-content-l5: 1.5rem;
-$default-mobile-content-l6: 1.25rem;
+//content * font-size
+$default-content-fz-sm: 1.6rem;
+$default-content-fz-md: 2.2rem;
+$default-content-fz-lg: 2.8rem;
 //button
-$default-button-width: rem(200px);
-$default-button-height: rem(70px);
-$default-button-font-size: rem(20.83px);;
+$default-button-width: rem(100px);
+$default-button-height: rem(50px);
+$default-button-font-size: rem(16.83px);;
 //footer
-$default-footer-title-color: $default-background-color;
-$default-footer-text-color: #a0a0a0;
-$default-footer-background-color: #022250;
+
 //button
 $btn-default-color: #0086ff;
 $btn-exception-color: $font-exception-color;

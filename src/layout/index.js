@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 22:02:33
+ * @Last Modified time: 2018-04-19 00:02:47
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -98,25 +98,15 @@ export default class BasicLayout extends PureComponent {
   getPageTitle() {
     const { routerData, location } = this.props;
     const { pathname } = location;
-    let title = '2.x-Blog For PhotoArtLife@mukuashi';
+    let title = '版本2.x - Blog For PhotoArtLife@mukuashi';
     if (routerData[pathname] && routerData[pathname].name) {
       title = `${routerData[pathname].name} - ${title}`;
     }
     return title;
   }
-  // 公共banner img
-  // converBanner() {
-  //   const path = this.props.location.pathname;
-  //   const bannerObj = banner[path];
-  //   if (bannerObj && bannerObj.img) {
-  //     return bannerObj;
-  //   } else {
-  //     return { img: '', content: '', button: '' };
-  //   }
-  // }
   // 滚屏与置顶菜单状态切换
   handleScrollCheck = () => {
-    // 设置滚屏默认高度为200px,超过后将会切换导航栏
+    // 设置滚屏默认高度为90px,超过后将会切换导航栏
     const DEFAULT_SCROLL_HEIGHT = 90;
     const toggleHeader = (value) => {
       setTimeout(() => {
@@ -148,10 +138,8 @@ export default class BasicLayout extends PureComponent {
     const classLayoutFooter = cx({
       'mux-layout-footer': true,
     });
-    // const bannerdata = this.converBanner();
     const layout = (
       <Layout className={classLayoutContainer}>
-
         <Header className={classLayoutHeader}>
           <GlobalHeader
             pathname={location.pathname}
@@ -159,17 +147,7 @@ export default class BasicLayout extends PureComponent {
             isMobile={this.state.isMobile || false}
           />
         </Header>
-        {/*
-        <div
-          className="mux-layout-banner"
-          onScroll={this.handleScrollCheck}
-        >
-          <BannerHeader
-            bannerdata={bannerdata}
-          />
-        </div>
-        */}
-
+        <BannerHeader {...this.props} onScroll={this.handleScrollCheck} />
         <Content className={classLayoutContent}>
           {/* 其他页面 */}
           <Switch>

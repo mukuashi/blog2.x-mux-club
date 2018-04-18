@@ -15,9 +15,7 @@ export default class Home extends PureComponent {
   };
   render() {
     return (
-      <article className="home-content-list">
-        ss
-      </article>
+      <article className="home-content-list" />
     );
   }
 }
