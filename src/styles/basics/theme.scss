@@ -6,7 +6,7 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-19 04:10:10
+ * @Last Modified time: 2018-04-20 01:18:10
 */
 @import "variable","functions";
 //theme color
@@ -24,7 +24,6 @@ $default-icon-hover-color: #404040;
 //default template
 $template-bg-color: #333;
 $template-bg-color-light: #ececec;
-$template-nav-bg-color: rgba($template-bg-color, .95);
 $template-text-color: #ccc;
 $template-text-title-color: #bcbcbc;
 $template-text-color-light: $default-background-color;
@@ -33,7 +32,7 @@ $template-footer-text-color: #666;
 $default-nav-zindex: 1000;
 $default-nav-height: rem(64px);
 $default-nav-background: transparent;
-$default-nav-active-fixed-background: $template-nav-bg-color;
+$default-nav-active-fixed-background: rgba(19, 28, 43, 0.67);
 $default-nav-active-border-color: $default-active-color;
 //content * color
 

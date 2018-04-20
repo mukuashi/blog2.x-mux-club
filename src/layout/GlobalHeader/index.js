@@ -2,10 +2,10 @@
  * Copyright (c) 2016-Now PhotoArtLife PD, All rights reseved.
  * @fileoverview | Common Header
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
- * @Date:   2018-03-26 12:25:27
- * @version 0.1 | 2018-03-26 // Initial version.
+ * @Date:   2017-03-26 12:25:27
+ * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-19 04:47:42
+ * @Last Modified time: 2018-04-20 01:46:15
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -15,7 +15,7 @@ import { data } from 'config/system';
 import styles from './index.scss';
 
 const { Item, SubMenu } = Menu;
-const { logo, nav } = data.header;
+const { logo, nav, submenu, contact } = data.header;
 
 export default class GlobalHeader extends PureComponent {
   constructor(props) {
@@ -47,11 +47,16 @@ export default class GlobalHeader extends PureComponent {
     const props = { ...this.props };
     const { isMobile, fixHeader, pathname } = props;
     const contactAuthor = (
-      <div>
-        <p>
-          <img alt="微信平台" src="http://kquanr.com/arts/images/photoartlife.jpg" width="135px" />
-          <img alt="作者微信" src="http://kquanr.com/arts/images/private-wechat.jpg" width="135px" />
-        </p>
+      <div className={styles.headerPopoverContent}>
+        <span>微信公众号 + 约片投稿</span>
+        <span>(断更中) + （摄/电影等媒体合作）</span>
+        <ul>
+          {
+            contact.block.map(row => (
+              <li key={row.id}><img src={row.img} alt={row.alt} /></li>
+            ))
+          }
+        </ul>
       </div>
     );
     const userTitle = (
@@ -64,7 +69,7 @@ export default class GlobalHeader extends PureComponent {
             height="36"
           />
         </span>
-        <span>Mich</span>
+        <span>mukuashi</span>
       </div>
     );
     const navChildren = Object.values(nav).map(row => (
@@ -78,7 +83,7 @@ export default class GlobalHeader extends PureComponent {
       <Item className="menu-contact" key="contact">
         <Popover
           content={contactAuthor}
-          title="微信公共平台 + 约片投稿微信 >>> 技术交流等"
+          title=""
           trigger="hover"
           placement="bottom"
           arrowPointAtCenter
@@ -88,13 +93,14 @@ export default class GlobalHeader extends PureComponent {
         </Popover>
       </Item>,
       <SubMenu className="menu-user" title={userTitle} key="user">
-        <Item key="a">用户：mukuashi</Item>
-        <Item key="b">
-          <a href="http://t.cn/Rt1xb42" target="_blank" style={styles.avatarSet}>微信专栏</a>
-        </Item>
-        <Item key="c">
-          <a href="http://kquanr.com" style={styles.avatarSet}>回到旧版</a>
-        </Item>
+        {
+          submenu.map(row => (
+            <Item key={row.id}>
+              {!row.href && <h4>{row.name}</h4>}
+              {row.href && <Link to={row.href} target={row.target} className={styles.avatarSet}>{row.name}</Link>}
+            </Item>
+          ))
+        }
       </SubMenu>
     );
     const navTopMenu = (
@@ -120,7 +126,7 @@ export default class GlobalHeader extends PureComponent {
           className="header-logo"
           animation={{ x: -30, delay: 100, type: 'from', ease: 'easeOutQuad' }}
         >
-          <Link to="/"><img alt="header-logo" width="100%" src="http://kquanr.com/images/header_nav.png" /></Link>
+          <Link to="/"><img alt="header-logo" width="100%" src={logo} /></Link>
         </TweenOne>
         {
           isMobile ? (

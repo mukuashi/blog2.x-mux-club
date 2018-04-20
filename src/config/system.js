@@ -5,7 +5,7 @@
  * @Date:   2018-03-23 12:25:27
  * @version 0.1 | 2018-03-23  // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-19 03:57:45
+ * @Last Modified time: 2018-04-20 01:45:35
 */
 const nowYear = new Date().getFullYear();
 //
@@ -37,6 +37,40 @@ export const data = {
         id: 4,
         name: '笔记篇',
         path: '/project/works/',
+      },
+    ],
+    contact: {
+      block: [
+        {
+          id: 'a1',
+          alt: '微信公众号',
+          img: 'http://kquanr.com/arts/images/photoartlife.jpg',
+        },
+        {
+          id: 'a2',
+          alt: 'my wechat',
+          img: 'http://kquanr.com/arts/images/private-wechat.jpg',
+        },
+      ],
+    },
+    submenu: [
+      {
+        id: 'a',
+        name: '当前版本：2.x',
+        href: '',
+        target: '_blank',
+      },
+      {
+        id: 'b',
+        name: '微信专栏',
+        href: 'http://t.cn/Rt1xb42',
+        target: '_blank',
+      },
+      {
+        id: 'c',
+        name: '回到旧版',
+        href: '/',
+        target: '_self',
       },
     ],
   },

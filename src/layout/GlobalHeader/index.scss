@@ -1,4 +1,32 @@
 @import "../../styles/basics/mixin";
+//
+.headerPopoverContent {
+  span {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.65);
+    display: block;
+    text-align: center;
+    padding: 1.2% 0;
+  }
+  ul {
+    @include ul-initialize;
+    margin-top: 2%;
+    li {
+      display: inline-block;
+      width: 47%;
+      &:first-child {
+        margin-right: 6%;
+      }
+      > img {
+        @include square(8.5rem);
+      }
+    }
+  }
+}
+.avatarSet {
+  color: rgba(108, 93, 231, 0.89);
+  font-size: 0.85rem;
+}
 :global {
 	.header {
 		width: 100%;
@@ -6,7 +34,7 @@
     background: transparent;
     @include custom-position(fixed,$top:0);
     &-fixheader {
-      background: $template-nav-bg-color;
+      background: $default-nav-active-fixed-background;
     }
 		&-logo {
 			display: inline-block;

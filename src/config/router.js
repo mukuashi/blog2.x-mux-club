@@ -3,10 +3,10 @@
  * @fileoverview | 公共路由配置 => component + model(可选) + route
  * @usage from Ant Design Pro脚手架设计 | https://pro.ant.design/docs/router-and-nav
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
- * @Date:   2018-03-23 12:25:27
- * @version 0.1 | 2018-03-23  // Initial version.
+ * @Date:   2017-03-23 12:25:27
+ * @version 0.1 | 2017-03-23  // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-10 01:30:04
+ * @Last Modified time: 2018-04-20 00:54:57
 */
 import { createElement } from 'react';
 import dynamic from 'dva/dynamic';
