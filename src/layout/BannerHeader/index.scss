@@ -38,12 +38,15 @@
       text-align: center;
       color: $template-text-color-light;
       @include custom-position(relative,$top:25%,$left:0,$right:0);
-      & .logo {
+      & .bannerHeader {
         width: 350px;
         left: 30px;
         margin: auto;
         display: inline-block;
         position: relative;
+        img {
+          width: 100%;
+        }
       }
       & p {
         margin-bottom: 20px;
@@ -53,8 +56,12 @@
         @include ul-initialize;
         li {
           display: inline-block;
-          &:not(:first-child) {
+          &:nth-last-child(2) {
             margin-left: 4%;
+          }
+          &:last-child {
+            display: block;
+            margin-top: 1.8rem;
           }
           & button,& a {
             border: 1px solid $default-background-theme;
@@ -103,7 +110,7 @@
     .banner{
       &-title{
         width: 90%;
-        .logo{
+        .bannerHeader{
           width: 90%;
           left: 0;
         }

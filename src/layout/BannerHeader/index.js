@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-19 04:23:52
+ * @Last Modified time: 2018-05-01 04:21:05
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -52,11 +52,9 @@ export default class BannerHeader extends PureComponent {
         >
           <span
             key="c"
-            className="logo"
-            dangerouslySetInnerHTML={{
-              __html: row.title,
-            }}
-          />
+            className="bannerHeader"
+          ><img src={row.headerImg} alt="header-banner" />
+          </span>
           <p key="d">{row.content}</p>
           <QueueAnim
             animation={{ ...yAnim, delay: 500 }}
@@ -77,7 +75,7 @@ export default class BannerHeader extends PureComponent {
                     {
                       second.icon && (
                         <TweenOne
-                          animation={{ ...second.animate, yoyo: true, repeat: -1, duration: 2200 }}
+                          animation={{ ...second.animate, yoyo: true, repeat: -1, duration: 2400 }}
                           className="icon"
                           key={`icon${second.id}`}
                         >
@@ -108,7 +106,7 @@ export default class BannerHeader extends PureComponent {
           <div className={`${className}-wrapper`}>
             <BannerAnim
               autoPlay
-              autoPlaySpeed={6666}
+              autoPlaySpeed={8888}
               key="g"
             >
               {childrenToRender}
@@ -116,7 +114,7 @@ export default class BannerHeader extends PureComponent {
           </div>
         </TweenOneGroup>
         <TweenOne
-          animation={{ y: '-=35', yoyo: true, repeat: -1, duration: 1500 }}
+          animation={{ y: '-=35', yoyo: true, repeat: -1, duration: 1650 }}
           className={`${className}-icon`}
           style={{ bottom: 40 }}
           key="h"

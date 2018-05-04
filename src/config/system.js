@@ -2,16 +2,28 @@
  * Copyright (c) 2016-Now PhotoArtLife PD, All rights reseved.
  * @fileoverview | System Config Data
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
- * @Date:   2018-03-23 12:25:27
- * @version 0.1 | 2018-03-23  // Initial version.
+ * @Date:   2016-03-23 12:25:27
+ * @version 0.1 | 2016-03-23  // Initial version.
+ * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-20 01:45:35
+ * @Last Modified time: 2018-05-01 04:34:23
 */
+// some assets imgs or others
+import headerNav from '../assets/images/header-nav.png';
+import bannerLogo from '../assets/images/banner-logo.png';
+import banner1 from '../assets/images/banner-1.jpg';
+import banner2 from '../assets/images/banner-2.jpg';
+import banner3 from '../assets/images/banner-3.jpg';
+import contactPublic from '../assets/images/contact-public.jpg';
+import contactPrivate from '../assets/images/contact-private.jpg';
+import headerAvatar from '../assets/images/header-avatar.png'
+
 const nowYear = new Date().getFullYear();
 //
 export const data = {
+  prefix: 'PhotoArtLife',
   header: {
-    logo: 'http://kquanr.com/images/header_nav.png',
+    logo: headerNav,
     nav: [
       {
         id: 0,
@@ -44,14 +56,18 @@ export const data = {
         {
           id: 'a1',
           alt: '微信公众号',
-          img: 'http://kquanr.com/arts/images/photoartlife.jpg',
+          img: contactPublic,
         },
         {
           id: 'a2',
           alt: 'my wechat',
-          img: 'http://kquanr.com/arts/images/private-wechat.jpg',
+          img: contactPrivate,
         },
       ],
+    },
+    user: {
+      name: 'mukuashi',
+      img: headerAvatar,
     },
     submenu: [
       {
@@ -77,8 +93,8 @@ export const data = {
   banner: [
     {
       id: 1,
-      title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
-      bgImg: 'https://zos.alipayobjects.com/rmsportal/hzPBTkqtFpLlWCi.jpg',
+      headerImg: bannerLogo,
+      bgImg: banner1,
       content: '一只拍片码稿、画图写代码的文盲（作）者',
       button: [
         {
@@ -92,8 +108,8 @@ export const data = {
     },
     {
       id: 2,
-      title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
-      bgImg: 'https://zos.alipayobjects.com/rmsportal/xHxWkcvaIcuAdQl.jpg',
+      headerImg: bannerLogo,
+      bgImg: banner2,
       content: '一个信仰自由与平等的摄影师、制片人、自媒体/公路作者...',
       button: [
         {
@@ -110,14 +126,22 @@ export const data = {
           icon: 'man',
           target: '_blank',
           animate: { x: '+=20', blur: '3px', rotate: 360 },
-          link: 'https://m.mepai.me/photographyer/u_592e418fe4a53.html',
+          link: 'https://www.mepai.me/user/u_592e418fe4a53',
+        },
+        {
+          id: 'b3',
+          value: '500PX',
+          icon: 'html5',
+          target: '_blank',
+          animate: { scale: 0, x: '+=20' },
+          link: 'https://www.mepai.me/user/u_592e418fe4a53',
         },
       ],
     },
     {
       id: 3,
-      title: '<img width="100%" src="http://kquanr.com/images/PhotoArtLife.png" />',
-      bgImg: 'https://zos.alipayobjects.com/rmsportal/gGlUMYGEIvjDOOw.jpg',
+      headerImg: bannerLogo,
+      bgImg: banner3,
       content: '一个喜欢创作与挑战的程序猿、软件工程师、背包客...',
       button: [
         {
@@ -131,4 +155,45 @@ export const data = {
       ],
     },
   ],
+  content1: {
+    block: [
+      {
+        id: 1,
+        icon: 'design',
+        title: '设计',
+        content: '从UI View层过渡到Code Products，博客托管相关原型交互设计资源等。',
+      },
+      {
+        id: 2,
+        icon: 'code',
+        title: '前后端',
+        content: 'Web项目基本由前后端框架构建，博客搭建FED手册及开源技术。',
+      },
+      {
+        id: 3,
+        icon: 'crm',
+        title: '中后台',
+        content: '系统CRM与管理后台、中间层、图像识别与3D建模、通信技术等。',
+      },
+      {
+        id: 4,
+        icon: 'camera',
+        title: '摄影',
+        content: '眼睛的一种凝固方式。',
+      },
+      {
+        id: 5,
+        icon: 'article',
+        title: '写作',
+        content: '虽不及文学高斗，但足矣慰藉心兽。',
+      },
+      {
+        id: 6,
+        icon: 'media',
+        title: '媒体',
+        content: '广告与传媒、电影与文化创作，穷极一生，但为恭求盈之。',
+      },
+    ],
+  },
+
 };

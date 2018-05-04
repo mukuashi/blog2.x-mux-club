@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-20 01:46:15
+ * @Last Modified time: 2018-05-01 03:54:51
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -15,7 +15,7 @@ import { data } from 'config/system';
 import styles from './index.scss';
 
 const { Item, SubMenu } = Menu;
-const { logo, nav, submenu, contact } = data.header;
+const { logo, nav, user, submenu, contact } = data.header;
 
 export default class GlobalHeader extends PureComponent {
   constructor(props) {
@@ -48,8 +48,8 @@ export default class GlobalHeader extends PureComponent {
     const { isMobile, fixHeader, pathname } = props;
     const contactAuthor = (
       <div className={styles.headerPopoverContent}>
-        <span>微信公众号 + 约片投稿</span>
-        <span>(断更中) + （摄/电影等媒体合作）</span>
+        <span>微信公众号 + 作者微信</span>
+        <span>(连载中) + （摄/电影等媒体合作）</span>
         <ul>
           {
             contact.block.map(row => (
@@ -64,12 +64,12 @@ export default class GlobalHeader extends PureComponent {
         <span className="img">
           <img
             alt="PhotoArtLife"
-            src="http://kquanr.com/images/now1.png"
+            src={user.img}
             width="36"
             height="36"
           />
         </span>
-        <span>mukuashi</span>
+        <span>{user.name}</span>
       </div>
     );
     const navChildren = Object.values(nav).map(row => (

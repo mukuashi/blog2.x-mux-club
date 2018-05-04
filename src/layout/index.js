@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-19 00:02:47
+ * @Last Modified time: 2018-04-28 11:44:33
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -16,7 +16,6 @@ import DocumentTitle from 'react-document-title';
 import { ContainerQuery } from 'react-container-query';
 import { enquireScreen, unenquireScreen } from 'enquire-js';
 import { getRoutes, getScrollTop } from 'utils';
-import { data } from 'config/system';
 import BannerHeader from 'layout/BannerHeader';
 import Home from 'routes/Home';
 import NotFound from 'routes/Exception/404';
@@ -25,7 +24,6 @@ import GlobalHeader from './GlobalHeader';
 import GlobalFooter from './GlobalFooter';
 import styles from './index.scss';
 
-const { banner } = data;
 const cx = classNames.bind(styles);
 const { Content, Header, Footer } = Layout;
 
@@ -64,7 +62,7 @@ export default class BasicLayout extends PureComponent {
     super(props);
     this.state = {
       isMobile,
-      fixHeader: false, // 置顶nav menu
+      fixHeader: false, // 置顶nav menu，初始化置顶透明背景，滚动一定高度时加fixHeader
     };
   }
   componentDidMount() {
