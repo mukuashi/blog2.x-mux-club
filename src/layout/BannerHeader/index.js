@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-01 04:21:05
+ * @Last Modified time: 2018-05-15 20:10:04
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -16,6 +16,7 @@ import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import BannerAnim, { Element } from 'rc-banner-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import { data } from 'config/system';
+import { scrollTo } from 'utils';
 import 'rc-banner-anim/assets/index.css';
 import './index.scss';
 
@@ -31,6 +32,13 @@ export default class BannerHeader extends PureComponent {
   };
   static propTypes = {
     className: PropTypes.string,
+  }
+  handleRollDown = () => {
+    // 计算第一屏的高度px
+    const firstScreenHeight = document.getElementById('banner').offsetHeight;
+    // document.querySelector('.banner')
+    // 有动画滚动方案
+    scrollTo(firstScreenHeight - 50, 800);
   }
   render() {
     const { className } = this.props;
@@ -70,6 +78,7 @@ export default class BannerHeader extends PureComponent {
                     type="ghost"
                     href={second.link}
                     target={second.target}
+                    onClick={second.event ? this.handleRollDown : null}
                   >
                     {second.value}
                     {
@@ -94,8 +103,10 @@ export default class BannerHeader extends PureComponent {
 
     return (
       <OverPack
-        playScale="0.1"
+        replay                   // 每次显示当前时是否都要动画, false 为只上往下滚时才有动画
+        playScale={[0.3, 0.9]}   // https://motion.ant.design/api/scroll-anim
         className={`mux-layout-${className} banner`}
+        id="banner"
       >
         <TweenOneGroup
           key="f"
@@ -106,7 +117,7 @@ export default class BannerHeader extends PureComponent {
           <div className={`${className}-wrapper`}>
             <BannerAnim
               autoPlay
-              autoPlaySpeed={8888}
+              autoPlaySpeed={6666}
               key="g"
             >
               {childrenToRender}
@@ -119,7 +130,7 @@ export default class BannerHeader extends PureComponent {
           style={{ bottom: 40 }}
           key="h"
         >
-          <Icon type="down" />
+          <Icon type="down" onClick={this.handleRollDown} />
         </TweenOne>
       </OverPack>
     );

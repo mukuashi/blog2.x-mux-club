@@ -5,16 +5,13 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Iconfont from "components/Iconfont";
 import { data } from 'config/system';
 
-const { block } = data.content1;
+const { text, block } = data.content1;
 
 export default class Content1 extends PureComponent {
-
   static defaultProps = {
     className: 'content1',
   };
-
   getDelay = e => e % 3 * 100 + Math.floor(e / 3) * 100 + 300;
-
   render() {
     const props = { ...this.props };
     const oneAnim = { y: '+=30', opacity: 0, type: 'from', ease: 'easeOutQuad' };
@@ -29,17 +26,25 @@ export default class Content1 extends PureComponent {
           key={item.id}
         >
           <TweenOne
+            key="a"
             animation={{ x: '-=10', opacity: 0, type: 'from', ease: 'easeOutQuad' }}
             className="img"
-            key="a"
           >
             <Iconfont type={item.icon} />
           </TweenOne>
           <div className="text">
-            <TweenOne key="h1" animation={childrenAnim} component="h1">
+            <TweenOne
+              key="b"
+              animation={childrenAnim}
+              component="h1"
+            >
               {item.title}
             </TweenOne>
-            <TweenOne key="p" animation={{ ...childrenAnim, delay: delay + 200 }} component="p">
+            <TweenOne
+              key="c"
+              animation={{ ...childrenAnim, delay: delay + 200 }}
+              component="p"
+            >
               {item.content}
             </TweenOne>
           </div>
@@ -50,32 +55,28 @@ export default class Content1 extends PureComponent {
       <section {...props} className={`content-template-wrapper ${props.className}-wrapper`}>
         <OverPack
           className={`content-template ${props.className}`}
-          location={props.id}
         >
           <TweenOne
-            key="h1"
+            key="d"
             animation={oneAnim}
             component="h1"
-            id={`${props.id}-title`}
             reverseDelay={100}
           >
-            阿里云提供基础的环境即服务
+            {text.title}
           </TweenOne>
           <TweenOne
-            key="p"
-            animation={{ ...oneAnim, delay: 100 }}
+            key="e"
             component="p"
-            id={`${props.id}-titleContent`}
+            animation={{ ...oneAnim, delay: 100 }}
           >
-            博客基于React、Redux、Dvajs、Node.js等技术栈构建
+            {text.subtitle}
           </TweenOne>
           <QueueAnim
-            key="ul"
+            key="f"
             type="bottom"
             className={`${props.className}-contentWrapper`}
-            id={`${props.id}-contentWrapper`}
           >
-            <ul key="ul">
+            <ul key="g">
               {children}
             </ul>
           </QueueAnim>

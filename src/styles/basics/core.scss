@@ -3,9 +3,10 @@
  * @fileoverview | system base core scss
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
  * @Date:   2016-04-18 11:25:27
- * @version 0.1 | 2018-04-18 // Initial version.
+ * @version 0.1 | 2016-04-18 // Initial version.
+ * @version 0.2 | 2017-06-18 // 配置一些浏览器默认，暂时保留normalize选择.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 21:01:12
+ * @Last Modified time: 2018-05-04 16:49:29
 */
 // Some best-practice CSS that's useful for most apps
 // Just remove them if they're not what you want
@@ -38,17 +39,16 @@ body,
   @include prefix(box-sizing,$box-sizing);
   font-size: $font-size-base;
   font-family: $font-family-default;
+   //default background
+  background: $default-background-theme;
   //页面里的字体变清晰
   -webkit-font-smoothing: antialiased;
-  //启用浏览器文本溢出算法|100%放大
-  -ms-text-size-adjust:100%;
-  -webkit-text-size-adjust:100%;
   //点击高亮hidden，偏移动端
   -webkit-tap-highlight-color:transparent;
-  //自定义滚动条-webkit内核统一样式，先采用浏览器默认
+  //自定义滚动条-webkit内核统一样式，开启与否会切到浏览器默认
   //@include scrollbar-bar;
-  //default background
-  background: $default-background-theme;
+  //启用浏览器文本溢出算法|100%放大
+  @include prefix(text-size-adjust,100%);
   @include prefix(transition, background 1s cubic-bezier(0.075, 0.82, 0.165, 1));   
 }
 //

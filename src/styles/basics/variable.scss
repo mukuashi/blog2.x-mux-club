@@ -5,7 +5,7 @@
  * @Date:   2016-03-02 12:50:27
  * @version 0.1 | 2016-03-02 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-19 04:11:03
+ * @Last Modified time: 2018-05-04 15:42:16
 */
 //font
 $font-size-base: 14px;
@@ -13,14 +13,12 @@ $font-size-md: 18px;
 $font-size-lg: 26px;
 $font-family-default: "Monospaced Number", "Chinese Quote", 'Helvetica Neue For Number',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-initialize-color: #fff;
-$font-minor-color: #979B9D;  // 次要信息
-$font-primary-color: #3E4347;  // 一般信息
-$font-important-color: #EE4A34; // 重要信息
-$font-exception-color:#F5222D; //404等
+$font-minor-color: #979B9D;
+$font-primary-color: #3E4347;
+$font-important-color: #EE4A34;
+$font-exception-color:#F5222D;
 //布局盒子类型
 $box-sizing: border-box;;
-//nav - old version definition
-$nav-font-size: 15px;
 //border
 $border-width-base: 1px;
 $border-radius-sm: 2px;

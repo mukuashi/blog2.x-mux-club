@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-28 11:44:33
+ * @Last Modified time: 2018-05-15 17:49:57
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -16,12 +16,12 @@ import DocumentTitle from 'react-document-title';
 import { ContainerQuery } from 'react-container-query';
 import { enquireScreen, unenquireScreen } from 'enquire-js';
 import { getRoutes, getScrollTop } from 'utils';
-import BannerHeader from 'layout/BannerHeader';
 import Home from 'routes/Home';
 import NotFound from 'routes/Exception/404';
 import ErrorPage from 'routes/Exception/110';
+import BannerHeader from 'layout/BannerHeader';
 import GlobalHeader from './GlobalHeader';
-import GlobalFooter from './GlobalFooter';
+// import GlobalFooter from './GlobalFooter';
 import styles from './index.scss';
 
 const cx = classNames.bind(styles);
@@ -162,7 +162,11 @@ export default class BasicLayout extends PureComponent {
                 )
               )
             }
-            <Route exact path="/" component={Home} />
+            <Route
+              exact
+              path="/"
+              render={() => <Home isMobile={this.state.isMobile || false} />}
+            />
             <Redirect from="/home" to={bashRedirect} />
             <Route render={NotFound} />
             <Route render={ErrorPage} />
