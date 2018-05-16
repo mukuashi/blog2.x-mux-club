@@ -6,7 +6,7 @@
  * @Date:   2016-05-1 11:40:27
  * @version 0.1 | 2016-05-01 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 21:02:57
+ * @Last Modified time: 2018-05-04 16:21:03
 */
 @import "mixin";
 //默认或覆盖
@@ -29,29 +29,17 @@
     }
   }
   //
-
-
-  //
   .micon-1x {
-    font-size: 1rem;
-  }
-  .micon-1x-ad {
-    font-size: 1.15rem;
+    font-size:1rem;
   }
   .micon-1x-md {
-    font-size: 1.35rem;
+    font-size:1.3rem;
   }
   .micon-1x-bg {
-    font-size: 1.75rem;
+    font-size:1.8rem;
   }
   .micon-2x {
     font-size: 2rem;
-  }
-  .micon-2x-md {
-    font-size: 2.35rem;
-  }
-  .micon-2x-bg {
-    font-size: 2.75rem;
   }
   .micon-3x {
     font-size: 3rem;
@@ -61,15 +49,6 @@
   }
   .micon-5x {
     font-size: 5rem;
-  }
-  .micon-6x {
-    font-size: 6rem;
-  }
-  .micon-7x {
-    font-size: 7rem;
-  }
-  .micon-8x {
-    font-size: 8rem;
   }
   //转向
   .micon-rotate-90 {
@@ -81,10 +60,6 @@
   .micon-rotate-270 {
     @include prefix(transform,rotate(270deg))
   }
-  //旋转
-  .micon-spin:before {
-    @include prefix(animation,loadingCircle 1.5s infinite linear);
-  }
   @include keyframes(loadingCircle) {
     0% {
       @include prefix(transform,rotate(0deg));
@@ -93,6 +68,12 @@
     100% {
       @include prefix(transform,rotate(360deg));
       @include prefix(transform-origin,50% 50%);
+    }
+  }
+  //旋转
+  .micon-spin {
+    &::before {
+      @include prefix(animation,loadingCircle 1.5s infinite linear);
     }
   }
   //闪烁
@@ -122,4 +103,62 @@
       @include prefix(animation-iteration-count, infinite);
       @include prefix(animation-delay, .2s);
   }
+  //
+  .micon-camera:before { content: "\e604"; }
+
+.micon-world:before { content: "\e632"; }
+
+.micon-qqzone:before { content: "\e608"; }
+
+.micon-email-circle:before { content: "\e60b"; }
+
+.micon-qq-circle:before { content: "\e627"; }
+
+.micon-wechat:before { content: "\e600"; }
+
+.micon-two:before { content: "\e605"; }
+
+.micon-smile:before { content: "\e636"; }
+
+.micon-code:before { content: "\e6cc"; }
+
+.micon-500px-circle:before { content: "\e603"; }
+
+.micon-email:before { content: "\e631"; }
+
+.micon-wechat-friends:before { content: "\e610"; }
+
+.micon-tuchong:before { content: "\e628"; }
+
+.micon-three:before { content: "\e62c"; }
+
+.micon-cafe:before { content: "\e684"; }
+
+.micon-video:before { content: "\e60f"; }
+
+.micon-wechat-circle:before { content: "\e64c"; }
+
+.micon-sina-weibo-circle:before { content: "\e64d"; }
+
+.micon-home-circle:before { content: "\e62b"; }
+
+.micon-github:before { content: "\e618"; }
+
+.micon-camera-circle:before { content: "\e602"; }
+
+.micon-mi-camera:before { content: "\e609"; }
+
+.micon-design:before { content: "\e79f"; }
+
+.micon-four:before { content: "\e606"; }
+
+.micon-media:before { content: "\e6c0"; }
+
+.micon-one:before { content: "\e607"; }
+
+.micon-article:before { content: "\e60a"; }
+
+.micon-500px:before { content: "\e601"; }
+
+.micon-crm:before { content: "\e60c"; }
 }

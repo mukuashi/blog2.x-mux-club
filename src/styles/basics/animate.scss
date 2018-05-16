@@ -1,18 +1,9 @@
 /*
  * Copyright (c) 2016-Now PhotoArtLife PD, All rights reseved.
- * @fileoverview | 自定义animate css | keyframes
+ * @fileoverview | 借鉴https://daneden.github.io/animate.css，看到不错的animate效果会在这里自定义，主要为一些keyframes操作
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
  * @Date:   2016-02-08 11:40:27
  * @version 0.1 |  2016-02-08 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 21:00:46
+ * @Last Modified time: 2018-05-04 16:41:03
 */
-//标题渐进动态线，适用于所有page
-@keyframes titleLine {
-  0%, 25% {
-    transform: translateX(-64px);
-  }
-  75%, 100% {
-    transform: translateX(544px);
-  }
-}

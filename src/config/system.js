@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-01 04:34:23
+ * @Last Modified time: 2018-05-15 19:53:08
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -95,7 +95,7 @@ export const data = {
       id: 1,
       headerImg: bannerLogo,
       bgImg: banner1,
-      content: '一只拍片码稿、画图写代码的文盲（作）者',
+      content: '一只拍片码稿、画图写代码的创作者',
       button: [
         {
           id: 'a1',
@@ -103,6 +103,7 @@ export const data = {
           icon: '',
           link: null,
           target: null,
+          event: true,
         },
       ],
     },
@@ -125,7 +126,7 @@ export const data = {
           value: '米拍',
           icon: 'man',
           target: '_blank',
-          animate: { x: '+=20', blur: '3px', rotate: 360 },
+          animate: { x: '+=20', blur: '3px' },
           link: 'https://www.mepai.me/user/u_592e418fe4a53',
         },
         {
@@ -133,8 +134,8 @@ export const data = {
           value: '500PX',
           icon: 'html5',
           target: '_blank',
-          animate: { scale: 0, x: '+=20' },
-          link: 'https://www.mepai.me/user/u_592e418fe4a53',
+          animate: { x: '+=20' },
+          link: 'https://500px.me/PhotoArtLife',
         },
       ],
     },
@@ -156,44 +157,58 @@ export const data = {
     },
   ],
   content1: {
+    text: {
+      title: '阿里云提供基础的环境即服务',
+      subtitle: '博客基于React、Redux、Dvajs、Node.js等技术栈构建',
+    },
     block: [
       {
         id: 1,
         icon: 'design',
         title: '设计',
-        content: '从UI View层过渡到Code Products，博客托管相关原型交互设计资源等。',
+        content: '从大学一二年纪的广告杂志设计过渡到后来的互联产品设计及研发，现在可能会偏爱简约主义、工业设计这一块。',
       },
       {
         id: 2,
         icon: 'code',
         title: '前后端',
-        content: 'Web项目基本由前后端框架构建，博客搭建FED手册及开源技术。',
+        content: 'Web的发展以及各种热门框架的铺天盖地，但基础这东西终究万变不离其宗，前后端分离和高效研发、维护尤为重要。',
       },
       {
         id: 3,
         icon: 'crm',
         title: '中后台',
-        content: '系统CRM与管理后台、中间层、图像识别与3D建模、通信技术等。',
+        content: '对于大多ToB或ToC的互联产品，中后台业务场景已经再普遍不过，业界的各种解决方案也丰富了各种数据展示的能力。',
       },
       {
         id: 4,
         icon: 'camera',
-        title: '摄影',
-        content: '眼睛的一种凝固方式。',
+        title: '摄/电影',
+        content: '记得是14年开始玩摄影，慢慢寻找和探索，作为一个爱好者，获奖、做主持人、电影或纪录片拍摄、负责摄影活动及参与比赛、私拍或商演拍摄...慢慢开始了独立摄影之路。',
       },
       {
         id: 5,
         icon: 'article',
         title: '写作',
-        content: '虽不及文学高斗，但足矣慰藉心兽。',
+        content: '从念大学开始并坚持和喜欢至今的莫过于拍照写文章记便签这些事了，后来开始在网上博客、公众号、简书/LOFTER等连载，也算是喂养心兽。',
       },
       {
         id: 6,
         icon: 'media',
         title: '媒体',
-        content: '广告与传媒、电影与文化创作，穷极一生，但为恭求盈之。',
+        content: '在做广告和自媒体那会，接触一些广告制作和传媒文化团队，现在媒体可能更多扮演着内容加工和制作甚至多次创作形式的传播介质。',
       },
     ],
+  },
+  content2: {
+    text: {
+      title: '一个创作者的富媒体之路',
+      subtitle: '成长即乐趣吧。不乎于去做电影、写代码、写文章、玩摄影等等这些事情，可能是一个阶段接着一个阶段去实现一个接着一个计划，得失的过程，便知岁月。',
+    },
+    video: {
+      cover: '//kquanr.com/files/blog/View_From_A_Blue_Moon_Trailer-HD.jpg',
+      url: '//kquanr.com/files/blog/View_From_A_Blue_Moon_Trailer-HD.mp4',
+    },
   },
 
 };

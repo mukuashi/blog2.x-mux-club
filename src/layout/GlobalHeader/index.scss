@@ -176,7 +176,7 @@
             display: block;
             width: 100%;
             height: 2px;
-            background: #FFF;
+            background: $default-background-color;
             margin-top: 4px;
             transition: transform .3s $ease-in-out, opacity .3s $ease-in-out;
           }
@@ -215,7 +215,7 @@
           opacity: 0;
           transition: opacity .3s $ease-in;
           pointer-events: none;
-          background: #404040;
+          background: $template-h1-color;
           .ant-menu-item-selected {
             border: none;
           }

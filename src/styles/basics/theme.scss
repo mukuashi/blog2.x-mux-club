@@ -6,7 +6,7 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-20 01:18:10
+ * @Last Modified time: 2018-05-15 16:02:05
 */
 @import "variable","functions";
 //theme color
@@ -27,21 +27,24 @@ $template-bg-color-light: #ececec;
 $template-text-color: #ccc;
 $template-text-title-color: #bcbcbc;
 $template-text-color-light: $default-background-color;
+$template-h1-color: #404040;
 $template-footer-text-color: #666;
 //layout-header-nav
 $default-nav-zindex: 1000;
 $default-nav-height: rem(64px);
 $default-nav-background: transparent;
-$default-nav-active-fixed-background: rgba(19, 28, 43, 0.67);
+$default-nav-active-fixed-background: rgba($dark-color, 0.7);
 $default-nav-active-border-color: $default-active-color;
 //content * color
 
 //content * font-size
+$default-content-fz-min: rem(12px);
+$default-content-fz-nl: 1rem;
 $default-content-fz-xs: 1.2rem;
 $default-content-fz-sm: 1.4rem;
 $default-content-fz-md: 1.6rem;
 $default-content-fz-lg: 2rem;
-$default-content-fz-xl: 2.6rem;
+$default-content-fz-xl: 2.4rem;
 $default-content-fz-xxl: 3rem;
 //button
 $default-button-width: rem(100px);

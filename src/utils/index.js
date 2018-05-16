@@ -3,10 +3,10 @@
  * @fileoverview | 常用工具函数，参考 https://github.com/zhangkun-Jser/autils
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
  * @Date:   2017-03-23 12:25:27
- * @version 0.1 | 2017-03-23 // Initial version.
- * @version 0.2 | 2017-04-08 // delete not important toTop function.
+ * @version 0.1 | 2017-01-23 // Initial version.
+ * @version 0.2 | 2017-02-08 // delete not important toTop function.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 21:39:42
+ * @Last Modified time: 2018-05-15 19:35:19
 */
 /**
  * @desc 获取滚动条距顶部的距离
@@ -92,8 +92,8 @@ export function isUrl(path) {
  * @desc 在${duration}时间内，滚动条平滑滚动到${to}指定位置
  * @param {Number} to
  * @param {Number} duration
- * @date     2018-04-10
- * @author   mukuashi | mu.kuashi@xinheyun.com
+ * @date     2018-01-10
+ * @author   mukuashi |mukuashi@qq.com
 */
 const requestAnimFrame = ((() => window.requestAnimationFrame ||
   window.webkitRequestAnimationFrame ||

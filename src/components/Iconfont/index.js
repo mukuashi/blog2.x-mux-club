@@ -6,14 +6,15 @@
  * @Date:   2017-02-02 12:25:27
  * @version 0.1 | 2017-04-02 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 22:15:34
+ * @Last Modified time: 2018-05-04 15:47:22
 */
 import React from 'react';
 // omit.js 对象浅拷贝
 import omit from 'omit.js';
 import classNames from 'classnames';
+import '../../assets/fonts/iconfont.scss';
 
-const Iconfont = (props) => {
+export default (props) => {
   const { type, className = '', size } = props;
   const classString = classNames({
     micon: true,
@@ -22,5 +23,3 @@ const Iconfont = (props) => {
   }, className);
   return <i {...omit(props, ['type', 'size'])} className={classString} />;
 };
-
-export default Iconfont;
