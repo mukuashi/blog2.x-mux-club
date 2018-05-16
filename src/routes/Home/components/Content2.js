@@ -23,15 +23,15 @@ export default class Content2 extends PureComponent {
           location={props.id}
         >
           <TweenOne
+            key="a"
             animation={animation}
             component="h1"
-            key="h1"
             reverseDelay={300}
           >
             {text.title}
           </TweenOne>
           <TweenOne
-            key="p"
+            key="b"
             component="p"
             animation={{ ...animation, delay: 200 }}
             reverseDelay={200}
@@ -39,7 +39,7 @@ export default class Content2 extends PureComponent {
             {text.subtitle}
           </TweenOne>
           <TweenOne
-            key="video"
+            key="c"
             animation={{ ...animation, delay: 300 }}
             className={`${props.className}-video`}
           >

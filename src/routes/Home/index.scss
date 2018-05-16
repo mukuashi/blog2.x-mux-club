@@ -15,6 +15,10 @@
         min-height: 25rem;
         margin: auto;
         position: relative;
+        & > h1, & > p {
+          text-align: center;
+          @include custom-position(relative,$top:10%);
+        }
         h1 {
           font-size: $default-content-fz-xl;
           font-weight: normal;
@@ -24,6 +28,7 @@
         > p {
           font-size: $default-content-fz-nl;
           margin: 1.4rem auto;
+          max-width: 52%;
         }
       }
     }
@@ -34,11 +39,6 @@
 		.content1 {
       &-wrapper {
         .content1 {
-          > h1, > p {
-            text-align: center;
-            position: relative;
-            top: 15%;
-          }
           &-contentWrapper {
             position: relative;
             top: 20%;
@@ -81,17 +81,6 @@
       &-wrapper {
         padding-top: 1%; 
         .content2 {
-          & > h1, & > p {
-            text-align: center;
-            @include custom-position(relative,$top:10%);
-          }
-          > h1 {
-            line-height: rem(48px);
-          }
-          > p {
-            max-width: 600px;
-            line-height: rem(24px);
-          }
           &-video {
             border-radius: 7px;
             overflow: hidden;
@@ -111,11 +100,6 @@
     .content3 {
       &-wrapper {
         .content3 {
-          & > h1, & > p {
-            text-align: center;
-            position: relative;
-            top: 10%;
-          }
           &-tag {
             & i {
               width: 14px;
@@ -127,21 +111,27 @@
                 vertical-align: top;
               }
             }
-          }
-          
-          .ant-tabs-bar {
-            width: 75%;
-            margin: auto;
-          }
-          .ant-tabs {
-            .ant-tabs-nav {
-              float: none;
-              text-align: center;
-            }
-          }
+          }   
           &-tabs {
             position: relative;
             top: 12%;
+            :global(.ant-tabs) {
+              &-bar {
+                width: 80%;
+                margin: auto;
+                .ant-tabs-nav {
+                  &-container {
+                    float: none;
+                    text-align: center;
+                  }
+                }
+              }
+              &-content {
+                > .ant-tabs-tabpane {
+                  margin-top: 1.8rem;
+                }
+              }
+            }
           }
           &-text, &-img {
             width: 35%;
@@ -162,9 +152,9 @@
             vertical-align: top;
             float: right;
             right: 10%;
-          }
-          .ant-tabs-tabpane {
-            margin-top: 40px;
+            img {
+              width: 100%;
+            }
           }
         }
       }
@@ -221,14 +211,20 @@
         max-width: 350px;
         text-align: center;
       }
-      .ant-tabs-bar {
-        width: auto;
-        .ant-tabs-nav {
-          float: left;
+      :global(.ant-tabs) {
+        &-bar {
+          width: auto;
+          .ant-tabs-nav {
+            &-container {
+               float: left;
+            }
+          }
         }
-      }
-      .ant-tabs-tabpane {
-        text-align: center;
+        &-content {
+          > .ant-tabs-tabpane {
+            text-align: center;
+          }
+        }
       }
     }
   }
