@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-04-18 // Initial version.
  * @version 0.2 | 2017-06-18 // 配置一些浏览器默认，暂时保留normalize选择.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-04 16:49:29
+ * @Last Modified time: 2018-05-19 01:36:28
 */
 // Some best-practice CSS that's useful for most apps
 // Just remove them if they're not what you want
@@ -15,24 +15,13 @@
 html {
   //IE盒子
   @include prefix(box-sizing,$box-sizing);
-  //
-  overflow-y: scroll;
-}
-//页面滚动条出现时不跳动
-:root {
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-:root body {
-  position: absolute;
 }
 body {
   width: 100vw;
 }
 //core
 html,
-body,
-:global(#root) {
+body {
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -45,7 +34,7 @@ body,
   -webkit-font-smoothing: antialiased;
   //点击高亮hidden，偏移动端
   -webkit-tap-highlight-color:transparent;
-  //自定义滚动条-webkit内核统一样式，开启与否会切到浏览器默认
+  //自定义滚动条-webkit内核统一样式，开启与否会切到浏览器默认，不过移动端滚动会变卡
   //@include scrollbar-bar;
   //启用浏览器文本溢出算法|100%放大
   @include prefix(text-size-adjust,100%);

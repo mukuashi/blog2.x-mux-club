@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-15 20:10:04
+ * @Last Modified time: 2018-05-17 13:15:52
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -38,7 +38,7 @@ export default class BannerHeader extends PureComponent {
     const firstScreenHeight = document.getElementById('banner').offsetHeight;
     // document.querySelector('.banner')
     // 有动画滚动方案
-    scrollTo(firstScreenHeight - 50, 800);
+    scrollTo(firstScreenHeight - 50, 1000);
   }
   render() {
     const { className } = this.props;

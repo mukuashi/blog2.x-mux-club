@@ -70,8 +70,9 @@ export default class Content3 extends PureComponent {
     const { numberLine } = this.state;
     const tabsChildren = block.map(this.getBlockChildren);
     return (
-      <section className={`content-template-wrapper ${props.className}-wrapper`}>
+      <section {...props} className={`content-template-wrapper ${props.className}-wrapper`}>
         <OverPack
+          location={props.id}
           className={`content-template ${props.className}`}
         >
           <TweenOne

@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-17 00:50:04
+ * @Last Modified time: 2018-05-19 02:21:57
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -28,27 +28,40 @@ export const data = {
       {
         id: 0,
         name: '首页',
+        isReact: false,
         path: '/',
+        target: null,
       },
       {
         id: 1,
         name: '项目篇(2016年及之前)',
+        isReact: false,
         path: '/arts',
+        url: '//kquanr.com/arts',
+        target: '_blank',
       },
       {
         id: 2,
         name: '背景篇',
+        isReact: false,
         path: '/project',
+        url: '//kquanr.com/project',
+        target: '_blank',
       },
       {
         id: 3,
         name: '摄影篇',
-        path: 'http://photoartlife.lofter.com',
+        isReact: false,
+        url: 'http://photoartlife.lofter.com',
+        target: '_blank',
       },
       {
         id: 4,
         name: '笔记篇',
-        path: '/project/works/',
+        isReact: false,
+        path: '/project/works',
+        url: '//kquanr.com/project/works',
+        target: '_blank',
       },
     ],
     contact: {
@@ -156,6 +169,32 @@ export const data = {
       ],
     },
   ],
+  media: [
+    {
+      id: 1,
+      name: 'LOFTER',
+      after: '、',
+      url: 'http://photoartlife.lofter.com',
+    },
+    {
+      id: 2,
+      name: '米拍',
+      after: '、',
+      url: 'https://www.mepai.me/user/u_592e418fe4a53',
+    },
+    {
+      id: 3,
+      name: '500PX',
+      after: '、',
+      url: 'https://500px.me/PhotoArtLife',
+    },
+    {
+      id: 4,
+      name: '图虫摄影',
+      after: '...',
+      url: 'https://photoartlife.tuchong.com',
+    },
+  ],
   content1: {
     text: {
       title: '阿里云提供基础的环境即服务',
@@ -244,7 +283,7 @@ export const data = {
           icon: 'three',
         },
         img: 'https://cdn.dribbble.com/users/99875/screenshots/1458439/pharrell_drib.gif',
-        body: `<h3>编程</h3>在<a href="https://www.baidu.com" target="_blank">百度</a>的一个产品<a href="https://www.zuoyebang.com" target="_blank">作业帮</a>搜索平台组，研发实习FE@前端坑。<h3>设计</h3>会继续做些小东西，偏注用户体验和交互细节更多的产品。<h3>摄影</h3>反正是有空就拍呗，城市（自然）风光和人文纪实为主，人像、肖像也挺感喜欢，总之是在创作路上<a href="//photoartlife.lofter.com" target="_blank"> LOFTER</a>、<a href="https://www.mepai.me/user/u_592e418fe4a53" target="_blank">米拍</a>、<a href="https://500px.me/PhotoArtLife" target="_blank">500PX</a>、<a href="https://photoartlife.tuchong.com" target="_blank">图虫</a>等。
+        body: `<h3>编程</h3>在<a href="https://www.baidu.com" target="_blank">百度</a>的一个产品<a href="https://www.zuoyebang.com" target="_blank">作业帮</a>搜索平台组，全职研发实习FE@前端坑。<h3>设计</h3>会继续做些小东西，偏注用户体验和交互细节更多的产品。<h3>摄影</h3>反正是有空就拍呗，城市（自然）风光和人文纪实为主，人像、肖像也挺感喜欢，总之是在创作路上<a href="//photoartlife.lofter.com" target="_blank"> LOFTER</a>、<a href="https://www.mepai.me/user/u_592e418fe4a53" target="_blank">米拍</a>、<a href="https://500px.me/PhotoArtLife" target="_blank">500PX</a>、<a href="https://photoartlife.tuchong.com" target="_blank">图虫</a>等。
         <h3>写作</h3>慢慢开始放到<a href="http://t.cn/Rt1xb42" target="_blank">微信公众号</a>、<a href="https://www.jianshu.com/u/0daeb4835d2d" target="_blank">简书</a>等一些自媒体平台连载。`,
       },
       {
@@ -264,7 +303,7 @@ export const data = {
           icon: 'cafe',
         },
         img: 'https://cdn.dribbble.com/users/605899/screenshots/2181211/400x300.gif',
-        body: `<h3>工作</h3>目前还是大部分时间的研发坑，小部分时间的摄影与创作空间。有一点印象很深刻，记得在小米工作时，电脑每天的开机画面都是一张很好看的风光壁纸，飘过一个很大的标题：永远相信美好的事情即将发生！当然，雷总每年年会都会强调，也一直影响着作者，去做感动人心的产品！
+        body: `<h3>工作</h3>目前还是大部分时间的研发坑，小部分时间的摄影与创作空间。有一点印象很深刻，记得在小米工作时，电脑每天的开机画面都是一张很好看的风光壁纸，幻灯片淡入一个很大的标题：永远相信美好的事情即将发生！当然，雷总很多发布会或年会都会说这句话，也一直影响着作者，去做感动人心的产品！
         <h3>摄影</h3>机子还没转手，还在拍，如有需要还请先约，更多作品移步关注
         <a href="http://photoartlife.lofter.com" target="_blank">LOFTER</a>、
         <a href="https://www.mepai.me/user/u_592e418fe4a53" target="_blank">米拍</a>、
@@ -276,5 +315,59 @@ export const data = {
       },
     ],
   },
+  content4: {
+    text: {
+      title: 'Photography And Creation Plus',
+      subtitle: '摄影、电影、文字、代码... 作为作者现在主要的创作介质，相辅相成，收获感动和快乐，也希望可以传递和分享更多的视角和能量。博客仅展示部分作品，更多连载于 ',
+    },
+    block: [
+      {
+        src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
+        thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
 
+        caption: "After Rain (Jeshu John - designerspics.com)",
+      },
+      {
+        src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
+        thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
+
+        tags: [{ value: "Ocean", title: "Ocean" }, { value: "People", title: "People" }],
+        caption: "Boats (Jeshu John - designerspics.com)",
+      },
+      {
+        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+
+      },
+      {
+        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+        thumbnailWidth: 320,
+        thumbnailHeight: 212,
+      },
+      {
+        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+        thumbnailWidth: 320,
+        thumbnailHeight: 212,
+      },
+      {
+        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+        thumbnailWidth: 320,
+        thumbnailHeight: 212,
+      },
+      {
+        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+        thumbnailWidth: 320,
+        thumbnailHeight: 212,
+      },
+      {
+        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
+        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+
+      },
+    ],
+  },
 };

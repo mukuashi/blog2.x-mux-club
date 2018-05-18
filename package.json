@@ -28,10 +28,11 @@
     "omit.js": "^1.0.0",
     "prop-types": "^15.6.1",
     "qs": "^6.5.0",
-    "react": "^16.3.1",
+    "react": "^16.3.2",
     "react-container-query": "^0.11.0",
     "react-document-title": "^2.0.3",
-    "react-dom": "^16.3.1",
+    "react-dom": "^16.3.2",
+    "react-grid-gallery": "^0.4.11",
     "react-sublime-video": "^0.2.5",
     "url-polyfill": "^1.0.10"
   },

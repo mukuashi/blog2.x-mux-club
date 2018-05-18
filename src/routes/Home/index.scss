@@ -159,6 +159,24 @@
         }
       }
     }
+    //content4
+    .content4 {
+      &-wrapper {
+        background-color: $template-bg-color-light-2;
+        .content4 {
+          & > h1 {
+            margin-top: 2.2%;
+          }
+          & > p {
+            padding-bottom: 1%;
+          }
+          &-img-wrapper {
+            display: inline-block;
+            margin: auto;
+          }
+        }
+      }
+    }
   }
 }
 @media screen and (max-width: 767px) {
