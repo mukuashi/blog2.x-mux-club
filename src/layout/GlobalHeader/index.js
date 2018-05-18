@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-01 03:54:51
+ * @Last Modified time: 2018-05-18 23:22:36
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -31,17 +31,17 @@ export default class GlobalHeader extends PureComponent {
     });
   }
   // 切换router置顶
-  handleScrollToTop = () => {
-    const tempId = 'header-banner';
-    const anchorElement = document.getElementById(tempId);
-    // 如果对应id的锚点存在，就跳转到锚点
-    if (anchorElement) {
-      anchorElement.scrollIntoView();
-      this.setState({
-        mobileOpen: !this.state.mobileOpen,
-      });
-    }
-  }
+  // handleScrollToTop = () => {
+  //   const tempId = 'header-banner';
+  //   const anchorElement = document.getElementById(tempId);
+  //   // 如果对应id的锚点存在，就跳转到锚点
+  //   if (anchorElement) {
+  //     anchorElement.scrollIntoView();
+  //     this.setState({
+  //       mobileOpen: !this.state.mobileOpen,
+  //     });
+  //   }
+  // }
   render() {
     const { mobileOpen } = this.state;
     const props = { ...this.props };
@@ -53,7 +53,9 @@ export default class GlobalHeader extends PureComponent {
         <ul>
           {
             contact.block.map(row => (
-              <li key={row.id}><img src={row.img} alt={row.alt} /></li>
+              <li key={row.id}>
+                <img src={row.img} alt={row.alt} />
+              </li>
             ))
           }
         </ul>
@@ -75,7 +77,7 @@ export default class GlobalHeader extends PureComponent {
     const navChildren = Object.values(nav).map(row => (
       <Item key={row.id} className={row.path === pathname ? 'ant-menu-item-selected' : ''}>
         {
-          row.path.includes('http') ? <a href={row.path} target="_blank">{row.name}</a> : <Link to={row.path}>{row.name}</Link>
+          row.isReact ? <Link to={row.path}>{row.name}</Link> : <a href={row.url} target={row.target}>{row.name}</a>
         }
       </Item>
     ));
@@ -96,8 +98,12 @@ export default class GlobalHeader extends PureComponent {
         {
           submenu.map(row => (
             <Item key={row.id}>
-              {!row.href && <h4>{row.name}</h4>}
-              {row.href && <Link to={row.href} target={row.target} className={styles.avatarSet}>{row.name}</Link>}
+              {
+                !row.href && <h4>{row.name}</h4>
+              }
+              {
+                row.href && <Link to={row.href} target={row.target} className={styles.avatarSet}>{row.name}</Link>
+              }
             </Item>
           ))
         }

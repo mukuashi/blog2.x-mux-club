@@ -33,8 +33,9 @@
 		height: $default-nav-height;
     background: transparent;
     @include custom-position(fixed,$top:0);
+    transition: all .3s $ease-in-circ;
     &-fixheader {
-      background: $default-nav-active-fixed-background;
+      background: $default-nav-active-fixed-background; 
     }
 		&-logo {
 			display: inline-block;
