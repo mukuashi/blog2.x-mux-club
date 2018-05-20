@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-15 17:49:57
+ * @Last Modified time: 2018-05-19 16:21:19
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -21,7 +21,7 @@ import NotFound from 'routes/Exception/404';
 import ErrorPage from 'routes/Exception/110';
 import BannerHeader from 'layout/BannerHeader';
 import GlobalHeader from './GlobalHeader';
-// import GlobalFooter from './GlobalFooter';
+import GlobalFooter from './GlobalFooter';
 import styles from './index.scss';
 
 const cx = classNames.bind(styles);
@@ -173,11 +173,9 @@ export default class BasicLayout extends PureComponent {
           </Switch>
         </Content>
         <Footer className={classLayoutFooter}>
-          {/*
-            <GlobalFooter
+          <GlobalFooter
             isMobile={this.state.isMobile || false}
           />
-          */}
         </Footer>
       </Layout>
     );

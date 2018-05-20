@@ -171,8 +171,7 @@
             padding-bottom: 1%;
           }
           &-img-wrapper {
-            display: inline-block;
-            margin: auto;
+            min-height: 30rem;
           }
         }
       }
@@ -226,7 +225,7 @@
       }
       &-img{
         width: 80%;
-        max-width: 350px;
+        max-width: 400px;
         text-align: center;
       }
       :global(.ant-tabs) {

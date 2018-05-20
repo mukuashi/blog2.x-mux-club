@@ -6,17 +6,18 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-19 02:21:57
+ * @Last Modified time: 2018-05-19 20:14:44
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
+import headerAvatar from '../assets/images/header-avatar.png'
 import bannerLogo from '../assets/images/banner-logo.png';
 import banner1 from '../assets/images/banner-1.jpg';
 import banner2 from '../assets/images/banner-2.jpg';
 import banner3 from '../assets/images/banner-3.jpg';
 import contactPublic from '../assets/images/contact-public.jpg';
 import contactPrivate from '../assets/images/contact-private.jpg';
-import headerAvatar from '../assets/images/header-avatar.png'
+import footerNav from '../assets/images/footer-nav.png';
 
 const nowYear = new Date().getFullYear();
 //
@@ -169,32 +170,6 @@ export const data = {
       ],
     },
   ],
-  media: [
-    {
-      id: 1,
-      name: 'LOFTER',
-      after: '、',
-      url: 'http://photoartlife.lofter.com',
-    },
-    {
-      id: 2,
-      name: '米拍',
-      after: '、',
-      url: 'https://www.mepai.me/user/u_592e418fe4a53',
-    },
-    {
-      id: 3,
-      name: '500PX',
-      after: '、',
-      url: 'https://500px.me/PhotoArtLife',
-    },
-    {
-      id: 4,
-      name: '图虫摄影',
-      after: '...',
-      url: 'https://photoartlife.tuchong.com',
-    },
-  ],
   content1: {
     text: {
       title: '阿里云提供基础的环境即服务',
@@ -319,6 +294,32 @@ export const data = {
     text: {
       title: 'Photography And Creation Plus',
       subtitle: '摄影、电影、文字、代码... 作为作者现在主要的创作介质，相辅相成，收获感动和快乐，也希望可以传递和分享更多的视角和能量。博客仅展示部分作品，更多连载于 ',
+      media: [
+        {
+          id: 1,
+          name: 'LOFTER',
+          after: '、',
+          url: 'http://photoartlife.lofter.com',
+        },
+        {
+          id: 2,
+          name: '米拍',
+          after: '、',
+          url: 'https://www.mepai.me/user/u_592e418fe4a53',
+        },
+        {
+          id: 3,
+          name: '500PX',
+          after: '、',
+          url: 'https://500px.me/PhotoArtLife',
+        },
+        {
+          id: 4,
+          name: '图虫摄影',
+          after: '...',
+          url: 'https://photoartlife.tuchong.com',
+        },
+      ],
     },
     block: [
       {
@@ -369,5 +370,230 @@ export const data = {
 
       },
     ],
+  },
+  footer: {
+    logo: {
+      img: footerNav,
+      content: '一只拍片码稿、画图写代码的创作者',
+    },
+    block: [
+      {
+        id: '1',
+        title: '关于作者',
+        content: [
+          {
+            id: '1',
+            name: '自由/签约摄影师',
+            path: '//photoartlife.lofter.com',
+          },
+          {
+            id: '2',
+            name: 'LOFTER旅行家/摄影师',
+            path: '//photoartlife.lofter.com',
+          },
+          {
+            id: '3.1',
+            name: '米拍认证·自由摄影师',
+            path: 'https://www.mepai.me/user/u_592e418fe4a53',
+          },
+          {
+            id: '3.2',
+            name: '米拍城市、旅行等标签主持人',
+            path: 'https://www.mepai.me/user/u_592e418fe4a53',
+          },
+          {
+            id: '4',
+            name: '500PX | 图虫摄影师',
+            path: 'https://500px.me/PhotoArtLife',
+          },
+          {
+            id: '5',
+            name: '程序猿/软件工程师',
+            path: 'https://github.com/photoArtLife',
+          },
+          {
+            id: '6',
+            name: '自媒体/公路作者',
+            path: '//kquanr.com/project/works',
+          },
+          {
+            id: '7',
+            name: '视频后期及制片人',
+            path: '//i.youku.com/mukuashi',
+          },
+          {
+            id: '8',
+            name: '半/平面设计师',
+            path: '//kquanr.com/project',
+          },
+        ],
+      },
+      {
+        id: '2',
+        title: '博客驿站',
+        content: [
+          {
+            id: '1',
+            name: '背景篇',
+            path: '//kquanr.com/about',
+          },
+          {
+            id: '2',
+            name: '项目篇(2017之前)',
+            path: '//kquanr.com/arts',
+          },
+          {
+            id: '3',
+            name: '摄影/文Plus篇',
+            path: '//kquanr.com/project/works',
+          },
+          {
+            id: '4',
+            name: 'LOFTER摄影',
+            path: '//photoartlife.lofter.com',
+          },
+          {
+            id: '5',
+            name: '米拍摄影',
+            path: 'https://www.mepai.me/user/u_592e418fe4a53',
+          },
+          {
+            id: '6',
+            name: '500PX摄影',
+            path: 'https://500px.me/PhotoArtLife',
+          },
+          {
+            id: '7',
+            name: '图虫摄影',
+            path: 'https://photoartlife.tuchong.com',
+          },
+          {
+            id: '8',
+            name: 'instagram(少更)',
+            path: 'https://www.instagram.com/mukuashi',
+          },
+        ],
+      },
+      {
+        id: '3',
+        title: '资源Club',
+        content: [
+          {
+            id: '1',
+            name: 'Stack Overflow',
+            path: 'https://stackoverflow.com',
+          },
+          {
+            id: '2',
+            name: 'Ant Design Pro',
+            path: 'https://pro.ant.design',
+          },
+          {
+            id: '3',
+            name: '蚂蚁金服设计平台',
+            path: '/login/#/',
+          },
+          {
+            id: '4',
+            name: '淘宝前端团队（FED）',
+            path: '/login/#/',
+          },
+          {
+            id: '5',
+            name: '阿里巴巴国际UED团队',
+            path: '/login/#/',
+          },
+          {
+            id: '6',
+            name: '腾讯ISUX社交用户设计部',
+            path: '/login/#/',
+          },
+          {
+            id: '7',
+            name: '百度FEX前端研发部',
+            path: '/login/#/',
+          },
+          {
+            id: '8',
+            name: 'Iconfont-阿里矢量图标库',
+            path: '/login/#/',
+          },
+        ],
+      },
+      {
+        id: '4',
+        title: '社交媒体',
+        content: [
+          {
+            id: '1',
+            icon: 'sina-weibo-circle',
+            name: '新浪微博',
+            path: '//weibo.com/572512250',
+          },
+          {
+            id: '2',
+            icon: 'wechat-circle',
+            name: '微信专栏',
+            path: 'http://t.cn/Rt1xb42',
+          },
+          {
+            id: '3',
+            icon: 'camera-circle',
+            name: 'LOFTER摄影',
+            path: '//photoartlife.lofter.com',
+          },
+          {
+            id: '4',
+            icon: 'mi-camera',
+            name: '米拍摄影',
+            path: 'https://www.mepai.me/user/u_592e418fe4a53',
+          },
+          {
+            id: '5',
+            icon: '500px-circle',
+            name: '500PX摄影',
+            path: 'https://500px.me/PhotoArtLife',
+          },
+          {
+            id: '6',
+            icon: 'tuchong',
+            name: '图虫摄影',
+            path: 'https://photoartlife.tuchong.com',
+          },
+          {
+            id: '7',
+            icon: 'video',
+            name: '优酷自媒体',
+            path: '//i.youku.com/mukuashi',
+          },
+          {
+            id: '8',
+            icon: 'github',
+            name: 'Github',
+            path: 'https://github.com/PhotoArtLife',
+          },
+          {
+            id: '9',
+            icon: 'email-circle',
+            name: '邮箱📮',
+            path: '//kquanr.com/project/works#four',
+          },
+          {
+            id: '8',
+            icon: 'home-circle',
+            name: '返回1.x版',
+            path: '//kquanr.com',
+          },
+
+        ],
+      },
+    ],
+    copyright: {
+      number: '备案号：鲁ICP备15022927号 ',
+      reserved: `Copyright © 2015-${nowYear} All Rights Reserved. `,
+    },
+    info: {
+      version: '版本2.x ',
+    },
   },
 };

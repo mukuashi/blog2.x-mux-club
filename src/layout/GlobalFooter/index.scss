@@ -1,4 +1,107 @@
 @import '../../styles/basics/mixin';
 :global {
-  
+  .footer {
+		background: $template-bg-color;
+		height: auto;
+		overflow: hidden;
+		position: relative;
+		color: $template-footer-text-color;
+		//left
+		& .logo {
+			width: 82%;
+			max-width: 11rem;
+			margin-bottom: .5rem;
+			img {
+				width: 100%;
+			}
+		}
+		//right
+		& > ul {
+			@include ul-initialize;
+			width: 95%;
+			max-width: 1240px;
+			margin: 3.5rem auto;
+			overflow: inherit;
+			& > li {
+				float: left;
+				width: 20%;
+				padding: .8rem;
+				position: relative !important; // 强制去除 queue-anim-leaving 的 absolute;
+				&:not(:first-child) {
+					padding-left: 3.2%;
+				}
+				> h2 {
+					font-weight: normal;
+					color: $template-text-color;
+					font-size: $default-content-fz-sm;
+				}
+				& ul {
+					@include ul-initialize;
+				}
+				&:last-child {
+						ul {
+							li {
+								width: 15%;
+								display: inline-block;
+								margin-right: 3%;
+								padding-top: 0;
+								opacity: .8;
+								transition: opacity .3s $ease-out;
+								a {
+									i {
+										line-height: 1.6;
+									}
+								}
+								&:first-child {
+									margin-left: 0;
+								}
+								&:hover {
+									opacity: 1;
+								}
+							}
+						}
+				}
+				& a {
+					color: $template-footer-text-color;
+					line-height: $line-height-md + .06;
+					font-size: 103%;
+					&:link {
+						text-decoration: none;
+						color: $template-footer-text-color;
+					}
+					&:hover {
+						color: $link-hover-color;
+					}
+				}
+			}
+		}
+		& .copyright {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 6rem;
+			text-align: center;
+			border-top: 1px solid fade($line-color, 10);
+			span{
+				display: block;
+				margin: 20px auto 0;
+				font-size: 115%;
+				em {
+					font-style: normal;
+				}
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+		& .toTop {
+      float: right;
+			display: inline;
+			margin: 0 1.8rem 1rem 0;
+			transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      i {
+        font-size: 2rem;
+			}
+    }
+	}
 }

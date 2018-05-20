@@ -4,7 +4,6 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Gallery from 'react-grid-gallery';
 import { data } from 'config/system';
 
-const { media } = data;
 const { text, block } = data.content4;
 export default class Content extends PureComponent {
 
@@ -40,7 +39,7 @@ export default class Content extends PureComponent {
           >
             {text.subtitle}
             {
-              media.map(row => (
+              text.media.map(row => (
                 <span key={row.id}>
                   <a href={row.url} target="_blank">{row.name}</a>{row.after}
                 </span>

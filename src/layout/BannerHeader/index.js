@@ -1,12 +1,12 @@
 /*
  * Copyright (c) 2016-Now PhotoArtLife PD, All rights reseved.
- * @fileoverview | Common Footer
+ * @fileoverview | Common Header Banner
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-17 13:15:52
+ * @Last Modified time: 2018-05-19 02:57:26
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
