@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-18 23:22:36
+ * @Last Modified time: 2018-05-25 03:43:01
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -15,7 +15,8 @@ import { data } from 'config/system';
 import styles from './index.scss';
 
 const { Item, SubMenu } = Menu;
-const { logo, nav, user, submenu, contact } = data.header;
+const { version, header } = data;
+const { logo, nav, user, submenu, contact } = header;
 
 export default class GlobalHeader extends PureComponent {
   constructor(props) {
@@ -75,7 +76,7 @@ export default class GlobalHeader extends PureComponent {
       </div>
     );
     const navChildren = Object.values(nav).map(row => (
-      <Item key={row.id} className={row.path === pathname ? 'ant-menu-item-selected' : ''}>
+      <Item key={row.id} className={row.path === pathname.replace(version, '') ? 'ant-menu-item-selected' : ''}>
         {
           row.isReact ? <Link to={row.path}>{row.name}</Link> : <a href={row.url} target={row.target}>{row.name}</a>
         }
