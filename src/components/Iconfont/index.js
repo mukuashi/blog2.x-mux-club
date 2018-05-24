@@ -6,7 +6,7 @@
  * @Date:   2017-02-02 12:25:27
  * @version 0.1 | 2017-04-02 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-04 15:47:22
+ * @Last Modified time: 2018-05-23 13:07:33
 */
 import React from 'react';
 // omit.js 对象浅拷贝
@@ -15,11 +15,11 @@ import classNames from 'classnames';
 import '../../assets/fonts/iconfont.scss';
 
 export default (props) => {
-  const { type, className = '', size } = props;
+  const { type, className = '', size, title = null } = props;
   const classString = classNames({
     micon: true,
     [`micon-${type}`]: true,
     [`micon-${size}`]: size && true,
   }, className);
-  return <i {...omit(props, ['type', 'size'])} className={classString} />;
+  return <i {...omit(props, ['type', 'size'])} className={classString} title={title} />;
 };

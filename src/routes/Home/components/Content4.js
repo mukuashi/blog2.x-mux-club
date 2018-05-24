@@ -11,15 +11,8 @@ export default class Content extends PureComponent {
     className: 'content4',
   };
 
-  getEnterAnim = (e, isMobile) => {
-    const index = e.index;
-    const delay = isMobile ? index * 50 + 200 : index % 4 * 100 + Math.floor(index / 4) * 100 + 300;
-    return { y: '+=30', opacity: 0, type: 'from', delay };
-  };
-
   render() {
     const props = { ...this.props };
-    const { isMobile } = props;
     return (
       <section {...props} className="content-template-wrapper content4-wrapper">
         <OverPack location={props.id} className={`content-template ${props.className}`}>
@@ -49,16 +42,14 @@ export default class Content extends PureComponent {
           <TweenOneGroup
             key="c"
             className={`${props.className}-img-wrapper`}
-            enter={(e) => this.getEnterAnim(e, isMobile)}
-            // enter={[
-            //   { opacity: 0, duration: 0, type: 'from', delay: 400 },
-            //   { ease: 'easeOutCubic', type: 'from', left: '0%' },
-            // ]}
+            enter={[
+              { opacity: 0, duration: 0, type: 'from', delay: 400 },
+              { ease: 'easeOutCubic', type: 'from', left: '0%' },
+            ]}
             leave={{ y: '+=30', opacity: 0, ease: 'easeOutQuad' }}
           >
             <Gallery
-              // id={`${props.className}-img-wrapper-gallery`}
-              margin={5}
+              margin={6}
               images={block}
               showLightboxThumbnails         // 弹层后显示底部预览幻灯片缩略图
               backdropClosesModal            // 弹层后点击其他地方支持遮罩关闭

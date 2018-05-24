@@ -6,7 +6,7 @@
  * @Date:   2016-05-1 11:40:27
  * @version 0.1 | 2016-05-01 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-04 16:21:03
+ * @Last Modified time: 2018-05-23 12:58:35
 */
 @import "mixin";
 //默认或覆盖
@@ -32,8 +32,11 @@
   .micon-1x {
     font-size:1rem;
   }
-  .micon-1x-md {
+  .micon-1x-sm {
     font-size:1.3rem;
+  }
+  .micon-1x-md {
+    font-size:1.6rem;
   }
   .micon-1x-bg {
     font-size:1.8rem;

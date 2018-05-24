@@ -41,19 +41,13 @@
 				&:last-child {
 						ul {
 							li {
-								width: 15%;
+								width: 20%;
 								display: inline-block;
-								margin-right: 3%;
-								padding-top: 0;
 								opacity: .8;
-								transition: opacity .3s $ease-out;
-								a {
-									i {
-										line-height: 1.6;
-									}
-								}
-								&:first-child {
-									margin-left: 0;
+								transition: opacity .3s $ease-in-out-back;
+								a > i {
+									line-height: 1.6;
+									font-size: 1.88rem;
 								}
 								&:hover {
 									opacity: 1;
@@ -65,6 +59,7 @@
 					color: $template-footer-text-color;
 					line-height: $line-height-md + .06;
 					font-size: 103%;
+					display: inline-block;
 					&:link {
 						text-decoration: none;
 						color: $template-footer-text-color;
@@ -76,31 +71,32 @@
 			}
 		}
 		& .copyright {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			height: 6rem;
 			text-align: center;
-			border-top: 1px solid fade($line-color, 10);
-			span{
-				display: block;
-				margin: 20px auto 0;
-				font-size: 115%;
-				em {
+			display: inline;
+			p {
+				> em {
 					font-style: normal;
+					font-size: 105%;
 				}
-				a {
-					text-decoration: none;
+				> span{
+					display: block;
+					font-size: 100%;
+					a {
+						text-decoration: none;
+					}
 				}
 			}
 		}
 		& .toTop {
-      float: right;
-			display: inline;
-			margin: 0 1.8rem 1rem 0;
+			float: right;
+			margin-right: 1.7rem;
 			transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-      i {
-        font-size: 2rem;
+			//@include custom-position(absolute,$bottom:0,$right:1.75rem,$zindex:1000);
+			a {
+				font-size: 2rem;
+				> a {
+					font-size: inherit;
+				}
 			}
     }
 	}

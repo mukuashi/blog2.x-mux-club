@@ -5,14 +5,14 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-19 19:53:16
+ * @Last Modified time: 2018-05-24 00:37:24
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
+import { Button, Icon, notification } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
-import { Button, Icon, notification } from 'antd';
 import Iconfont from "components/Iconfont";
 import { data } from 'config/system';
 import { scrollTo } from 'utils';
@@ -24,34 +24,7 @@ export default class GlobalFooter extends PureComponent {
   static defaultProps = {
     className: 'footer',
   };
-
-
-
-  // map
-  getLiChildren = (data, i) => {
-    const links = data.contentLink.split(/\n/).filter(item => item),
-      hoverTitle = data.hoverTitle.split(/\n/).filter(item => item);
-    const content = data.content.split(/\n/).filter(item => item)
-      .map((item, ii) => {
-        const cItem = item.trim();
-        const isImg = cItem.split('MKSIcon@')[1];
-        return (
-          <li className={isImg ? 'icon' : ''} key={ii}>
-            <a href={links[ii]} target="_blank">
-              {isImg ? <i className={`micon micon-1x-bg micon-${isImg}`} title={hoverTitle[ii]} /> : cItem}
-            </a>
-          </li>
-        );
-      });
-    return (
-      <li className={data.className} key={i} >
-        <h2>{data.title}</h2>
-        <ul>
-          {content}
-        </ul>
-      </li>
-    )
-  }
+  //
   handleScrollToTop = () => {
     // 有动画滚动至顶方案
     scrollTo(0, 800);
@@ -102,11 +75,11 @@ export default class GlobalFooter extends PureComponent {
                   {
                     row.content.map(second => (
                       <li key={second.id}>
-                        <a href={second.path} target="_blank">
+                        <Link to={second.path} target="_blank">
                           {
-                            second.icon ? <Iconfont type={second.icon} /> : second.name
+                            second.icon ? <Iconfont size="1x-bg" type={second.icon} title={second.name} /> : second.name
                           }
-                        </a>
+                        </Link>
                       </li>
                     ))
                   }
@@ -117,32 +90,30 @@ export default class GlobalFooter extends PureComponent {
         </QueueAnim>
         <TweenOne
           key="c"
-          animation={{ y: '+=30', opacity: 0, type: 'from' }}
-          className="copyright"
+          onClick={this.handleScrollToTop}
+          animation={{ y: '-=36', yoyo: true, repeat: -1, duration: 1600 }}
+          className="toTop"
+          style={{ bottom: 20 }}
         >
-          <span>
-            {copyright.number}
-            <em>{copyright.reserved}</em>
-            <p>
-              <a onClick={this.openNotification}>{info.version}</a>
-              Crafted By
-              <a href="//photoartlife.lofter.com"> PhotoArtLife </a>
-              | Referenced By
-              <Link target="_blank" to="https://reactjs.org"> Facebook React </Link>
-              | Powered By
-              <a href="//kquanr.com"> mukuashi </a>
-              Design For Life
-            </p>
-          </span>
+          <a><Icon type="up-circle" /></a>
         </TweenOne>
         <TweenOne
           key="d"
-          onClick={this.handleScrollToTop}
-          animation={{ y: '-=30', yoyo: true, repeat: -1, duration: 1600 }}
-          className="toTop"
-          style={{ bottom: 40 }}
+          animation={{ y: '+=30', opacity: 0, type: 'from' }}
+          className="copyright"
         >
-          <a><Icon type="up-circle" /></a>
+          <p>
+            {copyright.number}
+            <em>{copyright.reserved}</em>
+            <span>
+              <a onClick={this.openNotification}>{info.version}</a>
+              Just Blog Stage | Referenced By
+              <Link to="https://reactjs.org" target="_blank"> Facebook React </Link>
+              | Powered By
+              <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife·跨世 </Link>
+              Design For Life
+            </span>
+          </p>
         </TweenOne>
       </OverPack>
     );

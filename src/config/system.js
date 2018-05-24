@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-19 20:14:44
+ * @Last Modified time: 2018-05-24 19:29:00
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -37,16 +37,16 @@ export const data = {
         id: 1,
         name: '项目篇(2016年及之前)',
         isReact: false,
-        path: '/arts',
-        url: '//kquanr.com/arts',
+        path: '/project',
+        url: '//kquanr.com/project',
         target: '_blank',
       },
       {
         id: 2,
         name: '背景篇',
         isReact: false,
-        path: '/project',
-        url: '//kquanr.com/project',
+        path: '/about',
+        url: '//kquanr.com/about',
         target: '_blank',
       },
       {
@@ -60,8 +60,8 @@ export const data = {
         id: 4,
         name: '笔记篇',
         isReact: false,
-        path: '/project/works',
-        url: '//kquanr.com/project/works',
+        path: '/about/works',
+        url: '//kquanr.com/about/works',
         target: '_blank',
       },
     ],
@@ -220,8 +220,8 @@ export const data = {
       subtitle: '成长即乐趣吧。不乎于去做电影、写代码、写文章、玩摄影等等这些事情，可能是一个阶段接着一个阶段去实现一个接着一个计划，得失的过程，便知岁月。',
     },
     video: {
-      cover: '//kquanr.com/files/blog/View_From_A_Blue_Moon_Trailer-HD.jpg',
-      url: '//kquanr.com/files/blog/View_From_A_Blue_Moon_Trailer-HD.mp4',
+      cover: '//kquanr.com/files/blog/2.x/video/View_Dream/View_From_A_Blue_Moon_Trailer-HD.jpg',
+      url: '//kquanr.com/files/blog/2.x/video/View_Dream/View_From_A_Blue_Moon_Trailer-HD.mp4',
     },
   },
   content3: {
@@ -247,9 +247,9 @@ export const data = {
           icon: 'two',
         },
         img: 'https://cdn.dribbble.com/users/285475/screenshots/3618358/skate_apple_dribbble.gif',
-        body: `<h3>设计</h3>UI & UX，在某广告公司做广告传媒与平面设计等工作。
+        body: `<h3>设计</h3>UI & UX，边念书边在某广告公司做广告传媒与平面设计等工作。
         <h3>编程</h3>学校的一些基本课程学习和校外兼职项目，同时做着在线讲师项目创业和外包服务等。
-        <h3>媒体</h3>网上连载<a href="//kquanr.com/project/works" target="_blank">博客</a>文章和<a href="//i.youku.com/mukuashi" target="_blank">视频</a>前后期制作等。
+        <h3>媒体</h3>网上连载<a href="//kquanr.com/about/works" target="_blank">博客</a>文章和<a href="//i.youku.com/mukuashi" target="_blank">视频</a>前后期制作等。
         <h3>活动</h3>参加一些活动及比赛，华为杯、ACM、摄影比赛、微电影比赛等。`,
       },
       {
@@ -277,7 +277,7 @@ export const data = {
           tag: '2018-至今（Future）',
           icon: 'cafe',
         },
-        img: 'https://cdn.dribbble.com/users/605899/screenshots/2181211/400x300.gif',
+        img: 'https://cdn.dribbble.com/users/2007910/screenshots/4625590/___.gif',
         body: `<h3>工作</h3>目前还是大部分时间的研发坑，小部分时间的摄影与创作空间。有一点印象很深刻，记得在小米工作时，电脑每天的开机画面都是一张很好看的风光壁纸，幻灯片淡入一个很大的标题：永远相信美好的事情即将发生！当然，雷总很多发布会或年会都会说这句话，也一直影响着作者，去做感动人心的产品！
         <h3>摄影</h3>机子还没转手，还在拍，如有需要还请先约，更多作品移步关注
         <a href="http://photoartlife.lofter.com" target="_blank">LOFTER</a>、
@@ -323,50 +323,164 @@ export const data = {
     },
     block: [
       {
-        src: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
-        thumbnail: "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
-
-        caption: "After Rain (Jeshu John - designerspics.com)",
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-1.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-1.jpg",
+        tags: [{ value: "2016", title: "2016" }, { value: "风光", title: "风光" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "旅拍风光，拍摄于济南、北京、张家口等。",
       },
       {
-        src: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_b.jpg",
-        thumbnail: "https://c2.staticflickr.com/9/8356/28897120681_3b2c0f43e0_n.jpg",
-
-        tags: [{ value: "Ocean", title: "Ocean" }, { value: "People", title: "People" }],
-        caption: "Boats (Jeshu John - designerspics.com)",
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-2.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-2.jpg",
+        tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "人文纪实，拍摄于爵士音乐节、上海等。",
       },
       {
-        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
-
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-3.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-3.jpg",
+        tags: [{ value: "2017", title: "2017" }, { value: "风光", title: "风光" }, { value: "自然", title: "自然" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "旅拍风光，拍摄于黄山、上海等。",
       },
       {
-        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
-        thumbnailWidth: 320,
-        thumbnailHeight: 212,
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-4.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-4.jpg",
+        tags: [{ value: "2016", title: "2016" }, { value: "城市", title: "城市" }, { value: "人文", title: "人文" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "旅拍风光，拍摄于济南、北京等",
       },
       {
-        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
-        thumbnailWidth: 320,
-        thumbnailHeight: 212,
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-5.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-5.jpg",
+        tags: [{ value: "城市", title: "城市" }, { value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "城市人文纪实，拍摄于上海等。",
       },
       {
-        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
-        thumbnailWidth: 320,
-        thumbnailHeight: 212,
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-6.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-6.jpg",
+        tags: [{ value: "建筑", title: "建筑" }, { value: "城市", title: "城市" }, { value: "人文", title: "人文" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "城市建筑，拍摄于北京、上海等。",
       },
       {
-        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
-        thumbnailWidth: 320,
-        thumbnailHeight: 212,
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-7.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-7.jpg",
+        tags: [{ value: "旅行", title: "旅行" }, { value: "风光", title: "风光" }, { value: "人文", title: "人文" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "旅拍风光、人文纪实，拍摄于北京、秦皇岛等。",
       },
       {
-        src: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_b.jpg",
-        thumbnail: "https://c4.staticflickr.com/9/8887/28897124891_98c4fdd82b_n.jpg",
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-8.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-8.jpg",
+        tags: [{ value: "2016", title: "2016" }, { value: "风光", title: "风光" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "旅拍风光，拍摄于济南、北京、张家口等。",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-9.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-9.jpg",
+        tags: [{ value: "风光", title: "风光" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "风光旅行，拍摄于杭州、北京等。",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-10.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-10.jpg",
+        tags: [{ value: "城市", title: "城市" }, { value: "人文", title: "人文" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "城市风光，拍摄于杭州等。",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-11.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-11.jpg",
+        tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }],
+        thumbnailWidth: 360,
+        thumbnailHeight: 360,
+        caption: "人文纪实，拍摄于北京、上海等。",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-12.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-12.jpg",
+        tags: [{ value: "人像", title: "人像" }],
+        thumbnailWidth: 400,
+        thumbnailHeight: 800,
+        caption: "人文旅拍，拍摄于浙江等。",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-s1.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-s1.jpg",
+        tags: [{ value: "旅行", title: "旅行" }, { value: "风光", title: "风光" }],
+        thumbnailWidth: 400,
+        thumbnailHeight: 600,
+        caption: "人文旅拍，拍摄于北京、浙江等",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-s2.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-s2.jpg",
+        tags: [{ value: "人像", title: "人像" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 400,
+        thumbnailHeight: 600,
+        caption: "人文旅拍，北京、浙江等",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-s3.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-s3.jpg",
+        tags: [{ value: "人像", title: "人像" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 600,
+        thumbnailHeight: 400,
+        caption: "人文旅拍，北京、浙江等",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-s4.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-s4.jpg",
+        tags: [{ value: "人像", title: "人像" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 600,
+        thumbnailHeight: 400,
+        caption: "人文旅拍，北京、浙江等",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-s5.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-s5.jpg",
+        tags: [{ value: "人像", title: "人像" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 600,
+        thumbnailHeight: 400,
+        caption: "人文旅拍，北京、浙江等",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-s6.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-s6.jpg",
+        tags: [{ value: "人像", title: "人像" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 600,
+        thumbnailHeight: 400,
+        caption: "人文旅拍，北京、浙江等",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-s7.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-s7.jpg",
+        tags: [{ value: "人像", title: "人像" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 600,
+        thumbnailHeight: 400,
+        caption: "人文旅拍，北京、浙江等",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2017-s8.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2017-s8.jpg",
+        tags: [{ value: "人像", title: "人像" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 160,
+        thumbnailHeight: 90,
+        caption: "人文旅拍，北京、浙江等",
 
       },
     ],
@@ -383,12 +497,12 @@ export const data = {
         content: [
           {
             id: '1',
-            name: '自由/签约摄影师',
+            name: '自由/签约摄影师 | 摄影达人',
             path: '//photoartlife.lofter.com',
           },
           {
             id: '2',
-            name: 'LOFTER旅行家/摄影师',
+            name: 'LOFTER认证旅行家/摄影师',
             path: '//photoartlife.lofter.com',
           },
           {
@@ -398,7 +512,7 @@ export const data = {
           },
           {
             id: '3.2',
-            name: '米拍城市、旅行等标签主持人',
+            name: '米拍城市、旅行等主持人',
             path: 'https://www.mepai.me/user/u_592e418fe4a53',
           },
           {
@@ -413,18 +527,23 @@ export const data = {
           },
           {
             id: '6',
-            name: '自媒体/公路作者',
-            path: '//kquanr.com/project/works',
-          },
-          {
-            id: '7',
             name: '视频后期及制片人',
             path: '//i.youku.com/mukuashi',
           },
           {
+            id: '7',
+            name: '自媒体/公路作者',
+            path: '//kquanr.com/about/works',
+          },
+          {
             id: '8',
-            name: '半/平面设计师',
-            path: '//kquanr.com/project',
+            name: '平面设计师',
+            path: '//kquanr.com/about',
+          },
+          {
+            id: '9',
+            name: '关于更多...',
+            path: '//kquanr.com/about',
           },
         ],
       },
@@ -440,12 +559,12 @@ export const data = {
           {
             id: '2',
             name: '项目篇(2017之前)',
-            path: '//kquanr.com/arts',
+            path: '//kquanr.com/project',
           },
           {
             id: '3',
             name: '摄影/文Plus篇',
-            path: '//kquanr.com/project/works',
+            path: '//kquanr.com/about/works',
           },
           {
             id: '4',
@@ -469,8 +588,18 @@ export const data = {
           },
           {
             id: '8',
+            name: '微信自媒体',
+            path: 'http://t.cn/Rt1xb42',
+          },
+          {
+            id: '9',
             name: 'instagram(少更)',
             path: 'https://www.instagram.com/mukuashi',
+          },
+          {
+            id: '10',
+            name: 'Github(少更)',
+            path: 'https://github.com/photoArtLife',
           },
         ],
       },
@@ -491,32 +620,42 @@ export const data = {
           {
             id: '3',
             name: '蚂蚁金服设计平台',
-            path: '/login/#/',
+            path: 'https://design.alipay.com',
           },
           {
             id: '4',
             name: '淘宝前端团队（FED）',
-            path: '/login/#/',
+            path: 'http://taobaofed.org',
           },
           {
             id: '5',
             name: '阿里巴巴国际UED团队',
-            path: '/login/#/',
+            path: 'http://www.aliued.com',
           },
           {
             id: '6',
             name: '腾讯ISUX社交用户设计部',
-            path: '/login/#/',
+            path: '//isux.tencent.com',
           },
           {
             id: '7',
             name: '百度FEX前端研发部',
-            path: '/login/#/',
+            path: 'https://fex.baidu.com',
           },
           {
             id: '8',
+            name: '京东凸凹实验室',
+            path: 'https://aotu.io',
+          },
+          {
+            id: '9',
             name: 'Iconfont-阿里矢量图标库',
-            path: '/login/#/',
+            path: 'http://www.iconfont.cn',
+          },
+          {
+            id: '10',
+            name: '更多导航...',
+            path: 'http://lackk.com/bookmark',
           },
         ],
       },
@@ -576,10 +715,10 @@ export const data = {
             id: '9',
             icon: 'email-circle',
             name: '邮箱📮',
-            path: '//kquanr.com/project/works#four',
+            path: '//kquanr.com/about/works#four',
           },
           {
-            id: '8',
+            id: '10',
             icon: 'home-circle',
             name: '返回1.x版',
             path: '//kquanr.com',
@@ -590,7 +729,7 @@ export const data = {
     ],
     copyright: {
       number: '备案号：鲁ICP备15022927号 ',
-      reserved: `Copyright © 2015-${nowYear} All Rights Reserved. `,
+      reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
     },
     info: {
       version: '版本2.x ',
