@@ -5,126 +5,117 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-18 23:24:28
+ * @Last Modified time: 2018-05-24 00:37:24
 */
 import React, { PureComponent } from 'react';
-import { Icon, Button, Popover } from 'antd';
-import TweenOne from 'rc-tween-one';
-import QueueAnim from 'rc-queue-anim';
+import { Link } from 'dva/router';
+import { Button, Icon, notification } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
+import QueueAnim from 'rc-queue-anim';
+import TweenOne from 'rc-tween-one';
+import Iconfont from "components/Iconfont";
 import { data } from 'config/system';
 import { scrollTo } from 'utils';
 import './index.scss';
 
-const { footer } = data;
+const { logo, block, copyright, info } = data.footer;
 
 export default class GlobalFooter extends PureComponent {
+  static defaultProps = {
+    className: 'footer',
+  };
+  //
   handleScrollToTop = () => {
-    const tempId = 'header-banner';
-    const anchorElement = document.getElementById(tempId);
-    // 如果对应id的锚点存在，就跳转到锚点
-    if (anchorElement) {
-      // 有动画滚动至顶方案
-      scrollTo(0, 800);
-      // old version无动画滚动置顶方案
-      // anchorElement.scrollIntoView();
-    }
+    // 有动画滚动至顶方案
+    scrollTo(0, 800);
   }
-  render() {
-    const appContent = (
-      <div className="qrCodeMenu">
-        <img src="https://ok4nxnxdy.qnssl.com/download-qr-20160303.png" alt="download-qrcode" />
-      </div>
+  // version notice
+  openNotification = () => {
+    const btnReturn = (
+      <Button
+        type="primary"
+        size="default"
+        onClick={() => {
+          window.location.href = 'http://kquanr.com'
+        }}
+      >
+        返回旧版
+      </Button>
     );
+    notification.open({
+      message: 'Hey，欢迎访问 PhotoArtLife',
+      description: '当前版本：2.x\n。\n其为2016年及至今的博客新版本，老版本可以在首页切换（当前toast浮层会在3秒后自动关闭）。',
+      icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
+      duration: 3,
+      btn: btnReturn,
+    });
+  }
+
+  render() {
+    const props = { ...this.props };
+    const { isMobile } = props;
+
     return (
-      <OverPack playScale="0.2" className="footer-container">
-        {
-          footer.register && (
-            <QueueAnim
-              key="a"
-              component="header"
-              type={['top', 'bottom']}
-              leaveReverse
-            >
-              <Button
-                type="primary"
-                size="large"
-                href="/login/#/register/1"
-                key="b"
-              >
-                {footer.register}
-                <TweenOne
-                  animation={{ x: '+=18', yoyo: true, repeat: -1, duration: 1800 }}
-                  className="icon"
-                  key="c"
-                >
-                  <Icon type="double-right" />
-                </TweenOne>
-              </Button>
-            </QueueAnim>
-          )
-        }
-        <QueueAnim
-          key="d"
-          delay={200}
-          component="ul"
-          type={['bottom', 'top']}
-          className="footer-container-ul"
-        >
+      <OverPack
+        {...props}
+        playScale={isMobile ? 0.5 : 0.1}
+      >
+        <QueueAnim key="a" type="bottom" component="ul" leaveReverse>
+          <li key="b">
+            <p className="logo">
+              <img src={logo.img} alt="footer-logo" />
+            </p>
+            <p>{logo.content}</p>
+          </li>
           {
-            footer.item.map(row => (
-              <li key={row.id} className="footer-container-ul-li">
-                <h2 key="e">{row.title}</h2>
-                {
-                  row.content.length > 0 && (
-                    <ul key="f">
-                      {
-                        row.content.map(line => (
-                          <li key={line.id}>
-                            {
-                              line.path === '#app' ? (
-                                <Popover trigger="hover" title="扫码下载APP" content={appContent}>
-                                  <a href={line.path}>{line.name}</a>
-                                </Popover>
-                              ) : <a className={line.disabled ? 'disabled' : ''} href={line.path}>{line.name}</a>
-                            }
-                          </li>
-                        ))
-                      }
-                    </ul>
-                  )
-                }
+            block.map(row => (
+              <li key={row.id}>
+                <h2>{row.title}</h2>
+                <ul>
+                  {
+                    row.content.map(second => (
+                      <li key={second.id}>
+                        <Link to={second.path} target="_blank">
+                          {
+                            second.icon ? <Iconfont size="1x-bg" type={second.icon} title={second.name} /> : second.name
+                          }
+                        </Link>
+                      </li>
+                    ))
+                  }
+                </ul>
               </li>
             ))
           }
         </QueueAnim>
         <TweenOne
-          key="g"
-          delay={200}
+          key="c"
+          onClick={this.handleScrollToTop}
+          animation={{ y: '-=36', yoyo: true, repeat: -1, duration: 1600 }}
+          className="toTop"
+          style={{ bottom: 20 }}
+        >
+          <a><Icon type="up-circle" /></a>
+        </TweenOne>
+        <TweenOne
+          key="d"
           animation={{ y: '+=30', opacity: 0, type: 'from' }}
           className="copyright"
         >
-          <span key="h">
-            {footer.copyright.reserved}
-          </span>
-          <span key="i">
-            {footer.copyright.company}
-          </span>
-          <a key="j">
-            {footer.copyright.number}
-          </a>
-        </TweenOne>
-        <TweenOne
-          onClick={this.handleScrollToTop}
-          animation={{ y: '-=22', yoyo: true, repeat: -1, duration: 1600 }}
-          className="toTop"
-          style={{ bottom: 40 }}
-          key="k"
-        >
-          <a><Icon type="up-circle" /></a>
+          <p>
+            {copyright.number}
+            <em>{copyright.reserved}</em>
+            <span>
+              <a onClick={this.openNotification}>{info.version}</a>
+              Just Blog Stage | Referenced By
+              <Link to="https://reactjs.org" target="_blank"> Facebook React </Link>
+              | Powered By
+              <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife·跨世 </Link>
+              Design For Life
+            </span>
+          </p>
         </TweenOne>
       </OverPack>
     );
   }
 }
-

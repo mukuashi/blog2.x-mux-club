@@ -28,7 +28,7 @@ export default {
     template: './src/index.ejs',
   },
   disableDynamicImport: true,
-  publicPath: '/',
+  publicPath: '', //relative to HTML page (same directory)
   hash: true,
   sass: {
     'node-sass': true

@@ -4,11 +4,10 @@
     //common
     .content-template-wrapper {
       position: relative;
-      @include size(100%,98vh);
+      @include size(100%,auto);
       background: $default-background-color;
       border-color: $template-footer-text-color;
       padding: 3.5% 0;
-      height: auto;
       .content-template {
         @include square(100%);
         max-width: 1300px;
@@ -164,15 +163,20 @@
       &-wrapper {
         background-color: $template-bg-color-light-2;
         .content4 {
+          padding-bottom: 5%;
           & > h1 {
             margin-top: 2.2%;
           }
           & > p {
             padding-bottom: 1%;
           }
+          //slider
+          &-slider {
+            padding: 1.5% 4% 2.5%;
+          }
           &-img-wrapper {
             display: inline-block;
-            margin: auto;
+            @include square(100%);
           }
         }
       }
@@ -226,7 +230,7 @@
       }
       &-img{
         width: 80%;
-        max-width: 350px;
+        max-width: 400px;
         text-align: center;
       }
       :global(.ant-tabs) {

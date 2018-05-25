@@ -1,4 +1,103 @@
 @import '../../styles/basics/mixin';
 :global {
-  
+  .footer {
+		background: $template-bg-color;
+		height: auto;
+		overflow: hidden;
+		position: relative;
+		color: $template-footer-text-color;
+		//left
+		& .logo {
+			width: 82%;
+			max-width: 11rem;
+			margin-bottom: .5rem;
+			img {
+				width: 100%;
+			}
+		}
+		//right
+		& > ul {
+			@include ul-initialize;
+			width: 95%;
+			max-width: 1240px;
+			margin: 3.5rem auto;
+			overflow: inherit;
+			& > li {
+				float: left;
+				width: 20%;
+				padding: .8rem;
+				position: relative !important; // 强制去除 queue-anim-leaving 的 absolute;
+				&:not(:first-child) {
+					padding-left: 3.2%;
+				}
+				> h2 {
+					font-weight: normal;
+					color: $template-text-color;
+					font-size: $default-content-fz-sm;
+				}
+				& ul {
+					@include ul-initialize;
+				}
+				&:last-child {
+						ul {
+							li {
+								width: 20%;
+								display: inline-block;
+								opacity: .8;
+								transition: opacity .3s $ease-in-out-back;
+								a > i {
+									line-height: 1.6;
+									font-size: 1.88rem;
+								}
+								&:hover {
+									opacity: 1;
+								}
+							}
+						}
+				}
+				& a {
+					color: $template-footer-text-color;
+					line-height: $line-height-md + .06;
+					font-size: 103%;
+					display: inline-block;
+					&:link {
+						text-decoration: none;
+						color: $template-footer-text-color;
+					}
+					&:hover {
+						color: $link-hover-color;
+					}
+				}
+			}
+		}
+		& .copyright {
+			text-align: center;
+			display: inline;
+			p {
+				> em {
+					font-style: normal;
+					font-size: 105%;
+				}
+				> span{
+					display: block;
+					font-size: 100%;
+					a {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		& .toTop {
+			float: right;
+			margin-right: 1.7rem;
+			transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+			//@include custom-position(absolute,$bottom:0,$right:1.75rem,$zindex:1000);
+			a {
+				font-size: 2rem;
+				> a {
+					font-size: inherit;
+				}
+			}
+    }
+	}
 }

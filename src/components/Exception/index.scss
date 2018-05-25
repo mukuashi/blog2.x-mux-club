@@ -2,7 +2,7 @@
 
 .exception {
   position: relative;
-  min-height: calc(100vh - #{$default-nav-height + 20});
+  min-height: calc(100vh - #{$default-nav-height});
   ul {
     @include ul-initialize;
     @include custom-position(absolute,$top:50%,$left:50%);

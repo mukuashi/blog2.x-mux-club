@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-15 17:49:57
+ * @Last Modified time: 2018-05-25 03:36:21
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -16,13 +16,16 @@ import DocumentTitle from 'react-document-title';
 import { ContainerQuery } from 'react-container-query';
 import { enquireScreen, unenquireScreen } from 'enquire-js';
 import { getRoutes, getScrollTop } from 'utils';
+import { data } from 'config/system';
 import Home from 'routes/Home';
 import NotFound from 'routes/Exception/404';
 import ErrorPage from 'routes/Exception/110';
 import BannerHeader from 'layout/BannerHeader';
 import GlobalHeader from './GlobalHeader';
-// import GlobalFooter from './GlobalFooter';
+import GlobalFooter from './GlobalFooter';
 import styles from './index.scss';
+
+const { version } = data;
 
 const cx = classNames.bind(styles);
 const { Content, Header, Footer } = Layout;
@@ -145,7 +148,10 @@ export default class BasicLayout extends PureComponent {
             isMobile={this.state.isMobile || false}
           />
         </Header>
-        <BannerHeader {...this.props} onScroll={this.handleScrollCheck} />
+        {
+          location.pathname === `/${version}` &&
+          <BannerHeader {...this.props} onScroll={this.handleScrollCheck} />
+        }
         <Content className={classLayoutContent}>
           {/* 其他页面 */}
           <Switch>
@@ -164,7 +170,7 @@ export default class BasicLayout extends PureComponent {
             }
             <Route
               exact
-              path="/"
+              path={`/${version}`}
               render={() => <Home isMobile={this.state.isMobile || false} />}
             />
             <Redirect from="/home" to={bashRedirect} />
@@ -173,11 +179,9 @@ export default class BasicLayout extends PureComponent {
           </Switch>
         </Content>
         <Footer className={classLayoutFooter}>
-          {/*
-            <GlobalFooter
+          <GlobalFooter
             isMobile={this.state.isMobile || false}
           />
-          */}
         </Footer>
       </Layout>
     );
