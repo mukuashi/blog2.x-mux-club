@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-19 02:57:26
+ * @Last Modified time: 2018-05-25 17:39:59
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';

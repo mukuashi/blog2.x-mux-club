@@ -23,9 +23,14 @@
     }
   }
 }
-.avatarSet {
+.avatarVersion {
+  color: #b8ededd1;
+  font-size: 0.95rem;
+  margin-top: 1.5%;
+}
+.avatarInfo {
   color: rgba(108, 93, 231, 0.89);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 :global {
 	.header {
@@ -159,20 +164,16 @@
   @media screen and (max-width: 767px) {
     .header{
       &-logo {
-        z-index: 101;
+        z-index: $default-nav-zindex + 1;
       }
       &-mobile-nav {
-        width: 16px;
-        height: 14px;
         cursor: pointer;
-        position: absolute;
-        top: 0;
-        bottom: 0;
         margin: auto;
-        right: 20px;
+        @include size(1.3rem,1rem);
+        @include custom-position(absolute,$top:0,$bottom:0,$right:rem(20px));
         &-bar {
           position: relative;
-          z-index: 100;
+          z-index: $default-nav-zindex;
           em {
             display: block;
             width: 100%;
@@ -203,20 +204,30 @@
             opacity: 1;
             pointer-events: auto;
             transition-timing-function: $ease-out;
+            .ant-menu > li {
+              font-size: 1rem;
+              &:last-child {
+                .ant-menu-submenu-title {
+                  padding-bottom: 4%;
+                  height: auto;
+                }
+              }
+              > ul {
+                background: #00152a;
+                border-top: 1px solid rgba(233, 233, 233, 0.1);
+                box-shadow: none;
+              }
+            }
           }
         }
-
         &-text {
-          position: fixed;
-          top: 0;
-          right: 0;
-          width: 100%;
-          height: 100%;
-          padding-top: 64px;
           opacity: 0;
+          @include custom-position(fixed,$top:0,$right:0);
+          @include square(100%);
+          padding-top: $default-nav-height;
           transition: opacity .3s $ease-in;
           pointer-events: none;
-          background: $template-h1-color;
+          background: #00152a;
           .ant-menu-item-selected {
             border: none;
           }

@@ -74,11 +74,9 @@ export default class Content1 extends PureComponent {
           <QueueAnim
             key="f"
             type="bottom"
-            className={`${props.className}-contentWrapper`}
+            component="ul"
           >
-            <ul key="g">
-              {children}
-            </ul>
+            {children}
           </QueueAnim>
         </OverPack>
       </section>
