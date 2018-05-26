@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-25 03:36:21
+ * @Last Modified time: 2018-05-25 16:29:02
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -149,7 +149,7 @@ export default class BasicLayout extends PureComponent {
           />
         </Header>
         {
-          location.pathname === `/${version}` &&
+          (location.pathname === `/${version}` || `${location.pathname}/` === `/${version}`) &&
           <BannerHeader {...this.props} onScroll={this.handleScrollCheck} />
         }
         <Content className={classLayoutContent}>

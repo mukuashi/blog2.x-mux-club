@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-25 03:09:40
+ * @Last Modified time: 2018-05-25 17:09:19
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -23,7 +23,7 @@ const nowYear = new Date().getFullYear();
 //
 export const data = {
   prefix: 'mux',
-  version: '2.x',
+  version: '2.x/',
   header: {
     logo: headerNav,
     nav: [
@@ -99,7 +99,7 @@ export const data = {
       },
       {
         id: 'c',
-        name: '回到旧版',
+        name: '回到旧版1.x',
         href: '/',
         target: '_self',
       },

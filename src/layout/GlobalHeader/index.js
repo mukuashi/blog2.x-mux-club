@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-25 03:43:01
+ * @Last Modified time: 2018-05-25 17:19:28
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -88,7 +88,7 @@ export default class GlobalHeader extends PureComponent {
           content={contactAuthor}
           title=""
           trigger="hover"
-          placement="bottom"
+          placement={isMobile ? "bottomRight" : "bottom"}
           arrowPointAtCenter
         >
           <Icon type="wechat" />
@@ -100,10 +100,10 @@ export default class GlobalHeader extends PureComponent {
           submenu.map(row => (
             <Item key={row.id}>
               {
-                !row.href && <h4>{row.name}</h4>
+                !row.href && <h4 className={isMobile ? styles.avatarVersion : ''}>{row.name}</h4>
               }
               {
-                row.href && <Link to={row.href} target={row.target} className={styles.avatarSet}>{row.name}</Link>
+                row.href && <Link to={row.href} target={row.target} className={styles.avatarInfo}>{row.name}</Link>
               }
             </Item>
           ))
@@ -133,7 +133,9 @@ export default class GlobalHeader extends PureComponent {
           className="header-logo"
           animation={{ x: -30, delay: 100, type: 'from', ease: 'easeOutQuad' }}
         >
-          <Link to="/"><img alt="header-logo" width="100%" src={logo} /></Link>
+          <a href="/">
+            <img alt="header-logo" width="100%" src={logo} />
+          </a>
         </TweenOne>
         {
           isMobile ? (
