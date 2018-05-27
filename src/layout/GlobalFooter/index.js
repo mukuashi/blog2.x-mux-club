@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-26 19:24:44
+ * @Last Modified time: 2018-05-27 15:20:29
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -39,14 +39,14 @@ export default class GlobalFooter extends PureComponent {
           window.location.href = 'http://kquanr.com'
         }}
       >
-        返回旧版
+        返回1.x版
       </Button>
     );
     notification.open({
       message: 'Hey，欢迎访问 PhotoArtLife',
-      description: '当前版本：2.x\n。\n其为2016年及至今的博客新版本，老版本可以在首页切换（当前toast浮层会在3秒后自动关闭）。',
+      description: '当前版本：2.x\n，2016年之后的博客第二版，老版本可以在首页切换（5秒后关闭），博客最后更新时间：2017年6月。',
       icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
-      duration: 3,
+      duration: 6,
       btn: btnReturn,
     });
   }

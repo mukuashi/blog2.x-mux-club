@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-26 18:58:41
+ * @Last Modified time: 2018-05-27 16:24:49
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -63,7 +63,8 @@ export default class BannerHeader extends PureComponent {
           <span
             key="c"
             className="bannerHeader"
-          ><img src={row.headerImg} alt="header-banner" />
+          >
+            <img src={row.headerImg} alt="header-banner" />
           </span>
           <p key="d">{row.content}</p>
           <QueueAnim
@@ -127,7 +128,7 @@ export default class BannerHeader extends PureComponent {
           </div>
         </TweenOneGroup>
         <TweenOne
-          animation={{ y: '-=35', yoyo: true, repeat: -1, duration: 1650 }}
+          animation={{ y: '-=30', yoyo: true, repeat: -1, duration: 1650 }}
           className={`${className}-icon`}
           style={{ bottom: 40 }}
           key="h"

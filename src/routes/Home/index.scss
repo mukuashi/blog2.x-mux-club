@@ -106,8 +106,7 @@
         .content3 {
           &-tag {
             & i {
-              width: 14px;
-              height: 14px;
+              @include square(1rem);
               display: inline-block;
               vertical-align: middle;
               margin-right: 5px;
@@ -117,18 +116,15 @@
             }
           }   
           &-tabs {
-            position: relative;
-            top: 12%;
-            :global(.ant-tabs) {
+            padding-bottom: 1.8%;
+            .ant-tabs {
               &-bar {
                 width: 80%;
                 margin: auto;
-                .ant-tabs-nav {
-                  &-container {
-                    float: none;
-                    text-align: center;
-                  }
-                }
+              }
+              &-nav {
+                float: none;
+                text-align: center;
               }
               &-content {
                 > .ant-tabs-tabpane {
@@ -144,9 +140,9 @@
           }
           &-text {
             left: 10%;
-            padding-top: 20px;
+            padding-top: 1%;
             & h3 {
-              margin: 10px auto;
+              margin: 4.5% auto 2%;
             }
             & p {
               margin-bottom: 30px;
@@ -195,8 +191,9 @@
         .content-template {
           overflow: hidden;
           width: 98%;
+          padding-top: 4%;
           h1 {
-            font-size: $default-content-fz-lm;
+            font-size: $default-content-fz-md;
           }
           > p {
             font-size: $default-content-fz-nl;
@@ -224,65 +221,61 @@
         }
       }
       //content2
-    }
-    //
-    .content2-wrapper {
-      height: auto;
-      padding: 8% 0 12% 0;
       .content2 {
-        overflow: hidden;
-        width: 90%;
-        margin: auto;
-        h1 {
-          font-size: 24px;
-        }
-      }
-    }
-    //
-    .content3-wrapper {
-      height: auto;
-      padding-bottom: 10%;
-      overflow: hidden;
-      .content3 {
-        width: 90%;
-        max-width: 100%;
-        h1 {
-          font-size: 24px;
-          top: auto;
-          margin: 40px auto 20px;
-        }
-        > p, &-tabs {
-          top: auto;
-        }
-        &-text, &-img {
-          width: 90%;
-          left: auto;
-          right: auto;
-          text-align: left;
-          float: none;
-        }
-        &-img{
-          width: 80%;
-          max-width: 400px;
-          text-align: center;
-        }
-        :global(.ant-tabs) {
-          &-bar {
-            width: auto;
-            .ant-tabs-nav {
-              &-container {
-                float: left;
-              }
+        &-wrapper {
+          .content2 {
+            &-video {
+              width: 88%;
             }
           }
-          &-content {
-            > .ant-tabs-tabpane {
+        }
+      }
+      //content3
+      .content3 {
+        &-wrapper {
+          .content3 {
+            padding-bottom: 6.5%;
+            &-tabs {
+              .ant-tabs {
+                &-bar {
+                  width: auto;
+                  .ant-tabs-nav {
+                    float: left;
+                  }
+                }
+                &-content {
+                  > .ant-tabs-tabpane {
+                    text-align: center;
+                  }
+                }
+              }
+            }
+            &-text, &-img {
+              width: 90%;
+              left: auto;
+              right: auto;
+              text-align: left;
+              float: none;
+            }
+            &-img{
+              width: 80%;
+              max-width: 400px;
               text-align: center;
             }
           }
         }
       }
-    }
+      //content2
+      .content4 {
+        &-wrapper {
+          .content4 {
+            &-slider {
+              padding: 1% 10% 2%;
+            }
+          }
+        }
+      }
+    } 
   }
   @media screen and (min-width:768px) and (max-width:1024px){
     .home-content-list {

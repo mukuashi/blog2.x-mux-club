@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-26 18:33:02
+ * @Last Modified time: 2018-05-27 16:12:55
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -581,31 +581,36 @@ export const data = {
           },
           {
             id: '4',
-            name: '500PX | 图虫摄影师',
+            name: '500PX摄影师',
             path: 'https://500px.me/PhotoArtLife',
           },
           {
             id: '5',
+            name: '图虫摄影师',
+            path: 'https://photoartlife.tuchong.com',
+          },
+          {
+            id: '6',
             name: '程序猿/软件工程师',
             path: 'https://github.com/photoArtLife',
           },
           {
-            id: '6',
+            id: '7',
             name: '视频后期及制片人',
             path: '//i.youku.com/mukuashi',
           },
           {
-            id: '7',
+            id: '8',
             name: '自媒体/公路作者',
             path: '//kquanr.com/about/works',
           },
           {
-            id: '8',
+            id: '9',
             name: '平面设计师',
             path: '//kquanr.com/about',
           },
           {
-            id: '9',
+            id: '10',
             name: '关于更多...',
             path: '//kquanr.com/about',
           },
