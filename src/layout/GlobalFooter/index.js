@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-24 00:37:24
+ * @Last Modified time: 2018-05-26 19:24:44
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -53,12 +53,10 @@ export default class GlobalFooter extends PureComponent {
 
   render() {
     const props = { ...this.props };
-    const { isMobile } = props;
-
     return (
       <OverPack
         {...props}
-        playScale={isMobile ? 0.5 : 0.1}
+        playScale="0.1"
       >
         <QueueAnim key="a" type="bottom" component="ul" leaveReverse>
           <li key="b">
@@ -109,6 +107,7 @@ export default class GlobalFooter extends PureComponent {
               <a onClick={this.openNotification}>{info.version}</a>
               Just Blog Stage | Referenced By
               <Link to="https://reactjs.org" target="_blank"> Facebook React </Link>
+              & <Link to="https://github.com/dvajs/dva" target="_blank"> Dvajs </Link>
               | Powered By
               <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife·跨世 </Link>
               Design For Life

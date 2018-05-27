@@ -46,7 +46,7 @@
             > li {
               display: inline-block;
               width: 33.33%;
-              padding: 4.5% 5% 0;
+              padding: 4.5% 3.6% 0;
               vertical-align: top;
               .img {
                 display: inline-block;
@@ -83,13 +83,13 @@
     //content2
     .content2 {
       &-wrapper {
-        padding-top: 1%; 
+        padding-top: 2.5%; 
         .content2 {
           &-video {
             border-radius: 7px;
             overflow: hidden;
             width: 90%;
-            max-width: 960px;
+            max-width: 900px;
             @include custom-position(relative,$top:0);
             margin: 3% auto 0;
             box-shadow: 0 2px 6px rgba($dark-color, .2);
@@ -165,6 +165,7 @@
     }
     //content4
     .content4 {
+      overflow-x: hidden;
       &-wrapper {
         background-color: $template-bg-color-light-2;
         .content4 {
@@ -177,7 +178,7 @@
           }
           //slider
           &-slider {
-            padding: 1.5% 4% 2.5%;
+            padding: 1.5% 6.5% 2.5%;
           }
           &-img-wrapper {
             display: inline-block;
@@ -285,13 +286,21 @@
   }
   @media screen and (min-width:768px) and (max-width:1024px){
     .home-content-list {
+      .content-template-wrapper > .content-template {
+        padding-top: 10%;
+        > p {
+          max-width: 75%;
+        }
+      }
       .content1 {
         &-wrapper {
           .content1 { 
-            ul {
-              > li {
-                .text {
-                  padding-left: 15%;
+            ul > li {
+              padding-left: 1.5%;
+              .text {
+                padding-left: 15.6%;
+                > h1 {
+                  font-size: $default-content-fz-lm;
                 }
               }
             }

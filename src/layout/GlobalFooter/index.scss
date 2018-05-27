@@ -26,9 +26,8 @@
 				float: left;
 				width: 20%;
 				padding: .8rem;
-				position: relative !important; // 强制去除 queue-anim-leaving 的 absolute;
 				&:not(:first-child) {
-					padding-left: 3.2%;
+					padding-left: 3%;
 				}
 				> h2 {
 					font-weight: normal;
@@ -37,6 +36,10 @@
 				}
 				& ul {
 					@include ul-initialize;
+					li {
+						display: block;
+						width: 100%;
+					}
 				}
 				&:last-child {
 						ul {
@@ -71,6 +74,7 @@
 			}
 		}
 		& .copyright {
+			margin: auto;
 			text-align: center;
 			display: inline;
 			p {
@@ -100,4 +104,55 @@
 			}
     }
 	}
+	@media screen and (min-width:768px) and (max-width:1024px){
+		.footer {
+			.copyright {
+				display: block;
+				margin: 0 7.5%;
+			}
+			ul > li:last-child {
+				> ul > li {
+					width: 33%;
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 767px) {
+    .footer {
+			> ul {
+				width: 90%;
+				li:not(:first-child) {
+					padding-left: 2%;
+				}
+				li:not(:last-child) {
+					width: 100%;
+					padding-bottom: 1%;
+					ul {
+						> li {
+							display: inline;
+							padding-right: .5%;
+							&:not(:last-child) {
+								&::after {
+									content: '、';
+								}
+							}
+						}
+					}
+				}
+				li:last-child {
+					width: 100%;
+					padding-bottom: 1%;
+					ul > li {
+						float: left;
+						width: 17%;
+						padding: 0;
+					}
+				}
+			}
+			.copyright {
+				display: block;
+				margin: 0 8%;
+			}
+		}
+  }
 }
