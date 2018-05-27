@@ -23,7 +23,7 @@ export default class Content extends PureComponent {
 
   render() {
     const props = { ...this.props };
-
+    const { isMobile } = props;
     const { boxValue } = this.state;
     const marks = {
       0: '最小边距',
@@ -73,7 +73,7 @@ export default class Content extends PureComponent {
               min={0}
               max={50}
               marks={marks}
-              defaultValue={20}
+              defaultValue={isMobile ? 17 : 20}
               onChange={this.handleChange}
             />
           </TweenOne>
@@ -88,7 +88,7 @@ export default class Content extends PureComponent {
           >
             <Gallery
               margin={boxValue}
-              rowHeight={200 + boxValue}                // 图片当前列的默认高度
+              rowHeight={isMobile ? 160 + boxValue : 200 + boxValue}                // 图片当前列的默认高度
               images={block}
               showLightboxThumbnails         // 弹层后显示底部预览幻灯片缩略图
               backdropClosesModal            // 弹层后点击其他地方支持遮罩关闭

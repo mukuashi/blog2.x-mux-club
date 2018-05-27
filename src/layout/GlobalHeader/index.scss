@@ -37,14 +37,14 @@
 		width: 100%;
 		height: $default-nav-height;
     background: transparent;
-    @include custom-position(fixed,$top:0);
-    transition: all .3s $ease-in-circ;
     &-fixheader {
-      background: $default-nav-active-fixed-background; 
+      background: $default-nav-active-fixed-background;
+      @include custom-position(fixed,$top:0,$right:0,$zindex: $default-nav-zindex + 1);
+      transition: all .3s $ease-in-circ;
     }
 		&-logo {
 			display: inline-block;
-			@include custom-position(absolute,$left:4%);
+			margin-left: 4%;
 			width: rem(150px);
 			line-height: $default-nav-height;
 			& a {
@@ -69,7 +69,7 @@
         li {
           float: left;
           text-align: center;
-          min-width: 100px;
+          min-width: 8.5rem;
           a {
             color: $template-text-color-light;
           }
@@ -161,7 +161,16 @@
       }
     }
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (min-width:767px) and (max-width:1024px){
+    .header {
+      &-nav {
+        .ant-menu > li {
+          min-width: 0;     
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
     .header{
       &-logo {
         z-index: $default-nav-zindex + 1;
@@ -170,7 +179,7 @@
         cursor: pointer;
         margin: auto;
         @include size(1.3rem,1rem);
-        @include custom-position(absolute,$top:0,$bottom:0,$right:rem(20px));
+        @include custom-position(absolute,$top:#{$default-nav-height/3 + .2rem},$right:rem(20px));
         &-bar {
           position: relative;
           z-index: $default-nav-zindex;
