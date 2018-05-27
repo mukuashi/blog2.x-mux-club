@@ -37,10 +37,10 @@
       width: 100%;
       text-align: center;
       color: $template-text-color-light;
-      @include custom-position(relative,$top:25%,$left:0,$right:0);
+      @include custom-position(relative,$top:24%,$left:0,$right:0);
       & .bannerHeader {
-        width: 350px;
-        left: 30px;
+        width: rem(350px);
+        left: rem(30px);
         margin: auto;
         display: inline-block;
         position: relative;
@@ -49,8 +49,9 @@
         }
       }
       & p {
-        margin-bottom: 20px;
+        margin-bottom: rem(20px);
         word-wrap: break-word;
+        padding: 0 3%;
       }
       ul {
         @include ul-initialize;
@@ -95,10 +96,10 @@
     }
     &-icon {
       font-size: 2rem;
-      @include custom-position(absolute,$left:50%,$zindex:$default-nav-zindex);
       margin-left: -12px;
       cursor: pointer;
       color: $template-text-color-light;
+      @include custom-position(absolute,$left:50%,$zindex:$default-nav-zindex);
     }
   }
   .banner-anim-thumb-default span {
@@ -106,14 +107,34 @@
     border-radius: 10px;
     background: rgba(255, 255, 255, .5);
   }
-  @media screen and (max-width: 414px) {
-    .banner{
+  @media screen and (min-width:768px) and (max-width:1024px){
+    .banner{ 
       &-title{
+        top: 28%;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .banner {
+      &-title{
+        top: 20%;
         width: 90%;
+        margin: auto;
         .bannerHeader{
-          width: 90%;
-          left: 0;
+          width: 80%;
+          left: 1.1rem;
         }
+        > ul > li {
+          & a,& button {
+            height: 2.2rem;
+            line-height: 2.2rem;
+            font-size: $default-content-fz-nl;
+            min-width: 8rem;
+          }
+        }
+      }
+      &-icon {
+        //bottom已在组件层设置
       }
       .bg {
         background-attachment: inherit;
