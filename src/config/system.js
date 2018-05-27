@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-27 19:01:53
+ * @Last Modified time: 2018-05-28 01:46:21
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -271,7 +271,7 @@ export const data = {
         img: 'https://cdn.dribbble.com/users/6084/screenshots/2448824/icns.gif',
         body: `<h3>编程</h3>先后在<a href="//www.mi.com" target="_blank">小米 </a><a href="//www.miui.com" target="_blank">MIUI</a>安全组、短视频组从事全职研发工作@前端工程师。<h3>产品</h3>UGC App<a href="//wg.miui.com" target="_blank">围观小视频</a>、PGC App<a href="//xk.miui.com" target="_blank">想看视频</a>、PGC作者平台<a href="//open.xk.miui.com" target="_blank">想看开放平台</a>、UGC审核后台<a href="//mp.wg.miui.com" target="_blank">围观CRM</a>、PGC审核后台<a href="//mp.xk.miui.com" target="_blank">想看CRM</a>等。
         <h3>摄影</h3>从小透明开始慢慢在国内社区冒泡，作为<a href="https://m.mepai.me/photographyer/u_592e418fe4a53.html" target="_blank">米拍认证自由摄影师，#上海#、#城市#、#旅行#主持人</a>，米拍优秀主持人，米拍城市-巡城记北京十佳摄影师，<a href="//photoartlife.lofter.com" target="_blank">LOFTER摄影达人，LOFTER旅行家，LOFTER自由摄影师</a>等，一路走过来收获的不仅仅是感动，还有相知相惜。
-        <h3>设计</h3>作为一个半吊子设计师，喜欢设计和创造的这种兴趣也相辅相成了我的研发工作和摄影输入输出，一来可以做出自己喜欢的style，二来做电影后期也派上了用场。<a href="//i.youku.com/mukuashi" target="_blank">优酷自媒体</a>、<a href="//kquanr.com/project/demo/mukuashi" target="_blank">2017·济南大学毕设答辩@mukuashi</a>等。
+        <h3>设计</h3>作为一个自由独立设计师，喜欢设计和创造的这种兴趣也相辅相成了我的研发工作和摄影输入输出，一来可以做出自己喜欢的style，二来做电影后期也派上了用场。<a href="//i.youku.com/mukuashi" target="_blank">优酷自媒体</a>、<a href="//kquanr.com/project/demo/mukuashi" target="_blank">2017·济南大学毕设答辩@mukuashi</a>等。
         <h3>写作</h3>还是一如既往地坚持记录吧，部分会放到网上<a href="http://t.cn/Rt1xb42" target="_blank">专栏</a>连载。`,
       },
       {
@@ -607,7 +607,7 @@ export const data = {
           },
           {
             id: '9',
-            name: '平面设计师',
+            name: '独立设计师',
             path: '//kquanr.com/about',
           },
           {
