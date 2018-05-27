@@ -32,5 +32,17 @@ export default {
   hash: true,
   sass: {
     'node-sass': true
-  }
+  },
+  "commons": [
+    {
+      async: '__common',
+      children: true,
+      minChunks(module, count) {
+        if (pageCount <= 2) {
+          return count >= pageCount;
+        }
+        return count >= pageCount * 0.5;
+      },
+    },
+  ],
 };

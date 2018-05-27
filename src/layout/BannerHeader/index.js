@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-27 16:24:49
+ * @Last Modified time: 2018-05-27 19:25:58
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -120,7 +120,7 @@ export default class BannerHeader extends PureComponent {
           <div className={`${className}-wrapper`}>
             <BannerAnim
               autoPlay
-              autoPlaySpeed={6666}
+              autoPlaySpeed={9999}
               key="g"
             >
               {childrenToRender}

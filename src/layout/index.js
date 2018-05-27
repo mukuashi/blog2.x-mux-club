@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-25 16:29:02
+ * @Last Modified time: 2018-05-27 19:03:28
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -25,7 +25,7 @@ import GlobalHeader from './GlobalHeader';
 import GlobalFooter from './GlobalFooter';
 import styles from './index.scss';
 
-const { version } = data;
+const { version, title } = data;
 
 const cx = classNames.bind(styles);
 const { Content, Header, Footer } = Layout;
@@ -99,11 +99,11 @@ export default class BasicLayout extends PureComponent {
   getPageTitle() {
     const { routerData, location } = this.props;
     const { pathname } = location;
-    let title = '版本2.x - Blog For PhotoArtLife@mukuashi';
+    let newTitle = title;
     if (routerData[pathname] && routerData[pathname].name) {
-      title = `${routerData[pathname].name} - ${title}`;
+      newTitle = `${routerData[pathname].name} - ${title}`;
     }
-    return title;
+    return newTitle;
   }
   // 滚屏与置顶菜单状态切换
   handleScrollCheck = () => {

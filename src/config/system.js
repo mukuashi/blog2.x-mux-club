@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-27 16:12:55
+ * @Last Modified time: 2018-05-27 19:01:53
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -24,6 +24,7 @@ const nowYear = new Date().getFullYear();
 export const data = {
   prefix: 'mux',
   version: '2.x/',
+  title: 'mukuashi@PhotoArtLife | 2.x Blog',
   header: {
     logo: headerNav,
     nav: [
@@ -627,7 +628,7 @@ export const data = {
           },
           {
             id: '2',
-            name: '项目篇(2017之前)',
+            name: '项目篇(1.x版)',
             path: '//kquanr.com/project',
           },
           {
