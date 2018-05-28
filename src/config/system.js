@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-28 01:46:21
+ * @Last Modified time: 2018-05-28 01:54:22
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -127,7 +127,7 @@ export const data = {
       id: 2,
       headerImg: bannerLogo,
       bgImg: banner2,
-      content: '一个信仰自由与平等的摄影师、制片人、自媒体/公路作者...',
+      content: '一个信仰和平与自由的摄影师、制片人、自媒体/公路作者...',
       button: [
         {
           id: 'a2',
@@ -159,7 +159,7 @@ export const data = {
       id: 3,
       headerImg: bannerLogo,
       bgImg: banner3,
-      content: '一个喜欢创作与挑战的程序猿、软件工程师、背包客...',
+      content: '一个喜欢创作与挑战的程序猿/软件工程师、独立设计师...',
       button: [
         {
           id: 'a3',
