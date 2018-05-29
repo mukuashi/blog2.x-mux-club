@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-28 01:54:22
+ * @Last Modified time: 2018-05-29 13:20:06
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -737,7 +737,7 @@ export const data = {
             id: '1',
             icon: 'sina-weibo-circle',
             name: '新浪微博',
-            path: '//weibo.com/572512250',
+            path: 'https://weibo.com/mukuashi',
           },
           {
             id: '2',
