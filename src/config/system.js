@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-29 13:20:06
+ * @Last Modified time: 2018-05-30 19:45:42
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -198,21 +198,21 @@ export const data = {
       },
       {
         id: 4,
-        icon: 'camera',
-        title: '摄/电影',
-        content: '记得是14年开始玩摄影，慢慢寻找和探索，作为一个爱好者，获奖、做主持人、电影或纪录片拍摄、负责摄影活动及参与比赛、私拍或商演拍摄...慢慢开始了独立摄影之路。',
-      },
-      {
-        id: 5,
         icon: 'article',
         title: '写作',
         content: '从念大学开始并坚持和喜欢至今的莫过于拍照写文章记便签这些事了，后来开始在网上博客、公众号、简书/LOFTER等连载，也算是喂养心兽。',
       },
       {
-        id: 6,
+        id: 5,
         icon: 'media',
         title: '媒体',
         content: '在做广告和自媒体那会，接触一些广告制作和传媒文化团队，现在媒体可能更多扮演着内容加工和制作甚至多次创作形式的传播介质。',
+      },
+      {
+        id: 6,
+        icon: 'camera',
+        title: '摄/电影',
+        content: '记得是14年开始玩摄影，慢慢寻找和探索，作为一个爱好者，获奖、做主持人、电影或纪录片拍摄、负责摄影活动及参与比赛、私拍或商演拍摄...慢慢开始了独立摄影之路。',
       },
     ],
   },
