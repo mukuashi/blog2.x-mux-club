@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-30 19:45:42
+ * @Last Modified time: 2018-06-01 22:27:11
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -175,7 +175,7 @@ export const data = {
   content1: {
     text: {
       title: '阿里云提供基础的环境即服务',
-      subtitle: '博客基于React、Redux、Dvajs、Node.js等技术栈构建',
+      subtitle: '博客基于React、Redux、Dvajs、Node.js等技术栈构建，自适应市面上主流设备屏。',
     },
     block: [
       {
@@ -792,6 +792,7 @@ export const data = {
             icon: 'home-circle',
             name: '返回1.x版',
             path: '//kquanr.com',
+            target: true,
           },
 
         ],
