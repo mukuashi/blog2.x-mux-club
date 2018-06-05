@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-05 19:38:29
+ * @Last Modified time: 2018-06-05 20:09:53
 */
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
@@ -32,7 +32,7 @@ export const data = {
         id: 0,
         name: '首页',
         isReact: false,
-        path: '/2.x',
+        path: '/',
         target: null,
       },
       {
