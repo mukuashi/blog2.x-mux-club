@@ -1,6 +1,6 @@
 {
   "name": "blog2.x-mux-club",
-  "version": "0.0.2",
+  "version": "2.0.0",
   "description": "a blog version 2.x about dvajs and reactjs...",
   "private": true,
   "scripts": {
@@ -56,7 +56,7 @@
     "lint-staged": "^6.0.0",
     "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.8.3",
-    "sass-loader": "^6.0.7",
+    "path-to-regexp": "^2.2.1",
     "rc-banner-anim": "^1.0.1",
     "rc-queue-anim": "^1.4.1",
     "rc-scroll-anim": "^2.3.3",
@@ -64,6 +64,7 @@
     "redbox-react": "^1.5.0",
     "regenerator-runtime": "^0.11.1",
     "roadhog": "^2.4.2",
+    "sass-loader": "^6.0.7",
     "stylelint": "^8.4.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-scss": "^3.0.0"

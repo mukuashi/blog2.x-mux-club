@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-27 19:03:28
+ * @Last Modified time: 2018-06-05 19:35:02
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -15,6 +15,7 @@ import classNames from 'classnames';
 import DocumentTitle from 'react-document-title';
 import { ContainerQuery } from 'react-container-query';
 import { enquireScreen, unenquireScreen } from 'enquire-js';
+import pathToRegexp from 'path-to-regexp';
 import { getRoutes, getScrollTop } from 'utils';
 import { data } from 'config/system';
 import Home from 'routes/Home';
@@ -100,8 +101,15 @@ export default class BasicLayout extends PureComponent {
     const { routerData, location } = this.props;
     const { pathname } = location;
     let newTitle = title;
-    if (routerData[pathname] && routerData[pathname].name) {
-      newTitle = `${routerData[pathname].name} - ${title}`;
+    let currRouterData = null;
+    // match params path
+    Object.keys(routerData).forEach(key => {
+      if (pathToRegexp(key).test(pathname)) {
+        currRouterData = routerData[key];
+      }
+    });
+    if (currRouterData && currRouterData.name) {
+      newTitle = `${currRouterData.name} - ${title}`;
     }
     return newTitle;
   }
