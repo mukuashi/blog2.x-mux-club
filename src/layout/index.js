@@ -6,10 +6,11 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-05 19:35:02
+ * @Last Modified time: 2018-06-16 21:09:20
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
+import { connect } from 'dva';
 import { Route, Redirect, Switch } from 'dva/router';
 import classNames from 'classnames';
 import DocumentTitle from 'react-document-title';
@@ -17,13 +18,13 @@ import { ContainerQuery } from 'react-container-query';
 import { enquireScreen, unenquireScreen } from 'enquire-js';
 import pathToRegexp from 'path-to-regexp';
 import { getRoutes, getScrollTop } from 'utils';
-import { data } from 'config/system';
 import Home from 'routes/Home';
 import NotFound from 'routes/Exception/404';
 import ErrorPage from 'routes/Exception/110';
 import BannerHeader from 'layout/BannerHeader';
 import GlobalHeader from './GlobalHeader';
 import GlobalFooter from './GlobalFooter';
+import { data } from 'config/system';
 import styles from './index.scss';
 
 const { version, title } = data;
@@ -61,7 +62,7 @@ enquireScreen((b) => {
   isMobile = b;
 });
 
-export default class BasicLayout extends PureComponent {
+class BasicLayout extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -208,3 +209,7 @@ export default class BasicLayout extends PureComponent {
     );
   }
 }
+
+export default connect(({ global }) => ({
+  loading: global.loading
+}))(BasicLayout);

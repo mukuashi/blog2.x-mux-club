@@ -5,7 +5,7 @@
  * @version 0.1 | 2018-03-25 // Initial version.
  * @Date:   2018-03-25 18:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 20:48:55
+ * @Last Modified time: 2018-06-16 20:22:33
 */
 import '@babel/polyfill';
 import 'url-polyfill';
@@ -20,6 +20,9 @@ import createHistory from 'history/createBrowserHistory';
 // 1. Initialize
 const app = dva({
   history: createHistory(),
+  onError(e) {
+    console.log(e.message);
+  },
 });
 
 // 2. Plugins

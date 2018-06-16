@@ -5,9 +5,12 @@
  * @Date:   2016-03-23 12:25:27
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
+ * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-05 20:09:53
+ * @Last Modified time: 2018-06-15 21:05:27
 */
+// dev or online
+import { isProd } from 'utils';
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
 import headerAvatar from '../assets/images/header-avatar.png'
@@ -18,7 +21,7 @@ import banner3 from '../assets/images/banner-3.jpg';
 import contactPublic from '../assets/images/contact-public.jpg';
 import contactPrivate from '../assets/images/contact-private.jpg';
 import footerNav from '../assets/images/footer-nav.png';
-
+// Date
 const nowYear = new Date().getFullYear();
 //
 export const data = {
@@ -32,7 +35,7 @@ export const data = {
         id: 0,
         name: '首页',
         isReact: false,
-        path: '/',
+        path: isProd() ? '/' : '/2.x',
         target: null,
       },
       {
@@ -127,6 +130,22 @@ export const data = {
       id: 2,
       headerImg: bannerLogo,
       bgImg: banner2,
+      content: '一个喜欢创作与挑战的独立设计师、程序猿/软件工程师...',
+      button: [
+        {
+          id: 'a3',
+          value: 'Github',
+          icon: 'github',
+          target: '_blank',
+          animate: { x: '+=20' },
+          link: 'https://github.com/PhotoArtLife',
+        },
+      ],
+    },
+    {
+      id: 3,
+      headerImg: bannerLogo,
+      bgImg: banner3,
       content: '一个信仰和平与自由的摄影师、制片人、自媒体/公路作者...',
       button: [
         {
@@ -152,22 +171,6 @@ export const data = {
           target: '_blank',
           animate: { x: '+=20' },
           link: 'https://500px.me/PhotoArtLife',
-        },
-      ],
-    },
-    {
-      id: 3,
-      headerImg: bannerLogo,
-      bgImg: banner3,
-      content: '一个喜欢创作与挑战的程序猿/软件工程师、独立设计师...',
-      button: [
-        {
-          id: 'a3',
-          value: 'Github',
-          icon: 'github',
-          target: '_blank',
-          animate: { x: '+=20' },
-          link: 'https://github.com/PhotoArtLife',
         },
       ],
     },
