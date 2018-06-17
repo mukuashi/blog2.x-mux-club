@@ -5,8 +5,9 @@
  * @Date:   2017-03-23 12:25:27
  * @version 0.1 | 2017-01-23 // Initial version.
  * @version 0.2 | 2017-02-08 // delete not important toTop function.
+ * @version 0.2 | 2018-05-01 // add isMobile judge.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-25 03:17:39
+ * @Last Modified time: 2018-06-18 02:45:39
 */
 /**
  * @desc 获取滚动条距顶部的距离
@@ -137,3 +138,12 @@ export function isProd() {
     return false;
   }
 };
+/**
+ * @desc 设备环境判断，暂时分为移动和PC
+ * @return {Boolean} true/false
+ * @date     2018-05-01
+ * @author   mukuashi | mukuashi@qq.com
+ */
+export function isMobile() {
+  return navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i)
+}
