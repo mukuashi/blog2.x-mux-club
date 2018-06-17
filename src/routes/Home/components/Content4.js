@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'dva/router';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Gallery from 'react-grid-gallery';
-import { Slider, Icon } from 'antd';
+import { Slider } from 'antd';
 
 import { data } from 'config/system';
 
@@ -58,7 +59,7 @@ export default class Content extends PureComponent {
             {
               text.media.map(row => (
                 <span key={row.id}>
-                  <a href={row.url} target="_blank">{row.name}</a>{row.after}
+                  <Link to={row.url} target="_blank">{row.name}</Link>{row.after}
                 </span>
               ))
             }
