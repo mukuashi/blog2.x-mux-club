@@ -7,13 +7,13 @@
  * @version 0.2 | 2017-02-08 // delete not important toTop function.
  * @version 0.2 | 2018-05-01 // add isMobile judge.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-18 02:45:39
+ * @Last Modified time: 2018-06-18 02:47:50
 */
 /**
  * @desc 获取滚动条距顶部的距离
  * @returns  number
  * @date     2018-03-17
- * @author   mukuashi | mu.kuashi@xinheyun.com
+ * @author   mukuashi | mukuashi@qq.com
 */
 export function getScrollTop() {
   return (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
@@ -22,7 +22,7 @@ export function getScrollTop() {
  * @desc 设置滚动条距顶部的距离
  * @returns  number
  * @date     2018-03-17
- * @author   mukuashi | mu.kuashi@xinheyun.com
+ * @author   mukuashi | mukuashi@qq.com
 */
 export function setScrollTop(value) {
   window.scrollTo(0, value);
