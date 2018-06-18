@@ -21,3 +21,54 @@ from 2016，create a new version 2.x for blog，fit almost all the screens.
   - [CSS-in-JavaScript](https://github.com/airbnb/javascript/tree/master/css-in-javascript)
   - [CSS & Sass](https://github.com/airbnb/css)
   - [Ruby](https://github.com/airbnb/ruby)
+
+### Structure
+```
+├── package.json       # 项目依赖包及scripts
+├── webpack.config.js  # 扩展或覆盖roadhog的默认配置项目
+├── .webpackrc.js      # roadhog2.x配置文件
+├── dist               # 打包静态目录(npm run build)
+├── src                # 项目业务代码
+│ ├── /assets/         # 静态文件
+│ ├── /components/     # 公共组件
+│ ├── /config/         # 路由、主题、菜单、系统data等配置项
+│ ├── /layout/         # 平台布局 => header + content + footer + sidebar(可选)
+│ ├── /models/         # model数据层
+│ ├── /routes/         # 路由层
+│ ├── /services/       # 服务api
+│ ├── /styles/         # 全局样式 => core + mixin + function + theme...
+│ ├── /utils/          # 全局工具函数
+│ │──index.js          # 首页模板
+│ │──index.js          # 全局app入口
+│ │──route.js          # 全局路由入口
+```
+- Home(首页)
+  - components => Header + content1 + content2 + ... + Footer
+  - index.js
+  - index.scss
+
+- Exception
+  - 403
+  - 404
+  - 500
+  - 110
+
+- User
+  - Login
+  - Register
+
+```
+
+## Usage
+
+```bash
+#本地开发
+$ git clone git@github.com:PhotoArtLife/blog2.x-mux-club.git 请选择SSH方式
+$ mkdir your-blog-name -> cd your-blog-name 
+$ npm install
+$ npm start # visit http://localhost:8000（或online ip支持同局域网移动端开发适配）
+
+#线上部署
+测试环境：
+$ npm run build(可选)
+$ ssh 
