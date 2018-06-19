@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-01 22:52:54
+ * @Last Modified time: 2018-06-19 14:04:48
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -73,11 +73,11 @@ export default class GlobalFooter extends PureComponent {
                   {
                     row.content.map(second => (
                       <li key={second.id}>
-                        <Link to={second.path} target={second.target ? '_self' : '_blank'}>
+                        <a href={second.path} target={second.target ? '_self' : '_blank'}>
                           {
                             second.icon ? <Iconfont size="1x-bg" type={second.icon} title={second.name} /> : second.name
                           }
-                        </Link>
+                        </a>
                       </li>
                     ))
                   }

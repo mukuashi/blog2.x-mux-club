@@ -5,9 +5,9 @@
  * @Date:   2017-03-23 12:25:27
  * @version 0.1 | 2017-01-23 // Initial version.
  * @version 0.2 | 2017-02-08 // delete not important toTop function.
- * @version 0.2 | 2018-05-01 // add isMobile judge.
+ * @version 0.2 | 2018-05-01 // add isMobile judge and token get.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-18 02:47:50
+ * @Last Modified time: 2018-06-19 16:58:14
 */
 /**
  * @desc 获取滚动条距顶部的距离
@@ -147,3 +147,18 @@ export function isProd() {
 export function isMobile() {
   return navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i)
 }
+/**
+ * @desc 根据cookie生成唯一token指示符
+ * @return {String}
+ * @date     2018-05-01
+ * @author   mukuashi | mukuashi@qq.com
+ */
+// ，登录与注销或storage使用
+export function getToken() {
+  const name = '___rl__test__cookies';
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) {
+    return parts.pop().split(';').shift();
+  }
+};

@@ -164,8 +164,9 @@
       overflow-x: hidden;
       &-wrapper {
         background-color: $template-bg-color-light-2;
+        padding-bottom: 2.5%;
         .content4 {
-          padding-bottom: 5%;
+          padding-bottom: 1%;
           & > h1 {
             margin-top: 2.2%;
           }
@@ -179,6 +180,17 @@
           &-img-wrapper {
             display: inline-block;
             @include square(100%);
+          }
+          &-rate {
+            padding-top: 2.5%;
+            text-align: center;
+            > .ant-avatar-image {
+              margin-top: -.65%;
+            }
+            :global(.ant-rate) {
+              line-height: 2;
+              padding-left: 1.8%;
+            }
           }
         }
       }
@@ -268,6 +280,7 @@
       //content2
       .content4 {
         &-wrapper {
+          padding-bottom: 4.5%;
           .content4 {
             &-slider {
               padding: 1% 10% 2%;

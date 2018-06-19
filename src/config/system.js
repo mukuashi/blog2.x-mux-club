@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-18 02:43:12
+ * @Last Modified time: 2018-06-19 15:19:44
 */
 // dev or online
 import { isProd, isMobile } from 'utils';
@@ -139,7 +139,7 @@ export const data = {
           icon: 'github',
           target: '_blank',
           animate: { x: '+=20' },
-          link: 'https://github.com/PhotoArtLife',
+          link: 'https://github.com/PhotoArtLife/blog2.x-mux-club',
         },
       ],
     },
@@ -499,7 +499,7 @@ export const data = {
       {
         src: "//kquanr.com/files/blog/2.x/images/IMG2018-1.jpg",
         thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-1.jpg",
-        tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }],
+        tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }, { value: "城市", title: "城市" }],
         thumbnailWidth: 400,
         thumbnailHeight: 600,
         caption: "自然风光，拍摄于上海南京路等。",
@@ -507,15 +507,15 @@ export const data = {
       {
         src: "//kquanr.com/files/blog/2.x/images/IMG2018-2.jpg",
         thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-2.jpg",
-        tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }],
+        tags: [{ value: "城市", title: "城市" }, { value: "建筑", title: "建筑" }, { value: "街拍", title: "街拍" }],
         thumbnailWidth: 400,
         thumbnailHeight: 600,
-        caption: "自然风光，拍摄于上海南京路等。",
+        caption: "自然风光，拍摄于上海黄浦区等。",
       },
       {
         src: "//kquanr.com/files/blog/2.x/images/IMG2018-3.jpg",
         thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-3.jpg",
-        tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }],
+        tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }, { value: "街拍", title: "街拍" }],
         thumbnailWidth: 400,
         thumbnailHeight: 600,
         caption: "自然风光，拍摄于上海南京路等。",
@@ -523,34 +523,66 @@ export const data = {
       {
         src: "//kquanr.com/files/blog/2.x/images/IMG2018-4.jpg",
         thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-4.jpg",
-        tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }],
+        tags: [{ value: "城市", title: "城市" }, { value: "建筑", title: "建筑" }, { value: "风光", title: "风光" }],
         thumbnailWidth: 400,
         thumbnailHeight: 600,
-        caption: "自然风光，拍摄于上海南京路等。",
+        caption: "自然风光，拍摄于上海黄浦区等。",
       },
       {
         src: "//kquanr.com/files/blog/2.x/images/IMG2018-5.jpg",
         thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-5.jpg",
-        tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }],
+        tags: [{ value: "城市", title: "城市" }, { value: "风光", title: "风光" }],
         thumbnailWidth: 400,
         thumbnailHeight: 600,
-        caption: "自然风光，拍摄于上海南京路等。",
+        caption: "自然风光，拍摄于上海外滩隧道等。",
       },
       {
         src: "//kquanr.com/files/blog/2.x/images/IMG2018-s1.jpg",
         thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-s1.jpg",
-        tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }],
+        tags: [{ value: "手机", title: "手机" }, { value: "旅行", title: "旅行" }, { value: "纪实", title: "纪实" }],
         thumbnailWidth: 400,
         thumbnailHeight: 600,
-        caption: "自然风光，拍摄于上海南京路等。",
+        caption: "自然风光，拍摄于安徽、北京等。",
       },
       {
         src: "//kquanr.com/files/blog/2.x/images/IMG2018-s2.jpg",
         thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-s2.jpg",
+        tags: [{ value: "人文", title: "人文" }, { value: "黑白", title: "黑白" }, { value: "纪实", title: "纪实" }],
+        thumbnailWidth: 400,
+        thumbnailHeight: 600,
+        caption: "自然风光，拍摄于上海徐汇区等。",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2018-s3.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-s3.jpg",
         tags: [{ value: "人文", title: "人文" }, { value: "纪实", title: "纪实" }],
         thumbnailWidth: 400,
         thumbnailHeight: 600,
-        caption: "自然风光，拍摄于上海南京路等。",
+        caption: "人文纪实，拍摄于上海七宝教寺等。",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2018-s4.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-s4.jpg",
+        tags: [{ value: "人文", title: "人文" }, { value: "旅行", title: "旅行" }],
+        thumbnailWidth: 400,
+        thumbnailHeight: 600,
+        caption: "扫街纪实，拍摄于北京、上海等。",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2018-s5.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-s5.jpg",
+        tags: [{ value: "建筑", title: "建筑" }, { value: "城市", title: "城市" }],
+        thumbnailWidth: 600,
+        thumbnailHeight: 400,
+        caption: "人文建筑，拍摄于上海大厦等。",
+      },
+      {
+        src: "//kquanr.com/files/blog/2.x/images/IMG2018-s6.jpg",
+        thumbnail: "//kquanr.com/files/blog/2.x/images/IMG2018-s6.jpg",
+        tags: [{ value: "人文", title: "人文" }, { value: "城市", title: "城市" }, { value: '风光', title: "风光" }],
+        thumbnailWidth: 600,
+        thumbnailHeight: 400,
+        caption: "城镇风光，拍摄于隋唐大运河古镇等。",
       },
     ],
   },
