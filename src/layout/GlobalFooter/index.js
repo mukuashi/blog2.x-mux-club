@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-19 14:04:48
+ * @Last Modified time: 2018-06-19 17:44:52
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -44,7 +44,7 @@ export default class GlobalFooter extends PureComponent {
     );
     notification.open({
       message: 'Hey，欢迎访问 PhotoArtLife',
-      description: '当前版本：2.x\n，2016年之后的博客第二版，老版本可以在首页切换（5秒后关闭），博客最后更新时间：2017年6月。',
+      description: '当前版本：2.x\n，2016年之后的博客第二版，老版本可以在首页切换（5秒后关闭），博客最后更新时间：2018年6月。',
       icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
       duration: 6,
       btn: btnReturn,

@@ -3,7 +3,7 @@ import { Link } from 'dva/router';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Gallery from 'react-grid-gallery';
-import { Slider, Rate, Tooltip, Avatar, Icon } from 'antd';
+import { Slider, Rate, Tooltip, Avatar, Icon, message } from 'antd';
 import { getToken } from 'utils';
 import { data } from 'config/system';
 
@@ -23,6 +23,12 @@ export default class Content extends PureComponent {
   }
   handleRateChange = (value) => {
     this.setState({ rateValue: value }, () => {
+      if (value === 5) {
+        message.success('🐶 ❤️ 😘 五星好评呀，谢谢大佬嘿！');
+      }
+      if (value === 0) {
+        message.warning('🐶 😂 ☔️ 原来我这么差呀，努力向大佬你看齐啦！');
+      }
       localStorage.setItem(`${getToken()}-home-content4-rate`, value)
     });
   }
@@ -117,7 +123,7 @@ export default class Content extends PureComponent {
               character={<Icon type="heart" />}
               onChange={this.handleRateChange}
             />
-            {rateValue && <span className="ant-rate-text">评分：{rateValue} ⭐️📸</span>}
+            <span className="ant-rate-text">评分：{rateValue} ⭐️📸</span>
           </TweenOne>
         </OverPack>
       </section>
