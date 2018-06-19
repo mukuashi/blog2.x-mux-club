@@ -37,8 +37,9 @@
 				& ul {
 					@include ul-initialize;
 					li {
-						display: block;
 						width: 100%;
+						text-align: left;
+						display: inline-block;
 					}
 				}
 				&:last-child {

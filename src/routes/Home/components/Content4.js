@@ -3,8 +3,8 @@ import { Link } from 'dva/router';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Gallery from 'react-grid-gallery';
-import { Slider } from 'antd';
-
+import { Slider, Rate, Tooltip, Avatar, Icon } from 'antd';
+import { getToken } from 'utils';
 import { data } from 'config/system';
 
 const { text, block } = data.content4;
@@ -15,17 +15,21 @@ export default class Content extends PureComponent {
   };
   state = {
     boxValue: 20,
+    rateValue: localStorage.getItem(`${getToken()}-home-content4-rate`) ? localStorage.getItem(`${getToken()}-home-content4-rate`) : 3.5,
   };
 
-  handleChange = (value) => {
-    this.setState({
-      boxValue: value,
+  handleBoxChange = (value) => {
+    this.setState({ boxValue: value });
+  }
+  handleRateChange = (value) => {
+    this.setState({ rateValue: value }, () => {
+      localStorage.setItem(`${getToken()}-home-content4-rate`, value)
     });
   }
 
   render() {
     const props = { ...this.props };
-    const { boxValue } = this.state;
+    const { boxValue, rateValue } = this.state;
     const { isMobile } = props;
     const marks = {
       0: '最小边距',
@@ -76,7 +80,7 @@ export default class Content extends PureComponent {
               max={50}
               marks={marks}
               defaultValue={boxValue}
-              onChange={this.handleChange}
+              onChange={this.handleBoxChange}
             />
           </TweenOne>
           <TweenOneGroup
@@ -97,6 +101,24 @@ export default class Content extends PureComponent {
               enableImageSelection={false}   // 去掉多选checkbox
             />
           </TweenOneGroup>
+          <TweenOne
+            key="f"
+            animation={{ y: '+=30', opacity: 0, type: 'from', ease: 'easeOutCubic' }}
+            reverseDelay={300}
+            className={`${props.className}-rate`}
+          >
+            <Tooltip placement="top" title='给作者一个评价呗！'>
+              <Avatar src="http://kquanr.com/images/header-avatar.png" />
+            </Tooltip>
+            <Rate
+              allowHalf
+              value={rateValue}
+              style={{ color: 'rgb(246, 46, 25)' }}
+              character={<Icon type="heart" />}
+              onChange={this.handleRateChange}
+            />
+            {rateValue && <span className="ant-rate-text">评分：{rateValue} ⭐️📸</span>}
+          </TweenOne>
         </OverPack>
       </section>
     );
