@@ -6,7 +6,7 @@
  * @Date:   2017-03-23 12:25:27
  * @version 0.1 | 2017-03-23  // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-20 00:54:57
+ * @Last Modified time: 2018-06-20 14:58:40
 */
 import { createElement } from 'react';
 import dynamic from 'dva/dynamic';
@@ -66,7 +66,7 @@ export const getRouterData = (app) => {
   const routerConfig = {
     '/': {
       name: '',
-      component: dynamicWrapper(app, [], () => import('../layout')),
+      component: dynamicWrapper(app, ['global'], () => import('../layout')),
     },
     // 错误相关
     '/exception/403': {

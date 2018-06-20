@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-17 18:00:52
+ * @Last Modified time: 2018-06-20 12:12:40
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -84,7 +84,7 @@ class BasicLayout extends PureComponent {
     // 移动端uncheck
     unenquireScreen(this.enquireHandler);
   }
-  getBashRedirect = () => {
+  getBaseRedirect = () => {
     // According to the url parameter to redirect
     // 重定向的,重定向到 url 的 redirect 参数所示地址
     const urlParams = new URL(window.location.href);
@@ -135,7 +135,7 @@ class BasicLayout extends PureComponent {
   render() {
     const { fixHeader } = this.state;
     const { routerData, match, location } = this.props;
-    const bashRedirect = this.getBashRedirect();
+    const bashRedirect = this.getBaseRedirect();
     const classLayoutContainer = cx({
       'mux-layout': true,
     });
@@ -210,6 +210,6 @@ class BasicLayout extends PureComponent {
   }
 }
 
-export default connect(({ global }) => ({
-  loading: global.loading,
+export default connect(({ global, loading }) => ({
+
 }))(BasicLayout);

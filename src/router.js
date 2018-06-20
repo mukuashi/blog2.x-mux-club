@@ -5,11 +5,12 @@
  * @Date:   2016-03-24 12:25:27
  * @version 0.1 | 2016-03-24 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 20:47:08
+ * @Last Modified time: 2018-06-20 15:39:01
 */
 import React from 'react';
 import dynamic from 'dva/dynamic';
-import { Spin } from 'antd';
+import { LocaleProvider, Spin } from 'antd';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 import classNames from 'classnames';
 import { Switch, Route, routerRedux } from 'dva/router';
 import { getRouterData } from './config/router';
@@ -29,14 +30,16 @@ function RouterConfig({ history, app }) {
   const BasicLayout = routerData['/'].component;
 
   return (
-    <ConnectedRouter history={history}>
-      <Switch>
-        <Route
-          path="/"
-          render={props => <BasicLayout {...props} />}
-        />
-      </Switch>
-    </ConnectedRouter>
+    <LocaleProvider locale={zhCN}>
+      <ConnectedRouter history={history}>
+        <Switch>
+          <Route
+            path="/"
+            render={props => <BasicLayout {...props} />}
+          />
+        </Switch>
+      </ConnectedRouter>
+    </LocaleProvider>
   );
 }
 
