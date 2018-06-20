@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-26 17:24:33
+ * @Last Modified time: 2018-06-20 16:38:06
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -103,7 +103,7 @@ export default class GlobalHeader extends PureComponent {
                 !row.href && <h4 className={isMobile ? styles.avatarVersion : ''}>{row.name}</h4>
               }
               {
-                row.href && <Link to={row.href} target={row.target} className={styles.avatarInfo}>{row.name}</Link>
+                row.href && <a href={row.href} target={row.target} className={styles.avatarInfo}>{row.name}</a>
               }
             </Item>
           ))

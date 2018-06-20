@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-19 15:19:44
+ * @Last Modified time: 2018-06-20 15:54:48
 */
 // dev or online
 import { isProd, isMobile } from 'utils';
@@ -23,11 +23,12 @@ import contactPrivate from '../assets/images/contact-private.jpg';
 import footerNav from '../assets/images/footer-nav.png';
 // Date
 const nowYear = new Date().getFullYear();
+const version = '2.x';
 // Media
 const mePai = isMobile() ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.html' : 'https://www.mepai.me/user/u_592e418fe4a53';
 export const data = {
   prefix: 'mux',
-  version: '2.x/',
+  version: `${version}/`,
   title: 'mukuashi@PhotoArtLife | 2.x Blog',
   header: {
     logo: headerNav,
@@ -36,7 +37,7 @@ export const data = {
         id: 0,
         name: '首页',
         isReact: false,
-        path: isProd() ? '/' : '/2.x',
+        path: isProd() ? '/' : `/${version}`,
         target: null,
       },
       {
@@ -92,7 +93,7 @@ export const data = {
     submenu: [
       {
         id: 'a',
-        name: '当前版本：2.x',
+        name: `当前版本：${version}`,
         href: '',
         target: '_blank',
       },
