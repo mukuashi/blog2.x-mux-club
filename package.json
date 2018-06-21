@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "cross-env ESLINT=none roadhog dev",
-    "build": "cross-env ESLINT=true roadhog build",
+    "build": "cross-env ESLINT=none roadhog build",
     "build:analyze": "cross-env ANALYZE=true roadhog build",
     "lint:style": "stylelint \"src/**/*.scss\" --syntax scss",
     "lint:fix": "eslint --fix --ext .js src mock tests && npm run lint:style",

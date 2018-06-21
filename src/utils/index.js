@@ -1,27 +1,28 @@
 /*
  * Copyright (c) 2016-Now PhotoArtLife PD, All rights reseved.
- * @fileoverview | 常用工具函数，参考 https://github.com/zhangkun-Jser/autils
+ * @fileoverview | 常用工具函数，个别参考 https://github.com/zhangkun-Jser/autils
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
  * @Date:   2017-03-23 12:25:27
  * @version 0.1 | 2017-01-23 // Initial version.
  * @version 0.2 | 2017-02-08 // delete not important toTop function.
- * @version 0.2 | 2018-05-01 // add isMobile judge and token get.
+ * @version 0.3 | 2018-05-01 // add isMobile judge and token get.
+ * @version 0.4 | 2018-05-11 // add deepCopy.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-19 16:58:14
+ * @Last Modified time: 2018-06-21 11:34:41
 */
 /**
+ * @date     2018-03-17
  * @desc 获取滚动条距顶部的距离
  * @returns  number
- * @date     2018-03-17
  * @author   mukuashi | mukuashi@qq.com
 */
 export function getScrollTop() {
   return (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
 }
 /**
+ * @date     2018-03-17
  * @desc 设置滚动条距顶部的距离
  * @returns  number
- * @date     2018-03-17
  * @author   mukuashi | mukuashi@qq.com
 */
 export function setScrollTop(value) {
@@ -61,6 +62,7 @@ const getRenderArr = (routes) => {
 /**
  * Get router routing configuration
  * { path:{name,...param}}=>Array<{name,path ...param}>
+ * @date     2017-07-05
  * @param {string} path
  * @param {routerData} routerData
  */
@@ -90,10 +92,10 @@ export function isUrl(path) {
   return reg.test(path);
 }
 /**
+ * @date     2018-01-10
  * @desc 在${duration}时间内，滚动条平滑滚动到${to}指定位置
  * @param {Number} to
  * @param {Number} duration
- * @date     2018-01-10
  * @author   mukuashi |mukuashi@qq.com
 */
 const requestAnimFrame = ((() => window.requestAnimationFrame ||
@@ -125,9 +127,9 @@ export function scrollTo(to, duration) {
     });
 }
 /**
+ * @date     2017-04-11
  * @desc 开发环境判断，暂时分为dev和prod
  * @return {Boolean} true/false | 是否为生产环境production
- * @date     2017-04-11
  * @author   mukuashi | mukuashi@qq.com
  */
 export function isProd() {
@@ -139,21 +141,20 @@ export function isProd() {
   }
 };
 /**
+ * @date     2018-05-01
  * @desc 设备环境判断，暂时分为移动和PC
  * @return {Boolean} true/false
- * @date     2018-05-01
  * @author   mukuashi | mukuashi@qq.com
  */
 export function isMobile() {
   return navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i)
 }
 /**
+ * @date     2018-05-01
  * @desc 根据cookie生成唯一token指示符
  * @return {String}
- * @date     2018-05-01
  * @author   mukuashi | mukuashi@qq.com
  */
-// ，登录与注销或storage使用
 export function getToken() {
   const name = '___rl__test__cookies';
   const value = `; ${document.cookie}`;
@@ -161,4 +162,26 @@ export function getToken() {
   if (parts.length === 2) {
     return parts.pop().split(';').shift();
   }
+};
+/**
+ * @date 2018-05-11
+ * @desc deeply copy object or arrays with nested attributes
+ * @param  {any} obj
+ * @return {any} a depply copied replica of arguement passed
+ * @author   mukuashi | mukuashi@qq.com
+ */
+export function deepClone(obj) {
+  if (!obj || typeof obj !== 'object') {
+    return obj;
+  }
+  let newObj = {};
+  if (Array.isArray(obj)) {
+    newObj = obj.map(item => deepClone(item));
+  } else {
+    Object.keys(obj).forEach((key) => {
+      newObj[key] = deepClone(obj[key]);
+      return newObj[key];
+    })
+  }
+  return newObj;
 };

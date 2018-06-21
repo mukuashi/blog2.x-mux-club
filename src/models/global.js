@@ -5,7 +5,7 @@
  * @Date:   2018-03-23 12:25:27
  * @version 0.1 | 2018-03-23  // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-20 12:02:45
+ * @Last Modified time: 2018-06-20 17:53:39
 */
 export default {
   namespace: 'global',

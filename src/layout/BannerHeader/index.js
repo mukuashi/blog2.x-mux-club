@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-05-27 19:25:58
+ * @Last Modified time: 2018-06-20 21:24:21
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -27,12 +27,12 @@ const yAnim = {
 };
 //
 export default class BannerHeader extends PureComponent {
-  static defaultProps = {
-    className: 'banner',
-  };
   static propTypes = {
     className: PropTypes.string,
   }
+  static defaultProps = {
+    className: 'banner',
+  };
   handleRollDown = () => {
     const { isMobile } = this.props;
     const dimHeight = isMobile ? 120 : 50;
