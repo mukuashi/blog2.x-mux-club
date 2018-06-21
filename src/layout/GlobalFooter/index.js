@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-20 11:54:16
+ * @Last Modified time: 2018-06-21 10:26:09
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -106,8 +106,8 @@ export default class GlobalFooter extends PureComponent {
             <span>
               <a onClick={this.openNotification}>{info.version}</a>
               Just Blog Stage | Referenced By
-              <Link to="https://reactjs.org" target="_blank"> Facebook React </Link>
-              & <Link to="https://github.com/dvajs/dva" target="_blank"> Dvajs </Link>
+              <Link to="//reactjs.org" target="_blank"> Facebook React </Link>
+              & <Link to="//github.com/dvajs/dva" target="_blank"> Dvajs </Link>
               | Powered By
               <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife·跨世 </Link>
               Design For Life

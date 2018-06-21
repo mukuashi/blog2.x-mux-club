@@ -27,21 +27,13 @@ export default {
     template: './src/index.ejs',
   },
   disableDynamicImport: true,
-  publicPath: '', //relative to HTML page (same directory)
+  publicPath: '',
   hash: true,
   sass: {
     'node-sass': true
   },
-  "commons": [
-    {
-      async: '__common',
-      children: true,
-      minChunks(module, count) {
-        if (pageCount <= 2) {
-          return count >= pageCount;
-        }
-        return count >= pageCount * 0.5;
-      },
-    },
-  ],
+  commons: [{
+    name: 'common',
+    filename: 'common.js'
+  }],
 };
