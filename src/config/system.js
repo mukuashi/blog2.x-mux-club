@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-20 15:54:48
+ * @Last Modified time: 2018-07-15 00:46:02
 */
 // dev or online
 import { isProd, isMobile } from 'utils';
@@ -29,7 +29,7 @@ const mePai = isMobile() ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.htm
 export const data = {
   prefix: 'mux',
   version: `${version}/`,
-  title: 'mukuashi@PhotoArtLife | 2.x Blog',
+  title: '2.x 🐿 mukuashi@PhotoArtLife Blog',
   header: {
     logo: headerNav,
     nav: [
