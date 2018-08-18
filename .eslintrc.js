@@ -19,6 +19,7 @@ module.exports = {
     'react/jsx-no-bind': [0],
     'react/prop-types': [0],
     'react/prefer-stateless-function': [0],
+    'react/jsx-one-expression-per-line': [0],
     'react/jsx-wrap-multilines': [
       'error',
       {
@@ -35,14 +36,11 @@ module.exports = {
     'no-restricted-syntax': [0],
     'import/no-extraneous-dependencies': [0],
     'no-use-before-define': [0],
+    "jsx-a11y/href-no-hash": [0],
     'jsx-a11y/no-static-element-interactions': [0],
     'jsx-a11y/no-noninteractive-element-interactions': [0],
-    "jsx-a11y/href-no-hash": [0],
-    "jsx-a11y/click-events-have-key-events": [0],
-    "jsx-a11y/anchor-is-valid": ["error", {
-      "components": ["Link"],
-      "specialLink": ["to"]
-    }],
+    'jsx-a11y/click-events-have-key-events': [0],
+    'jsx-a11y/anchor-is-valid': [0],
     'no-nested-ternary': [0],
     'arrow-body-style': [0],
     'import/extensions': [0],

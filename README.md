@@ -72,3 +72,6 @@ $ npm start # visit http://localhost:8000（或online ip支持同局域网移动
 测试环境：
 $ npm run build(可选)
 $ ssh 
+
+#Issue
+npm install可能会出现部分依赖包安装不上的情况，可以试下国内代理的方式：npm install --registry=https://registry.npm.taobao.org

@@ -96,12 +96,9 @@
 			float: right;
 			margin-right: 1.7rem;
 			transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-			//@include custom-position(absolute,$bottom:0,$right:1.75rem,$zindex:1000);
-			a {
+			//@include custom-position(fixed,$bottom:0,$right:1.75rem,$zindex:1000);
+			a > i{
 				font-size: 2rem;
-				> a {
-					font-size: inherit;
-				}
 			}
     }
 	}

@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-07-15 00:46:02
+ * @Last Modified time: 2018-08-18 16:56:08
 */
 // dev or online
 import { isProd, isMobile } from 'utils';
@@ -21,6 +21,12 @@ import banner3 from '../assets/images/banner-3.jpg';
 import contactPublic from '../assets/images/contact-public.jpg';
 import contactPrivate from '../assets/images/contact-private.jpg';
 import footerNav from '../assets/images/footer-nav.png';
+import content3ArticleImg1 from '../assets/images/content3-article-img1.gif';
+import content3ArticleImg2 from '../assets/images/content3-article-img2.gif';
+import content3ArticleImg3 from '../assets/images/content3-article-img3.gif';
+import content3ArticleImg4 from '../assets/images/content3-article-img4.gif';
+import content3ArticleImg5 from '../assets/images/content3-article-img5.gif';
+
 // Date
 const nowYear = new Date().getFullYear();
 const version = '2.x';
@@ -29,7 +35,7 @@ const mePai = isMobile() ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.htm
 export const data = {
   prefix: 'mux',
   version: `${version}/`,
-  title: '2.x 🐿 mukuashi@PhotoArtLife Blog',
+  title: '2.x mukuashi@PhotoArtLife Blog 🐿',
   header: {
     logo: headerNav,
     nav: [
@@ -105,7 +111,7 @@ export const data = {
       },
       {
         id: 'c',
-        name: '回到旧版1.x',
+        name: '返回旧版1.x',
         href: '/',
         target: '_self',
       },
@@ -135,7 +141,7 @@ export const data = {
       content: '一个喜欢创作与挑战的独立设计师、程序猿/软件工程师...',
       button: [
         {
-          id: 'a3',
+          id: 'b2',
           value: 'Github',
           icon: 'github',
           target: '_blank',
@@ -151,7 +157,7 @@ export const data = {
       content: '一个信仰和平与自由的摄影师、制片人、自媒体/公路作者...',
       button: [
         {
-          id: 'a2',
+          id: 'c1',
           value: 'LOFTER',
           icon: 'camera',
           target: '_blank',
@@ -159,7 +165,7 @@ export const data = {
           link: 'http://photoartlife.lofter.com',
         },
         {
-          id: 'b2',
+          id: 'c2',
           value: '米拍',
           icon: 'man',
           target: '_blank',
@@ -167,7 +173,7 @@ export const data = {
           link: mePai,
         },
         {
-          id: 'b3',
+          id: 'c3',
           value: '500PX',
           icon: 'html5',
           target: '_blank',
@@ -187,7 +193,7 @@ export const data = {
         id: 1,
         icon: 'design',
         title: '设计',
-        content: '从大学一二年纪的广告杂志设计过渡到后来的互联产品设计及研发，现在可能会偏爱简约主义、工业设计这一块。',
+        content: '从大学一二年纪的广告杂志设计过渡到后来的互联产品设计及研发，现在可能会偏爱简约主义、工业设计、可视化视觉这一块。',
       },
       {
         id: 2,
@@ -217,14 +223,14 @@ export const data = {
         id: 6,
         icon: 'camera',
         title: '摄/电影',
-        content: '记得是14年开始玩摄影，慢慢寻找和探索，作为一个爱好者，获奖、做主持人、电影或纪录片拍摄、负责摄影活动及参与比赛、私拍或商演拍摄...慢慢开始了独立摄影之路。',
+        content: '记得是14年开始玩摄影，慢慢寻找和探索，作为一个爱好者，喜欢拍摄电影和纪录片，慢慢参与比赛，负责社区活动、商业拍摄等...也算是开始了独立摄影之路。',
       },
     ],
   },
   content2: {
     text: {
       title: '一个创作者的富媒体之路',
-      subtitle: '成长即乐趣吧。不乎于去做电影、写代码、写文章、玩摄影等等这些事情，可能是一个阶段接着一个阶段去实现一个接着一个计划，得失的过程，便知岁月。',
+      subtitle: '成长即乐趣吧。不乎于去做电影、迭代工程代码、写文章、玩摄影等等这些事情，可能是一个阶段接着一个阶段去实现一个接着一个计划，得失的过程，便知岁月。',
     },
     video: {
       cover: '//kquanr.com/files/blog/2.x/video/View_Dream/View_From_A_Blue_Moon_Trailer-HD.jpg',
@@ -242,18 +248,18 @@ export const data = {
           tag: '2013-2014（Freshman）',
           icon: 'one',
         },
-        img: 'https://cdn.dribbble.com/users/285475/screenshots/1792557/werewolf-big7.gif',
+        img: content3ArticleImg1,
         body: `<h3>摄影</h3>兴趣导向的入门吧，开始泡图书馆和蹭一些美术或摄影课。
                 <h3>设计</h3>可能还是视觉上的吸引阶段，倒腾些PS/AI，关注一些UED Blog、广告制作等传媒行业。
                 <h3>编程</h3>这个绝对是科班出身了，信息学院计算机系，可能那时候写代码还只是从书本上一行一行抄过来打出来看看demo的阶段。
-                <h3>写作</h3>还没有今天自媒体这么流行火热，只是个写作爱好者 <a href="http://kquanr.com/article" target="_blank">老版旧文</a>`,
+                <h3>写作</h3>还没有今天自媒体这么流行火热，也只是写作个爱好者。 <a href="http://kquanr.com/article" target="_blank">老版旧文</a>`,
       },
       {
         tab: {
           tag: '2014-2015（Sophomore）',
           icon: 'two',
         },
-        img: 'https://cdn.dribbble.com/users/285475/screenshots/3618358/skate_apple_dribbble.gif',
+        img: content3ArticleImg2,
         body: `<h3>设计</h3>UI & UX，边念书边在某广告公司做广告传媒与平面设计等工作。
         <h3>编程</h3>学校的一些基本课程学习和校外兼职项目，同时做着在线讲师项目创业和外包服务等。
         <h3>媒体</h3>网上连载<a href="//kquanr.com/about/works" target="_blank">博客</a>文章和<a href="//i.youku.com/mukuashi" target="_blank">视频</a>前后期制作等。
@@ -264,8 +270,8 @@ export const data = {
           tag: '2015-2016（Junior）',
           icon: 'three',
         },
-        img: 'https://cdn.dribbble.com/users/99875/screenshots/1458439/pharrell_drib.gif',
-        body: `<h3>编程</h3>在<a href="https://www.baidu.com" target="_blank">百度</a>的一个产品<a href="https://www.zuoyebang.com" target="_blank">作业帮</a>搜索平台组，全职研发实习FE@前端坑。<h3>设计</h3>会继续做些小东西，偏注用户体验和交互细节更多的产品。<h3>摄影</h3>反正是有空就拍呗，城市（自然）风光和人文纪实为主，人像、肖像也挺感喜欢，总之是在创作路上<a href="//photoartlife.lofter.com" target="_blank"> LOFTER</a>、<a href="mePai" target="_blank">米拍</a>、<a href="https://500px.me/PhotoArtLife" target="_blank">500PX</a>、<a href="https://photoartlife.tuchong.com" target="_blank">图虫</a>等。
+        img: content3ArticleImg3,
+        body: `<h3>编程</h3>在<a href="https://www.baidu.com" target="_blank">百度</a>的一个产品<a href="https://www.zuoyebang.com" target="_blank">作业帮</a>搜索平台组，全职研发实习FE@前端坑。<h3>设计</h3>会继续做些小东西，偏注用户体验和交互细节更多的产品。<h3>摄影</h3>反正是有空就拍呗，城市（自然）风光和人文纪实为主，人像、肖像也在拍，总之是在创作路上 <a href="//photoartlife.lofter.com" target="_blank"> LOFTER</a>、<a href=${mePai} target="_blank">米拍</a>、<a href="https://500px.me/PhotoArtLife" target="_blank">500PX</a>、<a href="https://photoartlife.tuchong.com" target="_blank">图虫</a>等。
         <h3>写作</h3>慢慢开始放到<a href="http://t.cn/Rt1xb42" target="_blank">微信公众号</a>、<a href="https://www.jianshu.com/u/0daeb4835d2d" target="_blank">简书</a>等一些自媒体平台连载。`,
       },
       {
@@ -273,9 +279,9 @@ export const data = {
           tag: '2016-2017（Senior）',
           icon: 'four',
         },
-        img: 'https://cdn.dribbble.com/users/6084/screenshots/2448824/icns.gif',
+        img: content3ArticleImg4,
         body: `<h3>编程</h3>先后在<a href="//www.mi.com" target="_blank">小米 </a><a href="//www.miui.com" target="_blank">MIUI</a>安全组、短视频组从事全职研发工作@前端工程师。<h3>产品</h3>UGC App<a href="//wg.miui.com" target="_blank">围观小视频</a>、PGC App<a href="//xk.miui.com" target="_blank">想看视频</a>、PGC作者平台<a href="//open.xk.miui.com" target="_blank">想看开放平台</a>、UGC审核后台<a href="//mp.wg.miui.com" target="_blank">围观CRM</a>、PGC审核后台<a href="//mp.xk.miui.com" target="_blank">想看CRM</a>等。
-        <h3>摄影</h3>从小透明开始慢慢在国内社区冒泡，作为<a href="mePai" target="_blank">米拍认证自由摄影师，#上海#、#城市#、#旅行#主持人</a>，米拍优秀主持人，米拍城市-巡城记北京十佳摄影师，<a href="//photoartlife.lofter.com" target="_blank">LOFTER摄影达人，LOFTER旅行家，LOFTER自由摄影师</a>等，一路走过来收获的不仅仅是感动，还有相知相惜。
+        <h3>摄影</h3>从小透明开始慢慢在国内社区冒泡，作为<a href=${mePai} target="_blank">米拍认证自由摄影师，#上海#、#城市#、#旅行#主持人</a>，米拍优秀主持人，米拍城市-巡城记北京十佳摄影师，<a href="//photoartlife.lofter.com" target="_blank">LOFTER摄影达人，LOFTER旅行家，LOFTER自由摄影师</a>等，一路走过来收获的不仅仅是感动，还有相知相惜。
         <h3>设计</h3>作为一个自由独立设计师，喜欢设计和创造的这种兴趣也相辅相成了我的研发工作和摄影输入输出，一来可以做出自己喜欢的style，二来做电影后期也派上了用场。<a href="//i.youku.com/mukuashi" target="_blank">优酷自媒体</a>、<a href="//kquanr.com/project/demo/mukuashi" target="_blank">2017·济南大学毕设答辩@mukuashi</a>等。
         <h3>写作</h3>还是一如既往地坚持记录吧，部分会放到网上<a href="http://t.cn/Rt1xb42" target="_blank">专栏</a>连载。`,
       },
@@ -284,11 +290,12 @@ export const data = {
           tag: '2018-至今（Future）',
           icon: 'cafe',
         },
-        img: 'https://cdn.dribbble.com/users/2007910/screenshots/4625590/___.gif',
-        body: `<h3>工作</h3>目前还是大部分时间的研发坑，小部分时间的摄影与创作空间。有一点印象很深刻，记得在小米工作时，电脑每天的开机画面都是一张很好看的风光壁纸，幻灯片淡入一个很大的标题：永远相信美好的事情即将发生！当然，雷总很多发布会或年会都会说这句话，也一直影响着作者，去做感动人心的产品！
+        img: content3ArticleImg5,
+        body: `<h3>工作</h3>目前还在从事互联网、可视化及视觉创作、摄影及传媒行业，慢慢打通这些点，积累的过程，匀加速成长吧。有一点印象很深刻，记得在小米工作时，电脑每天的开机画面都是一张很好看的风光壁纸，幻灯片淡入一个很大的标题：永远相信美好的事情即将发生！当然，雷总很多发布会或年会都会说这句话，也一直影响着作者，去做感动人心的产品！
         <h3>摄影</h3>还是当初那个摄影爱好者，还在坚持纪录和拍东西，更多作品移步关注
+        <a href="https://www.instagram.com/mukuashi" target="_blank">Ins</a>、 
         <a href="http://photoartlife.lofter.com" target="_blank">LOFTER</a>、
-        <a href="mePai" target="_blank">米拍</a>、
+        <a href=${mePai} target="_blank">米拍</a>、
         <a href="https://photoartlife.tuchong.com" target="_blank">图虫摄影</a>、
         <a href="https://500px.me/PhotoArtLife" target="_blank">500PX</a>等社区。
         <h3>设计与写作</h3>
@@ -302,6 +309,12 @@ export const data = {
       title: 'Photography And Creation Plus',
       subtitle: '摄影、电影、文字、代码... 作为作者现在主要的创作介质，相辅相成，收获感动和快乐，也希望可以传递和分享更多的视角和能量。博客仅展示部分作品，更多连载于 ',
       media: [
+        {
+          id: 0,
+          name: 'Ins',
+          after: '、',
+          url: 'https://www.instagram.com/mukuashi',
+        },
         {
           id: 1,
           name: 'LOFTER',
@@ -771,16 +784,22 @@ export const data = {
         title: '社交媒体',
         content: [
           {
-            id: '1',
+            id: '0',
             icon: 'sina-weibo-circle',
             name: '新浪微博',
             path: 'https://weibo.com/mukuashi',
           },
           {
-            id: '2',
+            id: '1',
             icon: 'wechat-circle',
             name: '微信专栏',
             path: 'http://t.cn/Rt1xb42',
+          },
+          {
+            id: '2',
+            icon: 'instagram',
+            name: 'Ins摄影',
+            path: 'https://www.instagram.com/mukuashi',
           },
           {
             id: '3',
@@ -814,18 +833,30 @@ export const data = {
           },
           {
             id: '8',
+            icon: 'zhihu',
+            name: '知乎-MUX Studio',
+            path: 'https://www.zhihu.com/people/mukuashi',
+          },
+          {
+            id: '9',
+            icon: 'jianshu',
+            name: '简书创作',
+            path: 'https://www.jianshu.com/u/0daeb4835d2d',
+          },
+          {
+            id: '10',
             icon: 'github',
             name: 'Github',
             path: 'https://github.com/PhotoArtLife',
           },
           {
-            id: '9',
+            id: '11',
             icon: 'email-circle',
             name: '邮箱📮',
             path: '//kquanr.com/about/works#four',
           },
           {
-            id: '10',
+            id: '12',
             icon: 'home-circle',
             name: '返回1.x版',
             path: '//kquanr.com',

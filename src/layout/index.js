@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-03-23 // Initial version.
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-20 12:12:40
+ * @Last Modified time: 2018-08-18 16:03:33
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -70,6 +70,7 @@ class BasicLayout extends PureComponent {
       fixHeader: false, // 置顶nav menu，初始化置顶透明背景，滚动一定高度时加fixHeader
     };
   }
+
   componentDidMount() {
     this.enquireHandler = enquireScreen((mobile) => {
       this.setState({
@@ -78,12 +79,14 @@ class BasicLayout extends PureComponent {
     });
     window.addEventListener('scroll', this.handleScrollCheck, false);
   }
+
   componentWillUnmount() {
     // 滚屏header
     window.removeEventListener('scroll', this.handleScrollCheck, false);
     // 移动端uncheck
     unenquireScreen(this.enquireHandler);
   }
+
   getBaseRedirect = () => {
     // According to the url parameter to redirect
     // 重定向的,重定向到 url 的 redirect 参数所示地址
@@ -98,6 +101,7 @@ class BasicLayout extends PureComponent {
     }
     return redirect;
   }
+
   getPageTitle() {
     const { routerData, location } = this.props;
     const { pathname } = location;
@@ -114,6 +118,7 @@ class BasicLayout extends PureComponent {
     }
     return newTitle;
   }
+
   // 滚屏与置顶菜单状态切换
   handleScrollCheck = () => {
     // 设置滚屏默认高度为90px,超过后将会切换导航栏
@@ -131,9 +136,10 @@ class BasicLayout extends PureComponent {
       toggleHeader(false);
     }
   }
+
   //
   render() {
-    const { fixHeader } = this.state;
+    const { fixHeader, isMobile } = this.state;
     const { routerData, match, location } = this.props;
     const bashRedirect = this.getBaseRedirect();
     const classLayoutContainer = cx({
@@ -154,7 +160,7 @@ class BasicLayout extends PureComponent {
           <GlobalHeader
             pathname={location.pathname}
             fixHeader={fixHeader || false}
-            isMobile={this.state.isMobile || false}
+            isMobile={isMobile || false}
           />
         </Header>
         {
@@ -180,7 +186,7 @@ class BasicLayout extends PureComponent {
             <Route
               exact
               path={`/${version}`}
-              render={() => <Home isMobile={this.state.isMobile || false} />}
+              render={() => <Home isMobile={isMobile || false} />}
             />
             <Redirect from="/home" to={bashRedirect} />
             <Route render={NotFound} />
@@ -189,14 +195,14 @@ class BasicLayout extends PureComponent {
         </Content>
         <Footer className={classLayoutFooter}>
           <GlobalFooter
-            isMobile={this.state.isMobile || false}
+            isMobile={isMobile || false}
           />
         </Footer>
       </Layout>
     );
 
     return (
-      <DocumentTitle title={this.getPageTitle()} >
+      <DocumentTitle title={this.getPageTitle()}>
         <ContainerQuery query={query}>
           {
             params => (
@@ -210,6 +216,6 @@ class BasicLayout extends PureComponent {
   }
 }
 
-export default connect(({ global, loading }) => ({
+export default connect(() => ({
 
 }))(BasicLayout);
