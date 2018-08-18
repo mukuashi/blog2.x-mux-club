@@ -12,6 +12,7 @@ export default class Content2 extends PureComponent {
   static defaultProps = {
     className: 'content2',
   };
+
   render() {
     const props = { ...this.props };
     const { isMobile } = props;

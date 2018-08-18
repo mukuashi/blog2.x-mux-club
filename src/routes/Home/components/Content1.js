@@ -11,7 +11,9 @@ export default class Content1 extends PureComponent {
   static defaultProps = {
     className: 'content1',
   };
+
   getDelay = e => e % 3 * 100 + Math.floor(e / 3) * 100 + 300;
+
   render() {
     const props = { ...this.props };
     const oneAnim = { y: '+=30', opacity: 0, type: 'from', ease: 'easeOutQuad' };

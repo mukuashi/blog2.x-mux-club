@@ -13,27 +13,31 @@ export default class Content extends PureComponent {
   static defaultProps = {
     className: 'content4',
   };
+
   state = {
     boxValue: 20,
     rateValue: localStorage.getItem(`${getToken()}-home-content4-rate`) ? JSON.parse(
       localStorage.getItem(`${getToken()}-home-content4-rate`)) : 3.5,
   };
+
   // layout box
   handleBoxChange = (value) => {
     this.setState({ boxValue: value });
   }
+
   // rate box
   handleRateChange = (value) => {
     this.setState({ rateValue: value }, () => {
       if (value === 5) {
-        message.success('❤️ 😘 五星好评呀，谢谢大佬嘿！');
+        message.success('😘 五星好评呀，谢谢大佬嘿！');
       }
       if (value === 0) {
-        message.warning('☔️ 😂 原来我这么差呀，努力向大佬你看齐啦！');
+        message.warning('😂 原来我这么差呀，努力向大佬你看齐啦！');
       }
       localStorage.setItem(`${getToken()}-home-content4-rate`, value)
     });
   }
+
   //
   render() {
     const props = { ...this.props };

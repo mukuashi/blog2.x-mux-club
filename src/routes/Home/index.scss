@@ -180,6 +180,7 @@
           &-img-wrapper {
             display: inline-block;
             @include square(100%);
+            overflow: hidden;
           }
           &-rate {
             padding-top: 2.5%;

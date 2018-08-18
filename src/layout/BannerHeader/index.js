@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-20 21:24:21
+ * @Last Modified time: 2018-08-18 15:03:59
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -30,9 +30,11 @@ export default class BannerHeader extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
   }
+
   static defaultProps = {
     className: 'banner',
   };
+
   handleRollDown = () => {
     const { isMobile } = this.props;
     const dimHeight = isMobile ? 120 : 50;
@@ -42,6 +44,7 @@ export default class BannerHeader extends PureComponent {
     // 有动画滚动方案
     scrollTo(firstScreenHeight - dimHeight, 1000);
   }
+
   render() {
     const { className } = this.props;
     const childrenToRender = banner.map(row => (

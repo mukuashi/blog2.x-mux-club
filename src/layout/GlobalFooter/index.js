@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-21 10:26:09
+ * @Last Modified time: 2018-08-18 16:29:50
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -24,11 +24,13 @@ export default class GlobalFooter extends PureComponent {
   static defaultProps = {
     className: 'footer',
   };
+
   //
   handleScrollToTop = () => {
     // 有动画滚动至顶方案
     scrollTo(0, 800);
   }
+
   // version notice
   openNotification = () => {
     const btnReturn = (
@@ -91,7 +93,7 @@ export default class GlobalFooter extends PureComponent {
           onClick={this.handleScrollToTop}
           animation={{ y: '-=36', yoyo: true, repeat: -1, duration: 1600 }}
           className="toTop"
-          style={{ bottom: 20 }}
+          style={{ bottom: 10 }}
         >
           <a><Icon type="up-circle" /></a>
         </TweenOne>

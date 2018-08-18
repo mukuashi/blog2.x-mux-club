@@ -46,7 +46,8 @@
 			display: inline-block;
 			margin-left: 4%;
 			width: rem(150px);
-			line-height: $default-nav-height;
+      line-height: $default-nav-height;
+      position: relative;
 			& a {
 				display: inline-block;
 				> img {
