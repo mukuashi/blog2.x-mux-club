@@ -5,7 +5,7 @@
  * @version 0.1 | 2018-03-25 // Initial version.
  * @Date:   2018-03-25 18:20:27
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-20 15:31:03
+ * @Last Modified time: 2018-08-19 12:07:30
 */
 //version 0.1 
 @import "./basics/theme";
@@ -15,12 +15,3 @@
 @import "./basics/functions";
 @import "./basics/iconfont";
 @import "./basics/animate";
-//
-:global {
-	.mux-global-loading {
-		@include center-middle;
-    .ant-spin-text {
-      margin-top: 8%;
-    }
-	}
-}

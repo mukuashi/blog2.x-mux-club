@@ -24,7 +24,12 @@
 		}
 		&-footer {
 			padding: 0;
-			
+		}
+		&-loading {
+			@include center-middle;
+			.ant-spin-text {
+				margin-top: 8%;
+			}
 		}
 	}
 }

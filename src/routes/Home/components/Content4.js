@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { Link } from 'dva/router';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Gallery from 'react-grid-gallery';
@@ -75,7 +74,7 @@ export default class Content extends PureComponent {
             {
               text.media.map(row => (
                 <span key={row.id}>
-                  <Link to={row.url} target="_blank">{row.name}</Link>{row.after}
+                  <a target="_blank" rel='noopener noreferrer' href={row.url}>{row.name}</a>{row.after}
                 </span>
               ))
             }
