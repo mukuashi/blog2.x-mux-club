@@ -1,7 +1,7 @@
 {
   "name": "blog2.x-mux-club",
   "version": "2.0.0",
-  "description": "a blog version 2.x about dvajs and reactjs...",
+  "description": "2.x mukuashi@PhotoArtLife Blog 🐿",
   "private": true,
   "scripts": {
     "start": "cross-env ESLINT=none roadhog dev",
