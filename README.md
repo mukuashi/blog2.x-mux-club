@@ -2,6 +2,7 @@
 from 2016，create a new version 2.x for blog，fit almost all the screens.
 - React + Redux + Dvajs + Roadhog + Webpack等
 - Preview： http://kquanr.com/2.x
+- others：1.x（http://kquanr.com）、3.x（ http://kquanr.com/3.x）
 
 # Usage
 * dvajs：https://dvajs.com 

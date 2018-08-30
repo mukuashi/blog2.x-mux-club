@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-18 16:56:08
+ * @Last Modified time: 2018-08-30 01:13:51
 */
 // dev or online
 import { isProd, isMobile } from 'utils';
@@ -20,7 +20,7 @@ import banner2 from '../assets/images/banner-2.jpg';
 import banner3 from '../assets/images/banner-3.jpg';
 import contactPublic from '../assets/images/contact-public.jpg';
 import contactPrivate from '../assets/images/contact-private.jpg';
-import footerNav from '../assets/images/footer-nav.png';
+import footerLogo from '../assets/images/footer-logo.png';
 import content3ArticleImg1 from '../assets/images/content3-article-img1.gif';
 import content3ArticleImg2 from '../assets/images/content3-article-img2.gif';
 import content3ArticleImg3 from '../assets/images/content3-article-img3.gif';
@@ -35,7 +35,7 @@ const mePai = isMobile() ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.htm
 export const data = {
   prefix: 'mux',
   version: `${version}/`,
-  title: '2.x mukuashi@PhotoArtLife Blog 🐿',
+  title: '2.x mukuashi@PhotoArtLife Studio',
   header: {
     logo: headerNav,
     nav: [
@@ -602,7 +602,7 @@ export const data = {
   },
   footer: {
     logo: {
-      img: footerNav,
+      img: footerLogo,
       content: '一只拍片码稿、画图写代码的创作者',
     },
     block: [
