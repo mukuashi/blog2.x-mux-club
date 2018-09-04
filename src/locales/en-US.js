@@ -7,10 +7,10 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-30 01:13:51
+ * @Last Modified time: 2018-09-03 14:39:37
 */
 // dev or online
-import { isProd, isMobile } from 'utils';
+import { isProd, isMobile } from '@/utils';
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
 import headerAvatar from '../assets/images/header-avatar.png'
@@ -32,7 +32,7 @@ const nowYear = new Date().getFullYear();
 const version = '2.x';
 // Media
 const mePai = isMobile() ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.html' : 'https://www.mepai.me/user/u_592e418fe4a53';
-export const data = {
+export default {
   prefix: 'mux',
   version: `${version}/`,
   title: '2.x mukuashi@PhotoArtLife Studio',

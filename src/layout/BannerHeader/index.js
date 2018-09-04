@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-18 15:03:59
+ * @Last Modified time: 2018-09-04 19:11:03
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -15,13 +15,13 @@ import QueueAnim from 'rc-queue-anim';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import BannerAnim, { Element } from 'rc-banner-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import { data } from 'config/system';
-import { scrollTo } from 'utils';
+import systemData from '@/locales/zh-CN';
+import { scrollTo } from '@/utils';
 import 'rc-banner-anim/assets/index.css';
 import './index.scss';
 
 const { BgElement } = Element;
-const { banner } = data;
+const { banner } = systemData;
 const yAnim = {
   type: 'from', ease: 'easeInOutQuad', duration: 200,
 };

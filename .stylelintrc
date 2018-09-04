@@ -1,7 +1,13 @@
 {
-  "extends": "stylelint-config-recommended-scss",
+  "extends": ["stylelint-config-recommended-scss", "stylelint-config-prettier"],
+	"plugins: ["stylelint-scss"],
   "rules": {
-    "block-no-empty": null,
-    "unit-whitelist": ["em", "rem", "s"]
+		"scss/at-extend-no-missing-placeholder": true
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "block-closing-brace-newline-after": ["always", { "ignoreAtRules": ["if", "else"]}],
+    "at-if-closing-brace-newline-after": "always-last-in-chain",
+		"block-no-empty": null,
+		"selector-pseudo-class-no-unknown": null
   }
 }

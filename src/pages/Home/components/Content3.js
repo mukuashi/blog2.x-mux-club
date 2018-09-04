@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react';
 import { Tabs } from 'antd';
 import PropTypes from 'prop-types';
 import TweenOne from 'rc-tween-one';
-import Iconfont from "components/Iconfont";
+import Iconfont from "@/components/Iconfont";
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import { data } from 'config/system';
+import systemData from '@/locales/zh-CN';
 
-const { text, block } = data.content3;
+const { text, block } = systemData.content3;
 const { TabPane } = Tabs;
 
 export default class Content3 extends PureComponent {

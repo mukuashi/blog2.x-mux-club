@@ -3,10 +3,10 @@ import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Gallery from 'react-grid-gallery';
 import { Slider, Rate, Tooltip, Avatar, Icon, message } from 'antd';
-import { getToken } from 'utils';
-import { data } from 'config/system';
+import { getToken } from '@/utils';
+import systemData from '@/locales/zh-CN';
 
-const { text, block } = data.content4;
+const { text, block } = systemData.content4;
 export default class Content extends PureComponent {
 
   static defaultProps = {

@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-18 16:29:50
+ * @Last Modified time: 2018-09-04 19:11:15
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -13,12 +13,12 @@ import { Button, Icon, notification } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
-import Iconfont from "components/Iconfont";
-import { data } from 'config/system';
-import { scrollTo } from 'utils';
+import Iconfont from "@/components/Iconfont";
+import systemData from '@/locales/zh-CN';
+import { scrollTo } from '@/utils';
 import './index.scss';
 
-const { logo, block, copyright, info } = data.footer;
+const { logo, block, copyright, info } = systemData.footer;
 
 export default class GlobalFooter extends PureComponent {
   static defaultProps = {

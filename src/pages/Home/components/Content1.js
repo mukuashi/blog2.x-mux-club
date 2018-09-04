@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import Iconfont from "components/Iconfont";
-import { data } from 'config/system';
+import Iconfont from "@/components/Iconfont";
+import systemData from '@/locales/zh-CN';
 
-const { text, block } = data.content1;
+const { text, block } = systemData.content1;
 
 export default class Content1 extends PureComponent {
   static defaultProps = {

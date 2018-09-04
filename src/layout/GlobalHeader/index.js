@@ -5,17 +5,17 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-18 15:16:56
+ * @Last Modified time: 2018-09-04 19:11:19
 */
 import React, { PureComponent } from 'react';
-import { Link } from 'dva/router';
+import Link from 'umi/link';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import { Menu, Icon, Popover } from 'antd';
-import { data } from 'config/system';
+import systemData from '@/locales/zh-CN';
 import styles from './index.scss';
 
 const { Item, SubMenu } = Menu;
-const { version, header } = data;
+const { version, header } = systemData;
 const { logo, nav, user, submenu, contact } = header;
 
 export default class GlobalHeader extends PureComponent {
@@ -36,24 +36,19 @@ export default class GlobalHeader extends PureComponent {
         const { isMobile, fixHeader, pathname } = props;
         const contactAuthor = (
           <div className={styles.headerPopoverContent}>
-              <span>微信公众号 + 作者微信</span>
-              <span>(连载中) + （摄/电影等媒体合作）</span>
-              <ul>
-                  {
-                        contact.block.map(row => (
-                          <li key={row.id}>
-                              <img src={row.img} alt={row.alt} />
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
+            <span>微信公众号 + 作者微信</span>
+            <span>(连载中) + （摄/电影等媒体合作）</span>
+            <ul>{
+                contact.block.map(row => (<li key={row.id}><img src={row.img} alt={row.alt} /></li>))
+            }
+            </ul>
+          </div>
         );
+        
         const userTitle = (
           <div>
-              <span className="img">
-                  <img
-                      alt="PhotoArtLife"
+            <span className="img">
+                <img alt="PhotoArtLife"
                       src={user.img}
                       width="36"
                       height="36"
@@ -62,6 +57,7 @@ export default class GlobalHeader extends PureComponent {
               <span>{user.name}</span>
             </div>
         );
+
         const navChildren = Object.values(nav).map(row => (
           <Item key={row.id} className={row.path === pathname.replace(version, '') ? 'ant-menu-item-selected' : ''}>
               {
@@ -69,6 +65,7 @@ export default class GlobalHeader extends PureComponent {
                 }
             </Item>
         ));
+
         navChildren.push(
           <Item className="menu-contact" key="contact">
               <Popover
