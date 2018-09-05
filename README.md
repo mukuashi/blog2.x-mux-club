@@ -1,16 +1,28 @@
 # 2.x Version Blog
 from 2016，create a new version 2.x for blog，fit almost all the screens.
-- React + Redux + Dvajs + Roadhog + Webpack等
+- React + Redux + DvaJS + UmiJS等
 - Preview： http://kquanr.com/2.x
-- others：1.x（http://kquanr.com）、3.x（ http://kquanr.com/3.x）
+- 1.x：http://kquanr.com
+- 3.x：http://kquanr.com/3.x
+- more...
 
 # Usage
-* dvajs：https://dvajs.com 
-* 相关API：https://dvajs.com/api
+* umijs：https://umijs.org
+* dvajs：https://dvajs.com
 * reactjs：https://reactjs.org
 * redux-devtools：https://github.com/gaearon/redux-devtools(本地开发利器/时间旅行器)
-* roadhog：https://github.com/sorrycc/roadhog
-* 自动化打包及构建工具webpack：https://webpack.js.org/concepts/
+
+## Features
+
+* 📦 **开箱即用**，内置 react、react-router 等
+* 🏈 **类 next.js 且[功能完备](https://umijs.org/guide/router.html)的路由约定**，同时支持配置的路由方式
+* 🎉 **完善的插件体系**，覆盖从源码到构建产物的每个生命周期
+* 🚀 **高性能**，通过插件支持 PWA、以路由为单元的 code splitting 等
+* 💈 **支持静态页面导出**，适配各种环境，比如中台业务、无线业务、[egg](https://github.com/eggjs/egg)、支付宝钱包、云凤蝶等
+* 🚄 **开发启动快**，支持一键开启 [dll](https://umijs.org/plugin/umi-plugin-react.html#dll) 和 [hard-source-webpack-plugin](https://umijs.org/plugin/umi-plugin-react.html#hardSource) 等
+* 🐠 **一键兼容到 IE9**，基于 [umi-plugin-polyfills](https://umijs.org/plugin/umi-plugin-react.html#polyfills)
+* 🍁 **完善的 TypeScript 支持**，包括 d.ts 定义和 umi test
+* 🌴 **与 dva 数据流的深入融合**，支持 duck directory、model 的自动加载、code splitting 等等
 
 # Features
 * 2016年接触react和redux栈时用的组合是react-redux：https://github.com/reactjs/react-redux + redux-thunk：https://github.com/gaearon/redux-thunk ，后来换到redux-saga：https://redux-saga.js.org/ 再后来看到支付宝团队的新架构Dvajs等业务方案：https://github.com/sorrycc/blog/issues/6 开始着手于这方面对的尝试，试着写了一些demo和一些商业产品。
