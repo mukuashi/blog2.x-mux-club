@@ -1,0 +1,35 @@
+@import "../styles/mixin";
+//
+:global {
+	//all layout => header + banner + content + footer
+	.mux-layout {
+		background: $default-background-color;
+		min-height: 100vh;
+		&-header {
+			padding: 0;
+			height: $default-nav-height;
+			line-height: $default-nav-height;
+			background: transparent;
+			z-index: $default-nav-zindex;
+		}
+		&-banner {
+			z-index: $default-nav-zindex - 1;
+			background: transparent;
+		}
+		&-content {
+			background: $default-background-color;
+			&-container {
+				background: $default-background-color;
+			}
+		}
+		&-footer {
+			padding: 0;
+		}
+		&-loading {
+			@include center-middle;
+			.ant-spin-text {
+				margin-top: 8%;
+			}
+		}
+	}
+}

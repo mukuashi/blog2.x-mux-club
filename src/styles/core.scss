@@ -1,0 +1,98 @@
+/*
+ * Copyright (c) 2016-Now PhotoArtLife PD, All rights reseved.
+ * @fileoverview | system base core scss
+ * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
+ * @Date:   2016-04-18 11:25:27
+ * @version 0.1 | 2016-04-18 // Initial version.
+ * @version 0.2 | 2017-06-18 // 配置一些浏览器默认，暂时保留normalize选择.
+ * @Last Modified by: mukuashi
+ * @Last Modified time: 2018-09-05 11:41:53
+*/
+// Some best-practice CSS that's useful for most apps
+// Just remove them if they're not what you want
+@import "mixin","iconfont";
+//base core
+html {
+  //IE盒子
+  @include prefix(box-sizing,$box-sizing);
+}
+body {
+  width: 100vw;
+}
+//core
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  @include prefix(box-sizing,$box-sizing);
+  font-size: $font-size-base;
+  font-family: $font-family-default;
+   //default background
+  background: $default-background-theme;
+  //页面里的字体变清晰
+  -webkit-font-smoothing: antialiased;
+  //点击高亮hidden，偏移动端
+  -webkit-tap-highlight-color:transparent;
+  //自定义滚动条-webkit内核统一样式，开启与否会切到浏览器默认，不过移动端滚动会变卡
+  //@include scrollbar-bar;
+  //启用浏览器文本溢出算法|100%放大
+  @include prefix(text-size-adjust,100%);
+  @include prefix(transition, background 1s cubic-bezier(0.075, 0.82, 0.165, 1));   
+}
+//
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+header,footer,section,article {
+  text-align: inherit;
+}
+//kill chrome边框高亮
+input,button,select,textarea{
+  outline: none;
+  &:focus {
+    outline: 0;
+  }
+}
+//chrome右下角边框大小拖动问题
+textarea{
+  resize:none;
+  overflow: hidden;
+}
+select::-ms-expand {
+  /* for IE 11 */
+   display: none;
+}
+button{
+  margin:0px;
+  border-radius:0px;
+  outline:none;
+}
+ul li{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    @include prefix(transition, color .3s);
+    -webkit-text-decoration-skip: objects;
+    &:focus,&:hover {
+      text-decoration: none;
+    }
+}
+
+//修改chrome记住密码后自动填充表单的黄色背景
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: rgb(250, 255, 189); /* #FAFFBD; */
+    background-image: none;
+    color: $dark-color;
+}
+i,img {
+  -webkit-tap-highlight-color: transparent;
+}

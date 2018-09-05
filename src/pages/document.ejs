@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="mukuashi@PhotoArtLife | Blog 2.x | 个人博客及社区 | 穆跨世 | PhotoArtLife | 一个创作者 | 独立设计师 • 自由摄影师 • 程序猿/软件工程师 • 制片人 • 自媒体/公路作者等。">
+	<meta name="description" content="mukuashi@PhotoArtLife，一个创作者。">
+  <meta name="description" content="mukuashi@PhotoArtLife" />
+  <link rel="shortcut icon" href="//kquanr.com/images/logo.ico" type="image/x-icon">
+  <link rel="icon" href="//kquanr.com/images/logo.ico" type="image/x-icon">
+  <link rel="bookmark" href="//kquanr.com/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_338835_4nzn4wtjvuq.css">
+  <!--[if lt IE 10]>
+    <script
+      src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.1.14/es5-shim.min.js,es5-shim/4.1.14/es5-sham.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js">
+    </script>
+  <![endif]-->
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    #root {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    #mux-motion-loading {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      -webkit-filter: url("#goo");
+      filter: url("#goo");
+      opacity: 0;
+      transition: opacity .5s;
+    }
+
+    #mux-motion-loading ul {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+
+    #mux-motion-loading ul li {
+      width: 18px;
+      height: 18px;
+      border-radius: 100%;
+      background: #019BF0;
+      position: absolute;
+      transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      left: 0;
+      top: 0;
+      transform: scale(1);
+    }
+
+    #root:empty+#mux-motion-loading {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <img style="width:0;height:0;position:absolute;" src="//kquanr.com/images/header-share.jpg" alt="PhotoArtLife">
+  <div id="root"></div>
+  <div id="mux-motion-loading">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
+  </div>
+  <script>
+    var w = 100, h = 113, r = 18,
+      wx = w / 2, wy = h / 2 - r, angle = 45, liArray = [];
+    for (var i = 0; i < 74; i++) {
+      var li = $('<li/>').appendTo($('#mux-motion-loading ul'));
+      liArray.push(li);
+      var _left = 110, _top = 110, _x, _y;
+      if (i < 25) {
+        _left = -wx;
+        _top = wy - r / 5 * i;
+      } else if (i < 41) {
+        angle = 45 * Math.PI / 180;
+        _left = -wx + (i - 24) * (r / 5) * Math.cos(angle);
+        _top = wy - r / 5 * 24 + (i - 24) * (r / 5) * Math.sin(angle);
+      } else if (i < 57) {
+        _x = -wx + 16 * (r / 5) * Math.cos(45 * Math.PI / 180);
+        _y = wy - r / 5 * 24 + 16 * (r / 5) * Math.sin(45 * Math.PI / 180);
+        angle = -45 * Math.PI / 180;
+        _left = _x + (i - 40) * (r / 5) * Math.cos(angle);
+        _top = _y + (i - 40) * (r / 5) * Math.sin(angle);
+      } else if (i < 73) {
+        _left = _x + 16 * (r / 5) * Math.cos(-45 * Math.PI / 180);
+        _top = (wy - r / 5 * 24) + r / 5 * (i - 56);
+      } else {
+        _left = -25;
+        _top = 10;
+        r = 14;
+      }
+      li.css({ left: _left, top: _top, width: r, height: r });
+    }
+
+    var load = $('#mux-motion-loading');
+
+    function animationStart() {
+      if (!load || load.css('opacity') === '0') {
+        load.remove();
+        return;
+      }
+      setTimeout(function () {
+        if (load.css('opacity') === '0') {
+          load.remove();
+          return;
+        }
+        liArray.forEach(function (item, i) {
+          item.css({
+            transform: 'scale(0)',
+            transitionDelay: (i === liArray.length - 1 ? 10 : i) * .007 + 's',
+            transitionTimingFunction: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+          });
+        });
+        setTimeout(function () {
+          if (load.css('opacity') === '0') {
+            load.remove();
+            return;
+          }
+          liArray.forEach(function (item, i) {
+            item.css({
+              transform: 'scale(1)',
+              transitionDelay: (i === liArray.length - 1 ? 10 : i) * .007 + 's',
+              transitionTimingFunction: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            });
+          });
+          setTimeout(animationStart, 1300);
+        }, 1300);
+      }, 100);
+    }
+    animationStart();
+  </script>
+  <script>
+    //接入阿里云监控日志API 
+    !(function (c, b, d, a) {
+      c[a] || (c[a] = {}); c[a].config = { pid: "gioyshyyzz@63fb9eb5dd7853a", imgUrl: "https://arms-retcode.aliyuncs.com/r.png?" };
+      with (b) with (body) with (insertBefore(createElement("script"), firstChild)) setAttribute("crossorigin", "", src = d)
+    })(window, document, "https://retcode.alicdn.com/retcode/bl.js", "__bl");
+    //IE版本检测及提示
+    var isIE = function (ver) {
+      var b = document.createElement('b')
+      b.innerHTML = '<!--[if IE ' + ver + ']><i></i><![endif]-->'
+      return b.getElementsByTagName('i').length === 1
+    }
+    if (isIE(5) || isIE(6) || isIE(7) || isIE(8)) {
+      (function (w) {
+        if (!("WebSocket" in w && 2 === w.WebSocket.CLOSING)) {
+          var firstChild = document.createElement("div"),
+            browserSkip = document.createElement("div");
+          //插入跳转按钮
+          browserSkip.innerHTML = '<div style="position:absolute;left:0;bottom:18%;width:100%;text-align:center;"><a target="_blank" href="http://browsehappy.com/" style="display:inline-block;height:50px;line-height:50px;margin: 0 5px;padding: 0 50px;font-size: 1.4rem;font-weight:bolder;letter-spacing:2px;text-align: center;color: #eee;text-decoration: none;background-color: #222;">下载最新浏览器</a><p style="color:#fff;padding-top:3%;font-size:1.18rem;font-weight:600;letter-spacing:1px;">很抱歉，您的浏览器太~太古老了(暂不支持IE8及以下版本)，请下载最新浏览器获得完整体验！！！</p></div>'
+          //背景图
+          firstChild.innerHTML = 'firstChild<style>html{height:100%;}body{height:100%;margin:0;font-size:20px;text-align:center;background:url(https://sec-cdn.static.xiaomi.net/secStatic/groups/miui-sec/mukuashi/StaticRes/93b96db134e8a0e495541b647666f800e43f8357.jpg) center no-repeat;-webkit-background-size:100%;-o-background-size:100%;-moz-background-size:100%;background-size: 100%;}</style>';
+          var bodyHacks = function () {
+            var Shill = document.getElementsByTagName("body")[0];
+            if ("undefined" == typeof (Shill)) {
+              setTimeout(bodyHacks, 10)
+            } else {
+              //背景
+              Shill.appendChild(firstChild.lastChild)
+              //按钮
+              Shill.insertBefore(browserSkip, Shill.firstChild)
+            }
+          };
+          bodyHacks();
+        }
+      }(window));
+    }         
+  </script>
+</body>
+
+</html>
