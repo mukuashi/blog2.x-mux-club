@@ -9,13 +9,14 @@ let Router = require('dva/router').routerRedux.ConnectedRouter;
 let routes = [
   {
     "path": "/",
-    "redirect": "/",
-    "exact": true
-  },
-  {
-    "path": "/",
-    "component": dynamic({ loader: () => import('../../layout'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/PageLoading/index').default  }),
+    "component": dynamic({ loader: () => import('../../layouts'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading').default  }),
     "routes": [
+      {
+        "path": "/",
+        "name": "Home",
+        "component": dynamic({ loader: () => import('../Home'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading').default  }),
+        "exact": true
+      },
       {
         "component": () => React.createElement(require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
       }

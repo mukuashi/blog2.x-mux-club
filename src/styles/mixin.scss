@@ -8,9 +8,9 @@
  * @version 0.3 | 2017-03-30 // add some basic linear-gradient mixin
  * @version 0.4 | 2017-04-08 // add mixin if扩展
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-16 21:11:38
+ * @Last Modified time: 2018-09-05 11:21:01
 */
-@import "theme", "variable","animate";
+@import "theme","animate";
 //各种浏览器前缀
 @mixin prefix($property, $value) {
   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {

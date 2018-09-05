@@ -1,0 +1,6 @@
+@import '../../styles/mixin';
+//
+.homeLoading {
+    height: 100vh;
+    @include flex-center-middle;
+}

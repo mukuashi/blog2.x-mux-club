@@ -5,9 +5,8 @@
  * @Date:   2016-04-17 11:40:27
  * @version 0.1 | 2016-1-18 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-04-19 04:06:16
+ * @Last Modified time: 2018-09-05 11:58:53
 */
-@import "variable";
 //去掉一个值的单位，如12px => 12
 @function strip-units($number) { 
   @return $number / ($number * 0 + 1); 
@@ -22,7 +21,7 @@
 /// @param {Number} $percentage - percentage of `$color` in returned color
 /// @return {Color}
 @function tint($color, $percentage) {
-  @return mix(white, $color, $percentage);
+  @return mix($font-initialize-color, $color, $percentage);
 }
 
 /// Slightly darken a color
@@ -31,5 +30,5 @@
 /// @param {Number} $percentage - percentage of `$color` in returned color
 /// @return {Color}
 @function shade($color, $percentage) {
-  @return mix(black, $color, $percentage);
+  @return mix($dark-color, $color, $percentage);
 }

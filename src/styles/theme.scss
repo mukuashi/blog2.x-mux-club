@@ -6,9 +6,29 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-18 16:09:44
+ * @Last Modified time: 2018-09-05 11:39:20
 */
-@import "variable","functions";
+@import "functions";
+//font
+$font-size-base: 14px;
+$font-size-md: 18px;
+$font-size-lg: 26px;
+$font-family-default: "Monospaced Number", "Chinese Quote", 'Helvetica Neue For Number',-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-initialize-color: #fff;
+$font-exception-color:#F5222D;
+//布局盒子类型
+$box-sizing: border-box;;
+//border
+$border-width-base: 1px;
+$border-radius-sm: 2px;
+$border-radius-base: 4px;
+$border-style-base: solid;
+$border-color-base: #ccc;
+//line-height
+$line-height-base: 1.5;
+$line-height-light-lg: 1.75;
+$line-height-md: 2;
+$line-height-lg: 4;
 //theme color
 $dark-color: #000;
 $default-color: #108ee9;
@@ -18,6 +38,26 @@ $default-active-color:#108ee9;
 $default-hover-color: #e6f7ff;
 $default-background-color: #fff;
 $default-background-theme: $default-background-color;
+
+$link-hover-color: tint($default-color, 10%);
+$link-active-color: shade($default-color, 5%);
+
+$line-color: #e9e9e9;
+$disabled-color: #5B5B5B;
+// Animation
+$ease-out            : cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in             : cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$ease-in-out         : cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-out-back       : cubic-bezier(0.12, 0.4, 0.29, 1.46);
+$ease-in-back        : cubic-bezier(0.71, -0.46, 0.88, 0.6);
+$ease-in-out-back    : cubic-bezier(0.71, -0.46, 0.29, 1.46);
+$ease-out-circ       : cubic-bezier(0.08, 0.82, 0.17, 1);
+$ease-in-circ        : cubic-bezier(0.6, 0.04, 0.98, 0.34);
+$ease-in-out-circ    : cubic-bezier(0.78, 0.14, 0.15, 0.86);
+$ease-out-quint      : cubic-bezier(0.23, 1, 0.32, 1);
+$ease-in-quint       : cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-out-quint   : cubic-bezier(0.86, 0, 0.07, 1);
+
 //icon
 $default-icon-color: rgba(0, 0, 0, 0.45);
 $default-icon-hover-color: #404040;
@@ -36,8 +76,6 @@ $default-nav-height: rem(64px);
 $default-nav-background: transparent;
 $default-nav-active-fixed-background: rgba($dark-color, 0.7);
 $default-nav-active-border-color: $default-active-color;
-//content * color
-
 //content * font-size
 $default-content-fz-min: rem(12px);
 $default-content-fz-nl: 1rem;

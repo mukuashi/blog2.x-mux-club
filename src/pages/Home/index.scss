@@ -1,4 +1,4 @@
-@import '../../styles/basics/mixin';
+@import '../../styles/mixin';
 :global {
 	.home-content-list {
     //common
@@ -56,7 +56,7 @@
                   font-size: 2.8rem;
                   vertical-align: middle;
                   width: 15%;
-                  color: $link-color;
+                  color: $default-color;
                   opacity: 0.8;
                   &:hover {
                     color: $link-hover-color;

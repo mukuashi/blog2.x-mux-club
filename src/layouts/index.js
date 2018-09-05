@@ -7,10 +7,10 @@
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @version 0.3 | 2018-09-02 // update staging into umi.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-04 19:14:40
+ * @Last Modified time: 2018-09-05 12:14:49
 */
 import React,{ PureComponent } from 'react';
-import { Layout,Spin } from 'antd';
+import { Layout } from 'antd';
 import isEqual from 'lodash/isEqual';
 import memoizeOne from 'memoize-one';
 import classNames from 'classnames';
@@ -116,8 +116,8 @@ class BasicLayout extends PureComponent {
     cancelAnimationFrame(this.renderRef);
     // 移动端uncheck
     unenquireScreen(this.enquireHandler);
-      // 滚屏header
-      window.removeEventListener('scroll', this.handleScrollCheck, false);
+    // 滚屏header
+    window.removeEventListener('scroll', this.handleScrollCheck, false);
   }
 
   getContext() {
@@ -206,7 +206,7 @@ class BasicLayout extends PureComponent {
   //
   render() {
     const { fixHeader, isMobile,rendering } = this.state;
-    const { location: { pathname } } = this.props;
+    const { children, location: { pathname } } = this.props;
     
     const classLayoutContainer = cx({
       'mux-layout': true,
@@ -229,15 +229,12 @@ class BasicLayout extends PureComponent {
             isMobile={isMobile || false}
           />
         </Header>
-        {
-          (location.pathname === `/${version}` || `${location.pathname}/` === `/${version}`) &&
-          <BannerHeader {...this.props} onScroll={this.handleScrollCheck} />
-        }
+        <BannerHeader {...this.props} onScroll={this.handleScrollCheck} />
         <Content className={classLayoutContent}>
           {children}
         </Content>
         <Footer className={classLayoutFooter}>
-          <GlobalFooter
+          <GlobalFooter 
             isMobile={isMobile || false}
           />
         </Footer>
@@ -255,9 +252,6 @@ class BasicLayout extends PureComponent {
             )}
           </ContainerQuery>
         </DocumentTitle>
-        {
-          rendering && process.env.NODE_ENV === 'production' ? null : <Spin />
-        }
       </React.Fragment>
     );
   }

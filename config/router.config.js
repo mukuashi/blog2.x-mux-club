@@ -2,12 +2,12 @@ export default [
     // app
     {
         path: '/',
-        component: '../layout',
+        component: '../layouts',
         routes: [
-            // home
             {
                 path: '/',
-                redirect: '/',
+                name: 'Home',
+                component: './Home',
             },
         ],
     },
