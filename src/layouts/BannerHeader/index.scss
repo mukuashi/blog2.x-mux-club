@@ -99,7 +99,7 @@
       margin-left: -12px;
       cursor: pointer;
       color: $template-text-color-light;
-      @include custom-position(absolute,$left:50%,$zindex:$default-nav-zindex);
+      @include custom-position(absolute,$left:50%);
     }
   }
   .banner-anim-thumb-default span {

@@ -7,7 +7,7 @@
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @version 0.3 | 2018-09-02 // update staging into umi.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-06 14:43:34
+ * @Last Modified time: 2018-09-07 02:38:54
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -27,7 +27,7 @@ import GlobalFooter from './GlobalFooter';
 import Context from './MenuContext';
 import styles from './index.scss';
 
-const { version, title } = systemData;
+const { title } = systemData;
 
 const cx = classNames.bind(styles);
 const { Content, Header, Footer } = Layout;
@@ -69,7 +69,7 @@ function formatter(data, parentPath = '') {
       locale,
     };
     if (item.routes) {
-      const children = formatter(item.routes, `${parentPath}${item.path}/`, locale);
+      const children = formatter(item.routes, `${parentPath}${item.path}/`);
       // Reduce memory usage
       result.children = children;
     }
@@ -86,7 +86,6 @@ class BasicLayout extends PureComponent {
     this.breadcrumbNameMap = this.getBreadcrumbNameMap();
     this.state = {
       rendering: true,
-      isMobile: false,
       fixHeader: false, // 置顶nav menu，初始化置顶透明背景，滚动一定高度时加fixHeader
     };
   }
@@ -98,10 +97,13 @@ class BasicLayout extends PureComponent {
       });
     });
     this.enquireHandler = enquireScreen(mobile => {
-      const { isMobile } = this.state;
-      if (isMobile !== mobile) {
-        this.setState({
-          isMobile: mobile,
+      const { ismobile, dispatch } = this.props;
+      if (ismobile !== mobile) {
+        dispatch({
+          type: 'global/update',
+          payload: {
+            'ismobile': mobile || false
+          },
         });
       }
     });
@@ -111,6 +113,7 @@ class BasicLayout extends PureComponent {
   componentDidUpdate() {
     this.breadcrumbNameMap = this.getBreadcrumbNameMap();
   }
+
 
   componentWillUnmount() {
     cancelAnimationFrame(this.renderRef);
@@ -160,7 +163,7 @@ class BasicLayout extends PureComponent {
         currRouterData = this.breadcrumbNameMap[key];
       }
     });
-    const message = currRouterData.locale || currRouterData.name;
+    const message = currRouterData && (currRouterData.locale || currRouterData.name);
     if (!message) {
       return title;
     }
@@ -202,8 +205,8 @@ class BasicLayout extends PureComponent {
 
   //
   render() {
-    const { fixHeader, isMobile, rendering } = this.state;
-    const { children, location: { pathname } } = this.props;
+    const { fixHeader, rendering } = this.state;
+    const { ismobile, children, location: { pathname } } = this.props;
 
     const classLayoutContainer = cx({
       'mux-layout': true,
@@ -221,19 +224,20 @@ class BasicLayout extends PureComponent {
       <Layout className={classLayoutContainer}>
         <Header className={classLayoutHeader}>
           <GlobalHeader
-            pathname={location.pathname}
-            fixHeader={fixHeader || false}
-            isMobile={isMobile || false}
+            pathname={pathname}
+            fixHeader={fixHeader}
+            ismobile={ismobile}
           />
         </Header>
-        <BannerHeader {...this.props} onScroll={this.handleScrollCheck} />
+        <BannerHeader
+          {...this.props}
+          onScroll={this.handleScrollCheck}
+        />
         <Content className={classLayoutContent}>
           {children}
         </Content>
         <Footer className={classLayoutFooter}>
-          <GlobalFooter
-            isMobile={isMobile || false}
-          />
+          <GlobalFooter />
         </Footer>
       </Layout>
     );
@@ -254,6 +258,6 @@ class BasicLayout extends PureComponent {
   }
 }
 
-export default connect(() => ({
-  collapsed: global.collapsed,
+export default connect(({ global }) => ({
+  ismobile: global.ismobile,
 }))(BasicLayout);

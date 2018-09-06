@@ -162,16 +162,17 @@
       }
     }
   }
-  @media screen and (min-width:767px) and (max-width:1024px){
+  @media screen and (min-width:767px) and (max-width:1096px){
     .header {
       &-nav {
-        .ant-menu > li {
-          min-width: 0;     
+        .ant-menu > .ant-menu-item {
+          width: 6.5rem;
+          padding: 0;    
         }
       }
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     .header{
       &-logo {
         z-index: $default-nav-zindex + 1;

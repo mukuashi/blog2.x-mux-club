@@ -1,11 +1,13 @@
+import defaultSettings from './settings.config';
+
 export default [
     // app
     {
-        path: '/',
+        path: defaultSettings.version,
         component: '../layouts',
         routes: [
             {
-                path: '/',
+                path: '/2.x',
                 name: '',
                 component: './Home',
             },

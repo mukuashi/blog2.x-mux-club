@@ -47,7 +47,7 @@ export default class Content extends PureComponent {
   render() {
     const props = { ...this.props };
     const { boxValue, rateValue } = this.state;
-    const { isMobile } = props;
+    const ismobile = JSON.parse(props.ismobile);
     const marks = {
       0: '最小边距',
       20: '相册边距推荐值',
@@ -111,7 +111,7 @@ export default class Content extends PureComponent {
           >
             <Gallery
               margin={boxValue}
-              rowHeight={isMobile ? 100 + boxValue : 200 + boxValue} // 图片当前列的默认高度
+              rowHeight={ismobile ? 100 + boxValue : 200 + boxValue} // 图片当前列的默认高度
               images={block}
               showLightboxThumbnails         // 弹层后显示底部预览幻灯片缩略图
               backdropClosesModal            // 弹层后点击其他地方支持遮罩关闭

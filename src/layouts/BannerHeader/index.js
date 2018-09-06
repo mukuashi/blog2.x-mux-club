@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-04 19:11:03
+ * @Last Modified time: 2018-09-07 02:22:27
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -36,8 +36,8 @@ export default class BannerHeader extends PureComponent {
   };
 
   handleRollDown = () => {
-    const { isMobile } = this.props;
-    const dimHeight = isMobile ? 120 : 50;
+    const { ismobile } = this.props;
+    const dimHeight = ismobile ? 120 : 50;
     // 计算第一屏的高度px
     const firstScreenHeight = document.getElementById('banner').offsetHeight;
     // document.querySelector('.banner')

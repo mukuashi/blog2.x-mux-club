@@ -1,6 +1,17 @@
 @import '../../styles/mixin';
+
 //
 .homeLoading {
     height: 100vh;
     @include flex-center-middle;
+    :global(.ant-spin-spinning) {
+        @include custom-position(absolute,$top:44%);
+    }
+    :global(.texty) {
+        padding-top: 14%;
+        span {  
+            font-size: 1.8rem;
+            letter-spacing: .2rem;
+        }
+    }
 }

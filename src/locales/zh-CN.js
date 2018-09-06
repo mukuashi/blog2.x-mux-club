@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-06 19:23:12
+ * @Last Modified time: 2018-09-07 02:56:16
 */
 // dev or online
 import { isProd, isMobile } from '@/utils';
@@ -29,12 +29,12 @@ import content3ArticleImg5 from '../assets/images/content3-article-img5.gif';
 
 // Date
 const nowYear = new Date().getFullYear();
-const version = '2.x';
+const version = '2.x/';
 // Media
 const mePai = isMobile() ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.html' : 'https://www.mepai.me/user/u_592e418fe4a53';
 export default {
   prefix: 'mux',
-  version: `${version}/`,
+  version: `${version}`,
   title: '2.x mukuashi@PhotoArtLife Studio',
   header: {
     logo: headerNav,
@@ -43,12 +43,12 @@ export default {
         id: 0,
         name: '首页',
         isReact: false,
-        path: isProd() ? `/${version}/` : '/',
+        path: isProd() ? `/${version}` : '/',
         target: null,
       },
       {
         id: 1,
-        name: '项目篇（1.x版)',
+        name: '项目篇（1.x)',
         isReact: false,
         path: '/project',
         url: '//kquanr.com/project',
@@ -99,7 +99,7 @@ export default {
     submenu: [
       {
         id: 'a',
-        name: `当前版本：${version}`,
+        name: `当前版本：${version.replace('/', '')}`,
         href: '',
         target: '_blank',
       },
@@ -871,7 +871,7 @@ export default {
       reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
     },
     info: {
-      version: '版本2.x ',
+      version: `版本${version.replace('/', '')}  `,
     },
   },
 };

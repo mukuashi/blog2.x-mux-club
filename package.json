@@ -29,6 +29,7 @@
     "omit.js": "^1.0.0",
     "prop-types": "^15.6.2",
     "qs": "^6.5.2",
+    "rc-texty": "^0.2.0",
     "react": "^16.4.2",
     "react-container-query": "^0.11.0",
     "react-document-title": "^2.0.3",

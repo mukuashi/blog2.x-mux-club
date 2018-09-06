@@ -8,11 +8,11 @@ let Router = require('dva/router').routerRedux.ConnectedRouter;
 
 let routes = [
   {
-    "path": "/",
+    "path": "/2.x/",
     "component": dynamic({ loader: () => import('../../layouts'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading').default  }),
     "routes": [
       {
-        "path": "/",
+        "path": "/2.x",
         "name": "",
         "component": dynamic({ loader: () => import('../Home'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading').default  }),
         "exact": true
