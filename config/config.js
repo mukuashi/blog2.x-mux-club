@@ -26,12 +26,12 @@ export default {
         polyfills: ['ie11'],
         ...(!process.env.TEST && os.platform() === 'darwin'
           ? {
-              dll: {
-                include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
-                exclude: ['@babel/runtime'],
-              },
-              hardSource: true,
-            }
+            dll: {
+              include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
+              exclude: ['@babel/runtime'],
+            },
+            hardSource: true,
+          }
           : {}),
       },
     ],
@@ -63,27 +63,7 @@ export default {
   urlLoaderExcludes: [/\.svg$/],
   ignoreMomentLocale: true,
   disableDynamicImport: true,
-  cssLoaderOptions: {
-    modules: true,
-    getLocalIdent: (context, localIdentName, localName) => {
-      if (
-        context.resourcePath.includes('node_modules') ||
-        context.resourcePath.includes('global.scss')
-      ) {
-        return localName;
-      }
-      const match = context.resourcePath.match(/src(.*)/);
-      if (match && match[1]) {
-        const stylePath = match[1].replace('.scss', '');
-        const arr = stylePath
-          .split('/')
-          .map(a => a.replace(/([A-Z])/g, '-$1'))
-          .map(a => a.toLowerCase());
-        return `blog2.x-mux-club${arr.join('-')}-${localName}`.replace(/--/g, '-');
-      }
-      return localName;
-    },
-  },
+  disableCSSModules: false, // css modules
   hash: true,
   manifest: {
     name: 'blog2.x-mux-club',

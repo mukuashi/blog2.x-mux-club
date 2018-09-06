@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-05-01 // add isMobile judge and token get.
  * @version 0.4 | 2018-05-11 // add deepCopy.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-06-21 11:34:41
+ * @Last Modified time: 2018-09-06 19:18:05
 */
 /**
  * @date     2018-03-17
@@ -28,62 +28,6 @@ export function getScrollTop() {
 export function setScrollTop(value) {
   window.scrollTo(0, value);
   return value;
-}
-//
-const getRelation = (str1, str2) => {
-  if (str1 === str2) {
-    console.warn('Two path are equal!');  // eslint-disable-line
-  }
-  const arr1 = str1.split('/');
-  const arr2 = str2.split('/');
-  if (arr2.every((item, index) => item === arr1[index])) {
-    return 1;
-  } else if (arr1.every((item, index) => item === arr2[index])) {
-    return 2;
-  }
-  return 3;
-};
-//
-const getRenderArr = (routes) => {
-  let renderArr = [];
-  renderArr.push(routes[0]);
-  for (let i = 1; i < routes.length; i += 1) {
-    let isAdd = false;
-    // 是否包含
-    isAdd = renderArr.every(item => getRelation(item, routes[i]) === 3);
-    // 去重
-    renderArr = renderArr.filter(item => getRelation(item, routes[i]) !== 1);
-    if (isAdd) {
-      renderArr.push(routes[i]);
-    }
-  }
-  return renderArr;
-};
-/**
- * Get router routing configuration
- * { path:{name,...param}}=>Array<{name,path ...param}>
- * @date     2017-07-05
- * @param {string} path
- * @param {routerData} routerData
- */
-export function getRoutes(path, routerData) {
-  let routes = Object.keys(routerData).filter(routePath =>
-    routePath.indexOf(path) === 0 && routePath !== path);
-  // Replace path to '' eg. path='user' /user/name => name
-  routes = routes.map(item => item.replace(path, ''));
-  // Get the route to be rendered to remove the deep rendering
-  const renderArr = getRenderArr(routes);
-  // Conversion and stitching parameters
-  const renderRoutes = renderArr.map((item) => {
-    const exact = !routes.some(route => route !== item && getRelation(route, item) === 1);
-    return {
-      exact,
-      ...routerData[`${path}${item}`],
-      key: `${path}${item}`,
-      path: `${path}${item}`,
-    };
-  });
-  return renderRoutes;
 }
 /* eslint no-useless-escape:0 */
 const reg = /(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/g;
@@ -136,9 +80,8 @@ export function isProd() {
   const match = 'kquanr.com';
   if (window && window.location && window.location.hostname) {
     return window.location.hostname.includes(match);
-  } else {
-    return false;
   }
+  return false;
 };
 /**
  * @date     2018-05-01
@@ -157,11 +100,11 @@ export function isMobile() {
  */
 export function getToken() {
   const name = '___rl__test__cookies';
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
+  const parts = `; ${document.cookie}`.split(`; ${name}=`);
   if (parts.length === 2) {
     return parts.pop().split(';').shift();
   }
+  return null
 };
 /**
  * @date 2018-05-11

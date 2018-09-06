@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-06 13:56:34
+ * @Last Modified time: 2018-09-06 19:23:12
 */
 // dev or online
 import { isProd, isMobile } from '@/utils';
@@ -43,7 +43,7 @@ export default {
         id: 0,
         name: '首页',
         isReact: false,
-        path: isProd() ? '/' : `/${version}`,
+        path: isProd() ? `/${version}/` : '/',
         target: null,
       },
       {
@@ -186,7 +186,7 @@ export default {
   content1: {
     text: {
       title: '阿里云提供基础的环境即服务',
-      subtitle: '博客基于React、Redux、Dvajs、Node.js等技术栈构建，自适应市面上主流设备屏。',
+      subtitle: '博客基于React、Redux、UmiJS、DvaJS、Node.js等技术栈构建，自适应市面上主流设备屏。',
     },
     block: [
       {

@@ -67,10 +67,10 @@
         background: transparent;
         color: $template-text-color-light;
         line-height: $default-nav-height;
-        li {
+        .ant-menu-item {
           float: left;
           text-align: center;
-          min-width: 8.5rem;
+          width: 8.5rem;
           a {
             color: $template-text-color-light;
           }
@@ -135,8 +135,10 @@
           transition: none;
         }
       }
-      .menu-contact {
+      .menu-contact,.menu-user {
         border-left: 1px solid rgba($line-color, 0.1);
+      }
+      .menu-contact {
         i {
           display: inline-block;
           font-style: normal;
@@ -147,7 +149,7 @@
       }
       .menu-user {
         font-size: 1rem;
-        border-left: 1px solid rgba($line-color, 0.1);
+        min-width: 12rem;
         .img {
           margin-left: 0;
           img {
