@@ -27,11 +27,17 @@ export default class Content extends PureComponent {
   // rate box
   handleRateChange = (value) => {
     this.setState({ rateValue: value }, () => {
-      if (value === 5) {
-        message.success('😘 五星好评呀，谢谢大佬嘿！');
-      }
-      if (value === 0) {
-        message.warning('😂 原来我这么差呀，努力向大佬你看齐啦！');
+
+      switch (value) {
+        case 0:
+          message.warning('😂 原来我这么差呀，努力向大佬你看齐啦！');
+          break;
+        case 5:
+          message.success('😘 五星好评呀，谢谢大佬嘿！');
+          break;
+        default:
+          message.loading(`${value}颗星，小编会继续加油嘿！`, 2.5);
+          break;
       }
       localStorage.setItem(`${getToken()}-home-content4-rate`, value)
     });
@@ -125,7 +131,7 @@ export default class Content extends PureComponent {
               allowHalf
               value={rateValue}
               style={{ color: 'rgb(246, 46, 25)' }}
-              character={<Icon type="heart" />}
+              character={<Icon type="heart" theme="filled" />}
               onChange={this.handleRateChange}
             />
             <span className="ant-rate-text">评分：{rateValue} ⭐️📸</span>

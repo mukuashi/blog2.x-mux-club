@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-03 14:39:37
+ * @Last Modified time: 2018-09-06 13:56:34
 */
 // dev or online
 import { isProd, isMobile } from '@/utils';

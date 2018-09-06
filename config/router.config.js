@@ -6,10 +6,9 @@ export default [
         routes: [
             {
                 path: '/',
-                name: 'Home',
+                name: '',
                 component: './Home',
             },
         ],
     },
 ];
-  

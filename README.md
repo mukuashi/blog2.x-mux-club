@@ -38,22 +38,23 @@ from 2016，create a new version 2.x for blog，fit almost all the screens.
 # Structure
 ```
 ├── package.json       # 项目依赖包及scripts
-├── webpack.config.js  # 扩展或覆盖roadhog的默认配置项目
-├── .webpackrc.js      # roadhog2.x配置文件
+├── config             # 全局配置入口 - UmiJS
+│ ├── config           # 构建及webpack等配置
+│ ├── router.config.js # 路由配置
+│ ├── plugin.config.js # 插件配置（三方、封装的插件配置）
 ├── dist               # 打包静态目录(npm run build)
 ├── src                # 项目业务代码
 │ ├── /assets/         # 静态文件
 │ ├── /components/     # 公共组件
-│ ├── /config/         # 路由、主题、菜单、系统data等配置项
+│ ├── /locales/        # 系统数据配置（Language Data）等配置
 │ ├── /layout/         # 平台布局 => header + content + footer + sidebar(可选)
-│ ├── /models/         # model数据层
-│ ├── /routes/         # 路由层
+│ ├── /models/         # model数据层 => DvaJS
+│ ├── /pages/          # 路由及页面层 => routes + document.ejs(首页模板)
 │ ├── /services/       # 服务api
 │ ├── /styles/         # 全局样式 => core + mixin + function + theme...
 │ ├── /utils/          # 全局工具函数
-│ │──index.js          # 首页模板
-│ │──index.js          # 全局app入口
-│ │──route.js          # 全局路由入口
+│ │──global.js         # 全局Index
+│ │──global.scss       # 全局Style
 ```
 - Home(首页)
   - components => Header + content1 + content2 + ... + Footer
