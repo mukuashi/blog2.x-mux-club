@@ -1,5 +1,5 @@
-import '../../global.js';
 import '../../../node_modules/umi-plugin-polyfills/lib/ie11.js';
+import '../../global.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 

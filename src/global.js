@@ -5,10 +5,9 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-05 11:58:18
+ * @Last Modified time: 2018-09-06 13:27:06
 */
 import '@babel/polyfill';
-import 'url-polyfill';
 import { message } from 'antd';
 
 export function config() {

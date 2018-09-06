@@ -5,11 +5,11 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-04 19:11:15
+ * @Last Modified time: 2018-09-06 16:52:56
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
-import { Button, Icon, notification } from 'antd';
+import { Button, Icon, notification, Tooltip } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -28,7 +28,7 @@ export default class GlobalFooter extends PureComponent {
   //
   handleScrollToTop = () => {
     // 有动画滚动至顶方案
-    scrollTo(0, 800);
+    scrollTo(0, 500);
   }
 
   // version notice
@@ -47,7 +47,7 @@ export default class GlobalFooter extends PureComponent {
     notification.open({
       message: 'Hey，欢迎访问 PhotoArtLife',
       description: '当前版本：2.x\n，2016年之后的博客第二版，老版本可以在首页切换（5秒后关闭），博客最后更新时间：2018年6月。',
-      icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
+      icon: <Icon type="smile" theme="filled" style={{ color: '#108ee9' }} />,
       duration: 6,
       btn: btnReturn,
     });
@@ -75,11 +75,23 @@ export default class GlobalFooter extends PureComponent {
                   {
                     row.content.map(second => (
                       <li key={second.id}>
+
                         <a href={second.path} target={second.target ? '_self' : '_blank'}>
                           {
-                            second.icon ? <Iconfont size="1x-bg" type={second.icon} title={second.name} /> : second.name
+                            second.icon
+                              ? <Tooltip
+                                title={second.name}
+                                placement="top"
+                              >
+                                <Iconfont
+                                  size="1x-bg"
+                                  type={second.icon}
+                                />
+                                </Tooltip>
+                              : second.name
                           }
                         </a>
+
                       </li>
                     ))
                   }
@@ -95,7 +107,11 @@ export default class GlobalFooter extends PureComponent {
           className="toTop"
           style={{ bottom: 10 }}
         >
-          <a><Icon type="up-circle" /></a>
+          <Tooltip title='回到顶部' placement="top">
+            <a>
+              <Icon type="up-circle" theme="filled" />
+            </a>
+          </Tooltip>
         </TweenOne>
         <TweenOne
           key="d"

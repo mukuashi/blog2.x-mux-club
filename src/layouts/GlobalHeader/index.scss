@@ -1,6 +1,7 @@
 @import "../../styles/mixin";
 //
 .headerPopoverContent {
+  padding: 0 1%;
   span {
     font-size: 1rem;
     color: rgba(0, 0, 0, 0.65);
@@ -18,13 +19,13 @@
         margin-right: 6%;
       }
       > img {
-        @include square(8.5rem);
+        @include square(10rem);
       }
     }
   }
 }
 .avatarVersion {
-  color: #b8ededd1;
+  color: #b8eded;
   font-size: 0.95rem;
   margin-top: 1.5%;
 }
@@ -59,7 +60,6 @@
       float: right;
       line-height: $default-nav-height;
       position: relative;
-      margin-right: 1.5%;
       & .ant-menu-horizontal {
         border-bottom-color: transparent;
       }
@@ -137,14 +137,12 @@
       }
       .menu-contact {
         border-left: 1px solid rgba($line-color, 0.1);
-        .anticon {
-          font-size: $default-content-fz-xs;
-          vertical-align: middle;
-        }
-        span {
+        i {
           display: inline-block;
-          margin-left: 5px;
-          font-size: 12px;
+          font-style: normal;
+          &:first-child {
+            padding-right: .4rem;
+          }
         }
       }
       .menu-user {

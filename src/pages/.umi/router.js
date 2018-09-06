@@ -13,7 +13,7 @@ let routes = [
     "routes": [
       {
         "path": "/",
-        "name": "Home",
+        "name": "",
         "component": dynamic({ loader: () => import('../Home'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading').default  }),
         "exact": true
       },
