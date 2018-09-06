@@ -64,6 +64,7 @@ export default {
   ignoreMomentLocale: true,
   disableDynamicImport: true,
   disableCSSModules: false, // css modules
+  publicPath: defaultSettings.version,
   hash: true,
   manifest: {
     name: 'blog2.x-mux-club',

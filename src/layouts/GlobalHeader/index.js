@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.1 | 2017-09-06 // update jsx and antd ui.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-06 19:20:35
+ * @Last Modified time: 2018-09-07 02:22:03
 */
 import React, { PureComponent } from 'react';
 import Link from 'umi/link';
@@ -17,7 +17,7 @@ import systemData from '@/locales/zh-CN';
 import styles from './index.scss';
 
 const { Item, SubMenu } = Menu;
-const { version, header } = systemData;
+const { header } = systemData;
 const { logo, nav, user, submenu, contact } = header;
 
 export default class GlobalHeader extends PureComponent {
@@ -26,16 +26,16 @@ export default class GlobalHeader extends PureComponent {
     }
 
     // 切换移动端menu
-    handleToggleMobile = () => {
+    handleToggleMobile = (value) => {
         this.setState({
-            mobileOpen: !this.state.mobileOpen,
+            mobileOpen: !value,
         })
     }
 
     render() {
         const { mobileOpen } = this.state;
         const props = { ...this.props };
-        const { isMobile, fixHeader, pathname } = props;
+        const { ismobile, fixHeader, pathname } = props;
         const contactAuthor = (
             <div className={styles.headerPopoverContent}>
                 <span>社区（连载中） + WeChat</span>
@@ -68,7 +68,7 @@ export default class GlobalHeader extends PureComponent {
                   content={contactAuthor}
                   title="百度/谷歌搜索PhotoArtLife，也可以找到作者哈！"
                   trigger="hover"
-                  placement={isMobile ? "bottomRight" : "bottom"}
+                  placement={ismobile ? "bottomRight" : "bottom"}
                   arrowPointAtCenter
                 >
                     <div>
@@ -82,7 +82,7 @@ export default class GlobalHeader extends PureComponent {
                     submenu.map(row => (
                         <Item key={row.id}>
                             {
-                                !row.href && <h4 className={isMobile ? styles.avatarVersion : ''}>{row.name}</h4>
+                                !row.href && <h4 className={ismobile ? styles.avatarVersion : ''}>{row.name}</h4>
                             }
                             {
                                 row.href && <a href={row.href} target={row.target} className={styles.avatarInfo}>{row.name}</a>
@@ -120,9 +120,12 @@ export default class GlobalHeader extends PureComponent {
                     </a>
                 </TweenOne>
                 {
-                    isMobile ? (
+                    ismobile ? (
                         <div className={`header-mobile-nav${mobileOpen ? ' open' : ''}`}>
-                            <div className="header-mobile-nav-bar" onClick={this.handleToggleMobile}>
+                            <div
+                              className="header-mobile-nav-bar"
+                              onClick={() => this.handleToggleMobile(mobileOpen)}
+                            >
                                 <em />
                                 <em />
                                 <em />

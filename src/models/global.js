@@ -5,18 +5,21 @@
  * @Date:   2018-03-23 12:25:27
  * @version 0.1 | 2018-03-23  // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-04 18:44:34
+ * @Last Modified time: 2018-09-07 02:32:13
 */
 export default {
   namespace: 'global',
   // 初始化state
   state: {
-    collapsed: false,
+    ismobile: false,
   },
   // 增删改查显隐切换等纯函数
   reducers: {
-    save(state, action) {
-      return { ...state, ...action.payload };
+    update(state, { payload }) {
+      return {
+        ...state,
+        ...payload
+      };
     },
   },
   // 异步，同步写法，Generator函数，后期async/awit代替

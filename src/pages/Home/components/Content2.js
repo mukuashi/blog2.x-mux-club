@@ -15,7 +15,7 @@ export default class Content2 extends PureComponent {
 
   render() {
     const props = { ...this.props };
-    const { isMobile } = props;
+    const ismobile = JSON.parse(props.ismobile);
     const animation = { y: '+=30', opacity: 0, type: 'from', ease: 'easeOutQuad' };
     return (
       <section {...props} className={`content-template-wrapper ${props.className}-wrapper`}>
@@ -45,7 +45,7 @@ export default class Content2 extends PureComponent {
             className={`${props.className}-video`}
           >
             {
-              isMobile ? (
+              ismobile ? (
                 <video
                   controls
                   loop
