@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-06 16:52:56
+ * @Last Modified time: 2018-09-06 18:02:04
 */
 import React, { PureComponent } from 'react';
 import { Link } from 'dva/router';
@@ -87,7 +87,7 @@ export default class GlobalFooter extends PureComponent {
                                   size="1x-bg"
                                   type={second.icon}
                                 />
-                                </Tooltip>
+                              </Tooltip>
                               : second.name
                           }
                         </a>
@@ -125,7 +125,10 @@ export default class GlobalFooter extends PureComponent {
               <a onClick={this.openNotification}>{info.version}</a>
               Just Blog Stage | Referenced By
               <Link to="//reactjs.org" target="_blank"> Facebook React </Link>
-              & <Link to="//github.com/dvajs/dva" target="_blank"> Dvajs </Link>
+              & Ant Design
+              <Link to="//dvajs.com" target="_blank"> DvaJS </Link>
+              &
+              <Link to="//umijs.org" target="_blank"> UmiJS </Link>
               | Powered By
               <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife·跨世 </Link>
               Design For Life

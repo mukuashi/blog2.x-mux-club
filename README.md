@@ -7,10 +7,12 @@ from 2016，create a new version 2.x for blog，fit almost all the screens.
 - more...
 
 # Usage
-* umijs：https://umijs.org
-* dvajs：https://dvajs.com
-* reactjs：https://reactjs.org
-* redux-devtools：https://github.com/gaearon/redux-devtools(本地开发利器/时间旅行器)
+* UmiJS：https://umijs.org
+* DvaJS：https://dvajs.com
+* React：https://reactjs.org
+* Sass：http://sass.bootcss.com/docs/sass-reference
+* Redux-Devtools（本地开发利器/时间旅行器）：https://github.com/gaearon/redux-devtools
+* 脚手架市场：http://scaffold.ant.design
 
 ## Features
 
@@ -25,15 +27,14 @@ from 2016，create a new version 2.x for blog，fit almost all the screens.
 * 🌴 **与 dva 数据流的深入融合**，支持 duck directory、model 的自动加载、code splitting 等等
 
 # Features
-* 2016年接触react和redux栈时用的组合是react-redux：https://github.com/reactjs/react-redux + redux-thunk：https://github.com/gaearon/redux-thunk ，后来换到redux-saga：https://redux-saga.js.org/ 再后来看到支付宝团队的新架构Dvajs等业务方案：https://github.com/sorrycc/blog/issues/6 开始着手于这方面对的尝试，试着写了一些demo和一些商业产品。
+* 2016年接触react和redux栈时用的组合是[react-redux](https://github.com/reactjs/react-redux) + [redux-thunk](https://github.com/gaearon/redux-thunk) ，后来换到[redux-saga](https://redux-saga.js.org)，再后来看到支付宝团队的[新架构方案](https://github.com/sorrycc/blog/issues/6)，便开始着手这方面对的尝试，试着重构博客和写一些商业产品。
 
-* 基于市面上前后端众多的轮子和铺天盖地的框架，作者认为很多领域还是万变不离其宗吧。就像编程、设计、摄影...很多东西传递的思想和基础也在很慢的发生改变和升级，写组件、分治布局、通信、数据交流...，共同组成一个弹性可无限扩展的视觉空间。
+* 市面上的前后端轮子和框架是越来越多了，但很多领域还是万变不离其宗吧。就像编程、设计、摄影...很多东西传递的思想和基础也只是在迭代性的发生改变和升级，组件、分治布局、通信、数据交流...，共同组成一个弹性可不断扩展的视觉空间。
+
 # Guides
-- [ES5 (Deprecated)](https://github.com/airbnb/javascript/tree/es5-deprecated/es5)
-  - [React](https://github.com/airbnb/javascript/tree/master/react)
-  - [CSS-in-JavaScript](https://github.com/airbnb/javascript/tree/master/css-in-javascript)
-  - [CSS & Sass](https://github.com/airbnb/css)
-  - [Ruby](https://github.com/airbnb/ruby)
+- [airbnb javascript standard](https://github.com/airbnb/javascript)
+- [Ant Design introduce](https://ant.design/docs/spec/introduce-cn)
+- [JD Front-End Coding Guidelines](https://guide.aotu.io)
 
 # Structure
 ```

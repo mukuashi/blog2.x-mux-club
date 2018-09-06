@@ -81,6 +81,7 @@
 			display: inline;
 			p {
 				> em {
+					padding-left: 2px;
 					font-style: normal;
 					font-size: 105%;
 				}
@@ -150,7 +151,10 @@
 			}
 			.copyright {
 				display: block;
-				margin: 0 2%;
+				padding: 0 .8rem;
+				> p {
+					font-size: .95rem;
+				}
 			}
 		}
   }
