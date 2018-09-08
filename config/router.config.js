@@ -7,9 +7,14 @@ export default [
         component: '../layouts',
         routes: [
             {
-                path: '/2.x',
+                path: defaultSettings.version,
                 name: '',
                 component: './Home',
+            },
+            {
+                path: `${defaultSettings.version}/media`,
+                name: 'Media',
+                component: './Media',
             },
         ],
     },

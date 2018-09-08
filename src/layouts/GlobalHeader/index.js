@@ -6,14 +6,15 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.1 | 2017-09-06 // update jsx and antd ui.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-07 02:22:03
+ * @Last Modified time: 2018-09-08 19:54:18
 */
 import React, { PureComponent } from 'react';
 import Link from 'umi/link';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
-import { Menu, Popover, Avatar } from 'antd';
+import { Menu, Popover, Avatar, Badge } from 'antd';
 import Iconfont from "@/components/Iconfont";
 import systemData from '@/locales/zh-CN';
+import defaultSettings from '../../../config/settings.config';
 import styles from './index.scss';
 
 const { Item, SubMenu } = Menu;
@@ -55,9 +56,18 @@ export default class GlobalHeader extends PureComponent {
         );
 
         const navChildren = Object.values(nav).map(row => (
-            <Item key={row.id} className={row.path === pathname ? 'ant-menu-item-selected' : ''}>
+            <Item
+              key={row.id}
+              className={
+                    (defaultSettings.version + row.path) === pathname ? 'ant-menu-item-selected' : ''
+                }
+            >
                 {
-                    row.isReact ? <Link to={row.path}>{row.name}</Link> : <a href={row.url} target={row.target}>{row.name}</a>
+                    row.isReact
+                        ? <Link to={defaultSettings.version + row.path}>
+                            <Badge count={row.version} dot={row.dot}>{row.name}</Badge>
+                          </Link>
+                        : <a href={row.url} target={row.target}>{row.name}</a>
                 }
             </Item>
         ));

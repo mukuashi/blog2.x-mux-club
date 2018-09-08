@@ -7,7 +7,7 @@
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @version 0.3 | 2018-09-02 // update staging into umi.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-07 02:38:54
+ * @Last Modified time: 2018-09-08 16:54:05
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -237,7 +237,7 @@ class BasicLayout extends PureComponent {
           {children}
         </Content>
         <Footer className={classLayoutFooter}>
-          <GlobalFooter />
+          <GlobalFooter pathname={pathname} />
         </Footer>
       </Layout>
     );

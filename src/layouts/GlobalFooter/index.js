@@ -5,20 +5,21 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-06 18:02:04
+ * @Last Modified time: 2018-09-08 19:53:48
 */
 import React, { PureComponent } from 'react';
-import { Link } from 'dva/router';
-import { Button, Icon, notification, Tooltip } from 'antd';
+import Link from 'umi/link';
+import { Button, Icon, notification, Tooltip, Card, Badge } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import Iconfont from "@/components/Iconfont";
 import systemData from '@/locales/zh-CN';
 import { scrollTo } from '@/utils';
+import defaultSettings from '../../../config/settings.config';
 import './index.scss';
 
-const { logo, block, copyright, info } = systemData.footer;
+const { logo, version, block, copyright, info } = systemData.footer;
 
 export default class GlobalFooter extends PureComponent {
   static defaultProps = {
@@ -66,6 +67,21 @@ export default class GlobalFooter extends PureComponent {
               <img src={logo.img} alt="footer-logo" />
             </p>
             <p>{logo.content}</p>
+            <Card title={version.title} bordered={false}>
+              {
+                version.list.map(row => (
+                  <p key={row.id}>
+                    <Badge status={row.status} />
+                    {
+                      row.path ? (row.path.includes(defaultSettings.version)
+                        ? <Link to={row.path} className="actived">{row.name}</Link>
+                        : <a href={row.path}>{row.name}</a>)
+                        : <span>{row.name}</span>
+                    }
+                  </p>
+                ))
+              }
+            </Card>
           </li>
           {
             block.map(row => (
@@ -75,7 +91,6 @@ export default class GlobalFooter extends PureComponent {
                   {
                     row.content.map(second => (
                       <li key={second.id}>
-
                         <a href={second.path} target={second.target ? '_self' : '_blank'}>
                           {
                             second.icon
@@ -87,7 +102,7 @@ export default class GlobalFooter extends PureComponent {
                                   size="1x-bg"
                                   type={second.icon}
                                 />
-                              </Tooltip>
+                                </Tooltip>
                               : second.name
                           }
                         </a>

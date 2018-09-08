@@ -5,7 +5,7 @@
  * @Date:   2018-03-23 12:25:27
  * @version 0.1 | 2018-03-23  // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-07 02:32:13
+ * @Last Modified time: 2018-09-08 16:27:44
 */
 export default {
   namespace: 'global',
@@ -22,7 +22,7 @@ export default {
       };
     },
   },
-  // 异步，同步写法，Generator函数，后期async/awit代替
+  // 异步，同步写法，Generator函数
   effects: {
     *fetch({ payload }, { call, put }) {  // eslint-disable-line
       yield put({ type: 'save' });

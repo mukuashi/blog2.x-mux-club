@@ -6,7 +6,7 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-05 11:39:20
+ * @Last Modified time: 2018-09-08 17:30:07
 */
 @import "functions";
 //font
@@ -34,7 +34,7 @@ $dark-color: #000;
 $default-color: #108ee9;
 $primary-color: $default-color;
 $default-text-color: #586069;
-$default-active-color:#108ee9;
+$default-active-color:$default-color;
 $default-hover-color: #e6f7ff;
 $default-background-color: #fff;
 $default-background-theme: $default-background-color;

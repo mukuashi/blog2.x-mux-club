@@ -6,9 +6,11 @@
  * @version 0.1 | 2016-03-23  // Initial version.
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
+ * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-07 02:56:16
+ * @Last Modified time: 2018-09-08 20:01:44
 */
+import defaultSettings from '../../config/settings.config'
 // dev or online
 import { isProd, isMobile } from '@/utils';
 // some assets imgs or others
@@ -29,7 +31,7 @@ import content3ArticleImg5 from '../assets/images/content3-article-img5.gif';
 
 // Date
 const nowYear = new Date().getFullYear();
-const version = '2.x/';
+const version = `${defaultSettings.version.replace('/', '')}/`;
 // Media
 const mePai = isMobile() ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.html' : 'https://www.mepai.me/user/u_592e418fe4a53';
 export default {
@@ -41,18 +43,17 @@ export default {
     nav: [
       {
         id: 0,
-        name: '首页',
-        isReact: false,
-        path: isProd() ? `/${version}` : '/',
-        target: null,
+        name: 'Home',
+        isReact: true,
+        path: isProd() ? '/' : '',
+        version: 2
       },
       {
         id: 1,
-        name: '项目篇（1.x)',
-        isReact: false,
-        path: '/project',
-        url: '//kquanr.com/project',
-        target: '_blank',
+        name: '媒体/项目篇',
+        isReact: true,
+        path: '/media',
+        dot: true
       },
       {
         id: 2,
@@ -605,6 +606,41 @@ export default {
       img: footerLogo,
       content: '一只拍片码稿、画图写代码的创作者',
     },
+    version: {
+      title: '版本列表',
+      list: [
+        {
+          id: '1.x',
+          name: '1.x old版本',
+          status: 'success',
+          path: '/'
+        },
+        {
+          id: '2.x',
+          name: '2.x current版本',
+          status: 'success',
+          path: '/2.x'
+        },
+        {
+          id: '3.x',
+          name: '3.x release版本',
+          status: 'success',
+          path: '/3.x',
+        },
+        {
+          id: '4.x',
+          name: '4.x next版本',
+          status: 'processing',
+          path: '',
+        },
+        {
+          id: Math.random(),
+          name: '陆续公开...',
+          status: 'warning',
+          path: '',
+        }
+      ]
+    },
     block: [
       {
         id: '1',
@@ -653,17 +689,20 @@ export default {
           {
             id: '8',
             name: '自媒体/公路作者',
-            path: '//kquanr.com/about/works',
+            path: '/about/works',
+            target: true
           },
           {
             id: '9',
             name: '独立设计师',
-            path: '//kquanr.com/about',
+            path: '/about',
+            target: true
           },
           {
             id: '10',
             name: '关于更多...',
-            path: '//kquanr.com/about',
+            path: '/about',
+            target: true
           },
         ],
       },
@@ -674,17 +713,20 @@ export default {
           {
             id: '1',
             name: '背景篇',
-            path: '//kquanr.com/about',
+            path: '/about',
+            target: true
           },
           {
             id: '2',
-            name: '项目篇(1.x版)',
-            path: '//kquanr.com/project',
+            name: '项目篇(1.x)',
+            path: '/project',
+            target: true
           },
           {
             id: '3',
             name: '摄影/文Plus篇',
-            path: '//kquanr.com/about/works',
+            path: '/about/works',
+            target: true
           },
           {
             id: '4',
@@ -859,7 +901,7 @@ export default {
             id: '12',
             icon: 'home-circle',
             name: '返回1.x版',
-            path: '//kquanr.com',
+            path: '/',
             target: true,
           },
 
