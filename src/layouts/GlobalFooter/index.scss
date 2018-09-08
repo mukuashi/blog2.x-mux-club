@@ -16,6 +16,22 @@
 				width: 100%;
 			}
 		}
+		.ant-card {
+			background: inherit;
+			.ant-card-head,.ant-card-body {
+				padding: 0;
+				border: none;
+				color: $template-text-color;
+			}
+			.ant-card-body > p {
+				margin: 0;
+				line-height: 2.2rem;
+				color: $template-footer-text-color;
+				.actived {
+					color: $link-hover-color;
+				}
+			}
+		}
 		//right
 		& > ul {
 			@include ul-initialize;

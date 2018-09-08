@@ -49,6 +49,7 @@ export default class Content2 extends PureComponent {
                 <video
                   controls
                   loop
+                  preload="none"
                   src={video.url}
                   poster={video.cover}
                   width="100%"
@@ -62,7 +63,8 @@ export default class Content2 extends PureComponent {
                     src={video.url}
                     poster={video.cover}
                     width="100%"
-                  />)
+                  />
+                )
             }
           </TweenOne>
         </OverPack>

@@ -8,7 +8,7 @@
  * @version 0.3 | 2017-03-30 // add some basic linear-gradient mixin
  * @version 0.4 | 2017-04-08 // add mixin if扩展
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-07 00:27:29
+ * @Last Modified time: 2018-09-08 17:29:47
 */
 @import "theme","animate";
 //各种浏览器前缀
@@ -223,7 +223,7 @@
   }
 }
 //button背景渐变-1
-@mixin linear-gradient1 {
+@mixin linear-gradient-box {
   background: rgba(#0189ff, 1);/* 一些不支持背景渐变的浏览器 */ 
   background: -webkit-linear-gradient(left, #0189ff, #0066ff); /* Safari 5.1 - 6.0 */
   background: -o-linear-gradient(right, #0189ff, #0066ff); /* Opera 11.1 - 12.0 */
@@ -232,32 +232,8 @@
   //ie9 and son on...
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#0189ff', endColorstr='#0066ff');
 }
-@mixin linear-gradient2 {
-  background: rgba(#0063ff, 1);
-  background: -webkit-linear-gradient(left, #0063ff, #0086ff);
-  background: -o-linear-gradient(right, #0063ff, #0086ff);
-  background: -moz-linear-gradient(right, #0063ff, #0086ff);
-  background: linear-gradient(to right, #0063ff, #0086ff);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#0063ff', endColorstr='#0086ff');
-}
-@mixin linear-gradient3($opacity:null) {
-  background: rgba(#017eff, .6);
-  background: -webkit-linear-gradient(left, rgba(#017eff,$opacity),rgba( #0067fe,$opacity));
-  background: -o-linear-gradient(right, rgba(#017eff,$opacity),rgba( #0067fe,$opacity));
-  background: -moz-linear-gradient(right, rgba(#017eff,$opacity),rgba( #0067fe,$opacity));
-  background: linear-gradient(to right, rgba(#017eff,$opacity),rgba( #0067fe,$opacity));
-}
-@mixin linear-gradient4 {
-  background: rgba(#032759, 1);
-  background: -webkit-linear-gradient(left, #032759, #01193e); /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(right, #032759, #01193e); /* Opera 11.1 - 12.0 */
-  background: -moz-linear-gradient(right, #032759, #01193e); /* Firefox 3.6 - 15 */
-  background: linear-gradient(to right, #032759, #01193e); /* 标准的语法 */
-  //ie9 and son on...
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#032759', endColorstr='#01193e');
-}
 //线条背景渐变线条-1
-@mixin line-linear-gradient1 {
+@mixin linear-gradient-line {
   background: rgba(#fafeff, .9);
   background: -webkit-linear-gradient(top, #fafeff, $default-content-arrows-color); 
   background: -o-linear-gradient(right, #fafeff, $default-content-arrows-color);

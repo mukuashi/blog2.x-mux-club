@@ -21,7 +21,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@babel/runtime": "^7.0.0",
-    "antd": "^3.9.0",
+    "antd": "^3.9.1",
     "dva": "^2.4.0",
     "hash.js": "^1.1.5",
     "lodash": "^4.17.10",
