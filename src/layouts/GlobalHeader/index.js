@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.1 | 2017-09-06 // update jsx and antd ui.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-08 19:54:18
+ * @Last Modified time: 2018-09-09 01:10:16
 */
 import React, { PureComponent } from 'react';
 import Link from 'umi/link';
@@ -55,7 +55,7 @@ export default class GlobalHeader extends PureComponent {
             </div>
         );
 
-        const navChildren = Object.values(nav).map(row => (
+        const navChildren = nav.map(row => (
             <Item
               key={row.id}
               className={

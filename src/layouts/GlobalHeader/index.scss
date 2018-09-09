@@ -68,9 +68,9 @@
         color: $template-text-color-light;
         line-height: $default-nav-height;
         .ant-menu-item {
-          float: left;
           text-align: center;
           width: 8.5rem;
+          height: $default-nav-height;
           a {
             color: $template-text-color-light;
           }
@@ -100,33 +100,6 @@
             }
           }
         }
-        .ant-menu-sub {
-          background: $template-text-color-light;
-          color: rgba($template-footer-text-color, .75);
-          overflow: hidden;
-          li {
-            width: 100%;
-            padding: 0 rem(20px);
-          }
-          &menu-title:hover {
-            color: inherit;
-          }
-        }
-        .ant-menu-vertical, .ant-menu-vertical .ant-menu-item {
-          border-right: none;
-        }
-      }
-      & .ant-menu-horizontal > .ant-menu-item-selected {
-        height: $default-nav-height;
-        > a {
-          color: $link-active-color;
-        }
-      }
-      & .ant-menu-horizontal > .ant-menu-item-active {
-        color: $link-hover-color;
-        border-bottom-color: $link-hover-color;
-        height: $default-nav-height;
-        
       }
     }
     &-nav, &-mobile-nav {
