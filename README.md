@@ -6,7 +6,7 @@ from 2016，create a new version 2.x for blog，fit almost all the screens.
 - 3.x：http://kquanr.com/3.x
 - more...
 
-# Usage
+## Usage
 * UmiJS：https://umijs.org
 * DvaJS：https://dvajs.com
 * React：https://reactjs.org
@@ -26,17 +26,17 @@ from 2016，create a new version 2.x for blog，fit almost all the screens.
 * 🍁 **完善的 TypeScript 支持**，包括 d.ts 定义和 umi test
 * 🌴 **与 dva 数据流的深入融合**，支持 duck directory、model 的自动加载、code splitting 等等
 
-# Features
+## Comments
 * 2016年接触react和redux栈时用的组合是[react-redux](https://github.com/reactjs/react-redux) + [redux-thunk](https://github.com/gaearon/redux-thunk) ，后来换到[redux-saga](https://redux-saga.js.org)，再后来看到支付宝团队的[新架构方案](https://github.com/sorrycc/blog/issues/6)，便开始着手这方面对的尝试，试着重构博客和写一些商业产品。
 
 * 市面上的前后端轮子和框架是越来越多了，但很多领域还是万变不离其宗吧。就像编程、设计、摄影...很多东西传递的思想和基础也只是在迭代性的发生改变和升级，组件、分治布局、通信、数据交流...，共同组成一个弹性、可扩展的视觉空间。
 
-# Guides
+## Guides
 - [airbnb javascript standard](https://github.com/airbnb/javascript)
 - [Ant Design introduce](https://ant.design/docs/spec/introduce-cn)
 - [JD Front-End Coding Guidelines](https://guide.aotu.io)
 
-# Structure
+## Structure
 ```
 ├── package.json       # 项目依赖包及scripts
 ├── config             # 全局配置入口 - UmiJS
@@ -56,7 +56,7 @@ from 2016，create a new version 2.x for blog，fit almost all the screens.
 │ ├── /utils/          # 全局工具函数
 │ │──global.js         # 全局Index
 │ │──global.scss       # 全局Style
-```
+
 - Home(首页)
   - components => Header + content1 + content2 + ... + Footer
   - index.js
@@ -74,7 +74,7 @@ from 2016，create a new version 2.x for blog，fit almost all the screens.
 
 ```
 
-# Usage
+## Usage
 
 ```bash
 #本地开发
