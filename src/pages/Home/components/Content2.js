@@ -63,6 +63,7 @@ export default class Content2 extends PureComponent {
                     src={video.url}
                     poster={video.cover}
                     width="100%"
+                    preload="none"
                   />
                 )
             }
