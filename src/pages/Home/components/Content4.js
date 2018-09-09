@@ -125,7 +125,7 @@ export default class Content extends PureComponent {
             className={`${props.className}-rate`}
           >
             <Tooltip placement="top" title='给作者一个评价呗！'>
-              <Avatar src="http://kquanr.com/images/header-avatar.png" />
+              <Avatar src="//kquanr.com/images/header-avatar.png" />
             </Tooltip>
             <Rate
               allowHalf

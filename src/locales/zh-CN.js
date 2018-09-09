@@ -8,14 +8,13 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-08 20:01:44
+ * @Last Modified time: 2018-09-09 17:03:29
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
 import { isProd, isMobile } from '@/utils';
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
-import headerAvatar from '../assets/images/header-avatar.png'
 import bannerLogo from '../assets/images/banner-logo.png';
 import banner1 from '../assets/images/banner-1.jpg';
 import banner2 from '../assets/images/banner-2.jpg';
@@ -95,7 +94,7 @@ export default {
     },
     user: {
       name: 'mukuashi',
-      img: headerAvatar,
+      img: '//kquanr.com/images/header-avatar.png',
     },
     submenu: [
       {

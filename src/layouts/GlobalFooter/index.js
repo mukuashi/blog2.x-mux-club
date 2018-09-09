@@ -5,14 +5,15 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-08 19:53:48
+ * @Last Modified time: 2018-09-09 17:51:36
 */
 import React, { PureComponent } from 'react';
-import Link from 'umi/link';
 import { Button, Icon, notification, Tooltip, Card, Badge } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
+import Link from 'umi/link';
+import Texty from 'rc-texty';
 import Iconfont from "@/components/Iconfont";
 import systemData from '@/locales/zh-CN';
 import { scrollTo } from '@/utils';
@@ -66,7 +67,7 @@ export default class GlobalFooter extends PureComponent {
             <p className="logo">
               <img src={logo.img} alt="footer-logo" />
             </p>
-            <p>{logo.content}</p>
+            <Texty type='scale' mode="smooth">{logo.content}</Texty>
             <Card title={version.title} bordered={false}>
               {
                 version.list.map(row => (
@@ -102,7 +103,7 @@ export default class GlobalFooter extends PureComponent {
                                   size="1x-bg"
                                   type={second.icon}
                                 />
-                                </Tooltip>
+                              </Tooltip>
                               : second.name
                           }
                         </a>
@@ -133,22 +134,25 @@ export default class GlobalFooter extends PureComponent {
           animation={{ y: '+=30', opacity: 0, type: 'from' }}
           className="copyright"
         >
+          <Texty>
+            {copyright.number + copyright.reserved}
+          </Texty>
           <p>
-            {copyright.number}
-            <em>{copyright.reserved}</em>
-            <span>
-              <a onClick={this.openNotification}>{info.version}</a>
-              Just Blog Stage | Referenced By
+            <a onClick={this.openNotification}>{info.version}</a>
+            Just Blog Stage | Referenced By
               <Link to="//reactjs.org" target="_blank"> Facebook React </Link>
-              & Ant Design
+            & Ant Design
               <Link to="//dvajs.com" target="_blank"> DvaJS </Link>
-              &
+            &
               <Link to="//umijs.org" target="_blank"> UmiJS </Link>
-              | Powered By
-              <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife·跨世 </Link>
-              Design For Life
-            </span>
+            | Powered By
+              <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife</Link>
           </p>
+          <Texty delay={400} type='scaleBig' mode='reverse'>
+            Design For Life By MUKUASHI | MUX Studio
+          </Texty>
+          <Icon type="smile" theme="filled" style={{ color: '#52c41a', fontSize: '1.2rem', marginRight: '.5rem' }} />
+          <Icon type="heart" theme="filled" style={{ color: '#f43e55', fontSize: '1.2rem' }} />
         </TweenOne>
       </OverPack>
     );

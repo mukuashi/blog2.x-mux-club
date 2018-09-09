@@ -13,7 +13,8 @@
 			margin-bottom: .5rem;
 			// background: url('../../assets/images/footer-logo.png');
 			img {
-				width: 100%;
+				width: 156px;
+				display: inline-block;
 			}
 		}
 		.ant-card {
@@ -92,23 +93,17 @@
 			}
 		}
 		& .copyright {
-			margin: auto;
 			text-align: center;
-			display: inline;
-			p {
-				> em {
-					padding-left: 2px;
-					font-style: normal;
-					font-size: 105%;
-				}
-				> span{
-					display: block;
-					font-size: 100%;
-					a {
-						text-decoration: none;
-					}
+			padding-bottom: .8rem; 
+			> p {
+				display: block;
+				font-size: 100%;
+				margin: 0;
+				a {
+					text-decoration: none;
 				}
 			}
+			
 		}
 		& .toTop {
 			float: right;
