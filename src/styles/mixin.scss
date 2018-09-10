@@ -10,7 +10,7 @@
  * @Last Modified by: mukuashi
  * @Last Modified time: 2018-09-08 17:29:47
 */
-@import "theme","animate";
+@import "theme";
 //各种浏览器前缀
 @mixin prefix($property, $value) {
   @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
