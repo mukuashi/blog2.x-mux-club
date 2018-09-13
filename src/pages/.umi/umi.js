@@ -1,10 +1,17 @@
-import '../../../node_modules/umi-plugin-polyfills/lib/ie11.js';
+import '../../../node_modules/umi-plugin-polyfills/lib/ie9.js';
 import '../../global.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import FastClick from '../../../node_modules/fastclick/lib/fastclick.js'
 
-
-
+// Initialize fastclick
+document.addEventListener(
+  'DOMContentLoaded',
+  () => {
+    FastClick.attach(document.body);
+  },
+  false,
+);
 
 // create history
 window.g_history = require('umi/_createHistory').default({

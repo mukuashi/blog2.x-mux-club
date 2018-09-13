@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-07 02:22:27
+ * @Last Modified time: 2018-09-13 11:17:18
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -21,7 +21,7 @@ import 'rc-banner-anim/assets/index.css';
 import './index.scss';
 
 const { BgElement } = Element;
-const { banner } = systemData;
+const { prefix,banner } = systemData;
 const yAnim = {
   type: 'from', ease: 'easeInOutQuad', duration: 200,
 };
@@ -111,7 +111,7 @@ export default class BannerHeader extends PureComponent {
       <OverPack
         replay                   // 每次显示当前时是否都要动画, false 为只上往下滚时才有动画
         playScale={[0.3, 0.9]}   // https://motion.ant.design/api/scroll-anim
-        className={`mux-layout-${className} banner`}
+        className={`${prefix}-layout-${className} banner`}
         id="banner"
       >
         <TweenOneGroup

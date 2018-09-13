@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-09 17:03:29
+ * @Last Modified time: 2018-09-13 10:49:20
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
@@ -34,9 +34,9 @@ const version = `${defaultSettings.version.replace('/', '')}/`;
 // Media
 const mePai = isMobile() ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.html' : 'https://www.mepai.me/user/u_592e418fe4a53';
 export default {
-  prefix: 'mux',
+  prefix: defaultSettings.prefix,
   version: `${version}`,
-  title: '2.x mukuashi@PhotoArtLife Studio',
+  title: defaultSettings.title,
   header: {
     logo: headerNav,
     nav: [
@@ -59,7 +59,7 @@ export default {
         name: '背景篇',
         isReact: false,
         path: '/about',
-        url: '//kquanr.com/about',
+        url: '/about',
         target: '_blank',
       },
       {
@@ -74,7 +74,7 @@ export default {
         name: '专栏篇',
         isReact: false,
         path: '/about/works',
-        url: '//kquanr.com/about/works',
+        url: '/about/works',
         target: '_blank',
       },
     ],
