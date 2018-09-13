@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { Spin } from "antd";
 import Texty from 'rc-texty';
 import styles from './index.scss';
-import 'rc-texty/assets/index.css';
 // loading components from code split
 // https://umijs.org/plugin/umi-plugin-react.html#dynamicimport
 export default class Loading extends PureComponent {
