@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-09 17:52:14
+ * @Last Modified time: 2018-09-12 22:37:57
 */
 import React, { PureComponent } from 'react';
 import { Button, Icon, notification, Tooltip, Card, Badge } from 'antd';
@@ -151,8 +151,8 @@ export default class GlobalFooter extends PureComponent {
           <Texty delay={400} type='scaleBig' mode='reverse'>
             Design For Life By MUKUASHI | MUX Studio
           </Texty>
-          <Icon type="smile" theme="filled" style={{ color: '#52c41a', fontSize: '1.2rem', marginRight: '.5rem' }} />
-          <Icon type="heart" theme="filled" style={{ color: '#f43e55', fontSize: '1.2rem' }} />
+          <Icon type="smile" theme="filled" style={{ color: '#52c41a', marginRight: '.6rem' }} />
+          <Icon type="heart" theme="filled" style={{ color: '#f43e55' }} />
         </TweenOne>
       </OverPack>
     );
