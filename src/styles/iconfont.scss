@@ -6,9 +6,8 @@
  * @Date:   2016-05-1 11:40:27
  * @version 0.1 | 2016-05-01 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-06 14:13:35
+ * @Last Modified time: 2018-09-13 10:34:37
 */
-@import "mixin";
 //在global.scss中引入默认全局形式
 .micon {
   display: inline-block;
@@ -54,14 +53,15 @@
 }
 //转向
 .micon-rotate-90 {
-  @include prefix(transform,rotate(90deg))
+  @include prefix(transform,rotate(90deg));
 }
 .micon-rotate-180 {
-  @include prefix(transform,rotate(180deg))
+  @include prefix(transform,rotate(180deg));
 }
 .micon-rotate-270 {
-  @include prefix(transform,rotate(270deg))
+  @include prefix(transform,rotate(270deg));
 }
+
 @include keyframes(loadingCircle) {
   0% {
     @include prefix(transform,rotate(0deg));
@@ -80,25 +80,19 @@
 }
 //闪烁
 .micon-relative {
-    display: inline-block;
-    height: 48px;
-    width: 48px;
-    position: relative;
-    line-height: 0;
-    transition: transform 0.25s ease-out;
-    transform-origin: center;
+  display: inline-block;
+  @include square(48px);
+  position: relative;
+  line-height: 0;
+  transition: transform 0.25s ease-out;
+  transform-origin: center;
 }
 .micon-pulse {
     display: block;
-    width: 48px;
-    height: 48px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
+    @include square(48px);
+    @include custom-position(absolute,$top:0,$left:0);
     transform-origin: center;
-    border: 1px solid;
-    border-color: #00CCEB;
+    border: $border-width-base $border-style-base #00CCEB;
     border-radius: 48px;
     @include prefix(animation-name, scale-up-fade-out);
     @include prefix(animation-duration, 1.5s);

@@ -8,7 +8,7 @@
  * @version 0.3 | 2017-03-30 // add some basic linear-gradient mixin
  * @version 0.4 | 2017-04-08 // add mixin if扩展
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-08 17:29:47
+ * @Last Modified time: 2018-09-13 10:36:10
 */
 @import "theme";
 //各种浏览器前缀
@@ -65,7 +65,7 @@
   &:hover {
     background: transparent;
     transition: .2s $ease-in-circ;
-    border: 3px solid $btn-default-color;
+    border: 3px solid $primary-color;
     border-radius: 2px;
     line-height: #{$default-button-height - rem(5.5px)};
     > span {
@@ -149,7 +149,7 @@
 }
 //special border-radius circle
 @mixin border-radius-box ($radius) {
-  @include prefix(border-radius,$radius)
+  @include prefix(border-radius,$radius);
 }
 //size
 @mixin size($width, $height) {

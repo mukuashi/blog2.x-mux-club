@@ -15,15 +15,17 @@ export default {
         dva: {
           hmr: true,
         },
-        locale: {
-          enable: true, // default false
-          default: 'zh-CN', // default zh-CN
-          baseNavigator: true, // default true, when it is true, will use `navigator.language` overwrite default
-        },
+        // 国际化配置，locale，2.x暂时不适配
+        // locale:{}
+        library:'react', // 默认底层库 react | preact
+        pwa: true,
+        fastClick:true,
+        title: defaultSettings.title,
         dynamicImport: {
+          webpackChunkName:true,
           loadingComponent: './components/Loading',
         },
-        polyfills: ['ie11'],
+        polyfills: ['ie9'],
         ...(!process.env.TEST && os.platform() === 'darwin'
           ? {
             dll: {
@@ -50,15 +52,7 @@ export default {
     'node-sass': true,
   },
   alias: {
-    components: resolve(__dirname, 'src/components/'),
-    utils: resolve(__dirname, 'src/utils/'),
-    locales: resolve(__dirname, 'src/locales/'),
-    services: resolve(__dirname, 'src/services/'),
-    models: resolve(__dirname, 'src/models/'),
-    styles: resolve(__dirname, 'src/styles/'),
-    layouts: resolve(__dirname, 'src/layouts/'),
-    assets: resolve(__dirname, 'src/assets/'),
-    pages: resolve(__dirname, 'src/pages/'),
+    '@': resolve(__dirname, 'src'),// umi默认，也可以不设置或在chainWebpack通过config.resolve.alias.set
   },
   urlLoaderExcludes: [/\.svg$/],
   ignoreMomentLocale: true,
