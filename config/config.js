@@ -63,7 +63,7 @@ export default {
   manifest: {
     name: 'blog2.x-mux-club',
     background_color: '#fff',
-    description: '2.x mukuashi@PhotoArtLife Studio',
+    description: defaultSettings.title,
     display: 'standalone',
     start_url: '/index.html',
     icons: [
