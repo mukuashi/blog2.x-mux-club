@@ -1,4 +1,5 @@
 @import '../../styles/mixin';
+//
 :global {
   .footer {
 		background: $template-bg-color;
@@ -105,16 +106,26 @@
 			}
 			:global(.anticon) {
 				font-size: 1.4rem;
-				padding-top: .6rem;
+				padding: 1rem 0 .4rem;
 			}
 		}
-		& .toTop {
-			float: right;
-			margin-right: 1.7rem;
+		:global(.ant-back-top) {
+			right: 1.2rem;
+			bottom: 1.5rem;
+			// animation: fadeInUp 2s infinite;
+      // transform-origin: right bottom;
+			&-content {
+				@include square(2.55rem);
+				background: rgba($primary-color,.9);
+			}
+			&-icon {
+				height: 1rem;
+			}
+		}
+		&-up {
 			transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
-			//@include custom-position(fixed,$bottom:0,$right:1.75rem,$zindex:1000);
 			a > i{
-				font-size: 2.3rem;
+				font-size: 2.5rem;
 			}
     }
 	}
