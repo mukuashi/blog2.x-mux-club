@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-15 00:50:15
+ * @Last Modified time: 2018-09-15 13:08:43
 */
 import React, { PureComponent } from 'react';
 import { Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
@@ -103,7 +103,7 @@ export default class GlobalFooter extends PureComponent {
                                   size="1x-bg"
                                   type={second.icon}
                                 />
-                                </Tooltip>
+                              </Tooltip>
                               : second.name
                           }
                         </a>
@@ -120,7 +120,7 @@ export default class GlobalFooter extends PureComponent {
         <BackTop>
           <TweenOne
             key="c"
-            animation={{ y: '-=25', yoyo: true, repeat: -1, duration: 1600 }}
+            animation={{ y: '-=28', yoyo: true, repeat: -1, duration: 1600 }}
             className="footer-up"
             style={{ bottom: 0 }}
           >

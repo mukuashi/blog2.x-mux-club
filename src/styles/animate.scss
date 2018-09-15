@@ -5,7 +5,7 @@
  * @Date:   2016-02-08 11:40:27
  * @version 0.1 |  2016-02-08 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-15 00:52:40
+ * @Last Modified time: 2018-09-15 13:32:50
 */
 @keyframes bounce {
     from,
@@ -139,4 +139,41 @@
       -webkit-transform: translate3d(0, -100%, 0);
       transform: translate3d(0, -100%, 0);
     }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+	}
+}
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 15deg);
+    transform: rotate3d(0, 0, 1, 15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg);
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
 }

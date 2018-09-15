@@ -105,27 +105,34 @@
 				}
 			}
 			:global(.anticon) {
-				font-size: 1.4rem;
+				font-size: 1.5rem;
 				padding: 1rem 0 .4rem;
+				animation: zoomIn 2.4s infinite;
+				&:last-child {
+					animation-name: swing;
+					transform-origin: top center;
+				}
+				
 			}
 		}
 		:global(.ant-back-top) {
-			right: 1.2rem;
-			bottom: 1.5rem;
-			// animation: fadeInUp 2s infinite;
-      // transform-origin: right bottom;
+			right: .8rem;
+			bottom: .8rem;
 			&-content {
-				@include square(2.55rem);
+				@include square(2.3rem);
+				animation: slideOutUp 2.4s infinite;
+      	transform-origin: right bottom;
 				background: rgba($primary-color,.9);
 			}
 			&-icon {
+				margin: .68rem auto;
 				height: 1rem;
 			}
 		}
 		&-up {
 			transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 			a > i{
-				font-size: 2.5rem;
+				font-size: 2.3rem;
 			}
     }
 	}
