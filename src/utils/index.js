@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-05-01 // add isMobile judge and token get.
  * @version 0.4 | 2018-05-11 // add deepCopy.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-06 19:18:05
+ * @Last Modified time: 2018-09-15 13:16:11
 */
 /**
  * @date     2018-03-17
@@ -99,7 +99,7 @@ export function isMobile() {
  * @author   mukuashi | mukuashi@qq.com
  */
 export function getToken() {
-  const name = '___rl__test__cookies';
+  const name = '_bl_uid';
   const parts = `; ${document.cookie}`.split(`; ${name}=`);
   if (parts.length === 2) {
     return parts.pop().split(';').shift();

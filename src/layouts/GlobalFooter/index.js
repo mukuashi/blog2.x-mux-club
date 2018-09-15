@@ -5,10 +5,10 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-12 22:37:57
+ * @Last Modified time: 2018-09-15 13:08:43
 */
 import React, { PureComponent } from 'react';
-import { Button, Icon, notification, Tooltip, Card, Badge } from 'antd';
+import { Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -116,19 +116,19 @@ export default class GlobalFooter extends PureComponent {
             ))
           }
         </QueueAnim>
-        <TweenOne
-          key="c"
-          onClick={this.handleScrollToTop}
-          animation={{ y: '-=36', yoyo: true, repeat: -1, duration: 1600 }}
-          className="toTop"
-          style={{ bottom: 10 }}
-        >
-          <Tooltip title='回到顶部' placement="top">
+
+        <BackTop>
+          <TweenOne
+            key="c"
+            animation={{ y: '-=28', yoyo: true, repeat: -1, duration: 1600 }}
+            className="footer-up"
+            style={{ bottom: 0 }}
+          >
             <a>
               <Icon type="up-circle" theme="filled" />
             </a>
-          </Tooltip>
-        </TweenOne>
+          </TweenOne>
+        </BackTop>
         <TweenOne
           key="d"
           animation={{ y: '+=30', opacity: 0, type: 'from' }}

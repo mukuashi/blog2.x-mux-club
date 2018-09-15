@@ -36,7 +36,7 @@ export default class Content extends PureComponent {
           message.success('😘 五星好评呀，谢谢大佬嘿！');
           break;
         default:
-          message.loading(`${value}颗星，小编会继续加油嘿！`, 2.5);
+          message.loading(`${value}颗星，小编会继续加油嘿！`, 2);
           break;
       }
       localStorage.setItem(`${getToken()}-home-content4-rate`, value)

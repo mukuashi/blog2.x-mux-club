@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-13 10:49:20
+ * @Last Modified time: 2018-09-15 00:23:46
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
@@ -45,7 +45,7 @@ export default {
         name: 'Home',
         isReact: true,
         path: isProd() ? '/' : '',
-        version: 2
+        version: 0
       },
       {
         id: 1,

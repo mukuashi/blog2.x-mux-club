@@ -7,11 +7,11 @@
  * @version 0.2 | 2017-06-18 // 配置一些浏览器默认，暂时保留normalize选择.
  * @version 0.3 | 2018-09-01 // 统一添加文字动画CSS.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-14 02:19:48
+ * @Last Modified time: 2018-09-15 00:55:36
 */
 // Some best-practice CSS that's useful for most apps
 // Just remove them if they're not what you want
-@import "mixin","iconfont";
+@import 'mixin','iconfont','animate';
 @import '~rc-texty/assets/index.css';
 //base core
 html {
