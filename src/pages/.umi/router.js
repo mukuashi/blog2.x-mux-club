@@ -42,6 +42,7 @@ let routes = [
     "_title_default": "2.x mukuashi@PhotoArtLife Studio"
   }
 ];
+window.g_plugins.applyForEach('patchRoutes', { initialValue: routes });
 
 export default function() {
   return (

@@ -58,8 +58,8 @@ export default {
         id: 2,
         name: '背景篇',
         isReact: false,
-        path: '/about',
-        url: '/about',
+        path: '/1.x/about',
+        url: '/1.x/about',
         target: '_blank',
       },
       {
@@ -73,8 +73,8 @@ export default {
         id: 4,
         name: '专栏篇',
         isReact: false,
-        path: '/about/works',
-        url: '/about/works',
+        path: '/1.x/about/works',
+        url: '/1.x/about/works',
         target: '_blank',
       },
     ],
@@ -104,14 +104,14 @@ export default {
         target: '_blank',
       },
       {
-        id: 'b',
-        name: '微信专栏',
-        href: 'http://t.cn/Rt1xb42',
-        target: '_blank',
+        id: 'd',
+        name: 'version 1.x',
+        href: '/1.x',
+        target: '_self',
       },
       {
         id: 'c',
-        name: '返回旧版1.x',
+        name: 'version 3.x',
         href: '/',
         target: '_self',
       },
@@ -252,7 +252,7 @@ export default {
         body: `<h3>摄影</h3>兴趣导向的入门吧，开始泡图书馆和蹭一些美术或摄影课。
                 <h3>设计</h3>可能还是视觉上的吸引阶段，倒腾些PS/AI，关注一些UED Blog、广告制作等传媒行业。
                 <h3>编程</h3>这个绝对是科班出身了，信息学院计算机系，可能那时候写代码还只是从书本上一行一行抄过来打出来看看demo的阶段。
-                <h3>写作</h3>还没有今天自媒体这么流行火热，也只是写作个爱好者。 <a href="http://kquanr.com/article" target="_blank">老版旧文</a>`,
+                <h3>写作</h3>还没有今天自媒体这么流行火热，也只是写作个爱好者。 <a href="http://kquanr.com/1.x/article" target="_blank">老版旧文</a>`,
       },
       {
         tab: {
@@ -262,7 +262,7 @@ export default {
         img: content3ArticleImg2,
         body: `<h3>设计</h3>UI & UX，边念书边在某广告公司做广告传媒与平面设计等工作。
         <h3>编程</h3>学校的一些基本课程学习和校外兼职项目，同时做着在线讲师项目创业和外包服务等。
-        <h3>媒体</h3>网上连载<a href="//kquanr.com/about/works" target="_blank">博客</a>文章和<a href="//i.youku.com/mukuashi" target="_blank">视频</a>前后期制作等。
+        <h3>媒体</h3>网上连载<a href="//kquanr.com/1.x/about/works" target="_blank">博客</a>文章和<a href="//i.youku.com/mukuashi" target="_blank">视频</a>前后期制作等。
         <h3>活动</h3>参加一些活动及比赛，华为杯、ACM、摄影比赛、微电影比赛等。`,
       },
       {
@@ -282,7 +282,7 @@ export default {
         img: content3ArticleImg4,
         body: `<h3>编程</h3>先后在<a href="//www.mi.com" target="_blank">小米 </a><a href="//www.miui.com" target="_blank">MIUI</a>安全组、短视频组从事全职研发工作@前端工程师。<h3>产品</h3>UGC App<a href="//wg.miui.com" target="_blank">围观小视频</a>、PGC App<a href="//xk.miui.com" target="_blank">想看视频</a>、PGC作者平台<a href="//open.xk.miui.com" target="_blank">想看开放平台</a>、UGC审核后台<a href="//mp.wg.miui.com" target="_blank">围观CRM</a>、PGC审核后台<a href="//mp.xk.miui.com" target="_blank">想看CRM</a>等。
         <h3>摄影</h3>从小透明开始慢慢在国内社区冒泡，作为<a href=${mePai} target="_blank">米拍认证自由摄影师，#上海#、#城市#、#旅行#主持人</a>，米拍优秀主持人，米拍城市-巡城记北京十佳摄影师，<a href="//photoartlife.lofter.com" target="_blank">LOFTER摄影达人，LOFTER旅行家，LOFTER自由摄影师</a>等，一路走过来收获的不仅仅是感动，还有相知相惜。
-        <h3>设计</h3>作为一个自由独立设计师，喜欢设计和创造的这种兴趣也相辅相成了我的研发工作和摄影输入输出，一来可以做出自己喜欢的style，二来做电影后期也派上了用场。<a href="//i.youku.com/mukuashi" target="_blank">优酷自媒体</a>、<a href="//kquanr.com/project/demo/mukuashi" target="_blank">2017·济南大学毕设答辩@mukuashi</a>等。
+        <h3>设计</h3>作为一个自由独立设计师，喜欢设计和创造的这种兴趣也相辅相成了我的研发工作和摄影输入输出，一来可以做出自己喜欢的style，二来做电影后期也派上了用场。<a href="//i.youku.com/mukuashi" target="_blank">优酷自媒体</a>、<a href="//kquanr.com/1.x/project/demo/mukuashi" target="_blank">2017·济南大学毕设答辩@mukuashi</a>等。
         <h3>写作</h3>还是一如既往地坚持记录吧，部分会放到网上<a href="http://t.cn/Rt1xb42" target="_blank">专栏</a>连载。`,
       },
       {
@@ -612,7 +612,7 @@ export default {
           id: '1.x',
           name: '1.x old版本',
           status: 'success',
-          path: '/'
+          path: '/1.x'
         },
         {
           id: '2.x',
@@ -624,7 +624,7 @@ export default {
           id: '3.x',
           name: '3.x release版本',
           status: 'success',
-          path: '/3.x',
+          path: '/',
         },
         {
           id: '4.x',
@@ -688,19 +688,19 @@ export default {
           {
             id: '8',
             name: '自媒体/公路作者',
-            path: '/about/works',
+            path: '/1.x/about/works',
             target: true
           },
           {
             id: '9',
             name: '独立设计师',
-            path: '/about',
+            path: '/1.x/about',
             target: true
           },
           {
             id: '10',
             name: '关于更多...',
-            path: '/about',
+            path: '/1.x/about',
             target: true
           },
         ],
@@ -712,19 +712,19 @@ export default {
           {
             id: '1',
             name: '背景篇',
-            path: '/about',
+            path: '/1.x/about',
             target: true
           },
           {
             id: '2',
             name: '项目篇(1.x)',
-            path: '/project',
+            path: '/1.x/project',
             target: true
           },
           {
             id: '3',
             name: '摄影/文Plus篇',
-            path: '/about/works',
+            path: '/1.x/about/works',
             target: true
           },
           {
@@ -894,12 +894,12 @@ export default {
             id: '11',
             icon: 'email-circle',
             name: '邮箱📮',
-            path: '//kquanr.com/about/works#four',
+            path: '//kquanr.com/1.x/about/works#four',
           },
           {
             id: '12',
             icon: 'home-circle',
-            name: '返回1.x版',
+            name: 'Home',
             path: '/',
             target: true,
           },

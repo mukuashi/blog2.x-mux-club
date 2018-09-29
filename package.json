@@ -37,8 +37,8 @@
     "react-grid-gallery": "^0.5.1",
     "react-router-config": "^1.0.0-beta.4",
     "react-sublime-video": "^0.2.5",
-    "umi": "^2.0.3",
-    "umi-plugin-react": "^1.0.3"
+    "umi": "^2.1.1",
+    "umi-plugin-react": "^1.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
