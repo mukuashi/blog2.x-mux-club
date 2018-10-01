@@ -25,7 +25,7 @@ export default {
           webpackChunkName:true,
           loadingComponent: './components/Loading',
         },
-        polyfills: ['ie9'],
+        targets: { ie: 8 },
         ...(!process.env.TEST && os.platform() === 'darwin'
           ? {
             dll: {

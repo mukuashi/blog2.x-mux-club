@@ -15,7 +15,6 @@
 			// background: url('../../assets/images/footer-logo.png');
 			img {
 				width: 156px;
-				display: inline-block;
 			}
 		}
 		.ant-card {
@@ -95,7 +94,8 @@
 		}
 		& .copyright {
 			text-align: center;
-			padding-bottom: .8rem; 
+			padding-bottom: .8rem;
+			word-break: break-all;
 			> p {
 				display: block;
 				font-size: 100%;
@@ -184,6 +184,7 @@
 			.copyright {
 				display: block;
 				padding: 0 .8rem;
+				font-size: .95rem; 
 				> p {
 					font-size: .95rem;
 				}
