@@ -5,10 +5,10 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-15 13:08:43
+ * @Last Modified time: 2018-10-01 11:57:35
 */
 import React, { PureComponent } from 'react';
-import { Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
+import { Menu, Dropdown, Skeleton, Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -16,7 +16,6 @@ import Link from 'umi/link';
 import Texty from 'rc-texty';
 import Iconfont from "@/components/Iconfont";
 import systemData from '@/locales/zh-CN';
-import { scrollTo } from '@/utils';
 import defaultSettings from '../../../config/settings.config';
 import './index.scss';
 
@@ -27,30 +26,38 @@ export default class GlobalFooter extends PureComponent {
     className: 'footer',
   };
 
-  //
-  handleScrollToTop = () => {
-    // 有动画滚动至顶方案
-    scrollTo(0, 500);
+  componentDidMount() {
+    this.openNotification()
   }
 
   // version notice
   openNotification = () => {
-    const btnReturn = (
-      <Button
-        type="primary"
-        size="default"
-        onClick={() => {
-          window.location.href = 'http://kquanr.com'
-        }}
-      >
-        返回1.x版
-      </Button>
+    const menu = (
+      <Menu>
+        <Menu.Item key="1">
+          <Badge dot>
+            <a href="/">Latest 3.x</a>
+          </Badge>
+        </Menu.Item>
+        <Menu.Item key="2">
+          <Badge status="success">
+            <a href="/1.x">Old 1.x</a>
+          </Badge>
+        </Menu.Item>
+      </Menu>
     );
+    const btnReturn = (
+      <Dropdown overlay={menu} trigger={['click']}>
+        <Button>
+          切换版本 <Icon type="down" />
+        </Button>
+      </Dropdown>
+    )
     notification.open({
-      message: 'Hey，欢迎访问 PhotoArtLife',
-      description: '当前版本：2.x\n，2016年之后的博客第二版，老版本可以在首页切换（5秒后关闭），博客最后更新时间：2018年6月。',
+      message: 'Hey，欢迎访问 PhotoArtLife，3.x MUX Studio近期也上线啦 ✨✈️',
+      description: '当前版本：2.x，2017版（5秒后自动关闭），博客最后更新时间：2018年6月。',
       icon: <Icon type="smile" theme="filled" style={{ color: '#108ee9' }} />,
-      duration: 6,
+      duration: 8,
       btn: btnReturn,
     });
   }
@@ -65,6 +72,7 @@ export default class GlobalFooter extends PureComponent {
         <QueueAnim key="a" type="bottom" component="ul" leaveReverse>
           <li key="b">
             <p className="logo">
+              {!logo.img && <Skeleton avatar />}
               <img src={logo.img} alt="footer-logo" />
             </p>
             <Texty type='scale' mode="smooth">{logo.content}</Texty>
@@ -103,7 +111,7 @@ export default class GlobalFooter extends PureComponent {
                                   size="1x-bg"
                                   type={second.icon}
                                 />
-                              </Tooltip>
+                                </Tooltip>
                               : second.name
                           }
                         </a>
@@ -135,16 +143,12 @@ export default class GlobalFooter extends PureComponent {
           className="copyright"
         >
           <Texty>
-            {copyright.number + copyright.reserved}
+            {copyright.number}
           </Texty>
           <p>
             <a onClick={this.openNotification}>{info.version}</a>
-            Just Blog Stage | Referenced By
+            {copyright.reserved} | Referenced By
               <Link to="//reactjs.org" target="_blank"> Facebook React </Link>
-            & Ant Design
-              <Link to="//dvajs.com" target="_blank"> DvaJS </Link>
-            &
-              <Link to="//umijs.org" target="_blank"> UmiJS </Link>
             | Powered By
               <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife</Link>
           </p>

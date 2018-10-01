@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-15 00:23:46
+ * @Last Modified time: 2018-10-01 10:55:51
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
@@ -908,8 +908,8 @@ export default {
       },
     ],
     copyright: {
-      number: '备案号：鲁ICP备15022927号 ',
-      reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
+      number: '鲁ICP备15022927号 All Rights Reserved',
+      reserved: `Copyright © 2015-${nowYear} mukuashi Inc.`,
     },
     info: {
       version: `版本${version.replace('/', '')}  `,
