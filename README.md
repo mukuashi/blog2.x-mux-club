@@ -1,9 +1,9 @@
 # 2.x Version Blog
 from 2016，create a new version 2.x for blog，fit almost all the screens.
 - React + Redux + DvaJS + UmiJS等
-- Preview： http://kquanr.com/2.x
-- 1.x：http://kquanr.com
-- 3.x：http://kquanr.com/3.x
+- Preview(2.x)： http://kquanr.com/2.x
+- 3.x：http://kquanr.com
+- 1.x：http://kquanr.com/1.x
 - more...
 
 ## Usage
