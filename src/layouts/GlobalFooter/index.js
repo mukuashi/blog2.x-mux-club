@@ -5,11 +5,11 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-27 14:00:30
+ * @Last Modified time: 2018-10-27 14:27:15
 */
 import React, { PureComponent } from 'react';
 import { Select, Skeleton, Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
-import router from 'umi/router';
+// import router from 'umi/router';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -32,7 +32,9 @@ export default class GlobalFooter extends PureComponent {
     this.openNotification()
   }
   handleChangeVersion(value) {
-    router.push(value)
+    //fix umi router not refresh
+    // router.push(value)
+    window.location.href = value
   }
 
   // version notice
@@ -46,15 +48,15 @@ export default class GlobalFooter extends PureComponent {
         onChange={this.handleChangeVersion}
         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
       >
-      {
-        version.list.slice(0,4).map(row => (
-          <Option key={row.id} value={row.path}>{row.name}</Option>
-        ))
-      }
+        {
+          version.list.slice(0, 4).map(row => (
+            <Option key={row.id} value={row.path}>{row.name}</Option>
+          ))
+        }
       </Select>
     )
     notification.open({
-      message: 'Hey，欢迎访问 PhotoArtLife，3.x MUX Studio近期也上线啦 ✨✈️',
+      message: 'Hey，欢迎访问 PhotoArtLife，3.x MUX VF-Studio近期也上线啦 ✨✈️',
       description: '当前版本：2.x，2017版（5秒后自动关闭），博客最后更新时间：2018年6月。',
       icon: <Icon type="smile" theme="filled" style={{ color: '#108ee9' }} />,
       duration: 6,
@@ -111,7 +113,7 @@ export default class GlobalFooter extends PureComponent {
                                   size="1x-bg"
                                   type={second.icon}
                                 />
-                                </Tooltip>
+                              </Tooltip>
                               : second.name
                           }
                         </a>
@@ -153,7 +155,7 @@ export default class GlobalFooter extends PureComponent {
               <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife</Link>
           </p>
           <Texty delay={400} type='scaleBig' mode='reverse'>
-            Design For Life By MUKUASHI | MUX Studio
+            Design For Life By MUKUASHI | MUX VF-Studio
           </Texty>
           <Icon type="smile" theme="filled" style={{ color: '#52c41a', marginRight: '.6rem' }} />
           <Icon type="heart" theme="filled" style={{ color: '#f43e55' }} />
