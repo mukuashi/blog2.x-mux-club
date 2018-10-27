@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-01 10:55:51
+ * @Last Modified time: 2018-10-27 14:27:30
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
@@ -875,7 +875,7 @@ export default {
           {
             id: '8',
             icon: 'zhihu',
-            name: '知乎-MUX Studio',
+            name: '知乎-MUX VF-Studio',
             path: 'https://www.zhihu.com/people/mukuashi',
           },
           {
