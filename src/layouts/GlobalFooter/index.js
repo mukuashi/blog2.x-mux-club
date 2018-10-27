@@ -5,10 +5,11 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-01 11:57:35
+ * @Last Modified time: 2018-10-27 14:00:30
 */
 import React, { PureComponent } from 'react';
-import { Menu, Dropdown, Skeleton, Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
+import { Select, Skeleton, Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
+import router from 'umi/router';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -20,6 +21,7 @@ import defaultSettings from '../../../config/settings.config';
 import './index.scss';
 
 const { logo, version, block, copyright, info } = systemData.footer;
+const Option = Select.Option;
 
 export default class GlobalFooter extends PureComponent {
   static defaultProps = {
@@ -29,36 +31,34 @@ export default class GlobalFooter extends PureComponent {
   componentDidMount() {
     this.openNotification()
   }
+  handleChangeVersion(value) {
+    router.push(value)
+  }
 
   // version notice
   openNotification = () => {
-    const menu = (
-      <Menu>
-        <Menu.Item key="1">
-          <Badge dot>
-            <a href="/">Latest 3.x</a>
-          </Badge>
-        </Menu.Item>
-        <Menu.Item key="2">
-          <Badge status="success">
-            <a href="/1.x">Old 1.x</a>
-          </Badge>
-        </Menu.Item>
-      </Menu>
-    );
-    const btnReturn = (
-      <Dropdown overlay={menu} trigger={['click']}>
-        <Button>
-          切换版本 <Icon type="down" />
-        </Button>
-      </Dropdown>
+    const versionOptions = (
+      <Select
+        defaultValue={version.list[1].path}
+        style={{ minWidth: 180 }}
+        placeholder="请选择切换版本"
+        optionFilterProp="children"
+        onChange={this.handleChangeVersion}
+        filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+      >
+      {
+        version.list.slice(0,4).map(row => (
+          <Option key={row.id} value={row.path}>{row.name}</Option>
+        ))
+      }
+      </Select>
     )
     notification.open({
       message: 'Hey，欢迎访问 PhotoArtLife，3.x MUX Studio近期也上线啦 ✨✈️',
       description: '当前版本：2.x，2017版（5秒后自动关闭），博客最后更新时间：2018年6月。',
       icon: <Icon type="smile" theme="filled" style={{ color: '#108ee9' }} />,
-      duration: 8,
-      btn: btnReturn,
+      duration: 6,
+      btn: versionOptions,
     });
   }
 

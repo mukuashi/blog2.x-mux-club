@@ -5,39 +5,42 @@ import pageRoutes from './router.config';
 import webpackplugin from './plugin.config';
 import defaultSettings from './settings.config';
 
+const plugins = [
+  [
+    'umi-plugin-react',
+    {
+      antd: true,
+      dva: {
+        hmr: true,
+      },
+      // 国际化配置，locale，2.x暂时不适配
+      // locale:{}
+      library: 'react', // 默认底层库 react | preact
+      pwa: true,
+      fastClick: true,
+      title: defaultSettings.title,
+      dynamicImport: {
+        loadingComponent: './components/Loading/index',
+      },
+      ...(!process.env.TEST && os.platform() === 'darwin'
+        ? {
+          dll: {
+            include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
+            exclude: ['@babel/runtime'],
+          },
+          hardSource: true,
+        }
+      : {}),
+    },
+  ],
+];
+
 export default {
   // add for transfer to umi
-  plugins: [
-    [
-      'umi-plugin-react',
-      {
-        antd: true,
-        dva: {
-          hmr: true,
-        },
-        // 国际化配置，locale，2.x暂时不适配
-        // locale:{}
-        library:'react', // 默认底层库 react | preact
-        pwa: true,
-        fastClick:true,
-        title: defaultSettings.title,
-        dynamicImport: {
-          webpackChunkName:true,
-          loadingComponent: './components/Loading',
-        },
-        targets: { ie: 8 },
-        ...(!process.env.TEST && os.platform() === 'darwin'
-          ? {
-            dll: {
-              include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
-              exclude: ['@babel/runtime'],
-            },
-            hardSource: true,
-          }
-          : {}),
-      },
-    ],
-  ],
+  plugins,
+  targets: {
+    ie: 8,
+  },
   define: {
     APP_TYPE: process.env.APP_TYPE || '',
   },

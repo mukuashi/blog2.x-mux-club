@@ -8,7 +8,7 @@ import FastClick from '../../../node_modules/fastclick/lib/fastclick.js'
 // runtime plugins
 window.g_plugins = require('umi/_runtimePlugin');
 window.g_plugins.init({
-  validKeys: ['patchRoutes','render','rootContainer','dva',],
+  validKeys: ['patchRoutes','render','rootContainer','modifyRouteProps','dva',],
 });
 window.g_plugins.use(require('../../../node_modules/umi-plugin-dva/lib/runtime'));
 

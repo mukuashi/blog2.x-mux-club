@@ -9,12 +9,12 @@ let Router = require('dva/router').routerRedux.ConnectedRouter;
 let routes = [
   {
     "path": "/2.x",
-    "component": dynamic({ loader: () => import(/* webpackChunkName: "layouts" */'../../layouts'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading').default  }),
+    "component": dynamic({ loader: () => import('../../layouts'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index').default }),
     "routes": [
       {
         "path": "/2.x",
         "name": "",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__Home" */'../Home'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading').default  }),
+        "component": dynamic({ loader: () => import('../Home'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index').default }),
         "exact": true,
         "_title": "2.x mukuashi@PhotoArtLife Studio",
         "_title_default": "2.x mukuashi@PhotoArtLife Studio"
@@ -22,7 +22,7 @@ let routes = [
       {
         "path": "/2.x/media",
         "name": "Media",
-        "component": dynamic({ loader: () => import(/* webpackChunkName: "p__Media" */'../Media'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading').default  }),
+        "component": dynamic({ loader: () => import('../Media'), loading: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index').default }),
         "exact": true,
         "_title": "2.x mukuashi@PhotoArtLife Studio",
         "_title_default": "2.x mukuashi@PhotoArtLife Studio"
