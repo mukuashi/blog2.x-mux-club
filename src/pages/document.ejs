@@ -17,9 +17,13 @@
   <img style="width:0;height:0;position:absolute;" src="//kquanr.com/images/header-share.jpg" alt="PhotoArtLife">
   <div id="root"></div>
   <script>
-    //接入阿里云监控日志API 
+    //接入阿里云前端监控日志
     !(function (c, b, d, a) {
-      c[a] || (c[a] = {}); c[a].config = { pid: "gioyshyyzz@63fb9eb5dd7853a", imgUrl: "https://arms-retcode.aliyuncs.com/r.png?" };
+      c[a] || (c[a] = {}); c[a].config = {
+        pid: "gioyshyyzz@cd2efcacb02efd2", imgUrl: "https://arms-retcode.aliyuncs.com/r.png?",
+        enableSPA: true,
+        useFmp: true
+      };
       with (b) with (body) with (insertBefore(createElement("script"), firstChild)) setAttribute("crossorigin", "", src = d)
     })(window, document, "https://retcode.alicdn.com/retcode/bl.js", "__bl");
     //IE版本检测及提示
