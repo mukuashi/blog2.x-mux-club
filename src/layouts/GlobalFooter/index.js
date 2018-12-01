@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-01 22:53:43
+ * @Last Modified time: 2018-12-02 01:41:32
 */
 import React, { PureComponent } from 'react';
 import { Select, Skeleton, Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
@@ -127,7 +127,11 @@ export default class GlobalFooter extends PureComponent {
                   {
                     row.content.map(second => (
                       <li key={second.id}>
-                        <a href={second.path} target={second.target ? '_self' : '_blank'}>
+                        <a
+                          href={second.path}
+                          target={second.target ? '_self' : '_blank'}
+                          rel="noopener noreferrer nofollow"
+                        >
                           {
                             second.icon
                               ? <Tooltip
@@ -175,13 +179,13 @@ export default class GlobalFooter extends PureComponent {
           <p>
             <a onClick={this.openNotification}>{info.version}</a>
             {copyright.reserved} | Referenced By
-              <Link to="//reactjs.org" target="_blank"> Facebook React </Link>
+              <Link to="//reactjs.org" target="_blank" rel="noopener noreferrer nofollow"> Facebook React </Link>
             | Powered By
-              <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife</Link>
+              <Link to="//photoartlife.lofter.com" target="_blank" rel="noopener noreferrer nofollow"> PhotoArtLife</Link>
           </p>
           <p>
             Design For Life By
-            <Link to="../1.x/contact" target="_blank"> MUX VF-Studio</Link>
+            <Link to="../1.x/contact" target="_blank" rel="noopener noreferrer nofollow"> MUX VF-Studio</Link>
           </p>
           <Icon type="smile" theme="filled" style={{ color: '#52c41a', marginRight: '.6rem' }} />
           <Icon type="heart" theme="filled" style={{ color: '#f43e55' }} />

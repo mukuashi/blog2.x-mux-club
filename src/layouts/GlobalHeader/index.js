@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.1 | 2017-09-06 // update jsx and antd ui.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-01 22:22:20
+ * @Last Modified time: 2018-12-02 01:42:18
 */
 import React, { PureComponent } from 'react';
 import Link from 'umi/link';
@@ -65,20 +65,22 @@ export default class GlobalHeader extends PureComponent {
 
         const navChildren = nav.map(row => (
             <Item
-              key={row.id}
-              className={
+                key={row.id}
+                className={
                     (defaultSettings.version + row.path) === pathname ? 'ant-menu-item-selected' : ''
                 }
             >
                 {
                     row.isReact
                         ? <Link
-                          to={defaultSettings.version + row.path}
-                          onClick={() => this.handelCheckMenuScroll(row)}
+                            to={defaultSettings.version + row.path}
+                            onClick={() => this.handelCheckMenuScroll(row)}
                         >
                             <Badge count={row.version} dot={row.dot}>{row.name}</Badge>
-                          </Link>
-                        : <a href={row.url} target={row.target}>{row.name}</a>
+                        </Link>
+                        : <a href={row.url} target={row.target} rel="noopener noreferrer nofollow">
+                            {row.name}
+                        </a>
                 }
             </Item>
         ));
@@ -86,11 +88,11 @@ export default class GlobalHeader extends PureComponent {
         navChildren.push(
             <Item className="menu-contact" key="contact">
                 <Popover
-                  content={contactAuthor}
-                  title="百度/谷歌搜索PhotoArtLife，也可以找到作者哈！"
-                  trigger="hover"
-                  placement={ismobile ? "bottomRight" : "bottom"}
-                  arrowPointAtCenter
+                    content={contactAuthor}
+                    title="百度/谷歌搜索PhotoArtLife，也可以找到作者哈！"
+                    trigger="hover"
+                    placement={ismobile ? "bottomRight" : "bottom"}
+                    arrowPointAtCenter
                 >
                     <div>
                         <Iconfont type="wechat" size="1x-sm" />
@@ -106,7 +108,7 @@ export default class GlobalHeader extends PureComponent {
                                 !row.href && <h4 className={ismobile ? styles.avatarVersion : ''}>{row.name}</h4>
                             }
                             {
-                                row.href && <a href={row.href} target={row.target} className={styles.avatarInfo}>{row.name}</a>
+                                row.href && <a href={row.href} target={row.target} rel="noopener noreferrer nofollow" className={styles.avatarInfo}>{row.name}</a>
                             }
                         </Item>
                     ))
@@ -115,10 +117,10 @@ export default class GlobalHeader extends PureComponent {
         );
         const navTopMenu = (
             <TweenOne
-              delay={300}
-              className="header-nav"
-              type={['left', 'right']}
-              ease={['easeOutQuart', 'easeInOutQuart']}
+                delay={300}
+                className="header-nav"
+                type={['left', 'right']}
+                ease={['easeOutQuart', 'easeInOutQuart']}
             >
                 <Menu mode="horizontal">
                     {navChildren}
@@ -127,14 +129,14 @@ export default class GlobalHeader extends PureComponent {
         );
         return (
             <TweenOneGroup
-              component="header"
-              className={fixHeader ? 'header header-fixheader' : 'header'}
-              enter={{ y: -80, opacity: 0, type: 'from' }}
-              leave={{ y: -80, opacity: 0 }}
+                component="header"
+                className={fixHeader ? 'header header-fixheader' : 'header'}
+                enter={{ y: -80, opacity: 0, type: 'from' }}
+                leave={{ y: -80, opacity: 0 }}
             >
                 <TweenOne
-                  className="header-logo"
-                  animation={{ x: -30, delay: 100, type: 'from', ease: 'easeOutQuad' }}
+                    className="header-logo"
+                    animation={{ x: -30, delay: 100, type: 'from', ease: 'easeOutQuad' }}
                 >
                     <a href="/">
                         <img alt="header-logo" width="100%" src={logo} />
@@ -144,20 +146,20 @@ export default class GlobalHeader extends PureComponent {
                     ismobile ? (
                         <div className={`header-mobile-nav${mobileOpen ? ' open' : ''}`}>
                             <div
-                              className="header-mobile-nav-bar"
-                              onClick={() => this.handleToggleMobile(mobileOpen)}
+                                className="header-mobile-nav-bar"
+                                onClick={() => this.handleToggleMobile(mobileOpen)}
                             >
                                 <em />
                                 <em />
                                 <em />
                             </div>
                             <div
-                              className="header-mobile-nav-text"
+                                className="header-mobile-nav-text"
                             >
                                 <Menu
-                                  defaultSelectedKeys={['0']}
-                                  mode="inline"
-                                  theme="dark"
+                                    defaultSelectedKeys={['0']}
+                                    mode="inline"
+                                    theme="dark"
                                 >
                                     {navChildren}
                                 </Menu>
