@@ -80,7 +80,7 @@ export default class Content extends PureComponent {
             {
               text.media.map(row => (
                 <span key={row.id}>
-                  <a target="_blank" rel='noopener noreferrer' href={row.url}>{row.name}</a>{row.after}
+                  <a target="_blank" rel="noopener noreferrer nofollow" href={row.url}>{row.name}</a>{row.after}
                 </span>
               ))
             }
