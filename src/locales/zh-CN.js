@@ -8,11 +8,12 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-27 14:27:30
+ * @Last Modified time: 2018-12-01 22:42:04
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
 import { isProd, isMobile } from '@/utils';
+import pwa from './zh-CN/pwa';
 // some assets imgs or others
 import headerNav from '../assets/images/header-nav.png';
 import bannerLogo from '../assets/images/banner-logo.png';
@@ -610,27 +611,27 @@ export default {
       list: [
         {
           id: '1.x',
-          name: '1.x old版本',
+          name: '1.x Old版本',
           status: 'success',
           path: '/1.x'
         },
         {
           id: '2.x',
-          name: '2.x current版本',
+          name: '2.x Current版本',
           status: 'success',
           path: '/2.x'
         },
         {
           id: '3.x',
-          name: '3.x release版本',
+          name: '3.x Release版本',
           status: 'success',
           path: '/',
         },
         {
           id: '4.x',
-          name: '4.x next版本',
+          name: '4.x Comming版本',
           status: 'processing',
-          path: '',
+          path: '/4.x',
         },
         {
           id: Math.random(),
@@ -915,4 +916,5 @@ export default {
       version: `版本${version.replace('/', '')}  `,
     },
   },
+  ...pwa
 };

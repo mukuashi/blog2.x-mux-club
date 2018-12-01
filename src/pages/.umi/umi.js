@@ -1,4 +1,5 @@
 import './polyfills';
+import 'intl';
 import '../../global.js';
 import '@tmp/initHistory';
 import React from 'react';
