@@ -7,10 +7,14 @@ const InjectedWrapper = injectIntl(function(props) {
   return props.children;
 })
 
+import 'moment/locale/zh-cn';
+
 const baseNavigator = true;
 const useLocalStorage = true;
 
 import { LocaleProvider } from 'antd';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
 const defaultAntd = require('antd/lib/locale-provider/zh_CN');
 
 const localeInfo = {
@@ -19,19 +23,22 @@ const localeInfo = {
     locale: 'en-US',
     antd: require('antd/lib/locale-provider/en_US'),
     data: require('react-intl/locale-data/en'),
+    momentLocale: '',
   },
   'zh-CN': {
     messages: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/locales/zh-CN.js').default,
     locale: 'zh-CN',
     antd: require('antd/lib/locale-provider/zh_CN'),
     data: require('react-intl/locale-data/zh'),
+    momentLocale: 'zh-cn',
   },
 };
 
 let appLocale = {
   locale: 'zh-CN',
   messages: {},
-  data: require('react-intl/locale-data/zh')
+  data: require('react-intl/locale-data/zh'),
+  momentLocale: 'zh-cn',
 };
 if (useLocalStorage && localStorage.getItem('umi_locale') && localeInfo[localStorage.getItem('umi_locale')]) {
   appLocale = localeInfo[localStorage.getItem('umi_locale')];

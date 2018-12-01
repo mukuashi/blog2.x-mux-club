@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.1 | 2017-09-06 // update jsx and antd ui.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-09 01:10:16
+ * @Last Modified time: 2018-12-01 22:22:20
 */
 import React, { PureComponent } from 'react';
 import Link from 'umi/link';
@@ -15,6 +15,7 @@ import { Menu, Popover, Avatar, Badge } from 'antd';
 import Iconfont from "@/components/Iconfont";
 import systemData from '@/locales/zh-CN';
 import defaultSettings from '../../../config/settings.config';
+import { scrollTo } from '@/utils';
 import styles from './index.scss';
 
 const { Item, SubMenu } = Menu;
@@ -31,6 +32,13 @@ export default class GlobalHeader extends PureComponent {
         this.setState({
             mobileOpen: !value,
         })
+    }
+
+    // menu check
+    handelCheckMenuScroll = (item) => {
+        if (item.path.includes('media')) {
+            scrollTo(660, 800);
+        }
     }
 
     render() {
@@ -64,7 +72,10 @@ export default class GlobalHeader extends PureComponent {
             >
                 {
                     row.isReact
-                        ? <Link to={defaultSettings.version + row.path}>
+                        ? <Link
+                          to={defaultSettings.version + row.path}
+                          onClick={() => this.handelCheckMenuScroll(row)}
+                        >
                             <Badge count={row.version} dot={row.dot}>{row.name}</Badge>
                           </Link>
                         : <a href={row.url} target={row.target}>{row.name}</a>

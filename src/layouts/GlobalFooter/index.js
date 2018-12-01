@@ -5,11 +5,10 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-27 14:27:15
+ * @Last Modified time: 2018-12-01 22:53:43
 */
 import React, { PureComponent } from 'react';
 import { Select, Skeleton, Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
-// import router from 'umi/router';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
@@ -31,33 +30,59 @@ export default class GlobalFooter extends PureComponent {
   componentDidMount() {
     this.openNotification()
   }
-  handleChangeVersion(value) {
-    //fix umi router not refresh
-    // router.push(value)
+
+  handleToggleVersion = (value) => {
+    if (value.includes('4.x')) {
+      notification.warning({
+        duration: 8,
+        placement: 'bottomLeft',
+        message: '友情提示 🐿',
+        description: '亲，4.x版本作者还在整理中，稍后就会开源哦，建议您先去浏览其他模块哈，比如我的摄影、设计作品啥的...欢迎来访！',
+        icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
+      });
+      return false
+    }
     window.location.href = value
   }
 
   // version notice
   openNotification = () => {
+    //
     const versionOptions = (
       <Select
         defaultValue={version.list[1].path}
         style={{ minWidth: 180 }}
         placeholder="请选择切换版本"
         optionFilterProp="children"
-        onChange={this.handleChangeVersion}
+        onChange={(value) => this.handleToggleVersion(value)}
         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
       >
         {
           version.list.slice(0, 4).map(row => (
-            <Option key={row.id} value={row.path}>{row.name}</Option>
+            <Option
+              key={row.id}
+              value={row.path}
+              disabled={row.path.includes('2.x')}
+            >
+              {row.name}
+            </Option>
           ))
         }
       </Select>
     )
+    //
+    const text = (
+      <div>
+        <Badge status="processing" text="Hey，欢迎访问 PhotoArtLife。" />
+        <br />
+        <Badge status="success" text="MUX VF-Studio | 3.x Blog也上线啦 ✈️" />
+        <br />
+        <Badge status="warning" text="当前版本：2.x，2017（5秒后自动关闭），博客最后更新时间：2018年6月。" />
+      </div>
+    )
     notification.open({
-      message: 'Hey，欢迎访问 PhotoArtLife，3.x MUX VF-Studio近期也上线啦 ✨✈️',
-      description: '当前版本：2.x，2017版（5秒后自动关闭），博客最后更新时间：2018年6月。',
+      message: text,
+      description: '',
       icon: <Icon type="smile" theme="filled" style={{ color: '#108ee9' }} />,
       duration: 6,
       btn: versionOptions,
@@ -113,7 +138,7 @@ export default class GlobalFooter extends PureComponent {
                                   size="1x-bg"
                                   type={second.icon}
                                 />
-                              </Tooltip>
+                                </Tooltip>
                               : second.name
                           }
                         </a>
@@ -154,9 +179,10 @@ export default class GlobalFooter extends PureComponent {
             | Powered By
               <Link to="//photoartlife.lofter.com" target="_blank"> PhotoArtLife</Link>
           </p>
-          <Texty delay={400} type='scaleBig' mode='reverse'>
-            Design For Life By MUKUASHI | MUX VF-Studio
-          </Texty>
+          <p>
+            Design For Life By
+            <Link to="../1.x/contact" target="_blank"> MUX VF-Studio</Link>
+          </p>
           <Icon type="smile" theme="filled" style={{ color: '#52c41a', marginRight: '.6rem' }} />
           <Icon type="heart" theme="filled" style={{ color: '#f43e55' }} />
         </TweenOne>
