@@ -2,7 +2,7 @@
 import { addLocaleData, IntlProvider, injectIntl } from 'react-intl';
 import { _setIntlObject } from 'umi/locale';
 
-const InjectedWrapper = injectIntl(function(props) {
+const InjectedWrapper = injectIntl(function ComponentWrapper(props) {
   _setIntlObject(props.intl);
   return props.children;
 })
@@ -15,18 +15,23 @@ const useLocalStorage = true;
 import { LocaleProvider } from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
-const defaultAntd = require('antd/lib/locale-provider/zh_CN');
+let defaultAntd = require('antd/lib/locale-provider/zh_CN');
+defaultAntd = defaultAntd.default || defaultAntd;
 
 const localeInfo = {
   'en-US': {
-    messages: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/locales/en-US.js').default,
+    messages: {
+      ...require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/locales/en-US.js').default,
+    },
     locale: 'en-US',
     antd: require('antd/lib/locale-provider/en_US'),
     data: require('react-intl/locale-data/en'),
     momentLocale: '',
   },
   'zh-CN': {
-    messages: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/locales/zh-CN.js').default,
+    messages: {
+      ...require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/locales/zh-CN.js').default,
+    },
     locale: 'zh-CN',
     antd: require('antd/lib/locale-provider/zh_CN'),
     data: require('react-intl/locale-data/zh'),
@@ -50,12 +55,12 @@ if (useLocalStorage && localStorage.getItem('umi_locale') && localeInfo[localSto
 window.g_lang = appLocale.locale;
 appLocale.data && addLocaleData(appLocale.data);
 
-export default (props) => {
+export default function LocaleWrapper(props) {
   let ret = props.children;
   ret = (<IntlProvider locale={appLocale.locale} messages={appLocale.messages}>
     <InjectedWrapper>{ret}</InjectedWrapper>
   </IntlProvider>)
-  ret = (<LocaleProvider locale={appLocale.antd || defaultAntd}>
+  ret = (<LocaleProvider locale={appLocale.antd ? (appLocale.antd.default || appLocale.antd) : defaultAntd}>
     {ret}
   </LocaleProvider>);
   return ret;
