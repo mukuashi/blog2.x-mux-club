@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-02 01:43:12
+ * @Last Modified time: 2019-01-06 14:44:57
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
@@ -631,7 +631,7 @@ export default {
           id: '4.x',
           name: '4.x Comming版本',
           status: 'processing',
-          path: '/4.x',
+          path: '',
         },
         {
           id: Math.random(),

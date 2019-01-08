@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.1 | 2017-09-06 // update jsx and antd ui.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-02 11:43:14
+ * @Last Modified time: 2018-12-02 11:59:33
 */
 import React, { PureComponent } from 'react';
 import Link from 'umi/link';
@@ -38,7 +38,9 @@ export default class GlobalHeader extends PureComponent {
     handelCheckMenuScroll = (item) => {
         const { mobileOpen } = this.state
         if (item.path.includes('media')) {
-            scrollTo(660, 800);
+            scrollTo(660, 800)
+        } else {
+            scrollTo(0, 800)
         }
         if (mobileOpen) {
             this.setState({

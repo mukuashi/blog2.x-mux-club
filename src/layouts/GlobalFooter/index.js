@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-02 01:41:32
+ * @Last Modified time: 2019-01-06 14:45:37
 */
 import React, { PureComponent } from 'react';
 import { Select, Skeleton, Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
@@ -75,7 +75,7 @@ export default class GlobalFooter extends PureComponent {
       <div>
         <Badge status="processing" text="Hey，欢迎访问 PhotoArtLife。" />
         <br />
-        <Badge status="success" text="MUX VF-Studio | 3.x Blog也上线啦 ✈️" />
+        <Badge status="success" text="MUX VF-Studio | 3.x也上线啦 ✈️" />
         <br />
         <Badge status="warning" text="当前版本：2.x，2017（5秒后自动关闭），博客最后更新时间：2018年6月。" />
       </div>
