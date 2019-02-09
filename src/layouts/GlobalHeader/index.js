@@ -6,20 +6,20 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.1 | 2017-09-06 // update jsx and antd ui.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-02 11:59:33
+ * @Last Modified time: 2019-02-09 20:25:47
 */
 import React, { PureComponent } from 'react';
-import Link from 'umi/link';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import { Menu, Popover, Avatar, Badge } from 'antd';
-import Iconfont from "@/components/Iconfont";
-import systemData from '@/locales/zh-CN';
+import Link from 'umi/link';
 import defaultSettings from '../../../config/settings.config';
+import Iconfont from "@/components/Iconfont";
+import app from '@/locales/zh-CN';
 import { scrollTo } from '@/utils';
 import styles from './index.scss';
 
 const { Item, SubMenu } = Menu;
-const { header } = systemData;
+const { header } = app;
 const { logo, nav, user, submenu, contact } = header;
 
 export default class GlobalHeader extends PureComponent {

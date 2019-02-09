@@ -9,7 +9,7 @@ import FastClick from '../../../node_modules/fastclick/lib/fastclick.js'
 // runtime plugins
 window.g_plugins = require('umi/_runtimePlugin');
 window.g_plugins.init({
-  validKeys: ['patchRoutes','render','rootContainer','modifyRouteProps','dva',],
+  validKeys: ['patchRoutes','render','rootContainer','modifyRouteProps','onRouteChange','dva',],
 });
 window.g_plugins.use(require('../../../node_modules/umi-plugin-dva/lib/runtime'));
 
@@ -41,9 +41,7 @@ const moduleBeforeRendererPromises = [];
 Promise.all(moduleBeforeRendererPromises).then(() => {
   render();
 }).catch((err) => {
-  if (process.env.NODE_ENV === 'development') {
-    console.error(err);
-  }
+  window.console && window.console.error(err);
 });
 
 require('../../global.scss');

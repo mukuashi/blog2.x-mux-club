@@ -5,21 +5,21 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-01-06 14:45:37
+ * @Last Modified time: 2019-02-09 21:11:02
 */
 import React, { PureComponent } from 'react';
-import { Select, Skeleton, Button, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
+import { Select, Skeleton, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import Link from 'umi/link';
 import Texty from 'rc-texty';
 import Iconfont from "@/components/Iconfont";
-import systemData from '@/locales/zh-CN';
+import app from '@/locales/zh-CN';
 import defaultSettings from '../../../config/settings.config';
 import './index.scss';
 
-const { logo, version, block, copyright, info } = systemData.footer;
+const { logo, version, block, copyright, info } = app.footer;
 const Option = Select.Option;
 
 export default class GlobalFooter extends PureComponent {
@@ -37,7 +37,7 @@ export default class GlobalFooter extends PureComponent {
         duration: 8,
         placement: 'bottomLeft',
         message: '友情提示 🐿',
-        description: '亲，4.x版本作者还在整理中，稍后就会开源哦，建议您先去浏览其他模块哈，比如我的摄影、设计作品啥的...欢迎来访！',
+        description: '亲，4.x版本作者还在整理中，稍后就会开源哦，建议您先去浏览其他模块哈，比如我的摄影、设计作品啥的 . . . 欢迎来访！',
         icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
       });
       return false
@@ -75,7 +75,7 @@ export default class GlobalFooter extends PureComponent {
       <div>
         <Badge status="processing" text="Hey，欢迎访问 PhotoArtLife。" />
         <br />
-        <Badge status="success" text="MUX VF-Studio | 3.x也上线啦 ✈️" />
+        <Badge status="success" text="MUX VF-Studio | 3.x也上线啦 😘" />
         <br />
         <Badge status="warning" text="当前版本：2.x，2017（5秒后自动关闭），博客最后更新时间：2018年6月。" />
       </div>
@@ -142,7 +142,7 @@ export default class GlobalFooter extends PureComponent {
                                   size="1x-bg"
                                   type={second.icon}
                                 />
-                                </Tooltip>
+                              </Tooltip>
                               : second.name
                           }
                         </a>
