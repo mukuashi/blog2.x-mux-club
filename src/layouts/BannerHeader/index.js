@@ -15,13 +15,13 @@ import QueueAnim from 'rc-queue-anim';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import BannerAnim, { Element } from 'rc-banner-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import systemData from '@/locales/zh-CN';
+import app from '@/locales/zh-CN';
 import { scrollTo } from '@/utils';
 import 'rc-banner-anim/assets/index.css';
 import './index.scss';
 
 const { BgElement } = Element;
-const { prefix,banner } = systemData;
+const { prefix,banner } = app;
 const yAnim = {
   type: 'from', ease: 'easeInOutQuad', duration: 200,
 };

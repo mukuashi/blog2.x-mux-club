@@ -7,7 +7,7 @@
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @version 0.3 | 2018-09-02 // update staging into umi.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-13 11:16:06
+ * @Last Modified time: 2019-02-09 18:28:24
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -20,14 +20,14 @@ import { ContainerQuery } from 'react-container-query';
 import { enquireScreen, unenquireScreen } from 'enquire-js';
 import pathToRegexp from 'path-to-regexp';
 import { getScrollTop } from '@/utils';
-import systemData from '@/locales/zh-CN';
 import BannerHeader from './BannerHeader';
 import GlobalHeader from './GlobalHeader';
 import GlobalFooter from './GlobalFooter';
 import Context from './MenuContext';
+import app from '@/locales/zh-CN';
 import styles from './index.scss';
 
-const { title,prefix } = systemData;
+const { title, prefix } = app;
 
 const cx = classNames.bind(styles);
 const { Content, Header, Footer } = Layout;

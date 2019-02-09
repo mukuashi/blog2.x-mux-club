@@ -4,9 +4,9 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import Gallery from 'react-grid-gallery';
 import { Slider, Rate, Tooltip, Avatar, Icon, message } from 'antd';
 import { getToken } from '@/utils';
-import systemData from '@/locales/zh-CN';
+import app from '@/locales/zh-CN';
 
-const { text, block } = systemData.content4;
+const { text, block } = app.content4;
 export default class Content extends PureComponent {
 
   static defaultProps = {
@@ -49,13 +49,13 @@ export default class Content extends PureComponent {
     const { boxValue, rateValue } = this.state;
     const ismobile = JSON.parse(props.ismobile);
     const marks = {
-      0: '最小边距',
-      20: '相册边距推荐值',
+      0: 'Min',
+      20: '边距推荐值',
       50: {
         style: {
           color: '#f50',
         },
-        label: <strong>最大边距</strong>,
+        label: <strong>Max</strong>,
       },
     };
 
@@ -92,7 +92,6 @@ export default class Content extends PureComponent {
             reverseDelay={300}
           >
             <Slider
-              // vertical 垂直布局属性
               min={0}
               max={50}
               marks={marks}
@@ -110,11 +109,11 @@ export default class Content extends PureComponent {
             leave={{ y: '+=30', opacity: 0, ease: 'easeOutQuad' }}
           >
             <Gallery
-              margin={boxValue}
-              rowHeight={ismobile ? 100 + boxValue : 200 + boxValue} // 图片当前列的默认高度
               images={block}
+              margin={boxValue}
+              rowHeight={ismobile ? 100 + boxValue : 200 + boxValue}  // 图片当前列默认高度
               showLightboxThumbnails         // 弹层后显示底部预览幻灯片缩略图
-              backdropClosesModal            // 弹层后点击其他地方支持遮罩关闭
+              backdropClosesModal            // 用户通过单击背景退出弹层
               enableImageSelection={false}   // 去掉多选checkbox
             />
           </TweenOneGroup>

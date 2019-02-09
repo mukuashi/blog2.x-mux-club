@@ -4,9 +4,9 @@ import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import VideoPlay from 'react-sublime-video';
 // @version 2.1视频设备解决方案-后续完善
 // import plyr from 'plyr';
-import systemData from '@/locales/zh-CN';
+import app from '@/locales/zh-CN';
 
-const { text, video } = systemData.content2;
+const { text, video } = app.content2;
 
 export default class Content2 extends PureComponent {
   static defaultProps = {
