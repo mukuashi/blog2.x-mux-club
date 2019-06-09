@@ -5,13 +5,12 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-01 22:29:11
+ * @Last Modified time: 2019-06-09 12:54:54
 */
 
 import React from 'react';
 import { notification, Button, message } from 'antd';
 import { formatMessage } from 'umi/locale';
-import '@babel/polyfill';
 
 export function config() {
 	return {
@@ -21,7 +20,7 @@ export function config() {
 		},
 		initialState: {
 			global: {
-				text: 'hi mukuashi@PhotoArtLife！',
+				text: 'Hey mukuashi@PhotoArtLife！',
 			},
 		},
 	};
@@ -34,7 +33,7 @@ window.addEventListener('sw.offline', () => {
 
 // Pop up a prompt on the page asking the user if they want to use the latest version
 window.addEventListener('sw.updated', e => {
-	const key = `open${Date.now()}`;
+	const key = `open${ Date.now() }`;
 	const btn = (
 		<Button type="primary" onClick={() => notification.close(key)}>
 			{formatMessage({ id: 'app.pwa.serviceworker.updated.ok' })}

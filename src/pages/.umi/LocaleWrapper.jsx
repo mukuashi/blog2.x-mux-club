@@ -1,5 +1,12 @@
-
-import { _setIntlObject, addLocaleData, IntlProvider, intlShape } from 'umi/locale';
+import React from 'react';
+import {
+  _setIntlObject,
+  addLocaleData,
+  IntlProvider,
+  intlShape,
+  LangContext,
+  _setLocaleContext
+} from 'umi-plugin-locale';
 
 const InjectedWrapper = (() => {
   let sfc = (props, context) => {
@@ -44,29 +51,62 @@ const localeInfo = {
   },
 };
 
-let appLocale = {
-  locale: 'zh-CN',
-  messages: {},
-  data: require('react-intl/locale-data/zh'),
-  momentLocale: 'zh-cn',
-};
-if (useLocalStorage && localStorage.getItem('umi_locale') && localeInfo[localStorage.getItem('umi_locale')]) {
-  appLocale = localeInfo[localStorage.getItem('umi_locale')];
-} else if (localeInfo[navigator.language] && baseNavigator){
-  appLocale = localeInfo[navigator.language];
-} else {
-  appLocale = localeInfo['zh-CN'] || appLocale;
-}
-window.g_lang = appLocale.locale;
-appLocale.data && addLocaleData(appLocale.data);
+class LocaleWrapper extends React.Component{
+  state = {
+    locale: 'zh-CN',
+  };
+  getAppLocale(){
+    let appLocale = {
+      locale: 'zh-CN',
+      messages: {},
+      data: require('react-intl/locale-data/zh'),
+      momentLocale: 'zh-cn',
+    };
 
-export default function LocaleWrapper(props) {
-  let ret = props.children;
-  ret = (<IntlProvider locale={appLocale.locale} messages={appLocale.messages}>
-    <InjectedWrapper>{ret}</InjectedWrapper>
-  </IntlProvider>)
-  ret = (<LocaleProvider locale={appLocale.antd ? (appLocale.antd.default || appLocale.antd) : defaultAntd}>
-    {ret}
-  </LocaleProvider>);
-  return ret;
+    const runtimeLocale = require('umi/_runtimePlugin').mergeConfig('locale') || {};
+    const runtimeLocaleDefault =  typeof runtimeLocale.default === 'function' ? runtimeLocale.default() : runtimeLocale.default;
+    if (useLocalStorage && localStorage.getItem('umi_locale') && localeInfo[localStorage.getItem('umi_locale')]) {
+      appLocale = localeInfo[localStorage.getItem('umi_locale')];
+    } else if (localeInfo[navigator.language] && baseNavigator){
+      appLocale = localeInfo[navigator.language];
+    } else if(localeInfo[runtimeLocaleDefault]){
+      appLocale = localeInfo[runtimeLocaleDefault];
+    } else {
+      appLocale = localeInfo['zh-CN'] || appLocale;
+    }
+    window.g_lang = appLocale.locale;
+    appLocale.data && addLocaleData(appLocale.data);
+
+    return appLocale;
+  }
+  reloadAppLocale = () => {
+    const appLocale = this.getAppLocale();
+    this.setState({
+      locale: appLocale.locale,
+    });
+  };
+
+  render(){
+    const appLocale = this.getAppLocale();
+    const LangContextValue = {
+      locale: appLocale.locale,
+      reloadAppLocale: this.reloadAppLocale,
+    };
+    let ret = this.props.children;
+    ret = (<IntlProvider locale={appLocale.locale} messages={appLocale.messages}>
+      <InjectedWrapper>
+        <LangContext.Provider value={LangContextValue}>
+          <LangContext.Consumer>{(value) => {
+            _setLocaleContext(value);
+            return this.props.children
+            }}</LangContext.Consumer>
+        </LangContext.Provider>
+      </InjectedWrapper>
+    </IntlProvider>)
+     return (<LocaleProvider locale={appLocale.antd ? (appLocale.antd.default || appLocale.antd) : defaultAntd}>
+      {ret}
+    </LocaleProvider>);
+    return ret;
+  }
 }
+export default LocaleWrapper;

@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-02-09 21:11:02
+ * @Last Modified time: 2019-06-09 15:59:07
 */
 import React, { PureComponent } from 'react';
 import { Select, Skeleton, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
@@ -20,7 +20,7 @@ import defaultSettings from '../../../config/settings.config';
 import './index.scss';
 
 const { logo, version, block, copyright, info } = app.footer;
-const Option = Select.Option;
+const { Option } = Select;
 
 export default class GlobalFooter extends PureComponent {
   static defaultProps = {
@@ -31,18 +31,19 @@ export default class GlobalFooter extends PureComponent {
     this.openNotification()
   }
 
-  handleToggleVersion = (value) => {
-    if (value.includes('4.x')) {
+  handleToggleVersion = value => {
+    if (value && value.includes('4.x')) {
+      debugger
       notification.warning({
-        duration: 8,
+        duration: 6,
         placement: 'bottomLeft',
         message: '友情提示 🐿',
         description: '亲，4.x版本作者还在整理中，稍后就会开源哦，建议您先去浏览其他模块哈，比如我的摄影、设计作品啥的 . . . 欢迎来访！',
         icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
-      });
-      return false
+      })
+    } else {
+      window.location.href = value
     }
-    window.location.href = value
   }
 
   // version notice
@@ -84,7 +85,7 @@ export default class GlobalFooter extends PureComponent {
       message: text,
       description: '',
       icon: <Icon type="smile" theme="filled" style={{ color: '#108ee9' }} />,
-      duration: 6,
+      duration: 5,
       btn: versionOptions,
     });
   }
@@ -106,12 +107,14 @@ export default class GlobalFooter extends PureComponent {
             <Card title={version.title} bordered={false}>
               {
                 version.list.map(row => (
-                  <p key={row.id}>
+                  <p key={row.id} onClick={() => this.handleToggleVersion(row.path)}>
                     <Badge status={row.status} />
                     {
-                      row.path ? (row.path.includes(defaultSettings.version)
-                        ? <Link to={row.path} className="actived">{row.name}</Link>
-                        : <a href={row.path}>{row.name}</a>)
+                      row.path ? (
+                        row.path.includes(defaultSettings.version)
+                          ? <Link to={row.path} className="actived">{row.name}</Link>
+                          : <a>{row.name}</a>
+                      )
                         : <span>{row.name}</span>
                     }
                   </p>
@@ -142,7 +145,7 @@ export default class GlobalFooter extends PureComponent {
                                   size="1x-bg"
                                   type={second.icon}
                                 />
-                              </Tooltip>
+                                </Tooltip>
                               : second.name
                           }
                         </a>
