@@ -1,9 +1,11 @@
 // https://umijs.org/config/
-import os from 'os';
-import { resolve } from 'path';
-import pageRoutes from './router.config';
-import webpackplugin from './plugin.config';
-import defaultSettings from './settings.config';
+import os from 'os'
+import { resolve } from 'path'
+import pageRoutes from './router.config'
+import webpackplugin from './plugin.config'
+import defaultSettings from './settings.config'
+
+const { TEST, NODE_ENV, APP_TYPE } = process.env
 
 const plugins = [
   [
@@ -30,20 +32,32 @@ const plugins = [
       title: defaultSettings.title,
       dynamicImport: {
         loadingComponent: './components/Loading/index',
+        webpackChunkName: true,
+        level: 3,
       },
-      ...(!process.env.TEST && os.platform() === 'darwin'
+      ...(!TEST && os.platform() === 'darwin'
         ? {
           dll: {
             include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
             exclude: ['@babel/runtime'],
           },
-          hardSource: true,
+          hardSource: false
         }
         : {}),
     },
   ],
 ];
-
+const uglifyJSOptions = NODE_ENV === 'production' ?
+  {
+    uglifyOptions: {
+      // remove console.* except console.error
+      compress: {
+        drop_console: true,
+        pure_funcs: ['console.error'],
+      },
+    },
+  }
+  : {};
 export default {
   // add for transfer to umi
   plugins,
@@ -51,8 +65,10 @@ export default {
     ie: 8,
   },
   define: {
-    APP_TYPE: process.env.APP_TYPE || '',
+    APP_TYPE: APP_TYPE || '',
   },
+  treeShaking: true,
+  devtool: TEST ? 'source-map' : false,
   // 路由配置
   routes: pageRoutes,
   // Theme for antd
@@ -70,8 +86,9 @@ export default {
   ignoreMomentLocale: true,
   disableDynamicImport: true,
   disableCSSModules: false, // css modules
-  publicPath: `${defaultSettings.version}/`,
+  publicPath: `${ defaultSettings.version }/`,
   hash: true,
+  disableRedirectHoist: true,
   manifest: {
     name: 'blog2.x-mux-club',
     background_color: '#fff',
@@ -86,6 +103,7 @@ export default {
       },
     ],
   },
+  uglifyJSOptions,
   chainWebpack: webpackplugin,
   cssnano: {
     mergeRules: false,

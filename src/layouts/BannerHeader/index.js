@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-03-26 // Initial version.
  * @version 0.2 | 2017-06-26 // 更新button配置项.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-13 11:17:18
+ * @Last Modified time: 2019-06-09 13:24:10
 */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -21,7 +21,7 @@ import 'rc-banner-anim/assets/index.css';
 import './index.scss';
 
 const { BgElement } = Element;
-const { prefix,banner } = app;
+const { prefix, banner } = app;
 const yAnim = {
   type: 'from', ease: 'easeInOutQuad', duration: 200,
 };
@@ -54,14 +54,14 @@ export default class BannerHeader extends PureComponent {
       >
         <BgElement
           key="a"
-          className={`bg bg${row.id}`}
-          style={{ background: `url(${row.bgImg}) no-repeat center`, backgroundSize: 'cover' }}
+          className={`bg bg${ row.id }`}
+          style={{ background: `url(${ row.bgImg }) no-repeat center`, backgroundSize: 'cover' }}
         />
         <QueueAnim
           key="b"
           type={['bottom', 'top']}
           delay={200}
-          className={`${className}-title`}
+          className={`${ className }-title`}
         >
           <span
             key="c"
@@ -78,7 +78,7 @@ export default class BannerHeader extends PureComponent {
           >
             {
               row.button.map(second => (
-                <li key={`li${second.id}`}>
+                <li key={`li${ second.id }`}>
                   <Button
                     key={second.id}
                     type="ghost"
@@ -90,9 +90,11 @@ export default class BannerHeader extends PureComponent {
                     {
                       second.icon && (
                         <TweenOne
-                          animation={{ ...second.animate, yoyo: true, repeat: -1, duration: 2400 }}
+                          animation={{
+                            ...second.animate, yoyo: true, repeat: -1, duration: 2400
+                          }}
                           className="icon"
-                          key={`icon${second.id}`}
+                          key={`icon${ second.id }`}
                         >
                           <Icon type={second.icon} />
                         </TweenOne>
@@ -111,7 +113,7 @@ export default class BannerHeader extends PureComponent {
       <OverPack
         replay                   // 每次显示当前时是否都要动画, false 为只上往下滚时才有动画
         playScale={[0.3, 0.9]}   // https://motion.ant.design/api/scroll-anim
-        className={`${prefix}-layout-${className} banner`}
+        className={`${ prefix }-layout-${ className } banner`}
         id="banner"
       >
         <TweenOneGroup
@@ -120,7 +122,7 @@ export default class BannerHeader extends PureComponent {
           leave={{ opacity: 0 }}
           component=""
         >
-          <div className={`${className}-wrapper`}>
+          <div className={`${ className }-wrapper`}>
             <BannerAnim
               autoPlay
               autoPlaySpeed={9999}
@@ -132,7 +134,7 @@ export default class BannerHeader extends PureComponent {
         </TweenOneGroup>
         <TweenOne
           animation={{ y: '-=30', yoyo: true, repeat: -1, duration: 1650 }}
-          className={`${className}-icon`}
+          className={`${ className }-icon`}
           style={{ bottom: 40 }}
           key="h"
         >

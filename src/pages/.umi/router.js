@@ -2,17 +2,18 @@ import React from 'react';
 import { Router as DefaultRouter, Route, Switch } from 'react-router-dom';
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/_renderRoutes';
+import history from '@tmp/history';
 import RendererWrapper0 from '/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/pages/.umi/LocaleWrapper.jsx'
 import _dvaDynamic from 'dva/dynamic'
 
-let Router = require('dva/router').routerRedux.ConnectedRouter;
+const Router = require('dva/router').routerRedux.ConnectedRouter;
 
-let routes = [
+const routes = [
   {
     "path": "/2.x",
     "component": _dvaDynamic({
   
-  component: () => import('../../layouts'),
+  component: () => import(/* webpackChunkName: "layouts" */'../../layouts'),
   LoadingComponent: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index').default,
 }),
     "routes": [
@@ -21,7 +22,7 @@ let routes = [
         "name": "",
         "component": _dvaDynamic({
   
-  component: () => import('../Home'),
+  component: () => import(/* webpackChunkName: "p__Home" */'../Home'),
   LoadingComponent: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index').default,
 }),
         "exact": true,
@@ -33,7 +34,7 @@ let routes = [
         "name": "Media",
         "component": _dvaDynamic({
   
-  component: () => import('../Media'),
+  component: () => import(/* webpackChunkName: "p__Media" */'../Media'),
   LoadingComponent: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index').default,
 }),
         "exact": true,
@@ -56,11 +57,12 @@ let routes = [
   }
 ];
 window.g_routes = routes;
-window.g_plugins.applyForEach('patchRoutes', { initialValue: routes });
+const plugins = require('umi/_runtimePlugin');
+plugins.applyForEach('patchRoutes', { initialValue: routes });
 
 // route change handler
 function routeChangeHandler(location, action) {
-  window.g_plugins.applyForEach('onRouteChange', {
+  plugins.applyForEach('onRouteChange', {
     initialValue: {
       routes,
       location,
@@ -68,13 +70,15 @@ function routeChangeHandler(location, action) {
     },
   });
 }
-window.g_history.listen(routeChangeHandler);
-routeChangeHandler(window.g_history.location);
+history.listen(routeChangeHandler);
+routeChangeHandler(history.location);
+
+export { routes };
 
 export default function RouterWrapper() {
   return (
 <RendererWrapper0>
-          <Router history={window.g_history}>
+          <Router history={history}>
       { renderRoutes(routes, {}) }
     </Router>
         </RendererWrapper0>
