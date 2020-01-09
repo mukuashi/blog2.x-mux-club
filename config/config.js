@@ -76,9 +76,7 @@ export default {
   theme: {
     'primary-color': defaultSettings.primaryColor,
   },
-  sass: {
-    'node-sass': true,
-  },
+  sass: {},
   alias: {
     '@': resolve(__dirname, 'src'),// umi默认，也可以不设置或在chainWebpack通过config.resolve.alias.set
   },

@@ -1,86 +1,129 @@
 import React from 'react';
-import { Router as DefaultRouter, Route, Switch } from 'react-router-dom';
+import {
+  Router as DefaultRouter,
+  Route,
+  Switch,
+  StaticRouter,
+} from 'react-router-dom';
 import dynamic from 'umi/dynamic';
-import renderRoutes from 'umi/_renderRoutes';
-import history from '@tmp/history';
-import RendererWrapper0 from '/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/pages/.umi/LocaleWrapper.jsx'
-import _dvaDynamic from 'dva/dynamic'
+import renderRoutes from 'umi/lib/renderRoutes';
+import history from '@@/history';
+import RendererWrapper0 from '/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/pages/.umi/LocaleWrapper.jsx';
+import { routerRedux, dynamic as _dvaDynamic } from 'dva';
 
-const Router = require('dva/router').routerRedux.ConnectedRouter;
+const Router = routerRedux.ConnectedRouter;
 
 const routes = [
   {
-    "path": "/2.x",
-    "component": _dvaDynamic({
-  
-  component: () => import(/* webpackChunkName: "layouts" */'../../layouts'),
-  LoadingComponent: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index').default,
-}),
-    "routes": [
+    path: '/2.x',
+    component: __IS_BROWSER
+      ? _dvaDynamic({
+          component: () =>
+            import(/* webpackChunkName: "layouts" */ '../../layouts'),
+          LoadingComponent: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index')
+            .default,
+        })
+      : require('../../layouts').default,
+    routes: [
       {
-        "path": "/2.x",
-        "name": "",
-        "component": _dvaDynamic({
-  
-  component: () => import(/* webpackChunkName: "p__Home" */'../Home'),
-  LoadingComponent: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index').default,
-}),
-        "exact": true,
-        "_title": "2.x mukuashi@PhotoArtLife Studio",
-        "_title_default": "2.x mukuashi@PhotoArtLife Studio"
+        path: '/2.x',
+        name: '',
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__Home" */ '../Home'),
+              LoadingComponent: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index')
+                .default,
+            })
+          : require('../Home').default,
+        exact: true,
+        _title: '2.x mukuashi@PhotoArtLife Studio',
+        _title_default: '2.x mukuashi@PhotoArtLife Studio',
       },
       {
-        "path": "/2.x/media",
-        "name": "Media",
-        "component": _dvaDynamic({
-  
-  component: () => import(/* webpackChunkName: "p__Media" */'../Media'),
-  LoadingComponent: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index').default,
-}),
-        "exact": true,
-        "_title": "2.x mukuashi@PhotoArtLife Studio",
-        "_title_default": "2.x mukuashi@PhotoArtLife Studio"
+        path: '/2.x/media',
+        name: 'Media',
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__Media" */ '../Media'),
+              LoadingComponent: require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/src/components/Loading/index')
+                .default,
+            })
+          : require('../Media').default,
+        exact: true,
+        _title: '2.x mukuashi@PhotoArtLife Studio',
+        _title_default: '2.x mukuashi@PhotoArtLife Studio',
       },
       {
-        "component": () => React.createElement(require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true }),
-        "_title": "2.x mukuashi@PhotoArtLife Studio",
-        "_title_default": "2.x mukuashi@PhotoArtLife Studio"
-      }
+        component: () =>
+          React.createElement(
+            require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+              .default,
+            { pagesPath: 'src/pages', hasRoutesInConfig: true },
+          ),
+        _title: '2.x mukuashi@PhotoArtLife Studio',
+        _title_default: '2.x mukuashi@PhotoArtLife Studio',
+      },
     ],
-    "_title": "2.x mukuashi@PhotoArtLife Studio",
-    "_title_default": "2.x mukuashi@PhotoArtLife Studio"
+    _title: '2.x mukuashi@PhotoArtLife Studio',
+    _title_default: '2.x mukuashi@PhotoArtLife Studio',
   },
   {
-    "component": () => React.createElement(require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true }),
-    "_title": "2.x mukuashi@PhotoArtLife Studio",
-    "_title_default": "2.x mukuashi@PhotoArtLife Studio"
-  }
+    component: () =>
+      React.createElement(
+        require('/Users/mukuashi/Project/Blog/blog2.x-mux-club/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+          .default,
+        { pagesPath: 'src/pages', hasRoutesInConfig: true },
+      ),
+    _title: '2.x mukuashi@PhotoArtLife Studio',
+    _title_default: '2.x mukuashi@PhotoArtLife Studio',
+  },
 ];
 window.g_routes = routes;
 const plugins = require('umi/_runtimePlugin');
 plugins.applyForEach('patchRoutes', { initialValue: routes });
 
-// route change handler
-function routeChangeHandler(location, action) {
-  plugins.applyForEach('onRouteChange', {
-    initialValue: {
-      routes,
-      location,
-      action,
-    },
-  });
-}
-history.listen(routeChangeHandler);
-routeChangeHandler(history.location);
-
 export { routes };
 
-export default function RouterWrapper() {
-  return (
-<RendererWrapper0>
-          <Router history={history}>
-      { renderRoutes(routes, {}) }
-    </Router>
-        </RendererWrapper0>
-  );
+export default class RouterWrapper extends React.Component {
+  unListen() {}
+
+  constructor(props) {
+    super(props);
+
+    // route change handler
+    function routeChangeHandler(location, action) {
+      plugins.applyForEach('onRouteChange', {
+        initialValue: {
+          routes,
+          location,
+          action,
+        },
+      });
+    }
+    this.unListen = history.listen(routeChangeHandler);
+    // dva 中 history.listen 会初始执行一次
+    // 这里排除掉 dva 的场景，可以避免 onRouteChange 在启用 dva 后的初始加载时被多执行一次
+    const isDva =
+      history.listen
+        .toString()
+        .indexOf('callback(history.location, history.action)') > -1;
+    if (!isDva) {
+      routeChangeHandler(history.location);
+    }
+  }
+
+  componentWillUnmount() {
+    this.unListen();
+  }
+
+  render() {
+    const props = this.props || {};
+    return (
+      <RendererWrapper0>
+        <Router history={history}>{renderRoutes(routes, props)}</Router>
+      </RendererWrapper0>
+    );
+  }
 }
