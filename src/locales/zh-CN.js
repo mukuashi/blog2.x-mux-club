@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-01-09 17:53:24
+ * @Last Modified time: 2020-01-09 18:07:54
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
@@ -33,7 +33,7 @@ import content3ArticleImg5 from '../assets/images/content3-article-img5.gif';
 const nowYear = new Date().getFullYear();
 const version = `${ defaultSettings.version.replace('/', '') }/`;
 // Media
-const mePai = `https://${ isMobile() ? 'm.' : '' }` + 'mepai.me/photographyer/u_592e418fe4a53'
+const mePai = `https://${ isMobile() ? 'm.' : '' }mepai.me/photographyer/u_592e418fe4a53`
 //
 export default {
   prefix: defaultSettings.prefix,
@@ -726,7 +726,7 @@ export default {
           },
           {
             id: '5',
-            name: 'MePai',
+            name: '米拍',
             path: mePai,
           },
           {
@@ -736,7 +736,7 @@ export default {
           },
           {
             id: '7',
-            name: 'tuchong',
+            name: '图虫',
             path: 'https://photoartlife.tuchong.com',
           },
           {
