@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-06-09 13:32:53
+ * @Last Modified time: 2020-01-09 18:07:54
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
@@ -33,7 +33,8 @@ import content3ArticleImg5 from '../assets/images/content3-article-img5.gif';
 const nowYear = new Date().getFullYear();
 const version = `${ defaultSettings.version.replace('/', '') }/`;
 // Media
-const mePai = isMobile() ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.html' : 'https://www.mepai.me/user/u_592e418fe4a53';
+const mePai = `https://${ isMobile() ? 'm.' : '' }mepai.me/photographyer/u_592e418fe4a53`
+//
 export default {
   prefix: defaultSettings.prefix,
   version: `${ version }`,
@@ -123,7 +124,7 @@ export default {
       id: 1,
       headerImg: bannerLogo,
       bgImg: banner1,
-      content: '一只拍片码稿、画图敲代码的创作者',
+      content: '一个拍片码稿、画图敲代码的创作者',
       button: [
         {
           id: 'a1',
@@ -139,7 +140,7 @@ export default {
       id: 2,
       headerImg: bannerLogo,
       bgImg: banner2,
-      content: '一个喜欢创作与挑战的独立设计师、工程师等',
+      content: '一个喜欢创作与挑战的独立设计师、全栈工程师等',
       button: [
         {
           id: 'b2',
@@ -175,7 +176,7 @@ export default {
         },
         {
           id: 'c3',
-          value: '500PX',
+          value: '500px',
           icon: 'html5',
           target: '_blank',
           animate: { x: '+=20' },
@@ -252,7 +253,7 @@ export default {
         img: content3ArticleImg1,
         body: `<h3>摄影</h3>兴趣导向的入门吧，开始泡图书馆和蹭一些美术或摄影课。
                 <h3>设计</h3>可能还是视觉上的吸引阶段，倒腾些PS/AI，关注一些UED Blog、广告制作等传媒行业。
-                <h3>编程</h3>这个绝对是科班出身了，信息学院计算机系，可能那时候敲代码还只是从书本上一行一行抄过来打出来看看demo的阶段。
+                <h3>编程</h3>这个绝对是科班出身了，信息学院计算机系，可能那时候敲代码还只是从书本上一行一行学和练习看看demo的阶段。
                 <h3>写作</h3>还没有今天自媒体这么流行火热，也只是写作个爱好者。 <a href="http://kquanr.com/1.x/article" target="_blank" rel="noopener noreferrer nofollow">老版旧文</a>`,
       },
       {
@@ -262,7 +263,7 @@ export default {
         },
         img: content3ArticleImg2,
         body: `<h3>设计</h3>UI & UX，边念书边在某广告公司做广告传媒与平面设计等工作。
-        <h3>编程</h3>学校的一些基本课程学习和校外兼职项目，同时做着在线讲师项目创业和外包服务等。
+        <h3>编程</h3>学校的一些基本课程学习和校外兼职项目，同时做着在线讲师项目创业和品牌服务等。
         <h3>媒体</h3>网上连载<a href="//kquanr.com/1.x/about/works" target="_blank" rel="noopener noreferrer nofollow">博客</a>文章和<a href="//i.youku.com/mukuashi" target="_blank" rel="noopener noreferrer nofollow">视频</a>前后期制作等。
         <h3>活动</h3>参加一些活动及比赛，华为杯、ACM、摄影比赛、微电影比赛等。`,
       },
@@ -272,7 +273,7 @@ export default {
           icon: 'three',
         },
         img: content3ArticleImg3,
-        body: `<h3>编程</h3>在<a href="https://www.baidu.com" target="_blank" rel="noopener noreferrer nofollow">百度</a>的一个产品<a href="https://www.zuoyebang.com" target="_blank" rel="noopener noreferrer nofollow">作业帮</a>搜索平台组，全职研发实习FE@前端坑。<h3>设计</h3>会继续做些小东西，偏注用户体验和交互细节更多的产品。<h3>摄影</h3>反正是有空就拍呗，城市（自然）风光和人文纪实为主，人像、肖像也在拍，总之是在创作路上 <a href="//photoartlife.lofter.com" target="_blank" rel="noopener noreferrer nofollow"> LOFTER</a>、<a href=${ mePai } target="_blank" rel="noopener noreferrer nofollow">米拍</a>、<a href="https://500px.me/PhotoArtLife" target="_blank" rel="noopener noreferrer nofollow">500PX</a>、<a href="https://photoartlife.tuchong.com" target="_blank" rel="noopener noreferrer nofollow">图虫</a>等。
+        body: `<h3>编程</h3>在<a href="https://www.baidu.com" target="_blank" rel="noopener noreferrer nofollow">百度</a>的一个产品<a href="https://www.zuoyebang.com" target="_blank" rel="noopener noreferrer nofollow">作业帮</a>搜索平台组，研发坑。<h3>设计</h3>会继续做些小东西，偏注用户体验和交互细节更多的产品。<h3>摄影</h3>反正是有空就拍呗，城市（自然）风光和人文纪实为主，人像、肖像也在拍，总之是在创作路上 <a href="//photoartlife.lofter.com" target="_blank" rel="noopener noreferrer nofollow"> LOFTER</a>、<a href=${ mePai } target="_blank" rel="noopener noreferrer nofollow">米拍</a>、<a href="https://500px.me/PhotoArtLife" target="_blank" rel="noopener noreferrer nofollow">500px</a>、<a href="https://photoartlife.tuchong.com" target="_blank" rel="noopener noreferrer nofollow">图虫</a>等。
         <h3>写作</h3>慢慢开始放到<a href="http://t.cn/Rt1xb42" target="_blank" rel="noopener noreferrer nofollow">微信公众号</a>、<a href="https://www.jianshu.com/u/0daeb4835d2d" target="_blank" rel="noopener noreferrer nofollow">简书</a>等一些自媒体平台连载。`,
       },
       {
@@ -281,9 +282,9 @@ export default {
           icon: 'four',
         },
         img: content3ArticleImg4,
-        body: `<h3>编程</h3>先后在<a href="//www.mi.com" target="_blank" rel="noopener noreferrer nofollow">小米 </a><a href="//www.miui.com" target="_blank" rel="noopener noreferrer nofollow">MIUI</a>安全组、短视频组从事全职研发工作@前端工程师。<h3>产品</h3>UGC App<a href="//wg.miui.com" target="_blank" rel="noopener noreferrer nofollow">围观小视频</a>、PGC App<a href="//xk.miui.com" target="_blank" rel="noopener noreferrer nofollow">想看视频</a>、PGC作者平台<a href="//open.xk.miui.com" target="_blank" rel="noopener noreferrer nofollow">想看开放平台</a>、UGC审核后台<a href="//mp.wg.miui.com" target="_blank" rel="noopener noreferrer nofollow">围观CRM</a>、PGC审核后台<a href="//mp.xk.miui.com" target="_blank" rel="noopener noreferrer nofollow">想看CRM</a>等。
-        <h3>摄影</h3>从小透明开始慢慢在国内社区冒泡，作为<a href=${mePai } target="_blank" rel="noopener noreferrer nofollow">米拍认证自由摄影师，#上海#、#城市#、#旅行#主持人</a>，米拍优秀主持人，米拍城市-巡城记北京十佳摄影师，<a href="//photoartlife.lofter.com" target="_blank" rel="noopener noreferrer nofollow">LOFTER摄影达人，LOFTER旅行家，LOFTER自由摄影师</a>等，一路走过来收获的不仅仅是感动，还有相知相惜。
-        <h3>设计</h3>作为一个自由独立设计师，喜欢设计和创造的这种兴趣也相辅相成了我的研发工作和摄影输入输出，一来可以做出自己喜欢的style，二来做电影后期也派上了用场。<a href="//i.youku.com/mukuashi" target="_blank" rel="noopener noreferrer nofollow">优酷自媒体</a>、<a href="//kquanr.com/1.x/project/demo/mukuashi" target="_blank" rel="noopener noreferrer nofollow">2017·济南大学毕设答辩@mukuashi</a>等。
+        body: `<h3>编程</h3>先后在<a href="//www.mi.com" target="_blank" rel="noopener noreferrer nofollow">小米 </a><a href="//www.miui.com" target="_blank" rel="noopener noreferrer nofollow">MIUI</a>安全组、短视频组从事全职研发工程师。<h3>产品</h3>UGC App<a href="//wg.miui.com" target="_blank" rel="noopener noreferrer nofollow">围观小视频</a>、PGC App<a href="//xk.miui.com" target="_blank" rel="noopener noreferrer nofollow">想看视频</a>、PGC作者平台<a href="//open.xk.miui.com" target="_blank" rel="noopener noreferrer nofollow">想看开放平台</a>、UGC审核后台<a href="//mp.wg.miui.com" target="_blank" rel="noopener noreferrer nofollow">围观CRM</a>、PGC审核后台<a href="//mp.xk.miui.com" target="_blank" rel="noopener noreferrer nofollow">想看CRM</a>等。
+        <h3>摄影</h3>从小透明开始慢慢在国内社区冒泡，从一个普通爱好者到<a href=${mePai } target="_blank" rel="noopener noreferrer nofollow">米拍 · 认证摄影师，城市、旅行优秀主持人，米拍北京十佳摄影师</a>、<a href="//photoartlife.lofter.com" target="_blank" rel="noopener noreferrer nofollow">LOFTER · 摄影达人、认证摄影师、视频博主、旅行家</a>，同时在各大社区如Behance、Instagram、视觉中国、500px、CNU、图虫等收获的不仅仅是参与的快乐，还有一路走过来的成长、感恩。
+        <h3>设计</h3>作为一个独立设计师，喜欢设计和创造的这种兴趣也相辅相成了我的研发工作和摄影输入输出，一来可以做出自己喜欢的style，二来做电影后期也派上了用场。<a href="//i.youku.com/mukuashi" target="_blank" rel="noopener noreferrer nofollow">优酷自媒体</a>、<a href="//kquanr.com/1.x/project/demo/mukuashi" target="_blank" rel="noopener noreferrer nofollow">2017·济南大学毕设答辩@mukuashi</a>等。
         <h3>写作</h3>还是一如既往地坚持记录吧，部分会放到网上<a href="http://t.cn/Rt1xb42" target="_blank" rel="noopener noreferrer nofollow">专栏</a>连载。`,
       },
       {
@@ -294,11 +295,12 @@ export default {
         img: content3ArticleImg5,
         body: `<h3>工作</h3>目前还在从事互联网、可视化及视觉创作、摄影及传媒行业，慢慢打通这些点，积累的过程，匀加速成长吧。有一点印象很深刻，记得在小米工作时，电脑每天的开机画面都是一张很好看的风光壁纸，幻灯片淡入一个很大的标题：永远相信美好的事情即将发生！当然，雷总很多发布会或年会都会说这句话，也一直影响着作者，去做感动人心的产品！
         <h3>摄影</h3>还是当初那个摄影爱好者，还在坚持纪录和拍东西，更多作品移步关注
-        <a href="https://www.instagram.com/mukuashi" target="_blank" rel="noopener noreferrer nofollow">Ins</a>、 
+        <a href="https://www.instagram.com/mukuashi" target="_blank" rel="noopener noreferrer nofollow">Instagram</a>、 
         <a href="http://photoartlife.lofter.com" target="_blank" rel="noopener noreferrer nofollow">LOFTER</a>、
-        <a href=${mePai } target="_blank" rel="noopener noreferrer nofollow">米拍</a>、
-        <a href="https://photoartlife.tuchong.com" target="_blank" rel="noopener noreferrer nofollow">图虫摄影</a>、
-        <a href="https://500px.me/PhotoArtLife" target="_blank" rel="noopener noreferrer nofollow">500PX</a>等社区。
+        <a href="https://www.behance.net/PhotoArtLife" target="_blank" rel="noopener noreferrer nofollow">Behance</a>、 
+        <a href="http://photoartlife.lofter.com" target="_blank" rel="noopener noreferrer nofollow">LOFTER</a>、
+        <a href="https://500px.me/PhotoArtLife" target="_blank" rel="noopener noreferrer nofollow">500px</a>、
+        <a href=${mePai } target="_blank" rel="noopener noreferrer nofollow">米拍</a>等社区。
         <h3>设计与写作</h3>
         <a href="http://kquanr.com" target="_blank" rel="noopener noreferrer nofollow">博客</a>和<a href="http://t.cn/Rt1xb42" target="_blank" rel="noopener noreferrer nofollow">公号文章及设计作品</a>，也会抽空更新，愿不忘初心。
         <h3>媒体与电影</h3><a href="//i.youku.com/mukuashi" target="_blank" rel="noopener noreferrer nofollow">优酷自媒体</a>与<a href="//www.jianshu.com/u/0daeb4835d2d" target="_blank" rel="noopener noreferrer nofollow">三方平台专栏</a>等，博主偶尔上线。`,
@@ -312,34 +314,34 @@ export default {
       media: [
         {
           id: 0,
-          name: 'Ins',
+          name: 'Instagram',
           after: '、',
           url: 'https://www.instagram.com/mukuashi',
         },
         {
           id: 1,
+          name: 'Behance',
+          after: '、',
+          url: 'https://www.behance.net/PhotoArtLife',
+        },
+        {
+          id: 2,
           name: 'LOFTER',
           after: '、',
           url: 'http://photoartlife.lofter.com',
         },
         {
-          id: 2,
+          id: 3,
           name: '米拍',
           after: '、',
           url: mePai,
         },
         {
-          id: 3,
-          name: '500PX',
+          id: 4,
+          name: '500px',
           after: '、',
           url: 'https://500px.me/PhotoArtLife',
-        },
-        {
-          id: 4,
-          name: '图虫摄影',
-          after: '...',
-          url: 'https://photoartlife.tuchong.com',
-        },
+        }
       ],
     },
     block: [
@@ -604,7 +606,7 @@ export default {
   footer: {
     logo: {
       img: footerLogo,
-      content: '一只拍片码稿、画图敲代码的创作者',
+      content: '一个拍片码稿、画图敲代码的创作者、一个致力于视觉艺术与影像工程研究的实验室｜MUX Lab ✘ MUX VF-Studio｜浅子艺术工作室',
     },
     version: {
       title: '版本列表',
@@ -629,13 +631,13 @@ export default {
         },
         {
           id: '4.x',
-          name: '4.x Comming版本',
+          name: '4.x SSR版本',
           status: 'processing',
           path: '/4.x',
         },
         {
           id: Math.random(),
-          name: '陆续公开...',
+          name: 'Next Coming',
           status: 'warning',
           path: '',
         }
@@ -648,27 +650,22 @@ export default {
         content: [
           {
             id: '1',
-            name: '自由/签约摄影师 | 摄影达人',
+            name: '独立设计师、签约摄影师/摄影博主',
             path: '//photoartlife.lofter.com',
           },
           {
             id: '2',
-            name: 'LOFTER认证旅行家/摄影师',
+            name: 'LOFTER · 认证旅行家、摄影师、视频博主',
             path: '//photoartlife.lofter.com',
           },
           {
-            id: '3.1',
-            name: '米拍认证·自由摄影师',
-            path: mePai,
-          },
-          {
-            id: '3.2',
-            name: '米拍城市、旅行等主持人',
+            id: '3',
+            name: '米拍 · 认证摄影师、城市/旅行等主持人',
             path: mePai,
           },
           {
             id: '4',
-            name: '500PX摄影师',
+            name: '视觉中国 · 500px摄影师',
             path: 'https://500px.me/PhotoArtLife',
           },
           {
@@ -678,12 +675,12 @@ export default {
           },
           {
             id: '6',
-            name: '程序猿/软件工程师',
+            name: '程序猿/全栈工程师/独立开发者',
             path: 'https://github.com/photoArtLife',
           },
           {
             id: '7',
-            name: '视频后期及制片人',
+            name: '制片人/视频创作者',
             path: '//i.youku.com/mukuashi',
           },
           {
@@ -694,13 +691,7 @@ export default {
           },
           {
             id: '9',
-            name: '独立设计师',
-            path: '/1.x/about',
-            target: true
-          },
-          {
-            id: '10',
-            name: '关于更多...',
+            name: '关于更多',
             path: '/1.x/about',
             target: true
           },
@@ -730,37 +721,42 @@ export default {
           },
           {
             id: '4',
-            name: 'LOFTER摄影',
+            name: 'LOFTER',
             path: '//photoartlife.lofter.com',
           },
           {
             id: '5',
-            name: '米拍摄影',
+            name: '米拍',
             path: mePai,
           },
           {
             id: '6',
-            name: '500PX摄影',
+            name: '500px',
             path: 'https://500px.me/PhotoArtLife',
           },
           {
             id: '7',
-            name: '图虫摄影',
+            name: '图虫',
             path: 'https://photoartlife.tuchong.com',
           },
           {
             id: '8',
-            name: '微信自媒体',
+            name: 'WeChat',
             path: 'http://t.cn/Rt1xb42',
           },
           {
             id: '9',
-            name: 'instagram(少更)',
+            name: 'instagram',
             path: 'https://www.instagram.com/mukuashi',
           },
           {
             id: '10',
-            name: 'Github(少更)',
+            name: 'Behance',
+            path: 'https://www.behance.net/PhotoArtLife',
+          },
+          {
+            id: '11',
+            name: 'Github',
             path: 'https://github.com/photoArtLife',
           },
         ],
@@ -816,7 +812,7 @@ export default {
           },
           {
             id: '10',
-            name: '更多导航...',
+            name: '更多导航',
             path: 'http://lackk.com/bookmark',
           },
         ],
@@ -840,65 +836,71 @@ export default {
           {
             id: '2',
             icon: 'instagram',
-            name: 'Ins摄影',
+            name: 'Instagram',
             path: 'https://www.instagram.com/mukuashi',
           },
           {
             id: '3',
-            icon: 'camera-circle',
-            name: 'LOFTER摄影',
-            path: '//photoartlife.lofter.com',
+            icon: 'behance',
+            name: 'Behance',
+            path: 'https://www.behance.net/PhotoArtLife',
           },
           {
             id: '4',
+            icon: 'camera-circle',
+            name: 'LOFTER',
+            path: '//photoartlife.lofter.com',
+          },
+          {
+            id: '5',
             icon: 'mi-camera',
             name: '米拍摄影',
             path: mePai,
           },
           {
-            id: '5',
+            id: '6',
             icon: '500px-circle',
-            name: '500PX摄影',
+            name: '500px社区',
             path: 'https://500px.me/PhotoArtLife',
           },
           {
-            id: '6',
+            id: '7',
             icon: 'tuchong',
             name: '图虫摄影',
             path: 'https://photoartlife.tuchong.com',
           },
           {
-            id: '7',
+            id: '8',
             icon: 'video',
             name: '优酷自媒体',
             path: '//i.youku.com/mukuashi',
           },
           {
-            id: '8',
+            id: '9',
             icon: 'zhihu',
             name: '知乎-MUX VF-Studio',
             path: 'https://www.zhihu.com/people/mukuashi',
           },
           {
-            id: '9',
+            id: '10',
             icon: 'jianshu',
             name: '简书创作',
             path: 'https://www.jianshu.com/u/0daeb4835d2d',
           },
           {
-            id: '10',
+            id: '11',
             icon: 'github',
             name: 'Github',
             path: 'https://github.com/PhotoArtLife',
           },
           {
-            id: '11',
+            id: '12',
             icon: 'email-circle',
             name: '邮箱📮',
             path: '//kquanr.com/1.x/about/works#four',
           },
           {
-            id: '12',
+            id: '13',
             icon: 'home-circle',
             name: 'Home',
             path: '/',
