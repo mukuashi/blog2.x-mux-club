@@ -5,12 +5,11 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-15 22:11:21
+ * @Last Modified time: 2020-02-16 14:54:18
 */
 import React, { PureComponent } from 'react';
 import { Select, Skeleton, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import Link from 'umi/link';
 import Texty from 'rc-texty';
@@ -98,7 +97,7 @@ export default class GlobalFooter extends PureComponent {
         {...props}
         playScale="0.1"
       >
-        <QueueAnim key="a" type="bottom" component='ul' leaveReverse>
+        <ul key="a">
           <li>
             <p className="logo">
               {!logo.img && <Skeleton avatar />}
@@ -154,7 +153,7 @@ export default class GlobalFooter extends PureComponent {
               </li>
             ))
           }
-        </QueueAnim>
+        </ul>
         <BackTop>
           <TweenOne
             key="c"
