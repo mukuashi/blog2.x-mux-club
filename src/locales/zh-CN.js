@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-01-09 18:07:54
+ * @Last Modified time: 2020-02-15 14:18:06
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
@@ -242,7 +242,7 @@ export default {
   content3: {
     text: {
       title: '过去，现在，未来',
-      subtitle: '人生或该是完整的、不重复的生长。不一定去很多的国家，到很多的地方，长多少见识和词汇，跨过那么大、那么无穷的一个世界才叫跨世。也许就是每天排得满满的，创作和工作，一直负责搞笑和搞事情吧。',
+      subtitle: '人生或该是完整的、不重复的生长。不一定去很多的国家，到很多的地方，长多少见识和词汇，跨过那么大、那么无穷的一个世界才叫跨世。或许就是每天过得踏实、充实，工作和创作，一直负责搞笑和搞事情吧！',
     },
     block: [
       {
@@ -606,10 +606,10 @@ export default {
   footer: {
     logo: {
       img: footerLogo,
-      content: '一个拍片码稿、画图敲代码的创作者、一个致力于视觉艺术与影像工程研究的实验室｜MUX Lab ✘ MUX VF-Studio｜浅子艺术工作室',
+      content: '一个拍片码稿、画图敲代码的创作者、一个致力于视觉艺术与影像工程研究的实验室 • MUX Lab ✘ MUX VF-Studio • Asako Studio',
     },
     version: {
-      title: '版本列表',
+      title: '版本记录',
       list: [
         {
           id: '1.x',

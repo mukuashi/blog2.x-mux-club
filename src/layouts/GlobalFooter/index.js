@@ -5,12 +5,11 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-01-09 16:37:23
+ * @Last Modified time: 2020-02-16 14:54:18
 */
 import React, { PureComponent } from 'react';
 import { Select, Skeleton, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import Link from 'umi/link';
 import Texty from 'rc-texty';
@@ -33,7 +32,6 @@ export default class GlobalFooter extends PureComponent {
 
   handleToggleVersion = value => {
     if (value && value.includes('4.x')) {
-      debugger
       notification.warning({
         duration: 6,
         placement: 'bottomLeft',
@@ -41,7 +39,7 @@ export default class GlobalFooter extends PureComponent {
         description: '亲，4.x版本作者还在整理中，稍后就会开源哦，建议您先去浏览其他模块哈，比如我的摄影、设计作品啥的 . . . 欢迎来访！',
         icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
       })
-    } else {
+    } else if (value && !value.includes('2.x')) {
       window.location.href = value
     }
   }
@@ -78,7 +76,9 @@ export default class GlobalFooter extends PureComponent {
         <br />
         <Badge status="success" text="MUX VF-Studio 3.x 已上线 ❤️" />
         <br />
-        <Badge status="warning" text="当前版本2.x => Landing In 2018" />
+        <Badge status="geekblue" text="Landing In 2018 🤔" />
+        <br />
+        <Badge status="pink" text="当前版本 2.x" />
       </div>
     )
     notification.open({
@@ -97,8 +97,8 @@ export default class GlobalFooter extends PureComponent {
         {...props}
         playScale="0.1"
       >
-        <QueueAnim key="a" type="bottom" component="ul" leaveReverse>
-          <li key="b">
+        <ul key="a">
+          <li>
             <p className="logo">
               {!logo.img && <Skeleton avatar />}
               <img src={logo.img} alt="footer-logo" />
@@ -110,11 +110,8 @@ export default class GlobalFooter extends PureComponent {
                   <p key={row.id} onClick={() => this.handleToggleVersion(row.path)}>
                     <Badge status={row.status} />
                     {
-                      row.path ? (
-                        row.path.includes(defaultSettings.version)
-                          ? <Link to={row.path} className="actived">{row.name}</Link>
-                          : <a>{row.name}</a>
-                      )
+                      row.path
+                        ? <a className={row.path.includes(defaultSettings.version) && 'actived'}>{row.name}</a>
                         : <span>{row.name}</span>
                     }
                   </p>
@@ -149,7 +146,6 @@ export default class GlobalFooter extends PureComponent {
                               : second.name
                           }
                         </a>
-
                       </li>
                     ))
                   }
@@ -157,8 +153,7 @@ export default class GlobalFooter extends PureComponent {
               </li>
             ))
           }
-        </QueueAnim>
-
+        </ul>
         <BackTop>
           <TweenOne
             key="c"
