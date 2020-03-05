@@ -7,7 +7,7 @@
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @version 0.3 | 2018-09-02 // update staging into umi.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-02-09 18:28:24
+ * @Last Modified time: 2020-03-05 17:44:14
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';

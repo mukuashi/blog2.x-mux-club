@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-16 14:54:18
+ * @Last Modified time: 2020-03-05 18:39:27
 */
 import React, { PureComponent } from 'react';
 import { Select, Skeleton, Icon, notification, Tooltip, Card, Badge, BackTop } from 'antd';
@@ -18,7 +18,8 @@ import app from '@/locales/zh-CN';
 import defaultSettings from '../../../config/settings.config';
 import './index.scss';
 
-const { logo, version, block, copyright, info } = app.footer;
+const { logo, block, copyright, info } = app.footer;
+const { version } = app.studio
 const { Option } = Select;
 
 export default class GlobalFooter extends PureComponent {
@@ -36,10 +37,13 @@ export default class GlobalFooter extends PureComponent {
         duration: 6,
         placement: 'bottomLeft',
         message: '友情提示 🐿',
-        description: '亲，4.x版本作者还在整理中，稍后就会开源哦，建议您先去浏览其他模块哈，比如我的摄影、设计作品啥的 . . . 欢迎来访！',
+        description: '4.x版文档还在整理中，稍后开源，建议您先去浏览其他模块哈，比如博主的摄影、设计作品啥的，感谢来访！',
         icon: <Icon type="smile" style={{ color: '#108ee9' }} />,
       })
     } else if (value && !value.includes('2.x')) {
+      if (value && value.includes('mp.weixin.qq.com')) {
+        return window.open(value)
+      }
       window.location.href = value
     }
   }
@@ -57,7 +61,7 @@ export default class GlobalFooter extends PureComponent {
         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
       >
         {
-          version.list.slice(0, 4).map(row => (
+          version.list.slice(0, 5).map(row => (
             <Option
               key={row.id}
               value={row.path}
@@ -72,13 +76,11 @@ export default class GlobalFooter extends PureComponent {
     //
     const text = (
       <div>
-        <Badge status="processing" text="Hey，欢迎访问 PhotoArtLife" />
+        <Badge status="pink" text="Hey，欢迎访问 PhotoArtLife" />
         <br />
-        <Badge status="success" text="MUX VF-Studio 3.x 已上线 ❤️" />
+        <Badge status="success" text="5.x 小程序版来啦 ️🔥" />
         <br />
-        <Badge status="geekblue" text="Landing In 2018 🤔" />
-        <br />
-        <Badge status="pink" text="当前版本 2.x" />
+        <Badge status="processing" text="当前版本2.x，Landed In 2018 🤔" />
       </div>
     )
     notification.open({
@@ -183,7 +185,15 @@ export default class GlobalFooter extends PureComponent {
           </p>
           <p>
             Design For Life By
-            <Link to="../1.x/contact" target="_blank" rel="noopener noreferrer nofollow"> MUX VF-Studio</Link>
+            <Link to="../1.x/contact" target="_blank" rel="noopener noreferrer nofollow"> Asako Studio</Link> ·
+            Code Hosted on
+            <Link
+              to="//github.com/PhotoArtLife/blog2.x-mux-club"
+              className="code"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            > Github
+            </Link>
           </p>
           <Icon type="smile" theme="filled" style={{ color: '#52c41a', marginRight: '.6rem' }} />
           <Icon type="heart" theme="filled" style={{ color: '#f43e55' }} />
