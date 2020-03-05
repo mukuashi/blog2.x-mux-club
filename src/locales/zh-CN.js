@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-15 14:18:06
+ * @Last Modified time: 2020-03-05 19:15:01
 */
 import defaultSettings from '../../config/settings.config'
 // dev or online
@@ -78,7 +78,7 @@ export default {
         path: '/1.x/about/works',
         url: '/1.x/about/works',
         target: '_blank',
-      },
+      }
     ],
     contact: {
       block: [
@@ -606,42 +606,7 @@ export default {
   footer: {
     logo: {
       img: footerLogo,
-      content: '一个拍片码稿、画图敲代码的创作者、一个致力于视觉艺术与影像工程研究的实验室 • MUX Lab ✘ MUX VF-Studio • Asako Studio',
-    },
-    version: {
-      title: '版本记录',
-      list: [
-        {
-          id: '1.x',
-          name: '1.x Old版本',
-          status: 'success',
-          path: '/1.x'
-        },
-        {
-          id: '2.x',
-          name: '2.x Current版本',
-          status: 'success',
-          path: '/2.x'
-        },
-        {
-          id: '3.x',
-          name: '3.x Release版本',
-          status: 'success',
-          path: '/',
-        },
-        {
-          id: '4.x',
-          name: '4.x SSR版本',
-          status: 'processing',
-          path: '/4.x',
-        },
-        {
-          id: Math.random(),
-          name: 'Next Coming',
-          status: 'warning',
-          path: '',
-        }
-      ]
+      content: '一个创作者｜一个致力于视觉艺术与影像工程研究的实验室、工作室@浅子文化工作室 • MUX Lab • PhotoArtLife • Asako Studio',
     },
     block: [
       {
@@ -878,7 +843,7 @@ export default {
           {
             id: '9',
             icon: 'zhihu',
-            name: '知乎-MUX VF-Studio',
+            name: '知乎',
             path: 'https://www.zhihu.com/people/mukuashi',
           },
           {
@@ -911,12 +876,56 @@ export default {
       },
     ],
     copyright: {
-      number: '鲁ICP备15022927号 All Rights Reserved',
+      number: 'ICP备15022927号 All Rights Reserved',
       reserved: `Copyright © 2015-${ nowYear } mukuashi Inc.`,
     },
     info: {
       version: `版本${ version.replace('/', '') }  `,
     },
+  },
+  studio: {
+    version: {
+      title: '版本记录',
+      list: [
+        {
+          id: '1.x',
+          name: '1.x Old版',
+          status: 'success',
+          path: '/1.x'
+        },
+        {
+          id: '2.x',
+          name: '2.x Current版',
+          status: 'processing',
+          path: '/2.x'
+        },
+        {
+          id: '3.x',
+          name: '3.x Release版',
+          status: 'success',
+          path: '/',
+        },
+        {
+          id: '4.x',
+          name: '4.x SSR版',
+          status: 'purple',
+          path: '/4.x',
+        },
+        {
+          id: '5.x',
+          name: '5.x 小程序版',
+          status: 'green',
+          path: '//mp.weixin.qq.com/s/t1Ys6Z9B0lCk9manU7Tf9g',
+          target: '_blank'
+        },
+        {
+          id: Math.random(),
+          name: 'Next Coming',
+          status: 'volcano',
+          path: '',
+        }
+      ]
+    }
   },
   ...pwa
 };

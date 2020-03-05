@@ -4,9 +4,9 @@
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
- * @version 0.1 | 2017-09-06 // update jsx and antd ui.
+ * @version 0.2 | 2017-09-06 // update jsx and antd ui.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-02-09 20:25:47
+ * @Last Modified time: 2020-03-05 19:13:38
 */
 import React, { PureComponent } from 'react';
 import TweenOne, { TweenOneGroup } from 'rc-tween-one';
@@ -19,8 +19,8 @@ import { scrollTo } from '@/utils';
 import styles from './index.scss';
 
 const { Item, SubMenu } = Menu;
-const { header } = app;
-const { logo, nav, user, submenu, contact } = header;
+const { header, studio } = app;
+const { logo, nav, user, contact } = header;
 
 export default class GlobalHeader extends PureComponent {
     state = {
@@ -110,13 +110,12 @@ export default class GlobalHeader extends PureComponent {
             </Item>,
             <SubMenu className="menu-user" title={userTitle} key="user">
                 {
-                    submenu.map(row => (
+                    studio.version.list.slice(0, 5).map(row => (
                         <Item key={row.id}>
                             {
-                                !row.href && <h4 className={ismobile ? styles.avatarVersion : ''}>{row.name}</h4>
-                            }
-                            {
-                                row.href && <a href={row.href} target={row.target} rel="noopener noreferrer nofollow" className={styles.avatarInfo}>{row.name}</a>
+                                row.path && row.path.includes('2.x')
+                                    ? <h4 className={ismobile ? styles.avatarVersion : ''}>{`当前版：${ row.id }`}</h4>
+                                    : <a href={row.path} target={row.target} rel="noopener noreferrer nofollow" className={styles.avatarInfo}>{`version：${ row.id }`}</a>
                             }
                         </Item>
                     ))
@@ -152,7 +151,7 @@ export default class GlobalHeader extends PureComponent {
                 </TweenOne>
                 {
                     ismobile ? (
-                        <div className={`header-mobile-nav${mobileOpen ? ' open' : ''}`}>
+                        <div className={`header-mobile-nav${ mobileOpen ? ' open' : '' }`}>
                             <div
                                 className="header-mobile-nav-bar"
                                 onClick={() => this.handleToggleMobile(mobileOpen)}
