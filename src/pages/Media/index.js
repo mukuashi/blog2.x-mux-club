@@ -40,13 +40,18 @@ class Media extends PureComponent {
             <Timeline mode="alternate">
               <Item dot={<Icon type="clock-circle" theme="twoTone" style={{ fontSize: '16px' }} twoToneColor="#52c41a" />}>2015-01-01，1.x created and published.
               </Item>
-              <Item color="green">UI、UX、UED、Photography，Join LOFTER</Item>
-              <Item dot={<Icon type="skin" theme="twoTone" twoToneColor="#ef6ab5" style={{ fontSize: '16px' }} />}>2015-09-01，FE、RD、UE...Join BaiDu|ZuoYeBang</Item>
-              <Item dot={<Icon type="smile" theme="twoTone" style={{ fontSize: '16px' }} />}>2016-08-01，2.x created and published.</Item>
-              <Item color="blue">Programme、UED、Photography，Join 500px|XiaoMi</Item>
-              <Item dot={<Icon type="heart" theme="twoTone" twoToneColor="#eb2f96" style={{ fontSize: '16px' }} />}>2018-07-01，3.x created and published.</Item>
-              <Item color="pink">AI、Ant Design、Keep、UED、Photography，Join Ins|Keep</Item>
-              <Item dot={<Icon type="thunderbolt" theme="twoTone" twoToneColor="red" style={{ fontSize: '16px' }} />}>2018-09-01 later，4.x coming soon...</Item>
+              <Item color="pink">UI、UX、UED、Photography，JiNan University</Item>
+
+              <Item dot={<Icon type="skin" theme="twoTone" style={{ fontSize: '16px' }} />}>2015-09-01，FE、RD、UE... Join BaiDu ZuoYeBang</Item>
+              <Item dot={<Icon type="smile" theme="twoTone" style={{ fontSize: '16px' }} />}>2016-08-01，2.x created and published</Item>
+              <Item color="pink">Coding、Create Products、UED、Photography，Join XiaoMi</Item>
+              <Item dot={<Icon type="heart" theme="twoTone"  style={{ fontSize: '16px' }} />}>2018-07-01，3.x created and published</Item>
+              <Item color="pink">Design、UED、Studio、Lab、Photography</Item>
+              <Item dot={<Icon type="camera" twoToneColor="#584F60" style={{ fontSize: '16px' }} />}>2018-07-09，Sports And Fitness、join Keep</Item>
+              <Item color="pink">A Creator、Asako Studio Founder</Item>
+              <Item dot={<Icon type="home"  style={{ fontSize: '16px' }} />}>2020-01-01，4.x and 5.x miniprogram published</Item>
+              <Item color="pink">Photographer、Independent Designer、Full Stack Developer、Engineer、Producer、Touring Blogger etc. </Item>
+              <Item dot={<Icon type="qq"  style={{ fontSize: '16px' }} />}>2020-05-07，Join Tencent CSIG</Item>
             </Timeline>
           </OverPack>
         </section>
