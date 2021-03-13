@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-06-10  // add env split.
  * @version 0.4 | 2018-09-09  // add version list.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-26 15:41:53
+ * @Last Modified time: 2021-03-13 18:10:26
  */
 import defaultSettings from '../../config/settings.config';
 // dev or online
@@ -742,8 +742,8 @@ export default {
       img: footerLogo,
       content: [
         '一个创作者｜一个致力于视觉艺术与影像工程研究的实验室、工作室',
-        '@浅子文化工作室 • Asako Studio',
-        '@MUX Lab • PhotoArtLife',
+        '@浅子文化实验室、工作室',
+        '@Asako Studio｜PhotoArtLife',
       ],
     },
     block: [
