@@ -148,7 +148,7 @@ export default class GlobalFooter extends PureComponent {
           </TweenOne>
         </BackTop>
         <TweenOne key="d" animation={{ y: '+=30', opacity: 0, type: 'from' }} className="copyright">
-          <a target="_blank" href="http://www.beian.miit.gov.cn">
+          <a target="_blank" href="https://beian.miit.gov.cn">
             {copyright.number}
           </a>
           All Rights Reserved
