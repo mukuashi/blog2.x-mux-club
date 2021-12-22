@@ -36,7 +36,7 @@ const version = `${defaultSettings.version.replace('/', '')}/`;
 const community = {
   blog: '//kquanr.com',
   weibo: '//weibo.com/mukuashi',
-  mepai: '//mepai.me/PhotoArtLife',
+  mepai: '//mepai.me/mukuashi',
   lofter: '//photoartlife.lofter.com',
   _500px: '//500px.me/PhotoArtLife',
   instagram: '//instagram.com/mukuashi',
@@ -742,7 +742,7 @@ export default {
       img: footerLogo,
       content: [
         '一个创作者｜一个致力于视觉艺术与影像工程研究的实验室、工作室',
-        '@浅子文化实验室、工作室',
+        '@浅子艺术工作室、实验室',
         '@Asako Studio｜PhotoArtLife',
       ],
     },
