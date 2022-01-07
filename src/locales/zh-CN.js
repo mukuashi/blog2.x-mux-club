@@ -38,7 +38,7 @@ const community = {
   weibo: '//weibo.com/mukuashi',
   mepai: '//mepai.me/mukuashi',
   lofter: '//photoartlife.lofter.com',
-  _500px: '//500px.me/PhotoArtLife',
+  _500px: '//500px.com.cn/mukuashi',
   instagram: '//instagram.com/mukuashi',
   behance: '//behance.net/PhotoArtLife',
   tuchong: '//photoartlife.tuchong.com',
